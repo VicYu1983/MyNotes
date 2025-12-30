@@ -1,0 +1,226 @@
+{
+  "level": {
+    "id": "light-renovation",
+    "name": "自家淺改造",
+    "emoji": "🏠",
+    "description": "簡單室內改造搭配智能化升級",
+    "color": "#FF9800"
+  },
+  "knowledgePoints": [
+    {
+      "number": "06",
+      "title": "淺改造基礎規劃",
+      "subtitle": "評估房屋現況，規劃智能化方向",
+      "sections": [
+        {
+          "heading": "評估現有條件",
+          "list": [
+            "勘查房屋電路容量",
+            "確認WiFi覆蓋範圍",
+            "識別關鍵改造區域（廚房、衛浴、客廳）",
+            "評估預算和優先級"
+          ]
+        },
+        {
+          "heading": "淺改造的定義",
+          "list": [
+            "不涉及結構改動",
+            "避免大規模佈線",
+            "主要是表面翻新",
+            "逐步添加智能設備"
+          ]
+        },
+        {
+          "heading": "改造優先級",
+          "list": [
+            "<strong>第一階段</strong>：照明+基礎智能控制",
+            "<strong>第二階段</strong>：安全監控+鎖定",
+            "<strong>第三階段</strong>：溫控+家電控制",
+            "<strong>第四階段</strong>：語音助手+高級自動化"
+          ]
+        },
+        {
+          "heading": "預算規劃",
+          "list": [
+            "<strong>照明升級</strong>：3000-8000元（10-20個燈位）",
+            "<strong>安全系統</strong>：2000-5000元（攝像頭+鎖）",
+            "<strong>溫控系統</strong>：2000-4000元（傳感器+控制）",
+            "<strong>Hub和中樞</strong>：1000-2000元（Echo/Google Home）"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "廚房淺改造與智能化",
+      "subtitle": "翻新廚房並整合智能控制",
+      "sections": [
+        {
+          "heading": "廚房翻新項目",
+          "list": [
+            "<strong>櫃子重新著色</strong>：最經濟的更新",
+            "<strong>檯面更新</strong>：石英或層壓板",
+            "<strong>後擋板更新</strong>：地鐵磚或馬賽克",
+            "<strong>照明升級</strong>：LED和智能燈泡",
+            "<strong>五金更新</strong>：新把手和拉手"
+          ]
+        },
+        {
+          "heading": "廚房智能化方案",
+          "list": [
+            "<strong>智能照明</strong>：可調光的廚房燈，方便做飯",
+            "<strong>智能插座</strong>：控制咖啡機、烤箱等小家電",
+            "<strong>語音助手</strong>：在廚房播放音樂、設定計時器",
+            "<strong>智能溫度計</strong>：監測烤箱溫度"
+          ]
+        },
+        {
+          "heading": "安裝步驟",
+          "list": [
+            "選擇並採購材料和設備",
+            "拆除舊的櫃門或檯面",
+            "安裝新材料（可聘請工人）",
+            "更新電路和插座（有需要時聘請電工）",
+            "安裝和配置智能設備"
+          ]
+        },
+        {
+          "heading": "常見廚房自動化",
+          "list": [
+            "<strong>早晨模式</strong>：咖啡機自動開啟，廚房燈亮起",
+            "<strong>烹飪模式</strong>：增亮照明，提醒做飯時間",
+            "<strong>清潔模式</strong>：所有電器關閉，燈調暗以保護眼睛"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "浴室淺改造與智能衛浴",
+      "subtitle": "提升浴室舒適度與實用性",
+      "sections": [
+        {
+          "heading": "浴室翻新重點",
+          "list": [
+            "<strong>通風改善</strong>：升級排氣扇，防止黴菌",
+            "<strong>照明升級</strong>：防水LED燈和鏡前燈",
+            "<strong>五金更換</strong>：新毛巾桿、馬桶紙架",
+            "<strong>儲存優化</strong>：浮動架子、鏡子櫃",
+            "<strong>地板防滑</strong>：更新防滑瓷磚"
+          ]
+        },
+        {
+          "heading": "浴室智能化方案",
+          "list": [
+            "<strong>智能鏡前燈</strong>：可調光，支持語音控制",
+            "<strong>浴室排氣扇</strong>：自動啟動（溼度感應）",
+            "<strong>智能淋浴溫控</strong>：恆溫淋浴頭控制",
+            "<strong>智能馬桶</strong>：自動蓋板、加熱座圈（高端選項）"
+          ]
+        },
+        {
+          "heading": "防水安裝考慮",
+          "list": [
+            "選擇IPX4以上防水等級設備",
+            "遠離直接水流安裝（至少30cm）",
+            "使用防水膠密封所有接縫",
+            "考慮浴室專用的WiFi中繼器"
+          ]
+        },
+        {
+          "heading": "浴室自動化場景",
+          "list": [
+            "<strong>早晨模式</strong>：排氣扇和鏡前燈同時開啟",
+            "<strong>洗澡模式</strong>：排氣自動啟動，音樂播放",
+            "<strong>離開模式</strong>：15分鐘後自動關閉排氣"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "09",
+      "title": "客廳與卧室智能改造",
+      "subtitle": "創建智能娛樂和舒適空間",
+      "sections": [
+        {
+          "heading": "客廳改造重點",
+          "list": [
+            "<strong>照明系統</strong>：分層照明，可調光",
+            "<strong>牆面更新</strong>：油漆或壁紙翻新",
+            "<strong>地板選項</strong>：木地板或高質量瓷磚",
+            "<strong>家具配置</strong>：優化流線和觀視角度"
+          ]
+        },
+        {
+          "heading": "客廳智能化方案",
+          "list": [
+            "<strong>智能照明</strong>：可調色溫和亮度的燈",
+            "<strong>智能電視</strong>：整合流媒體和語音控制",
+            "<strong>智能音響</strong>：多房間音樂播放",
+            "<strong>遠程遙控</strong>：集中控制所有家電"
+          ]
+        },
+        {
+          "heading": "卧室改造與智能",
+          "list": [
+            "<strong>照明</strong>：分層照明（主燈、床頭燈、夜燈）",
+            "<strong>智能窗簾</strong>：自動開關，防光污染",
+            "<strong>環境監測</strong>：溫度、濕度、空氣品質監測",
+            "<strong>睡眠輔助</strong>：調光和白噪音播放"
+          ]
+        },
+        {
+          "heading": "常見客廳和卧室自動化",
+          "list": [
+            "<strong>離家模式</strong>：所有燈關閉，溫控調低",
+            "<strong>電影模式</strong>：房間變暗，所有燈關閉，音樂停止",
+            "<strong>睡眠模式</strong>：燈逐漸變暗，溫度降低，白噪音開啟"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "淺改造中的電氣和安全升級",
+      "subtitle": "安全地添加電路和智能設備",
+      "sections": [
+        {
+          "heading": "電氣升級評估",
+          "list": [
+            "檢查現有電路容量",
+            "評估新設備的功率需求",
+            "確定是否需要增加電路",
+            "聘請持證電工進行評估"
+          ]
+        },
+        {
+          "heading": "常見電氣升級",
+          "list": [
+            "<strong>添加新插座</strong>：為智能設備供電",
+            "<strong>升級照明電路</strong>：支持調光和智能燈",
+            "<strong>安裝GFCI插座</strong>：浴室和廚房安全",
+            "<strong>佈置隱藏電線</strong>：通過牆板或導管"
+          ]
+        },
+        {
+          "heading": "WiFi基礎設施",
+          "list": [
+            "升級WiFi路由器覆蓋整個家居",
+            "考慮安裝WiFi 6（802.11ax）",
+            "使用WiFi中繼器擴大覆蓋範圍",
+            "為IoT設備創建獨立SSID"
+          ]
+        },
+        {
+          "heading": "安全最佳實踐",
+          "list": [
+            "所有工作由持證電工完成",
+            "獲得必要的建築許可證",
+            "安裝符合法規的設備",
+            "定期檢查電路和設備"
+          ]
+        }
+      ]
+    }
+  ]
+}

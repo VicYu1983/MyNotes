@@ -47,6 +47,30 @@
           "jsonFile": "home-improvement/advanced.json"
         }
       ]
+    },
+    {
+      "id": "smart-home-improvement",
+      "title": "智能家居改造",
+      "icon": "✨",
+      "subtitle": "結合家居改造與智能化，打造現代化住宅",
+      "description": "從租屋族無損方案到深度改造的完整智能家居整合指南",
+      "levels": [
+        {
+          "id": "rental",
+          "order": 1,
+          "jsonFile": "smart-home-improvement/rental.json"
+        },
+        {
+          "id": "light-renovation",
+          "order": 2,
+          "jsonFile": "smart-home-improvement/light-renovation.json"
+        },
+        {
+          "id": "deep-renovation",
+          "order": 3,
+          "jsonFile": "smart-home-improvement/deep-renovation.json"
+        }
+      ]
     }
   ]
 }

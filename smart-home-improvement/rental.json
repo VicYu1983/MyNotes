@@ -1,0 +1,226 @@
+{
+  "level": {
+    "id": "rental",
+    "name": "租屋族",
+    "emoji": "🏘️",
+    "description": "無損設備，租屋友善的智能化方案",
+    "color": "#2196F3"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "租屋族的智能家居方案",
+      "subtitle": "不傷牆面、可移動、房東友善的設備選擇",
+      "sections": [
+        {
+          "heading": "租屋族的挑戰",
+          "list": [
+            "無法進行永久性裝修",
+            "需要保留原有格局",
+            "必須能復原到原狀態",
+            "成本敏感"
+          ]
+        },
+        {
+          "heading": "智能設備選擇原則",
+          "list": [
+            "<strong>無線優先</strong>：避免打孔佈線",
+            "<strong>粘貼式安裝</strong>：使用3M膠或同等產品",
+            "<strong>電池供電</strong>：無需修改電路",
+            "<strong>易於移除</strong>：不留痕跡"
+          ]
+        },
+        {
+          "heading": "常見智能設備（租屋友善）",
+          "list": [
+            "<strong>智能燈泡</strong>：直接換燈泡，無需改線",
+            "<strong>無線智能開關</strong>：貼在現有開關旁邊",
+            "<strong>智能插座</strong>：插入現有插孔，控制家電",
+            "<strong>無線安全攝像頭</strong>：貼在牆上或放在架子上",
+            "<strong>智能門鎖</strong>：臨時安裝在門把上"
+          ]
+        },
+        {
+          "heading": "與房東溝通",
+          "list": [
+            "事先取得許可安裝設備",
+            "確認可使用粘膠或膠帶",
+            "保存所有原始配件以便復原",
+            "拍照記錄原始狀態",
+            "搬家時完全復原房間"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "租屋族智能燈光方案",
+      "subtitle": "改造照明而不需要重新佈線",
+      "sections": [
+        {
+          "heading": "智能燈泡類型",
+          "list": [
+            "<strong>WiFi燈泡</strong>：直接連接WiFi，不需要Hub",
+            "<strong>藍牙燈泡</strong>：需要藍牙Hub或手機",
+            "<strong>RF遙控燈泡</strong>：配套遙控器，無需Hub"
+          ]
+        },
+        {
+          "heading": "安裝步驟",
+          "list": [
+            "關閉燈的電源開關",
+            "移除舊燈泡",
+            "安裝新的智能燈泡",
+            "開啟電源開關",
+            "通過App進行配置"
+          ]
+        },
+        {
+          "heading": "常見品牌和特點",
+          "list": [
+            "<strong>Philips Hue</strong>：顏色豐富，價格較高，支持HomeKit",
+            "<strong>Wyze</strong>：便宜，功能基礎，性價比高",
+            "<strong>LIFX</strong>：直接WiFi，無需Hub，支持多個平台",
+            "<strong>Amazon Smart Bulb</strong>：與Alexa深度整合"
+          ]
+        },
+        {
+          "heading": "無線開關方案",
+          "list": [
+            "購買無線開關搭配智能燈泡",
+            "貼在現有開關旁邊",
+            "也可用手機或語音控制"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "租屋族智能安全監控",
+      "subtitle": "保護隱私和財產的無痕安裝",
+      "sections": [
+        {
+          "heading": "無線監控攝像頭優勢",
+          "list": [
+            "無需佈線，直接粘貼安裝",
+            "電池或USB充電",
+            "雲端存儲或本地存儲",
+            "手機遠程查看"
+          ]
+        },
+        {
+          "heading": "安裝位置建議",
+          "list": [
+            "<strong>門口</strong>：監控訪客和快遞",
+            "<strong>客廳</strong>：監控主要活動區域",
+            "<strong>臥室外</strong>：監控走廊（避免隱私問題）",
+            "<strong>陽台</strong>：監控室外環境"
+          ]
+        },
+        {
+          "heading": "產品選擇",
+          "list": [
+            "<strong>Wyze Cam</strong>：便宜，內置麥克風，本地存儲",
+            "<strong>Google Nest Mini</strong>：與Google Home整合",
+            "<strong>Amazon Cloud Cam</strong>：與Alexa整合",
+            "<strong>Eufy</strong>：隱私優先，本地AI分析"
+          ]
+        },
+        {
+          "heading": "隱私和法律考慮",
+          "list": [
+            "檢查當地法律關於監控的規定",
+            "避免拍攝鄰居的隱私區域",
+            "告知室友和訪客監控的存在",
+            "保護雲端帳戶密碼"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "租屋族智能溫控",
+      "subtitle": "控制溫度舒適度而不修改現有系統",
+      "sections": [
+        {
+          "heading": "無損溫控方案",
+          "list": [
+            "<strong>便攜式空調</strong>：可移動，無需安裝",
+            "<strong>智能插座控制</strong>：控制風扇開關和運行時間",
+            "<strong>溫濕度傳感器</strong>：監測環境數據",
+            "<strong>智能除濕機</strong>：自動控制濕度"
+          ]
+        },
+        {
+          "heading": "智能控制舊空調",
+          "list": [
+            "購買紅外線遙控Hub",
+            "Hub學習舊空調遙控命令",
+            "通過App控制空調開關和溫度",
+            "設置自動化和定時"
+          ]
+        },
+        {
+          "heading": "產品推薦",
+          "list": [
+            "<strong>Broadlink RM4</strong>：紅外線學習器，支持多品牌",
+            "<strong>SwitchBot</strong>：機械臂按壓遙控按鈕",
+            "<strong>智能插座</strong>：Meross、Wyze等"
+          ]
+        },
+        {
+          "heading": "節能建議",
+          "list": [
+            "分時段設置目標溫度",
+            "避免長時間開啟，設置自動關閉",
+            "使用溫濕度傳感器觸發自動化",
+            "監控電費和能耗"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "租屋族的集中控制方案",
+      "subtitle": "用手機或語音控制所有智能設備",
+      "sections": [
+        {
+          "heading": "控制中樞選擇",
+          "list": [
+            "<strong>Amazon Alexa</strong>：支持最多品牌，便宜",
+            "<strong>Google Home</strong>：整合Google服務",
+            "<strong>Apple HomeKit</strong>：隱私優先，整合Apple裝置",
+            "<strong>SmartThings</strong>：三星生態，開放性強"
+          ]
+        },
+        {
+          "heading": "設置步驟",
+          "list": [
+            "購買支持的Hub設備（如Echo Dot）",
+            "連接到WiFi和電源",
+            "安裝對應的App",
+            "添加各個智能設備",
+            "創建房間和場景"
+          ]
+        },
+        {
+          "heading": "常見自動化場景",
+          "list": [
+            "<strong>早晨模式</strong>：燈亮、暖氣開啟、新聞播放",
+            "<strong>離家模式</strong>：所有燈關閉、門鎖鎖定、空調關閉",
+            "<strong>睡眠模式</strong>：燈暗淡、空調調低、門窗監控啟動",
+            "<strong>回家模式</strong>：燈亮、空調開啟、音樂播放"
+          ]
+        },
+        {
+          "heading": "預算計劃",
+          "list": [
+            "<strong>最低配置</strong>：約1000-2000元（1個Hub + 2-3個設備）",
+            "<strong>基礎配置</strong>：約3000-5000元（Hub + 5-8個設備）",
+            "<strong>推薦配置</strong>：約5000-10000元（完整家庭覆蓋）"
+          ]
+        }
+      ]
+    }
+  ]
+}

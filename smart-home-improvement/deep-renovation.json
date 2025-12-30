@@ -1,0 +1,243 @@
+{
+  "level": {
+    "id": "deep-renovation",
+    "name": "自家深改造",
+    "emoji": "🏢",
+    "description": "全面改造與完整智能家居整合",
+    "color": "#F44336"
+  },
+  "knowledgePoints": [
+    {
+      "number": "11",
+      "title": "深改造規劃與設計",
+      "subtitle": "整體規劃、專業設計、項目管理",
+      "sections": [
+        {
+          "heading": "深改造的範圍",
+          "list": [
+            "可能涉及結構改動（牆體、隔斷）",
+            "完全重新佈線（電氣、網路、管道）",
+            "全面翻新（所有房間或大部分房間）",
+            "從頭規劃智能家居系統"
+          ]
+        },
+        {
+          "heading": "規劃步驟",
+          "list": [
+            "<strong>1. 諮詢與評估</strong>：聘請建築師或室內設計師",
+            "<strong>2. 結構評估</strong>：由結構工程師評估可行性",
+            "<strong>3. 智能系統規劃</strong>：與智能家居顧問合作",
+            "<strong>4. 預算和時程</strong>：制定詳細計劃",
+            "<strong>5. 許可證申請</strong>：獲得必要的建築許可"
+          ]
+        },
+        {
+          "heading": "專業人員團隊",
+          "list": [
+            "<strong>建築師/設計師</strong>：規劃和設計",
+            "<strong>承包商</strong>：總體協調和施工",
+            "<strong>電工</strong>：電氣和智能系統佈線",
+            "<strong>水工</strong>：水管和排水系統",
+            "<strong>智能家居整合商</strong>：系統設計和安裝"
+          ]
+        },
+        {
+          "heading": "預算規劃",
+          "list": [
+            "<strong>結構改造</strong>：總預算的40-60%",
+            "<strong>電氣和水管</strong>：總預算的15-25%",
+            "<strong>智能系統</strong>：總預算的10-20%",
+            "<strong>設計和許可</strong>：總預算的5-10%",
+            "<strong>應急費用</strong>：總預算的10-15%"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "深改造中的網路和數據基礎設施",
+      "subtitle": "為智能家居提供堅實的網路基礎",
+      "sections": [
+        {
+          "heading": "結構化佈線系統",
+          "list": [
+            "<strong>貓6A/貓7電纜</strong>：所有房間的牆壁內",
+            "<strong>中央配線箱</strong>：集中管理所有數據線",
+            "<strong>WiFi接入點</strong>：每200平方英尺一個",
+            "<strong>冗餘連接</strong>：備用路由和連接"
+          ]
+        },
+        {
+          "heading": "網路設計考慮",
+          "list": [
+            "為IoT設備創建獨立VLAN",
+            "實施網路安全和防火牆",
+            "計劃10年的帶寬需求",
+            "安裝不間斷電源（UPS）"
+          ]
+        },
+        {
+          "heading": "智能家居中樞系統",
+          "list": [
+            "<strong>專業級Hub</strong>：Hubitat、SmartThings或Home Assistant",
+            "<strong>本地處理</strong>：不依賴雲端，隱私和速度更佳",
+            "<strong>冗餘備份</strong>：自動備份配置和數據",
+            "<strong>多協議支持</strong>：Zigbee、Z-Wave、WiFi、Thread"
+          ]
+        },
+        {
+          "heading": "安全最佳實踐",
+          "list": [
+            "所有設備使用強密碼",
+            "定期更新固件",
+            "使用VPN遠程訪問",
+            "分離IoT和個人設備網路",
+            "監控網路流量異常"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "13",
+      "title": "全房間照明系統設計",
+      "subtitle": "專業級動態照明和智能控制",
+      "sections": [
+        {
+          "heading": "照明設計原則",
+          "list": [
+            "<strong>分層照明</strong>：環境光、工作光、強調光",
+            "<strong>調光能力</strong>：0-100%完全可調",
+            "<strong>色溫控制</strong>：2700K-6500K日光循環",
+            "<strong>場景預設</strong>：為不同活動優化"
+          ]
+        },
+        {
+          "heading": "區域照明規劃",
+          "list": [
+            "<strong>客廳</strong>：多層系統，可調色溫",
+            "<strong>廚房</strong>：明亮工作照明+環境燈",
+            "<strong>卧室</strong>：調光系統+夜間照明",
+            "<strong>浴室</strong>：防水IP65+/+，可調光",
+            "<strong>走廊</strong>：運動感應+夜間模式"
+          ]
+        },
+        {
+          "heading": "專業級產品選擇",
+          "list": [
+            "<strong>飛利浦企業系統</strong>：商業級可靠性",
+            "<strong>Nanoleaf</strong>：現代化面板設計",
+            "<strong>Cree或Sylvania</strong>：專業級球泡",
+            "<strong>定制軌道燈</strong>：聘請照明設計師"
+          ]
+        },
+        {
+          "heading": "自動化照明場景",
+          "list": [
+            "<strong>日出模擬</strong>：早晨逐漸亮起",
+            "<strong>工作模式</strong>：明亮中性白光",
+            "<strong>放鬆模式</strong>：柔和暖光",
+            "<strong>電影模式</strong>：完全暗淡",
+            "<strong>日落模擬</strong>：逐漸變暗"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "title": "環境控制系統（HVAC+濕度+空氣質量）",
+      "subtitle": "集成溫控、濕度和空氣品質管理",
+      "sections": [
+        {
+          "heading": "HVAC系統選擇",
+          "list": [
+            "<strong>中央空調</strong>：最昂貴但覆蓋全家",
+            "<strong>迷你分體式</strong>：靈活但多個室外機",
+            "<strong>多門迷你分體</strong>：最佳平衡",
+            "<strong>地板供暖/冷卻</strong>：舒適但昂貴"
+          ]
+        },
+        {
+          "heading": "智能溫控集成",
+          "list": [
+            "<strong>智能溫度計</strong>：每個房間一個",
+            "<strong>學習型恆溫器</strong>：Ecobee、Nest、Honeywell",
+            "<strong>分區控制</strong>：獨立控制每個房間",
+            "<strong>佔用感知</strong>：根據居住者調整"
+          ]
+        },
+        {
+          "heading": "濕度和空氣質量",
+          "list": [
+            "<strong>濕度控制</strong>：40-60% RH最佳",
+            "<strong>除濕機</strong>：在潮濕地區自動運行",
+            "<strong>加濕器</strong>：在乾燥季節使用",
+            "<strong>空氣淨化</strong>：HEPA過濾系統",
+            "<strong>質量監測</strong>：CO2、PM2.5、VOC感應"
+          ]
+        },
+        {
+          "heading": "自動化控制邏輯",
+          "list": [
+            "<strong>佔用模式</strong>：20-22°C，濕度50%",
+            "<strong>睡眠模式</strong>：18-20°C，濕度45%",
+            "<strong>離家模式</strong>：設置為節能溫度",
+            "<strong>高溫警報</strong>：超過25°C時通知",
+            "<strong>質量警報</strong>：不健康空氣品質時通知"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "title": "深改造中的電氣系統和備電",
+      "subtitle": "完整的電氣規劃、升級和備用電源",
+      "sections": [
+        {
+          "heading": "電氣升級計劃",
+          "list": [
+            "<strong>主配電盤升級</strong>：從100A到200A或更高",
+            "<strong>分迴路佈局</strong>：按房間和用途分區",
+            "<strong>智能斷路器</strong>：遠程控制和監測",
+            "<strong>接地系統</strong>：符合最新規範"
+          ]
+        },
+        {
+          "heading": "專業級插座和開關",
+          "list": [
+            "<strong>高級通用插座</strong>：多功能、USB充電",
+            "<strong>智能開關</strong>：內置調光和場景控制",
+            "<strong>GFCI保護</strong>：浴室、廚房必須",
+            "<strong>弧故障保護</strong>：卧室和起居室"
+          ]
+        },
+        {
+          "heading": "備用電源系統",
+          "list": [
+            "<strong>UPS系統</strong>：保護智能中樞和路由器",
+            "<strong>電池備份</strong>：3-8小時運行時間",
+            "<strong>太陽能選項</strong>：長期節能",
+            "<strong>發電機</strong>：全家備電（可選）"
+          ]
+        },
+        {
+          "heading": "監測和智能化",
+          "list": [
+            "<strong>能源監測</strong>：實時看到電費成本",
+            "<strong>負荷平衡</strong>：自動分配電力",
+            "<strong>故障檢測</strong>：異常用電通知",
+            "<strong>需量控制</strong>：避免超出契約容量"
+          ]
+        },
+        {
+          "heading": "安全和合規",
+          "list": [
+            "所有工作由持證電工完成",
+            "完整的檢查和認證",
+            "保留所有許可證和檢查記錄",
+            "定期維護和測試"
+          ]
+        }
+      ]
+    }
+  ]
+}
