@@ -1,0 +1,28 @@
+{
+  "topics": [
+    {
+      "id": "smart-home",
+      "title": "智能家居",
+      "icon": "🏠",
+      "subtitle": "從基礎到進階，系統化學習智能家居技術",
+      "description": "從基礎概念到系統開發，全方位學習智能家居技術",
+      "levels": [
+        {
+          "id": "beginner",
+          "order": 1,
+          "jsonFile": "smart-home-beginner.json"
+        },
+        {
+          "id": "intermediate",
+          "order": 2,
+          "jsonFile": "smart-home-intermediate.json"
+        },
+        {
+          "id": "advanced",
+          "order": 3,
+          "jsonFile": "smart-home-advanced.json"
+        }
+      ]
+    }
+  ]
+}

@@ -118,36 +118,61 @@
     <div class="container">
         <h1>🎓 互動式學習平台</h1>
         
-        <div class="topics-grid">
-            <!-- 智能家居主題 -->
-            <a href="smart-home.html" class="topic-card">
-                <div class="topic-icon">🏠</div>
-                <div class="topic-title">智能家居</div>
-                <div class="topic-description">
-                    從基礎概念到系統開發，全方位學習智能家居技術
-                </div>
-                <div class="topic-count">20 個知識點</div>
-            </a>
-
-            <!-- 未來主題預留位置 -->
-            <div class="topic-card coming-soon">
-                <div class="topic-icon">📱</div>
-                <div class="topic-title">物聯網開發</div>
-                <div class="topic-description">
-                    即將推出...
-                </div>
-                <div class="badge">Coming Soon</div>
-            </div>
-
-            <div class="topic-card coming-soon">
-                <div class="topic-icon">🤖</div>
-                <div class="topic-title">人工智慧應用</div>
-                <div class="topic-description">
-                    即將推出...
-                </div>
-                <div class="badge">Coming Soon</div>
-            </div>
+        <div class="topics-grid" id="topicsGrid">
+            <!-- 動態載入主題卡片 -->
         </div>
     </div>
+
+    <script>
+        async function loadTopics() {
+            try {
+                const response = await fetch('config.json');
+                const config = await response.json();
+                const grid = document.getElementById('topicsGrid');
+                
+                config.topics.forEach(topic => {
+                    const card = document.createElement('a');
+                    card.href = `smart-home.html?topic=${topic.id}`;
+                    card.className = 'topic-card';
+                    card.innerHTML = `
+                        <div class="topic-icon">${topic.icon}</div>
+                        <div class="topic-title">${topic.title}</div>
+                        <div class="topic-description">
+                            ${topic.description}
+                        </div>
+                        <div class="topic-count">${topic.levels.length * 3} 個知識點</div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                // 添加Coming Soon卡片
+                const comingSoonCards = [
+                    { icon: '📱', title: '物聯網開發', description: '即將推出...' },
+                    { icon: '🤖', title: '人工智慧應用', description: '即將推出...' }
+                ];
+
+                comingSoonCards.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'topic-card coming-soon';
+                    card.innerHTML = `
+                        <div class="topic-icon">${item.icon}</div>
+                        <div class="topic-title">${item.title}</div>
+                        <div class="topic-description">
+                            ${item.description}
+                        </div>
+                        <div class="badge">Coming Soon</div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error('載入配置失敗:', error);
+                document.getElementById('topicsGrid').innerHTML = '<p style="color: red;">載入失敗，請重新整理頁面。</p>';
+            }
+        }
+
+        // 頁面載入時執行
+        window.addEventListener('DOMContentLoaded', loadTopics);
+    </script>
 </body>
 </html>

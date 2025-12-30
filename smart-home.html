@@ -81,85 +81,81 @@
 
         .knowledge-list {
             display: grid;
-            gap: 30px;
+            gap: 15px;
         }
 
         .knowledge-item {
-            padding: 30px;
+            padding: 15px 20px;
             background: #f8f9fa;
-            border-radius: 15px;
-            border-left: 5px solid #667eea;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .knowledge-item:hover {
+            background: #eff1f7;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
         }
 
         .knowledge-header {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 8px;
         }
 
         .knowledge-number {
-            font-size: 2em;
+            font-size: 1.2em;
             font-weight: bold;
             color: #667eea;
-            margin-right: 20px;
-            min-width: 50px;
+            margin-right: 12px;
+            min-width: 30px;
         }
 
         .knowledge-title {
-            font-size: 1.5em;
+            font-size: 1em;
             font-weight: 600;
             color: #333;
         }
 
         .knowledge-subtitle {
-            color: #888;
-            font-size: 1em;
-            margin-bottom: 20px;
+            color: #999;
+            font-size: 0.85em;
+            margin-bottom: 0;
             font-style: italic;
+            display: none;
         }
 
         .knowledge-content {
-            line-height: 1.8;
+            line-height: 1.6;
             color: #555;
+            font-size: 0.95em;
         }
 
         .knowledge-content h3 {
             color: #667eea;
-            margin: 20px 0 10px 0;
-            font-size: 1.2em;
+            margin: 12px 0 8px 0;
+            font-size: 1em;
         }
 
         .knowledge-content ul {
-            margin-left: 25px;
-            margin-bottom: 15px;
+            margin-left: 20px;
+            margin-bottom: 10px;
         }
 
         .knowledge-content li {
-            margin-bottom: 8px;
+            margin-bottom: 5px;
+            font-size: 0.9em;
         }
 
         .knowledge-content p {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
         }
 
         .knowledge-content strong {
             color: #333;
-        }
-
-        .expand-btn {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
-
-        .expand-btn:hover {
-            background: #5568d3;
         }
 
         .collapsed {
@@ -168,6 +164,9 @@
 
         .expanded {
             display: block;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #ddd;
         }
 
         .sub-section {
@@ -191,12 +190,12 @@
             }
 
             .knowledge-number {
-                font-size: 1.2em;
-                min-width: 30px;
+                font-size: 1em;
+                min-width: 25px;
             }
 
             .knowledge-title {
-                font-size: 1em;
+                font-size: 0.95em;
             }
         }
     </style>
@@ -215,23 +214,41 @@
     </div>
 
     <script>
+        // 從URL參數取得主題ID
+        function getTopicIdFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('topic') || 'smart-home';
+        }
+
         // 載入所有階層的 JSON 資料
         async function loadData() {
             try {
-                const [beginner, intermediate, advanced] = await Promise.all([
-                    fetch('smart-home-beginner.json').then(res => res.json()),
-                    fetch('smart-home-intermediate.json').then(res => res.json()),
-                    fetch('smart-home-advanced.json').then(res => res.json())
-                ]);
+                const topicId = getTopicIdFromURL();
+
+                // 先載入配置文件
+                const configResponse = await fetch('config.json');
+                const config = await configResponse.json();
+
+                // 找到對應的主題
+                const topic = config.topics.find(t => t.id === topicId);
+                if (!topic) {
+                    throw new Error(`主題 ${topicId} 未找到`);
+                }
+
+                // 按照配置載入所有階層的JSON
+                const levelPromises = topic.levels.map(level => 
+                    fetch(level.jsonFile).then(res => res.json())
+                );
+                const levels = await Promise.all(levelPromises);
 
                 const data = {
                     topic: {
-                        id: "smart-home",
-                        title: "智能家居",
-                        icon: "🏠",
-                        subtitle: "從基礎到進階，系統化學習智能家居技術"
+                        id: topic.id,
+                        title: topic.title,
+                        icon: topic.icon,
+                        subtitle: topic.subtitle
                     },
-                    levels: [beginner, intermediate, advanced]
+                    levels: levels
                 };
 
                 renderContent(data);
@@ -270,30 +287,25 @@
                     // 只顯示有內容的知識點
                     if (point.sections && point.sections.length > 0) {
                         html += `
-                            <div class="knowledge-item">
+                            <div class="knowledge-item" onclick="toggleContent('${point.number}')">
                                 <div class="knowledge-header">
                                     <div class="knowledge-number">${point.number}</div>
                                     <div class="knowledge-title">${point.title}</div>
                                 </div>
-                                <div class="knowledge-subtitle">${point.subtitle}</div>
                                 <div class="knowledge-content collapsed" id="content-${point.number}">
                                     ${renderSections(point.sections)}
                                 </div>
-                                <button class="expand-btn" onclick="toggleContent('${point.number}', this)">
-                                    展開內容 ▼
-                                </button>
                             </div>
                         `;
                     } else {
                         // 沒有內容的知識點顯示為待補充
                         html += `
-                            <div class="knowledge-item" style="opacity: 0.6;">
+                            <div class="knowledge-item" style="opacity: 0.6; cursor: default;">
                                 <div class="knowledge-header">
                                     <div class="knowledge-number">${point.number}</div>
                                     <div class="knowledge-title">${point.title}</div>
                                 </div>
-                                <div class="knowledge-subtitle">${point.subtitle}</div>
-                                <p style="color: #888; margin-top: 15px;">📝 內容待補充...</p>
+                                <p style="color: #888; margin-top: 8px; font-size: 0.85em;">📝 內容待補充...</p>
                             </div>
                         `;
                     }
@@ -348,16 +360,14 @@
         }
 
         // 切換內容展開/收合
-        function toggleContent(id, button) {
+        function toggleContent(id) {
             const content = document.getElementById(`content-${id}`);
             if (content.classList.contains('collapsed')) {
                 content.classList.remove('collapsed');
                 content.classList.add('expanded');
-                button.textContent = '收合內容 ▲';
             } else {
                 content.classList.add('collapsed');
                 content.classList.remove('expanded');
-                button.textContent = '展開內容 ▼';
             }
         }
 
