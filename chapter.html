@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互動式學習 - 章節內容</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #5568d3;
+        }
+
+        .level-section {
+            margin-bottom: 40px;
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+
+        .level-badge {
+            padding: 8px 20px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .knowledge-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .knowledge-item {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .knowledge-item:hover {
+            background: #eff1f7;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+
+        .knowledge-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .knowledge-number {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-right: 12px;
+            min-width: 30px;
+        }
+
+        .knowledge-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .knowledge-subtitle {
+            color: #999;
+            font-size: 0.85em;
+            margin-bottom: 0;
+            font-style: italic;
+            display: none;
+        }
+
+        .knowledge-content {
+            line-height: 1.6;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .knowledge-content h3 {
+            color: #667eea;
+            margin: 12px 0 8px 0;
+            font-size: 1em;
+        }
+
+        .knowledge-content ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .knowledge-content li {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .knowledge-content p {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .knowledge-content strong {
+            color: #333;
+        }
+
+        .collapsed {
+            display: none;
+        }
+
+        .expanded {
+            display: block;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #ddd;
+        }
+
+        .sub-section {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .sub-section h4 {
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .knowledge-number {
+                font-size: 1em;
+                min-width: 25px;
+            }
+
+            .knowledge-title {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← 返回主頁</a>
+        
+        <div class="header" id="header">
+            <!-- 動態載入標題 -->
+        </div>
+
+        <div id="content">
+            <!-- 動態載入內容 -->
+        </div>
+    </div>
+
+    <script>
+        // 從URL參數取得主題ID
+        function getTopicIdFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('topic') || 'smart-home';
+        }
+
+        // 載入所有階層的 JSON 資料
+        async function loadData() {
+            try {
+                const topicId = getTopicIdFromURL();
+
+                // 先載入配置文件
+                const configResponse = await fetch('config.json');
+                const config = await configResponse.json();
+
+                // 找到對應的主題
+                const topic = config.topics.find(t => t.id === topicId);
+                if (!topic) {
+                    throw new Error(`主題 ${topicId} 未找到`);
+                }
+
+                // 按照配置載入所有階層的JSON
+                const levelPromises = topic.levels.map(level => 
+                    fetch(level.jsonFile).then(res => res.json())
+                );
+                const levels = await Promise.all(levelPromises);
+
+                const data = {
+                    topic: {
+                        id: topic.id,
+                        title: topic.title,
+                        icon: topic.icon,
+                        subtitle: topic.subtitle
+                    },
+                    levels: levels
+                };
+
+                renderContent(data);
+            } catch (error) {
+                console.error('載入資料失敗:', error);
+                document.getElementById('content').innerHTML = '<p style="color: red;">資料載入失敗，請重新整理頁面。</p>';
+            }
+        }
+
+        // 渲染頁面內容
+        function renderContent(data) {
+            // 渲染標題
+            const header = document.getElementById('header');
+            header.innerHTML = `
+                <h1>${data.topic.icon} ${data.topic.title}</h1>
+                <p class="subtitle">${data.topic.subtitle}</p>
+            `;
+
+            // 更新頁面標題
+            document.title = `${data.topic.title} - 互動式學習`;
+
+            // 渲染知識點
+            const content = document.getElementById('content');
+            let html = '';
+
+            data.levels.forEach(level => {
+                if (level.knowledgePoints.length === 0) return;
+
+                html += `
+                    <div class="level-section">
+                        <div class="level-header">
+                            <span class="level-badge" style="background: ${level.level.color}">${level.level.emoji} ${level.level.name}</span>
+                            <span>${level.level.description}</span>
+                        </div>
+                        <div class="knowledge-list">
+                `;
+
+                level.knowledgePoints.forEach(point => {
+                    // 只顯示有內容的知識點
+                    if (point.sections && point.sections.length > 0) {
+                        html += `
+                            <div class="knowledge-item" onclick="toggleContent('${point.number}')">
+                                <div class="knowledge-header">
+                                    <div class="knowledge-number">${point.number}</div>
+                                    <div class="knowledge-title">${point.title}</div>
+                                </div>
+                                <div class="knowledge-content collapsed" id="content-${point.number}">
+                                    ${renderSections(point.sections)}
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        // 沒有內容的知識點顯示為待補充
+                        html += `
+                            <div class="knowledge-item" style="opacity: 0.6; cursor: default;">
+                                <div class="knowledge-header">
+                                    <div class="knowledge-number">${point.number}</div>
+                                    <div class="knowledge-title">${point.title}</div>
+                                </div>
+                                <p style="color: #888; margin-top: 8px; font-size: 0.85em;">📝 內容待補充...</p>
+                            </div>
+                        `;
+                    }
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            content.innerHTML = html;
+        }
+
+        // 渲染段落內容
+        function renderSections(sections) {
+            let html = '';
+            sections.forEach(section => {
+                html += `<h3>${section.heading}</h3>`;
+                
+                if (section.content) {
+                    html += `<p>${section.content}</p>`;
+                }
+                
+                if (section.list) {
+                    html += '<ul>';
+                    section.list.forEach(item => {
+                        html += `<li>${item}</li>`;
+                    });
+                    html += '</ul>';
+                }
+
+                if (section.subSections) {
+                    section.subSections.forEach(sub => {
+                        html += '<div class="sub-section">';
+                        html += `<h4>${sub.subHeading}</h4>`;
+                        if (sub.content) {
+                            html += `<p>${sub.content}</p>`;
+                        }
+                        if (sub.list) {
+                            html += '<ul>';
+                            sub.list.forEach(item => {
+                                html += `<li>${item}</li>`;
+                            });
+                            html += '</ul>';
+                        }
+                        html += '</div>';
+                    });
+                }
+            });
+            return html;
+        }
+
+        // 切換內容展開/收合
+        function toggleContent(id) {
+            const content = document.getElementById(`content-${id}`);
+            if (content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+                content.classList.add('expanded');
+            } else {
+                content.classList.add('collapsed');
+                content.classList.remove('expanded');
+            }
+        }
+
+        // 頁面載入時執行
+        window.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>
