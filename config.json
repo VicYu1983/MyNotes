@@ -23,6 +23,30 @@
           "jsonFile": "smart-home/advanced.json"
         }
       ]
+    },
+    {
+      "id": "home-improvement",
+      "title": "居家修善",
+      "icon": "🔧",
+      "subtitle": "從基礎修繕到大規模改造，打造夢想家居",
+      "description": "學習家居維護、修理和改造的實用技能，由初階DIY到專業級別",
+      "levels": [
+        {
+          "id": "beginner",
+          "order": 1,
+          "jsonFile": "home-improvement/beginner.json"
+        },
+        {
+          "id": "intermediate",
+          "order": 2,
+          "jsonFile": "home-improvement/intermediate.json"
+        },
+        {
+          "id": "advanced",
+          "order": 3,
+          "jsonFile": "home-improvement/advanced.json"
+        }
+      ]
     }
   ]
 }
