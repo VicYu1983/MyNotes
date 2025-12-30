@@ -10,17 +10,17 @@
         {
           "id": "beginner",
           "order": 1,
-          "jsonFile": "smart-home-beginner.json"
+          "jsonFile": "smart-home/beginner.json"
         },
         {
           "id": "intermediate",
           "order": 2,
-          "jsonFile": "smart-home-intermediate.json"
+          "jsonFile": "smart-home/intermediate.json"
         },
         {
           "id": "advanced",
           "order": 3,
-          "jsonFile": "smart-home-advanced.json"
+          "jsonFile": "smart-home/advanced.json"
         }
       ]
     }
