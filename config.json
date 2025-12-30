@@ -80,6 +80,33 @@
                     "jsonFile": "smart-home-improvement/deep-renovation.json"
                 }
             ]
+        },
+        {
+            "id": "home-assistant",
+            "title": "Home Assistant",
+            "icon": "🤖",
+            "subtitle": "開源智能家居平台完全指南",
+            "description": "從安裝設定到進階整合，全面掌握 Home Assistant 智能家居中樞",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "初階",
+                    "order": 1,
+                    "jsonFile": "home-assistant/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中階",
+                    "order": 2,
+                    "jsonFile": "home-assistant/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高階",
+                    "order": 3,
+                    "jsonFile": "home-assistant/advanced.json"
+                }
+            ]
         }
     ]
 }

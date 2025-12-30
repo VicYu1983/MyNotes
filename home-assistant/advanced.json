@@ -1,0 +1,244 @@
+{
+  "level": {
+    "id": "advanced",
+    "name": "高階",
+    "emoji": "🔴",
+    "description": "系統整合與專業應用",
+    "color": "#f44336"
+  },
+  "knowledgePoints": [
+    {
+      "number": "11",
+      "title": "自製 ESPHome 設備",
+      "subtitle": "使用 ESP32/ESP8266 創建客製感應器",
+      "sections": [
+        {
+          "heading": "ESPHome 簡介",
+          "content": "ESPHome 是專為 Home Assistant 設計的韌體框架，讓你可以輕鬆將 ESP32/ESP8266 微控制器轉變為智能設備，無需編寫複雜的程式碼。"
+        },
+        {
+          "heading": "硬體準備",
+          "list": [
+            "<strong>ESP32 或 ESP8266 開發板</strong>：NodeMCU、Wemos D1 等",
+            "<strong>感應器模組</strong>：溫濕度（DHT22、BME280）、動作（PIR）、門窗（磁簧開關）",
+            "<strong>繼電器模組</strong>：控制電器開關",
+            "<strong>電源供應</strong>：5V USB 或外部電源",
+            "<strong>麵包板和杜邦線</strong>：連接元件"
+          ]
+        },
+        {
+          "heading": "ESPHome 設定流程",
+          "list": [
+            "安裝 ESPHome 附加元件或儀表板",
+            "建立新設備並命名",
+            "選擇開發板類型（ESP32/ESP8266）",
+            "設定 WiFi 連線資訊",
+            "添加感應器和元件配置",
+            "編譯並上傳韌體到設備",
+            "在 Home Assistant 中自動發現設備"
+          ]
+        },
+        {
+          "heading": "實用 ESPHome 專案",
+          "list": [
+            "<strong>多功能環境感應器</strong>：溫度、濕度、光照、空氣品質",
+            "<strong>智能開關</strong>：帶狀態回報的繼電器",
+            "<strong>門窗感應器</strong>：磁簧開關 + 電池供電",
+            "<strong>存在感應</strong>：毫米波雷達或 PIR",
+            "<strong>LED 燈條控制</strong>：可調光和顏色"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "高級自動化與腳本",
+      "subtitle": "Python Scripts 和複雜邏輯",
+      "sections": [
+        {
+          "heading": "AppDaemon 進階自動化",
+          "content": "AppDaemon 是一個 Python 應用框架，讓你用 Python 編寫更複雜的自動化邏輯，比 YAML 更靈活強大。適合需要複雜計算、API 呼叫或機器學習的場景。"
+        },
+        {
+          "heading": "安裝與設定 AppDaemon",
+          "list": [
+            "安裝 AppDaemon 附加元件",
+            "設定 Home Assistant API 連接",
+            "在 /config/appdaemon/apps 建立 Python 檔案",
+            "定義 app 類別繼承自 hass.Hass",
+            "使用 listen_state() 監聽狀態變化",
+            "呼叫 call_service() 執行動作"
+          ]
+        },
+        {
+          "heading": "Python Scripts 整合",
+          "list": [
+            "在 configuration.yaml 啟用 python_script",
+            "將 .py 檔案放在 /config/python_scripts/",
+            "透過 python_script.execute 服務呼叫",
+            "存取 hass 物件操作狀態和服務",
+            "適合簡單的一次性腳本"
+          ]
+        },
+        {
+          "heading": "進階範例：智能能源管理",
+          "list": [
+            "監控即時電力消耗",
+            "計算最佳充電時段（電價最低）",
+            "自動調整高耗電設備運行時間",
+            "預測未來用電並發送警報",
+            "整合太陽能板數據優化用電"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "13",
+      "title": "網路安全與遠端訪問",
+      "subtitle": "安全地從外部訪問 Home Assistant",
+      "sections": [
+        {
+          "heading": "遠端訪問方案比較",
+          "list": [
+            "<strong>Nabu Casa Cloud</strong>：最簡單，月費 $6.50，支援開發",
+            "<strong>VPN（WireGuard/OpenVPN）</strong>：最安全，需要設定",
+            "<strong>反向代理（Nginx）</strong>：靈活但複雜",
+            "<strong>Cloudflare Tunnel</strong>：免費，不需開放端口",
+            "<strong>DuckDNS + Let's Encrypt</strong>：免費 HTTPS"
+          ]
+        },
+        {
+          "heading": "使用 Nabu Casa（推薦新手）",
+          "list": [
+            "進入「設定」→「Home Assistant Cloud」",
+            "註冊 Nabu Casa 帳號並訂閱",
+            "自動獲得加密的遠端 URL",
+            "啟用 Google Assistant 或 Alexa 整合",
+            "無需設定路由器或 SSL 憑證"
+          ]
+        },
+        {
+          "heading": "自架 WireGuard VPN",
+          "list": [
+            "安裝 WireGuard 附加元件",
+            "生成伺服器和客戶端金鑰",
+            "設定防火牆規則開放 UDP 端口",
+            "在手機/電腦安裝 WireGuard 客戶端",
+            "匯入配置檔案連接 VPN",
+            "透過內部 IP 訪問 Home Assistant"
+          ]
+        },
+        {
+          "heading": "安全最佳實踐",
+          "list": [
+            "使用強密碼和雙因素驗證",
+            "啟用「可疑登入嘗試」通知",
+            "限制登入嘗試次數（fail2ban）",
+            "定期審查授權的裝置和用戶",
+            "監控系統日誌異常活動",
+            "保持系統和附加元件更新"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "title": "智能語音與 AI 整合",
+      "subtitle": "本地語音助手與 AI 應用",
+      "sections": [
+        {
+          "heading": "Home Assistant 本地語音",
+          "content": "從 2023 年開始，Home Assistant 推出了「Year of the Voice」計劃，目標是實現完全本地化的語音控制，不依賴雲端服務，保護隱私並提高響應速度。"
+        },
+        {
+          "heading": "設定 Assist 語音助手",
+          "list": [
+            "安裝 Piper TTS（文字轉語音）附加元件",
+            "安裝 Whisper（語音轉文字）附加元件",
+            "設定語言和聲音模型",
+            "使用 ESP32-S3 或手機作為語音衛星",
+            "測試語音命令「開啟客廳燈」"
+          ]
+        },
+        {
+          "heading": "整合 ChatGPT/OpenAI",
+          "list": [
+            "安裝 OpenAI Conversation 整合",
+            "輸入 OpenAI API 金鑰",
+            "設定可控制的設備和區域",
+            "使用自然語言下達複雜指令",
+            "範例：「把客廳調整成電影模式並關掉其他房間的燈」"
+          ]
+        },
+        {
+          "heading": "進階 AI 應用",
+          "list": [
+            "<strong>圖像識別</strong>：使用 Frigate 進行人臉/車輛識別",
+            "<strong>異常檢測</strong>：機器學習偵測異常用電模式",
+            "<strong>預測性維護</strong>：預測設備故障時間",
+            "<strong>個性化場景</strong>：根據使用習慣自動調整",
+            "<strong>語音對話</strong>：與家中智能助手自然對話"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "title": "企業級部署與高可用性",
+      "subtitle": "打造穩定可靠的智能家居系統",
+      "sections": [
+        {
+          "heading": "高可用性架構",
+          "list": [
+            "<strong>主備份架構</strong>：主系統故障時自動切換",
+            "<strong>負載平衡</strong>：多個實例分散請求",
+            "<strong>資料同步</strong>：確保備份系統資料一致",
+            "<strong>健康檢查</strong>：自動監控並重啟故障服務",
+            "<strong>異地備援</strong>：防止單點故障"
+          ]
+        },
+        {
+          "heading": "容器化部署（Docker Compose）",
+          "list": [
+            "使用 Docker Compose 管理所有服務",
+            "定義網路和數據卷",
+            "設定環境變數和重啟策略",
+            "集成 Watchtower 自動更新",
+            "使用 Portainer 圖形化管理"
+          ]
+        },
+        {
+          "heading": "監控與告警",
+          "list": [
+            "<strong>Grafana + InfluxDB</strong>：時序資料視覺化",
+            "<strong>Prometheus</strong>：系統指標收集",
+            "<strong>Uptime Kuma</strong>：服務可用性監控",
+            "<strong>自訂警報</strong>：CPU、記憶體、硬碟空間告警",
+            "<strong>通知整合</strong>：Telegram、Discord、Email"
+          ]
+        },
+        {
+          "heading": "效能調校",
+          "list": [
+            "使用 MariaDB 替代 SQLite",
+            "啟用記錄器過濾減少日誌",
+            "調整歷史記錄保留時間",
+            "使用 Redis 作為快取",
+            "優化自動化執行頻率",
+            "分離資料庫到獨立伺服器"
+          ]
+        },
+        {
+          "heading": "大型部署案例",
+          "list": [
+            "管理 100+ 設備的最佳實踐",
+            "多建築或校園級部署",
+            "商業應用與租戶管理",
+            "整合既有 BMS 系統",
+            "合規性與稽核日誌"
+          ]
+        }
+      ]
+    }
+  ]
+}

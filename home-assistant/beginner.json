@@ -1,0 +1,230 @@
+{
+  "level": {
+    "id": "beginner",
+    "name": "初階",
+    "emoji": "🟢",
+    "description": "Home Assistant 基礎安裝與設定",
+    "color": "#4caf50"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "Home Assistant 簡介",
+      "subtitle": "什麼是 Home Assistant？為什麼選擇它？",
+      "sections": [
+        {
+          "heading": "什麼是 Home Assistant？",
+          "content": "Home Assistant 是一個開源的家庭自動化平台，專注於本地控制和隱私保護。它可以整合超過 2000 種不同品牌和協議的智能家居設備，提供統一的控制介面和強大的自動化功能。"
+        },
+        {
+          "heading": "核心優勢",
+          "list": [
+            "<strong>開源免費</strong>：完全免費，社群活躍",
+            "<strong>本地控制</strong>：不依賴雲端，隱私有保障",
+            "<strong>設備支援廣</strong>：支援 2000+ 整合",
+            "<strong>高度自訂</strong>：可完全客製化介面和功能",
+            "<strong>強大自動化</strong>：複雜的邏輯和場景控制"
+          ]
+        },
+        {
+          "heading": "適用場景",
+          "list": [
+            "想要完全掌控智能家居系統",
+            "注重隱私和數據安全",
+            "需要整合多品牌設備",
+            "希望實現複雜的自動化邏輯",
+            "願意學習和探索技術"
+          ]
+        },
+        {
+          "heading": "系統要求",
+          "list": [
+            "<strong>硬體</strong>：Raspberry Pi 4（推薦4GB RAM）或 x86 電腦",
+            "<strong>儲存</strong>：至少 32GB microSD 卡或 SSD",
+            "<strong>網路</strong>：穩定的有線或 WiFi 連接",
+            "<strong>電源</strong>：穩定的 5V/3A 電源供應器"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "安裝 Home Assistant",
+      "subtitle": "多種安裝方式與建議選擇",
+      "sections": [
+        {
+          "heading": "安裝方式比較",
+          "list": [
+            "<strong>Home Assistant OS</strong>：最推薦，完整功能，易於管理",
+            "<strong>Home Assistant Container</strong>：使用 Docker，適合進階使用者",
+            "<strong>Home Assistant Core</strong>：Python 虛擬環境，最靈活但最複雜",
+            "<strong>Home Assistant Supervised</strong>：Docker 加完整監督功能"
+          ]
+        },
+        {
+          "heading": "推薦安裝：Home Assistant OS on Raspberry Pi",
+          "list": [
+            "下載 Raspberry Pi Imager 工具",
+            "選擇 Home Assistant OS 映像檔",
+            "寫入到 microSD 卡（至少 32GB）",
+            "插入 Raspberry Pi 並開機",
+            "等待 20 分鐘完成初始化"
+          ]
+        },
+        {
+          "heading": "初次設定",
+          "list": [
+            "瀏覽器訪問 http://homeassistant.local:8123",
+            "創建管理員帳號",
+            "設定家庭位置和時區",
+            "選擇要整合的設備（可跳過，稍後設定）",
+            "完成設定，進入主介面"
+          ]
+        },
+        {
+          "heading": "安全建議",
+          "list": [
+            "使用強密碼",
+            "啟用雙因素驗證（2FA）",
+            "定期備份設定",
+            "更新到最新版本",
+            "不要將管理介面暴露到公網"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "基礎介面與操作",
+      "subtitle": "認識 Home Assistant 的主要介面",
+      "sections": [
+        {
+          "heading": "主要介面區域",
+          "list": [
+            "<strong>概覽 (Overview)</strong>：顯示所有設備和狀態",
+            "<strong>地圖 (Map)</strong>：顯示位置和設備地理分布",
+            "<strong>歷史記錄 (History)</strong>：查看設備狀態變化",
+            "<strong>開發者工具</strong>：測試服務和狀態",
+            "<strong>設定 (Configuration)</strong>：系統設定中心"
+          ]
+        },
+        {
+          "heading": "新增第一個設備",
+          "list": [
+            "進入「設定」→「裝置與服務」",
+            "點選「新增整合」",
+            "搜尋設備品牌或協議（如 Philips Hue、小米）",
+            "按照提示完成配對",
+            "設備會自動顯示在概覽頁面"
+          ]
+        },
+        {
+          "heading": "組織設備",
+          "list": [
+            "<strong>區域 (Areas)</strong>：按房間分類設備",
+            "<strong>標籤 (Labels)</strong>：為設備添加標籤",
+            "<strong>群組 (Groups)</strong>：將多個設備組合",
+            "<strong>場景 (Scenes)</strong>：儲存設備狀態組合"
+          ]
+        },
+        {
+          "heading": "基本控制操作",
+          "list": [
+            "點擊設備卡片查看詳細資訊",
+            "長按設備進入設定",
+            "拖曳卡片重新排列順序",
+            "使用搜尋快速找到設備"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "常用整合設定",
+      "subtitle": "連接主流智能家居設備",
+      "sections": [
+        {
+          "heading": "WiFi 智能設備",
+          "list": [
+            "<strong>Tuya/Smart Life</strong>：需要 Cloud API 金鑰",
+            "<strong>小米/Aqara</strong>：需要網關和 Token",
+            "<strong>TP-Link</strong>：自動發現，輸入帳密",
+            "<strong>Sonoff</strong>：支援原廠和 Tasmota 固件"
+          ]
+        },
+        {
+          "heading": "Zigbee 設備整合",
+          "list": [
+            "需要 Zigbee 適配器（如 ConBee II、CC2531）",
+            "安裝 ZHA 或 Zigbee2MQTT 整合",
+            "將設備設為配對模式",
+            "在 Home Assistant 中新增設備",
+            "設定設備名稱和區域"
+          ]
+        },
+        {
+          "heading": "語音助手整合",
+          "list": [
+            "<strong>Google Assistant</strong>：透過 Nabu Casa Cloud 或手動設定",
+            "<strong>Amazon Alexa</strong>：使用官方 Skill",
+            "<strong>Apple HomeKit</strong>：透過 HomeKit Bridge 整合",
+            "<strong>本地語音</strong>：使用 Rhasspy 或 Mycroft"
+          ]
+        },
+        {
+          "heading": "常見問題排除",
+          "list": [
+            "設備無法發現：檢查網路和防火牆",
+            "連線失敗：確認金鑰和密碼正確",
+            "設備離線：檢查電源和訊號強度",
+            "更新失敗：查看日誌檔案找原因"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "建立第一個自動化",
+      "subtitle": "使用視覺化編輯器創建自動化規則",
+      "sections": [
+        {
+          "heading": "自動化的三要素",
+          "list": [
+            "<strong>觸發 (Trigger)</strong>：何時執行（時間、狀態變化、事件）",
+            "<strong>條件 (Condition)</strong>：在什麼情況下執行（可選）",
+            "<strong>動作 (Action)</strong>：執行什麼操作（開燈、通知、服務）"
+          ]
+        },
+        {
+          "heading": "範例：日落自動開燈",
+          "list": [
+            "進入「設定」→「自動化與場景」",
+            "點選「建立自動化」",
+            "<strong>觸發</strong>：選擇「日落」",
+            "<strong>條件</strong>：「有人在家」（可選）",
+            "<strong>動作</strong>：「開啟客廳燈」",
+            "儲存並測試"
+          ]
+        },
+        {
+          "heading": "實用自動化範例",
+          "list": [
+            "<strong>回家模式</strong>：進門時自動開燈和空調",
+            "<strong>離家模式</strong>：離開時關閉所有燈和電器",
+            "<strong>睡眠模式</strong>：晚上 11 點自動關燈調暗",
+            "<strong>安全警報</strong>：門窗異常開啟時發送通知"
+          ]
+        },
+        {
+          "heading": "測試和除錯",
+          "list": [
+            "使用「立即執行」測試自動化",
+            "查看「追蹤」了解執行歷史",
+            "檢查日誌檔案找出錯誤",
+            "逐步添加條件和動作，不要一次太複雜"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "level": {
+    "id": "intermediate",
+    "name": "中階",
+    "emoji": "🟡",
+    "description": "進階設定與客製化",
+    "color": "#ff9800"
+  },
+  "knowledgePoints": [
+    {
+      "number": "06",
+      "title": "YAML 設定基礎",
+      "subtitle": "理解並編輯 configuration.yaml",
+      "sections": [
+        {
+          "heading": "什麼是 YAML？",
+          "content": "YAML 是 Home Assistant 的主要設定格式，用於定義進階設定、自訂元件和複雜自動化。雖然大部分功能可透過 UI 完成，但 YAML 提供更大的靈活性和控制權。"
+        },
+        {
+          "heading": "YAML 基本語法",
+          "list": [
+            "<strong>縮排</strong>：使用 2 個空格（不要用 Tab）",
+            "<strong>鍵值對</strong>：key: value",
+            "<strong>列表</strong>：使用 - 開頭",
+            "<strong>註解</strong>：使用 # 開頭",
+            "<strong>多行文字</strong>：使用 | 或 >"
+          ]
+        },
+        {
+          "heading": "編輯 configuration.yaml",
+          "list": [
+            "使用「File Editor」附加元件（推薦）",
+            "或透過 SSH/Samba 訪問檔案",
+            "編輯後點選「檢查設定」",
+            "確認無誤後重新啟動 Home Assistant",
+            "查看日誌檢查是否有錯誤"
+          ]
+        },
+        {
+          "heading": "常用 YAML 設定",
+          "list": [
+            "<strong>sensors</strong>：自訂感應器",
+            "<strong>binary_sensors</strong>：二進制感應器",
+            "<strong>template</strong>：範本感應器和開關",
+            "<strong>input_boolean/number/select</strong>：輸入元件",
+            "<strong>customize</strong>：客製化實體屬性"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "進階自動化技巧",
+      "subtitle": "條件判斷、範本和複雜邏輯",
+      "sections": [
+        {
+          "heading": "多重觸發與條件",
+          "list": [
+            "組合多個觸發條件（OR 邏輯）",
+            "使用時間模式觸發",
+            "狀態變化的持續時間判斷",
+            "數值範圍條件",
+            "範本條件（自訂邏輯）"
+          ]
+        },
+        {
+          "heading": "使用範本 (Templates)",
+          "content": "範本使用 Jinja2 語法，可以動態取得狀態、進行計算和條件判斷。例如：{{ states('sensor.temperature') | float > 25 }} 可判斷溫度是否超過 25 度。"
+        },
+        {
+          "heading": "進階動作類型",
+          "list": [
+            "<strong>選擇 (Choose)</strong>：根據條件執行不同動作",
+            "<strong>等待 (Wait)</strong>：等待特定時間或條件",
+            "<strong>重複 (Repeat)</strong>：循環執行動作",
+            "<strong>並行 (Parallel)</strong>：同時執行多個動作",
+            "<strong>呼叫服務</strong>：執行任何 Home Assistant 服務"
+          ]
+        },
+        {
+          "heading": "實用範例：智能溫控",
+          "list": [
+            "觸發：溫度感應器變化",
+            "條件：溫度超過 26 度且有人在家",
+            "動作：開啟空調並設定 24 度",
+            "等待：10 分鐘",
+            "檢查：如果溫度仍超過 25 度，降低到 22 度"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "客製化 Lovelace 介面",
+      "subtitle": "打造個人化儀表板",
+      "sections": [
+        {
+          "heading": "Lovelace 模式",
+          "list": [
+            "<strong>儲存模式</strong>：預設，透過 UI 編輯",
+            "<strong>YAML 模式</strong>：完全控制，需手動編輯",
+            "<strong>混合模式</strong>：結合兩者優點"
+          ]
+        },
+        {
+          "heading": "卡片類型",
+          "list": [
+            "<strong>entities</strong>：實體列表卡片",
+            "<strong>picture-entity</strong>：圖片控制卡片",
+            "<strong>horizontal-stack/vertical-stack</strong>：排列卡片",
+            "<strong>conditional</strong>：條件顯示卡片",
+            "<strong>custom 卡片</strong>：社群開發的客製卡片"
+          ]
+        },
+        {
+          "heading": "安裝客製卡片 (HACS)",
+          "list": [
+            "安裝 HACS（Home Assistant Community Store）",
+            "瀏覽「前端」分類",
+            "搜尋並安裝卡片（如 mini-graph-card、button-card）",
+            "在 Lovelace 中新增客製卡片",
+            "參考文件進行設定"
+          ]
+        },
+        {
+          "heading": "介面設計技巧",
+          "list": [
+            "按房間或功能分類建立不同檢視",
+            "使用顏色和圖示提升視覺效果",
+            "隱藏不常用的實體",
+            "使用條件卡片根據狀態顯示",
+            "手機和平板使用不同的儀表板"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "09",
+      "title": "附加元件與整合",
+      "subtitle": "擴展 Home Assistant 功能",
+      "sections": [
+        {
+          "heading": "必裝附加元件",
+          "list": [
+            "<strong>File Editor</strong>：編輯設定檔案",
+            "<strong>Samba Share</strong>：透過網路訪問檔案",
+            "<strong>Terminal & SSH</strong>：命令列訪問",
+            "<strong>Mosquitto Broker</strong>：MQTT 訊息中介",
+            "<strong>MariaDB</strong>：資料庫優化"
+          ]
+        },
+        {
+          "heading": "實用附加元件",
+          "list": [
+            "<strong>AdGuard Home</strong>：廣告封鎖和 DNS",
+            "<strong>Node-RED</strong>：視覺化流程編輯",
+            "<strong>ESPHome</strong>：自製 ESP32/ESP8266 設備",
+            "<strong>Grafana</strong>：進階數據視覺化",
+            "<strong>Frigate</strong>：AI 監控攝像頭"
+          ]
+        },
+        {
+          "heading": "MQTT 整合",
+          "list": [
+            "安裝 Mosquitto Broker 附加元件",
+            "在 Home Assistant 中新增 MQTT 整合",
+            "設定使用者名稱和密碼",
+            "將設備連接到 MQTT",
+            "透過主題訂閱和發布訊息"
+          ]
+        },
+        {
+          "heading": "Node-RED 工作流",
+          "list": [
+            "安裝 Node-RED 附加元件",
+            "新增 Home Assistant 節點",
+            "使用拖放方式建立流程",
+            "比自動化更靈活的邏輯控制",
+            "可視覺化除錯和測試"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "備份、更新與維護",
+      "subtitle": "確保系統穩定運行",
+      "sections": [
+        {
+          "heading": "自動備份策略",
+          "list": [
+            "使用內建的備份功能",
+            "設定每日自動備份",
+            "保留多個版本（建議至少 7 天）",
+            "將備份複製到外部儲存",
+            "測試還原備份的流程"
+          ]
+        },
+        {
+          "heading": "系統更新",
+          "list": [
+            "檢查「設定」→「系統」→「更新」",
+            "閱讀更新日誌了解變更",
+            "更新前先備份",
+            "更新 Home Assistant Core",
+            "更新 Home Assistant OS（如適用）",
+            "更新附加元件和整合"
+          ]
+        },
+        {
+          "heading": "效能優化",
+          "list": [
+            "定期清理歷史記錄（預設保留 10 天）",
+            "使用外部資料庫（MariaDB）",
+            "移除不使用的整合和實體",
+            "使用 SSD 而非 microSD 卡",
+            "監控系統資源使用情況"
+          ]
+        },
+        {
+          "heading": "故障排除",
+          "list": [
+            "查看「設定」→「系統」→「日誌」",
+            "使用開發者工具測試服務",
+            "檢查設定檔案語法",
+            "還原到先前的備份",
+            "社群論壇和 Discord 尋求協助"
+          ]
+        }
+      ]
+    }
+  ]
+}
