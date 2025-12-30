@@ -1,7 +1,25 @@
 {
+    "categories": [
+        {
+            "id": "learning",
+            "name": "學習課程",
+            "icon": "📚"
+        },
+        {
+            "id": "practical",
+            "name": "實戰應用",
+            "icon": "🔧"
+        },
+        {
+            "id": "business",
+            "name": "商業服務",
+            "icon": "💼"
+        }
+    ],
     "topics": [
         {
             "id": "smart-home",
+            "category": "learning",
             "title": "智能家居",
             "icon": "🏠",
             "subtitle": "從基礎到進階，系統化學習智能家居技術",
@@ -29,6 +47,7 @@
         },
         {
             "id": "home-improvement",
+            "category": "learning",
             "title": "居家修善",
             "icon": "🔧",
             "subtitle": "從基礎修繕到大規模改造，打造夢想家居",
@@ -56,6 +75,7 @@
         },
         {
             "id": "smart-home-improvement",
+            "category": "practical",
             "title": "智能家居改造",
             "icon": "✨",
             "subtitle": "結合家居改造與智能化，打造現代化住宅",
@@ -83,6 +103,7 @@
         },
         {
             "id": "home-assistant",
+            "category": "practical",
             "title": "Home Assistant",
             "icon": "🤖",
             "subtitle": "開源智能家居平台完全指南",
@@ -110,6 +131,7 @@
         },
         {
             "id": "smart-home-service",
+            "category": "business",
             "title": "智能家居服務配置",
             "icon": "💼",
             "subtitle": "專業智能家居服務方案與定價策略",
