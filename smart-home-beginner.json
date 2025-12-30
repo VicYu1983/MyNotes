@@ -1,0 +1,322 @@
+{
+  "level": {
+    "id": "beginner",
+    "name": "初階",
+    "emoji": "🟢",
+    "description": "基礎概念與入門",
+    "color": "#4caf50"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "智能家居簡介",
+      "subtitle": "什麼是智能家居？發展歷史、優缺點與應用場景",
+      "sections": [
+        {
+          "heading": "什麼是智能家居？",
+          "content": "智能家居（Smart Home）是指透過物聯網（IoT）技術，將家中的各種設備連接起來，實現自動化控制、遠端監控和智能管理的居住環境。透過智慧型手機、平板電腦或語音助理，使用者可以隨時隨地控制家中的燈光、溫度、安全系統等設備。"
+        },
+        {
+          "heading": "發展歷史",
+          "list": [
+            "<strong>1975年</strong>：X10 協定誕生，首個家庭自動化通訊標準",
+            "<strong>1990年代</strong>：微軟推出 \"Home of the Future\" 概念",
+            "<strong>2011年</strong>：Nest 智能溫控器問世，開啟現代智能家居時代",
+            "<strong>2014年</strong>：Amazon Echo 推出，語音控制成為主流",
+            "<strong>2022年</strong>：Matter 標準發布，推動跨平台互通"
+          ]
+        },
+        {
+          "heading": "優點",
+          "list": [
+            "<strong>便利性</strong>：遠端控制、語音操作、自動化場景",
+            "<strong>節能</strong>：智能調節能源使用，降低電費",
+            "<strong>安全</strong>：即時監控、異常通知、自動報警",
+            "<strong>舒適</strong>：個人化設定、環境自動調整",
+            "<strong>價值提升</strong>：增加房產吸引力"
+          ]
+        },
+        {
+          "heading": "缺點",
+          "list": [
+            "<strong>初期成本</strong>：設備購置費用較高",
+            "<strong>技術門檻</strong>：需要學習設定與操作",
+            "<strong>相容性問題</strong>：不同品牌可能無法互通",
+            "<strong>隱私風險</strong>：數據收集與安全疑慮",
+            "<strong>依賴網路</strong>：斷網可能影響功能"
+          ]
+        },
+        {
+          "heading": "常見應用場景",
+          "list": [
+            "<strong>回家模式</strong>：自動開燈、調節溫度、播放音樂",
+            "<strong>離家模式</strong>：關閉所有燈光、啟動安全監控",
+            "<strong>睡眠模式</strong>：關燈、鎖門、調整溫度",
+            "<strong>起床模式</strong>：逐漸開燈、播放鬧鐘、開啟咖啡機",
+            "<strong>娛樂模式</strong>：調暗燈光、關閉窗簾、開啟影音系統"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "基礎硬體認識",
+      "subtitle": "智能音箱、燈泡、插座、門鎖、攝影機",
+      "sections": [
+        {
+          "heading": "智能音箱",
+          "content": "<strong>主要功能</strong>：語音控制中樞、音樂播放、資訊查詢、控制其他智能設備",
+          "list": [
+            "<strong>Amazon Echo</strong>：搭載 Alexa 語音助理，生態系最完整",
+            "<strong>Google Nest Audio</strong>：整合 Google Assistant，搜尋能力強",
+            "<strong>Apple HomePod</strong>：音質優秀，與 Apple 生態緊密整合",
+            "<strong>小米小愛音箱</strong>：性價比高，支援豐富的中文內容"
+          ]
+        },
+        {
+          "heading": "智能燈泡與開關",
+          "content": "<strong>主要功能</strong>：遠端控制、亮度調節、色溫/色彩變換、定時開關",
+          "list": [
+            "<strong>Philips Hue</strong>：業界標竿，色彩豐富，生態完整",
+            "<strong>LIFX</strong>：無需網關，直接 Wi-Fi 連接",
+            "<strong>Yeelight</strong>：小米生態鏈，性價比高",
+            "<strong>智能開關</strong>：適合既有燈具改造，無需更換燈泡"
+          ]
+        },
+        {
+          "heading": "智能插座",
+          "content": "<strong>主要功能</strong>：遠端開關、排程控制、用電監測、過載保護",
+          "list": [
+            "讓傳統家電變身智能設備（電風扇、除濕機等）",
+            "監控待機電力，找出耗電元凶",
+            "設定排程自動開關，節省能源",
+            "外出時遠端關閉電器，提升安全"
+          ]
+        },
+        {
+          "heading": "智能門鎖",
+          "content": "<strong>主要功能</strong>：指紋解鎖、密碼解鎖、卡片解鎖、遠端控制、進出紀錄",
+          "list": [
+            "<strong>優點</strong>：不用帶鑰匙、訪客管理方便、安全性高",
+            "<strong>考量</strong>：電池續航、機械鑰匙備用、安裝相容性",
+            "<strong>進階功能</strong>：臨時密碼、防撬警報、視訊通話"
+          ]
+        },
+        {
+          "heading": "智能攝影機",
+          "content": "<strong>主要功能</strong>：即時監控、移動偵測、雙向語音、雲端錄影",
+          "list": [
+            "<strong>室內攝影機</strong>：嬰兒監控、寵物照看、居家安全",
+            "<strong>室外攝影機</strong>：防盜監控、包裹提醒、訪客確認",
+            "<strong>門鈴攝影機</strong>：來客提醒、遠端應答、包裹防盜",
+            "<strong>重點功能</strong>：夜視、防水、AI 人形辨識、區域偵測"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "無線通訊協定基礎",
+      "subtitle": "Wi-Fi、藍牙、紅外線",
+      "sections": [
+        {
+          "heading": "Wi-Fi",
+          "content": "<strong>特性</strong>：高速傳輸、遠距離、支援大量數據",
+          "list": [
+            "<strong>頻段</strong>：2.4 GHz（穿透力強）、5 GHz（速度快但距離短）",
+            "<strong>優點</strong>：速度快、覆蓋範圍廣、支援影像串流",
+            "<strong>缺點</strong>：耗電較高、容易受干擾",
+            "<strong>適用設備</strong>：攝影機、智能音箱、電視、掃地機器人",
+            "<strong>Wi-Fi 6</strong>：最新標準，更快速度、更低延遲、更多設備連接"
+          ]
+        },
+        {
+          "heading": "藍牙（Bluetooth）",
+          "content": "<strong>特性</strong>：低功耗、近距離、點對點連接",
+          "list": [
+            "<strong>Bluetooth Classic</strong>：適合音訊傳輸（耳機、音箱）",
+            "<strong>BLE（低功耗藍牙）</strong>：適合感測器、穿戴裝置",
+            "<strong>優點</strong>：省電、配對簡單、成本低",
+            "<strong>缺點</strong>：距離短（約10公尺）、速度較慢",
+            "<strong>適用設備</strong>：智能鎖、溫濕度計、手環、藍牙網關"
+          ]
+        },
+        {
+          "heading": "紅外線（IR）",
+          "content": "<strong>特性</strong>：單向傳輸、需要視線、成熟技術",
+          "list": [
+            "<strong>工作原理</strong>：發射紅外光訊號，接收器解碼執行",
+            "<strong>優點</strong>：成本低、相容性好、不佔用網路",
+            "<strong>缺點</strong>：需要對準、無法雙向通訊、距離有限",
+            "<strong>適用設備</strong>：冷氣、電視、機上盒、電風扇",
+            "<strong>智能應用</strong>：萬能遙控器、智能紅外線轉發器"
+          ]
+        },
+        {
+          "heading": "選擇建議",
+          "list": [
+            "<strong>需要高速傳輸</strong>：選 Wi-Fi（攝影機、音箱）",
+            "<strong>注重省電</strong>：選藍牙或 Zigbee（感測器）",
+            "<strong>控制傳統家電</strong>：選紅外線（冷氣、電視）",
+            "<strong>大量設備</strong>：避免全用 Wi-Fi，會造成路由器負擔"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "智能家居生態系統",
+      "subtitle": "Apple HomeKit、Google Home、Amazon Alexa、小米米家",
+      "sections": [
+        {
+          "heading": "Apple HomeKit",
+          "list": [
+            "<strong>特色</strong>：注重隱私與安全、本地處理、端到端加密",
+            "<strong>控制方式</strong>：Siri 語音、家庭 App、自動化",
+            "<strong>中樞設備</strong>：HomePod、Apple TV、iPad",
+            "<strong>優點</strong>：隱私保護佳、設定簡單、Apple 生態整合",
+            "<strong>缺點</strong>：支援設備較少、價格較高",
+            "<strong>適合</strong>：Apple 用戶、注重隱私者"
+          ]
+        },
+        {
+          "heading": "Google Home",
+          "list": [
+            "<strong>特色</strong>：強大的 AI 語音辨識、豐富的資訊查詢",
+            "<strong>控制方式</strong>：Google Assistant、Google Home App",
+            "<strong>中樞設備</strong>：Nest Hub、Nest Audio",
+            "<strong>優點</strong>：語音理解能力強、支援設備多、與 Google 服務整合",
+            "<strong>缺點</strong>：較依賴雲端、隱私疑慮",
+            "<strong>適合</strong>：Android 用戶、Google 服務重度使用者"
+          ]
+        },
+        {
+          "heading": "Amazon Alexa",
+          "list": [
+            "<strong>特色</strong>：最完整的生態系、最多支援設備",
+            "<strong>控制方式</strong>：Alexa 語音、Alexa App",
+            "<strong>中樞設備</strong>：Echo 系列音箱",
+            "<strong>優點</strong>：設備支援最廣、技能（Skills）豐富、價格實惠",
+            "<strong>缺點</strong>：中文支援較弱（主要英文）",
+            "<strong>適合</strong>：追求設備相容性、英文使用者"
+          ]
+        },
+        {
+          "heading": "小米米家",
+          "list": [
+            "<strong>特色</strong>：超高性價比、豐富的中文生態",
+            "<strong>控制方式</strong>：小愛同學、米家 App",
+            "<strong>中樞設備</strong>：小愛音箱、小米網關",
+            "<strong>優點</strong>：價格便宜、設備齊全、中文支援完善",
+            "<strong>缺點</strong>：較封閉、國際品牌整合較少",
+            "<strong>適合</strong>：預算有限、中文用戶、小米生態用戶"
+          ]
+        },
+        {
+          "heading": "如何選擇？",
+          "list": [
+            "<strong>iPhone 用戶</strong>：優先考慮 HomeKit",
+            "<strong>Android 用戶</strong>：Google Home 或小米米家",
+            "<strong>預算考量</strong>：小米米家最經濟實惠",
+            "<strong>國際品牌</strong>：Alexa 或 Google Home 相容性最好",
+            "<strong>隱私優先</strong>：HomeKit 本地處理最安全",
+            "<strong>建議</strong>：可混合使用，透過 Matter 協定實現互通"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "基礎安裝與設定",
+      "subtitle": "選購、配對與語音控制",
+      "sections": [
+        {
+          "heading": "如何選購第一個智能設備",
+          "list": [
+            "<strong>建議入門設備</strong>：智能音箱或智能燈泡",
+            "<strong>確認生態系統</strong>：選擇符合自己手機系統的平台",
+            "<strong>檢查相容性</strong>：確認與現有 Wi-Fi 路由器相容（2.4GHz）",
+            "<strong>閱讀評價</strong>：查看使用者回饋，了解穩定性",
+            "<strong>預算分配</strong>：先從單一設備開始，逐步擴充"
+          ]
+        },
+        {
+          "heading": "App 下載與註冊",
+          "list": [
+            "<strong>Apple HomeKit</strong>：使用內建「家庭」App，無需另外下載",
+            "<strong>Google Home</strong>：下載 Google Home App",
+            "<strong>Amazon Alexa</strong>：下載 Alexa App",
+            "<strong>小米米家</strong>：下載米家 App",
+            "<strong>註冊帳號</strong>：使用現有帳號或註冊新帳號"
+          ]
+        },
+        {
+          "heading": "設備配對步驟",
+          "content": "<strong>以智能燈泡為例</strong>：",
+          "list": [
+            "<strong>步驟 1</strong>：將燈泡安裝到燈座，開啟電源",
+            "<strong>步驟 2</strong>：燈泡通常會閃爍，表示進入配對模式",
+            "<strong>步驟 3</strong>：打開 App，點選「新增裝置」",
+            "<strong>步驟 4</strong>：選擇設備類型（燈泡）",
+            "<strong>步驟 5</strong>：連接到 Wi-Fi 網路（輸入密碼）",
+            "<strong>步驟 6</strong>：等待配對完成（約 30 秒）",
+            "<strong>步驟 7</strong>：為設備命名（例如：客廳燈）"
+          ]
+        },
+        {
+          "heading": "常見配對問題",
+          "list": [
+            "<strong>無法找到設備</strong>：確認設備已進入配對模式（重置設備）",
+            "<strong>Wi-Fi 連接失敗</strong>：確認使用 2.4GHz 頻段，檢查密碼正確",
+            "<strong>配對中斷</strong>：靠近路由器，減少障礙物",
+            "<strong>App 無反應</strong>：重啟 App 或手機"
+          ]
+        },
+        {
+          "heading": "基本語音控制指令",
+          "subSections": [
+            {
+              "subHeading": "Siri（HomeKit）",
+              "list": [
+                "「嘿 Siri，打開客廳燈」",
+                "「嘿 Siri，把臥室燈調到 50%」",
+                "「嘿 Siri，關閉所有燈」"
+              ]
+            },
+            {
+              "subHeading": "Google Assistant",
+              "list": [
+                "「Ok Google，開燈」",
+                "「Ok Google，把溫度調到 24 度」",
+                "「Ok Google，執行晚安模式」"
+              ]
+            },
+            {
+              "subHeading": "Alexa",
+              "list": [
+                "「Alexa, turn on the living room light」",
+                "「Alexa, dim the bedroom light」"
+              ]
+            },
+            {
+              "subHeading": "小愛同學",
+              "list": [
+                "「小愛同學，開燈」",
+                "「小愛同學，把客廳燈調成藍色」",
+                "「小愛同學，執行回家模式」"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "基礎自動化設定",
+          "list": [
+            "<strong>時間觸發</strong>：「每天晚上 10 點關閉客廳燈」",
+            "<strong>日出日落</strong>：「日落時自動開燈」",
+            "<strong>離家/回家</strong>：「離開家時關閉所有燈」"
+          ]
+        }
+      ]
+    }
+  ]
+}

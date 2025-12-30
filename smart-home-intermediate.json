@@ -1,0 +1,853 @@
+{
+  "level": {
+    "id": "intermediate",
+    "name": "中階",
+    "emoji": "🟡",
+    "description": "進階應用與整合",
+    "color": "#ff9800"
+  },
+  "knowledgePoints": [
+    {
+      "number": "06",
+      "title": "進階通訊協定",
+      "subtitle": "Zigbee、Z-Wave、Matter、Thread",
+      "sections": [
+        {
+          "heading": "Zigbee",
+          "list": [
+            "<strong>特性</strong>：低功耗、網狀網路（Mesh）、中距離通訊",
+            "<strong>頻段</strong>：2.4 GHz 全球通用",
+            "<strong>網狀架構</strong>：設備可互相中繼訊號，擴大覆蓋範圍",
+            "<strong>優點</strong>：省電、穩定、支援大量設備（超過 65,000 個）",
+            "<strong>缺點</strong>：需要專用網關、速度較慢",
+            "<strong>適用</strong>：感測器、智能開關、智能插座",
+            "<strong>主要品牌</strong>：Philips Hue、IKEA、小米 Aqara"
+          ]
+        },
+        {
+          "heading": "Z-Wave",
+          "list": [
+            "<strong>特性</strong>：專為智能家居設計、互通性強",
+            "<strong>頻段</strong>：908.42 MHz（美國）、868.42 MHz（歐洲）",
+            "<strong>優點</strong>：抗干擾強、認證嚴格（品牌相容性好）、安全性高",
+            "<strong>缺點</strong>：需要網關、設備較貴、區域限制",
+            "<strong>網路規模</strong>：最多 232 個節點",
+            "<strong>適用</strong>：門鎖、感測器、安全系統"
+          ]
+        },
+        {
+          "heading": "Matter（前身 CHIP）",
+          "list": [
+            "<strong>特性</strong>：跨平台統一標準、本地控制",
+            "<strong>支援者</strong>：Apple、Google、Amazon、Samsung 等",
+            "<strong>底層技術</strong>：基於 Wi-Fi、Thread、Ethernet",
+            "<strong>優點</strong>：打破生態系統壁壘、互操作性強、安全性高",
+            "<strong>現況</strong>：2022 年 10 月正式推出，設備逐步上市",
+            "<strong>未來</strong>：有望成為智能家居主流標準"
+          ]
+        },
+        {
+          "heading": "Thread",
+          "list": [
+            "<strong>特性</strong>：低功耗網狀網路、IPv6 原生支援",
+            "<strong>關係</strong>：Matter 的底層通訊協定之一",
+            "<strong>優點</strong>：省電、可靠、無單點故障、本地通訊",
+            "<strong>架構</strong>：設備互為中繼節點，自我修復網路",
+            "<strong>支援</strong>：Apple、Google、Eve、Nanoleaf"
+          ]
+        },
+        {
+          "heading": "協定比較與選擇",
+          "list": [
+            "<strong>追求省電</strong>：Zigbee、Z-Wave、Thread",
+            "<strong>大量設備</strong>：Zigbee（網狀網路）",
+            "<strong>跨平台互通</strong>：Matter",
+            "<strong>高安全需求</strong>：Z-Wave、Matter",
+            "<strong>未來趨勢</strong>：Matter + Thread 將成主流"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "智能家庭中樞",
+      "subtitle": "網關作用、本地vs雲端控制",
+      "sections": [
+        {
+          "heading": "什麼是智能家庭中樞？",
+          "content": "智能家庭中樞（Hub/Gateway）是連接不同通訊協定設備的橋樑，負責協調各設備間的通訊、執行自動化規則，並提供遠端存取功能。"
+        },
+        {
+          "heading": "網關的主要功能",
+          "list": [
+            "<strong>協定轉換</strong>：將 Zigbee/Z-Wave 轉換為 Wi-Fi/網路訊號",
+            "<strong>設備管理</strong>：統一控制不同品牌、協定的設備",
+            "<strong>自動化執行</strong>：運行場景和自動化規則",
+            "<strong>遠端存取</strong>：外出時也能控制家中設備",
+            "<strong>資料處理</strong>：收集設備數據、生成報表"
+          ]
+        },
+        {
+          "heading": "常見中樞設備",
+          "list": [
+            "<strong>Apple</strong>：HomePod、HomePod mini、Apple TV、iPad",
+            "<strong>Google</strong>：Nest Hub、Nest Hub Max",
+            "<strong>Amazon</strong>：Echo、Echo Show、Echo Dot",
+            "<strong>小米</strong>：小米多模網關、Aqara Hub",
+            "<strong>Philips</strong>：Hue Bridge",
+            "<strong>專業級</strong>：Home Assistant、Hubitat"
+          ]
+        },
+        {
+          "heading": "本地控制 vs 雲端控制",
+          "subSections": [
+            {
+              "subHeading": "本地控制",
+              "list": [
+                "<strong>優點</strong>：反應快速、不依賴網路、隱私安全、斷網仍可用",
+                "<strong>缺點</strong>：初期設定較複雜、功能可能受限",
+                "<strong>代表</strong>：HomeKit、Home Assistant、Hubitat"
+              ]
+            },
+            {
+              "subHeading": "雲端控制",
+              "list": [
+                "<strong>優點</strong>：設定簡單、遠端存取容易、雲端AI功能",
+                "<strong>缺點</strong>：依賴網路、延遲較高、隱私疑慮、服務停止風險",
+                "<strong>代表</strong>：Google Home、Alexa、小米米家"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "混合模式（最佳方案）",
+          "list": [
+            "基本控制使用本地執行（快速反應）",
+            "進階功能使用雲端（AI、語音識別）",
+            "重要功能保留本地備援"
+          ]
+        },
+        {
+          "heading": "如何選擇中樞？",
+          "list": [
+            "<strong>生態系統</strong>：配合現有設備選擇",
+            "<strong>協定支援</strong>：需要什麼協定（Zigbee、Z-Wave）",
+            "<strong>技術能力</strong>：進階用戶可選 Home Assistant",
+            "<strong>預算</strong>：從單一品牌網關開始",
+            "<strong>隱私需求</strong>：選擇支援本地控制的方案"
+          ]
+        },
+        {
+          "heading": "多中樞整合",
+          "content": "可同時使用多個中樞，例如：",
+          "list": [
+            "Philips Hue Bridge（燈光）",
+            "Aqara Hub（感測器）",
+            "Home Assistant（整合控制）"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "場景自動化",
+      "subtitle": "情境模式、條件觸發、多設備聯動",
+      "sections": [
+        {
+          "heading": "什麼是場景自動化？",
+          "content": "場景自動化是根據特定條件或時間，自動執行一系列設備動作的功能。讓智能家居真正「智能」的關鍵。"
+        },
+        {
+          "heading": "常見情境模式",
+          "subSections": [
+            {
+              "subHeading": "回家模式",
+              "list": [
+                "自動解鎖門鎖",
+                "打開玄關燈和客廳燈",
+                "調整空調到舒適溫度",
+                "播放歡迎音樂",
+                "關閉安全監控"
+              ]
+            },
+            {
+              "subHeading": "離家模式",
+              "list": [
+                "關閉所有燈光",
+                "關閉空調、電扇",
+                "啟動安全監控",
+                "確認門窗已關閉",
+                "啟動掃地機器人"
+              ]
+            },
+            {
+              "subHeading": "睡眠模式",
+              "list": [
+                "關閉公共區域燈光",
+                "鎖門",
+                "調整臥室燈光（暖色、低亮度）",
+                "設定舒眠溫度",
+                "啟動夜間監控"
+              ]
+            },
+            {
+              "subHeading": "起床模式",
+              "list": [
+                "逐漸提升臥室亮度（模擬日出）",
+                "播放輕音樂或新聞",
+                "調整溫度",
+                "啟動咖啡機",
+                "打開窗簾"
+              ]
+            },
+            {
+              "subHeading": "觀影模式",
+              "list": [
+                "調暗燈光",
+                "關閉窗簾",
+                "開啟電視和音響",
+                "調整座位氛圍燈"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "觸發條件類型",
+          "subSections": [
+            {
+              "subHeading": "時間觸發",
+              "list": [
+                "每天 7:00 開燈",
+                "週一至週五 8:00 執行離家模式",
+                "日落時自動開燈",
+                "日出時關閉夜燈"
+              ]
+            },
+            {
+              "subHeading": "位置觸發",
+              "list": [
+                "到家時（GPS 定位）",
+                "離開家 500 公尺時",
+                "最後一人離家",
+                "第一人到家"
+              ]
+            },
+            {
+              "subHeading": "感測器觸發",
+              "list": [
+                "偵測到移動 → 開燈",
+                "門窗開啟 → 發送通知",
+                "溫度高於 28°C → 開冷氣",
+                "濕度低於 40% → 開加濕器",
+                "偵測到煙霧 → 警報通知"
+              ]
+            },
+            {
+              "subHeading": "設備狀態觸發",
+              "list": [
+                "電視開啟 → 執行觀影模式",
+                "智能鎖解鎖 → 執行回家模式",
+                "充電完成 → 發送通知"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "進階自動化技巧",
+          "subSections": [
+            {
+              "subHeading": "多條件判斷",
+              "list": [
+                "「如果」偵測到移動「且」時間在 18:00-06:00「且」照度低於 50 lux → 開燈",
+                "「如果」溫度 > 28°C「或」濕度 > 70% → 開除濕機"
+              ]
+            },
+            {
+              "subHeading": "延遲執行",
+              "list": [
+                "偵測到移動後，3 分鐘無移動 → 關燈",
+                "門窗開啟 5 分鐘 → 發送提醒"
+              ]
+            },
+            {
+              "subHeading": "循環執行",
+              "list": [
+                "每 30 分鐘檢查溫度",
+                "每小時記錄用電量"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "設定自動化的建議",
+          "list": [
+            "<strong>從簡單開始</strong>：先設定單一條件、單一動作",
+            "<strong>測試驗證</strong>：每個自動化都要實際測試",
+            "<strong>避免衝突</strong>：確保不同自動化不會互相干擾",
+            "<strong>保留手動</strong>：重要功能保留手動控制選項",
+            "<strong>考慮例外</strong>：假期、訪客等特殊情況",
+            "<strong>命名清楚</strong>：方便日後管理"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "09",
+      "title": "感測器應用",
+      "subtitle": "溫濕度、移動、門窗、光線、安全感測器",
+      "sections": [
+        {
+          "heading": "溫濕度感測器",
+          "content": "<strong>功能</strong>：監測環境溫度與濕度",
+          "list": [
+            "<strong>應用場景</strong>：溫度過高/過低 → 調整空調、濕度過高 → 啟動除濕機、濕度過低 → 啟動加濕器、嬰兒房環境監控",
+            "<strong>擺放位置</strong>：避免陽光直射、通風處、離地約 1.5m",
+            "<strong>推薦產品</strong>：Aqara 溫濕度感測器、小米溫濕度計"
+          ]
+        },
+        {
+          "heading": "人體移動感測器（PIR）",
+          "content": "<strong>功能</strong>：偵測人體紅外線移動",
+          "list": [
+            "<strong>應用場景</strong>：走廊夜燈（偵測到移動 → 開燈）、省電模式（無人 10 分鐘 → 關燈）、安全警報（夜間偵測異常移動）、自動開關（進入房間開燈，離開關燈）",
+            "<strong>偵測角度</strong>：通常 120-170 度",
+            "<strong>偵測距離</strong>：5-9 公尺",
+            "<strong>限制</strong>：無法偵測靜止不動的人"
+          ]
+        },
+        {
+          "heading": "門窗感測器",
+          "content": "<strong>功能</strong>：偵測門窗開關狀態",
+          "list": [
+            "<strong>應用場景</strong>：離家時檢查門窗是否關閉、窗戶開啟時關閉空調（省電）、夜間門窗開啟 → 安全警報、開窗通風提醒",
+            "<strong>安裝</strong>：分為本體與磁鐵，間距 < 2cm",
+            "<strong>電池續航</strong>：通常 1-2 年"
+          ]
+        },
+        {
+          "heading": "光線感測器（照度計）",
+          "content": "<strong>功能</strong>：偵測環境亮度（單位：lux）",
+          "list": [
+            "<strong>應用場景</strong>：天黑自動開燈（照度 < 50 lux）、天亮自動關燈、根據光線調整燈光亮度、自動開關窗簾",
+            "<strong>參考值</strong>：1-10 lux（黑暗）、50 lux（昏暗）、300-500 lux（辦公室）、10,000+ lux（戶外陽光）"
+          ]
+        },
+        {
+          "heading": "水浸感測器",
+          "content": "<strong>功能</strong>：偵測漏水",
+          "list": [
+            "<strong>應用場景</strong>：浴室地板漏水警報、洗衣機溢水偵測、廚房水槽漏水、水族箱水位監控",
+            "<strong>擺放</strong>：地面最低處、水槽下方",
+            "<strong>重要性</strong>：及早發現可避免重大財損"
+          ]
+        },
+        {
+          "heading": "煙霧/一氧化碳感測器",
+          "content": "<strong>功能</strong>：偵測火災與有害氣體",
+          "list": [
+            "<strong>煙霧感測器</strong>：偵測煙霧粒子，火災警報",
+            "<strong>一氧化碳感測器</strong>：偵測 CO 濃度，防止中毒",
+            "<strong>安裝位置</strong>：天花板（煙霧上升）、每層至少一個",
+            "<strong>智能功能</strong>：手機通知、自動開窗、關閉燃氣",
+            "<strong>維護</strong>：定期測試、更換電池"
+          ]
+        },
+        {
+          "heading": "振動感測器",
+          "content": "<strong>功能</strong>：偵測震動",
+          "list": [
+            "<strong>應用</strong>：門窗防拆、洗衣機運轉偵測、地震警報"
+          ]
+        },
+        {
+          "heading": "組合應用範例",
+          "subSections": [
+            {
+              "subHeading": "智能夜燈",
+              "list": [
+                "人體感測器（偵測移動）+ 光線感測器（確認夜間）→ 開啟低亮度燈光"
+              ]
+            },
+            {
+              "subHeading": "智能通風",
+              "list": [
+                "溫濕度感測器（濕度過高）+ 門窗感測器（確認窗戶關閉）→ 發送開窗提醒"
+              ]
+            },
+            {
+              "subHeading": "安全監控",
+              "list": [
+                "門窗感測器 + 人體感測器 + 攝影機 → 夜間異常闖入警報"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "能源管理",
+      "subtitle": "智能電錶、用電監控、節能策略",
+      "sections": [
+        {
+          "heading": "智能電錶",
+          "content": "<strong>功能</strong>：即時監控家庭用電量",
+          "subSections": [
+            {
+              "subHeading": "安裝方式",
+              "list": [
+                "夾式電流感測器（非侵入式）",
+                "整合式電錶（需電工安裝）",
+                "智能插座（單一設備監控）"
+              ]
+            },
+            {
+              "subHeading": "監控數據",
+              "list": [
+                "即時功率（W）",
+                "累計用電量（kWh）",
+                "電壓、電流",
+                "功率因數",
+                "電費估算"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "用電監控應用",
+          "subSections": [
+            {
+              "subHeading": "找出耗電元凶",
+              "list": [
+                "比較各時段用電量",
+                "識別異常耗電設備",
+                "發現待機電力浪費"
+              ]
+            },
+            {
+              "subHeading": "電費控制",
+              "list": [
+                "設定每月用電目標",
+                "超過預算時發送警報",
+                "用電高峰自動關閉非必要設備"
+              ]
+            },
+            {
+              "subHeading": "設備狀態監控",
+              "list": [
+                "洗衣機/烘衣機完成通知（功率降至待機）",
+                "電器異常警報（功率異常）",
+                "長時間待機提醒"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "智能節能策略",
+          "subSections": [
+            {
+              "subHeading": "時間電價優化（若適用）",
+              "list": [
+                "離峰時段充電（電動車、蓄電池）",
+                "離峰時段運轉耗電設備（洗衣機、烘衣機）",
+                "尖峰時段減少用電"
+              ]
+            },
+            {
+              "subHeading": "自動化節能",
+              "list": [
+                "<strong>離家模式</strong>：關閉非必要電器",
+                "<strong>睡眠模式</strong>：降低空調溫度、關閉公共區域電器",
+                "<strong>無人偵測</strong>：房間無人 10 分鐘 → 關燈關冷氣",
+                "<strong>開窗省電</strong>：窗戶開啟 → 自動關閉空調"
+              ]
+            },
+            {
+              "subHeading": "溫度管理",
+              "list": [
+                "夏季空調設定 26-28°C（每高 1°C 省電 6%）",
+                "冬季暖氣設定 18-20°C",
+                "離家前 30 分鐘預冷/預熱",
+                "睡眠時自動調整溫度"
+              ]
+            },
+            {
+              "subHeading": "照明優化",
+              "list": [
+                "根據自然光自動調整亮度",
+                "無人自動關燈",
+                "夜間降低亮度"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "太陽能與儲能整合",
+          "list": [
+            "<strong>太陽能板</strong>：發電自用，降低電費",
+            "<strong>儲能系統</strong>：儲存多餘電力，停電備用",
+            "<strong>智能調配</strong>：優先使用太陽能，不足時用市電",
+            "<strong>賣電收益</strong>：多餘電力回售電網（依地區政策）"
+          ]
+        },
+        {
+          "heading": "節能監控儀表板",
+          "list": [
+            "即時用電功率",
+            "每日/每週/每月用電統計",
+            "電費估算",
+            "與去年同期比較",
+            "設備用電排行",
+            "節能建議"
+          ]
+        },
+        {
+          "heading": "實用節能技巧",
+          "list": [
+            "使用 LED 燈泡（省電 80%）",
+            "拔除長期不用的電器插頭",
+            "定期清潔空調濾網",
+            "使用節能標章電器",
+            "善用定時開關",
+            "冰箱不要塞太滿，留空間通風"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "11",
+      "title": "安全與隱私",
+      "subtitle": "網路安全、權限管理、隱私保護",
+      "sections": [
+        {
+          "heading": "智能家居安全威脅",
+          "list": [
+            "<strong>未授權存取</strong>：駭客入侵設備或帳號",
+            "<strong>資料竊取</strong>：個人資訊、生活習慣被竊",
+            "<strong>隱私監控</strong>：攝影機、麥克風被竊聽",
+            "<strong>設備劫持</strong>：成為殭屍網路一員（DDoS 攻擊）",
+            "<strong>韌體漏洞</strong>：設備軟體存在安全漏洞"
+          ]
+        },
+        {
+          "heading": "網路安全防護",
+          "subSections": [
+            {
+              "subHeading": "強化 Wi-Fi 安全",
+              "list": [
+                "使用 WPA3 加密（或至少 WPA2）",
+                "設定強密碼（16 位以上，大小寫+數字+符號）",
+                "隱藏 SSID（不公開網路名稱）",
+                "關閉 WPS 功能",
+                "定期更換 Wi-Fi 密碼"
+              ]
+            },
+            {
+              "subHeading": "路由器設定",
+              "list": [
+                "更改預設管理員帳密",
+                "停用遠端管理功能（若非必要）",
+                "啟用防火牆",
+                "更新韌體到最新版本",
+                "定期檢查連線設備清單"
+              ]
+            },
+            {
+              "subHeading": "IoT 設備隔離",
+              "list": [
+                "建立獨立的 IoT 網路（Guest Network）",
+                "使用 VLAN 隔離 IoT 設備與主要網路",
+                "限制 IoT 設備互相存取",
+                "阻擋非必要的對外連線"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "設備安全管理",
+          "subSections": [
+            {
+              "subHeading": "購買設備注意",
+              "list": [
+                "選擇知名品牌（持續更新支援）",
+                "檢查是否支援韌體更新",
+                "查看隱私政策",
+                "避免來路不明的便宜設備"
+              ]
+            },
+            {
+              "subHeading": "設定安全",
+              "list": [
+                "立即更改預設密碼",
+                "啟用雙因素認證（2FA）",
+                "定期更新韌體",
+                "關閉不必要的功能",
+                "限制遠端存取"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "帳號與權限管理",
+          "list": [
+            "<strong>強密碼</strong>：每個平台使用不同密碼",
+            "<strong>密碼管理器</strong>：使用 1Password、Bitwarden 等",
+            "<strong>雙因素認證</strong>：務必啟用",
+            "<strong>訪客帳號</strong>：給訪客使用獨立帳號（限定權限）",
+            "<strong>定期檢查</strong>：移除不再使用的授權設備"
+          ]
+        },
+        {
+          "heading": "隱私保護",
+          "subSections": [
+            {
+              "subHeading": "攝影機隱私",
+              "list": [
+                "避免對準隱私區域（臥室、浴室）",
+                "啟用隱私模式（回家時自動關閉）",
+                "使用本地儲存（避免雲端上傳）",
+                "檢查是否有實體遮蔽開關",
+                "定期檢查存取紀錄"
+              ]
+            },
+            {
+              "subHeading": "麥克風控制",
+              "list": [
+                "不需要時按靜音",
+                "避免在智能音箱附近討論敏感話題",
+                "定期刪除語音記錄"
+              ]
+            },
+            {
+              "subHeading": "資料最小化",
+              "list": [
+                "只提供必要的權限",
+                "關閉不必要的資料收集",
+                "定期刪除歷史記錄",
+                "避免綁定過多個人資訊"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "雲端服務安全",
+          "list": [
+            "了解資料儲存位置",
+            "確認是否加密傳輸/儲存",
+            "檢查隱私政策（資料保留期限）",
+            "優先選擇本地處理的服務",
+            "定期備份重要資料"
+          ]
+        },
+        {
+          "heading": "安全檢查清單",
+          "list": [
+            "✓ 所有設備已更改預設密碼",
+            "✓ 路由器使用 WPA3 加密",
+            "✓ IoT 設備使用獨立網路",
+            "✓ 啟用雙因素認證",
+            "✓ 定期更新設備韌體",
+            "✓ 攝影機未對準隱私區域",
+            "✓ 定期檢查連線設備",
+            "✓ 關閉不必要的遠端存取"
+          ]
+        },
+        {
+          "heading": "發現異常時的處理",
+          "list": [
+            "立即更改所有密碼",
+            "中斷可疑設備網路連線",
+            "檢查登入記錄",
+            "重置設備到出廠設定",
+            "通報廠商或資安單位"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "語音助理進階應用",
+      "subtitle": "自訂指令、多用戶識別、例行程序",
+      "sections": [
+        {
+          "heading": "自訂語音指令",
+          "subSections": [
+            {
+              "subHeading": "捷徑/快捷指令（Shortcuts）",
+              "list": [
+                "自訂觸發詞：「我回來了」→ 執行回家模式",
+                "「晚安」→ 關燈+鎖門+啟動監控",
+                "「看電影」→ 調暗燈光+開電視+關窗簾",
+                "「早安」→ 開燈+播報天氣+新聞"
+              ]
+            },
+            {
+              "subHeading": "Alexa Routines",
+              "list": [
+                "語音觸發",
+                "時間排程",
+                "設備狀態觸發",
+                "位置觸發",
+                "多步驟動作串連"
+              ]
+            },
+            {
+              "subHeading": "Google Assistant Routines",
+              "list": [
+                "預設例行程序（早安、晚安、離家、回家）",
+                "自訂例行程序",
+                "Starter（觸發詞）",
+                "Actions（執行動作）"
+              ]
+            },
+            {
+              "subHeading": "Siri 捷徑",
+              "list": [
+                "自動化（Automation）",
+                "捷徑 App 建立複雜流程",
+                "整合第三方 App",
+                "NFC 標籤觸發"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "多用戶識別",
+          "subSections": [
+            {
+              "subHeading": "Voice Match（Google）",
+              "list": [
+                "識別不同家庭成員聲音",
+                "提供個人化回應（行事曆、通勤時間）",
+                "個別音樂偏好",
+                "個別提醒事項"
+              ]
+            },
+            {
+              "subHeading": "Voice Profiles（Alexa）",
+              "list": [
+                "建立家庭成員語音檔案",
+                "個人化購物清單",
+                "個別通話功能"
+              ]
+            },
+            {
+              "subHeading": "HomeKit 個人請求",
+              "list": [
+                "透過 HomePod 識別用戶",
+                "存取個人訊息、行事曆",
+                "需 iPhone 認證"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "例行程序範例",
+          "subSections": [
+            {
+              "subHeading": "早晨例行程序",
+              "content": "<strong>觸發</strong>：「早安」或 7:00 鬧鐘<br><strong>動作</strong>：",
+              "list": [
+                "逐漸提升臥室燈光亮度",
+                "播報天氣預報",
+                "播報今日行程",
+                "播報交通狀況",
+                "播放新聞/音樂",
+                "啟動咖啡機"
+              ]
+            },
+            {
+              "subHeading": "離家例行程序",
+              "content": "<strong>觸發</strong>：「我出門了」或 GPS 離開<br><strong>動作</strong>：",
+              "list": [
+                "關閉所有燈光",
+                "關閉冷氣、電扇",
+                "鎖門",
+                "啟動安全監控",
+                "啟動掃地機器人",
+                "檢查門窗是否關閉（提醒）"
+              ]
+            },
+            {
+              "subHeading": "回家例行程序",
+              "content": "<strong>觸發</strong>：GPS 接近家 或「我到家了」<br><strong>動作</strong>：",
+              "list": [
+                "解鎖門鎖",
+                "開啟玄關燈",
+                "調整溫度至舒適值",
+                "播放歡迎音樂/訊息",
+                "關閉安全監控",
+                "停止掃地機器人"
+              ]
+            },
+            {
+              "subHeading": "睡眠例行程序",
+              "content": "<strong>觸發</strong>：「晚安」或 23:00<br><strong>動作</strong>：",
+              "list": [
+                "關閉公共區域燈光",
+                "臥室燈光調至暖色低亮度",
+                "鎖門",
+                "調整空調至睡眠溫度",
+                "啟動夜間監控模式",
+                "設定明早鬧鐘",
+                "播放白噪音/輕音樂"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "進階應用技巧",
+          "subSections": [
+            {
+              "subHeading": "條件判斷",
+              "list": [
+                "「如果」現在是工作日 → 播報通勤資訊",
+                "「如果」溫度 > 28°C → 開冷氣"
+              ]
+            },
+            {
+              "subHeading": "延遲執行",
+              "list": [
+                "說「晚安」後，等待 30 分鐘 → 關閉臥室燈"
+              ]
+            },
+            {
+              "subHeading": "連續動作",
+              "list": [
+                "開燈 → 等待 2 秒 → 調整亮度 → 等待 5 秒 → 變更顏色"
+              ]
+            },
+            {
+              "subHeading": "通知與提醒",
+              "list": [
+                "「提醒我 30 分鐘後關火」",
+                "「每週一早上 8 點提醒我倒垃圾」",
+                "洗衣機完成時發送通知"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "第三方整合",
+          "list": [
+            "<strong>IFTTT</strong>：If This Then That，跨平台自動化",
+            "<strong>Zapier</strong>：更強大的自動化工具",
+            "<strong>Home Assistant</strong>：完全自訂的語音指令",
+            "<strong>Alexa Skills</strong>：擴充 Alexa 功能",
+            "<strong>Google Actions</strong>：自訂 Google Assistant 行為"
+          ]
+        },
+        {
+          "heading": "語音控制優化",
+          "list": [
+            "為設備取簡短易記的名稱",
+            "使用群組控制（「客廳的燈」）",
+            "避免相似的設備名稱",
+            "善用「所有」關鍵字（「關閉所有燈」）",
+            "測試並調整喚醒詞靈敏度"
+          ]
+        }
+      ]
+    }
+  ]
+}

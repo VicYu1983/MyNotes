@@ -1,0 +1,1748 @@
+{
+  "level": {
+    "id": "advanced",
+    "name": "高階",
+    "emoji": "🔴",
+    "description": "系統設計與開發",
+    "color": "#f44336"
+  },
+  "knowledgePoints": [
+    {
+      "number": "13",
+      "title": "Home Assistant",
+      "subtitle": "安裝、配置、YAML、整合第三方設備",
+      "sections": [
+        {
+          "heading": "什麼是 Home Assistant？",
+          "content": "Home Assistant 是開源的家庭自動化平台，可整合數千種不同品牌的智能設備，提供強大的本地控制與自動化功能。完全免費且注重隱私保護。"
+        },
+        {
+          "heading": "安裝方式",
+          "list": [
+            "<strong>Home Assistant OS</strong>：完整作業系統，推薦方式（Raspberry Pi、NUC）",
+            "<strong>Home Assistant Container</strong>：Docker 容器方式",
+            "<strong>Home Assistant Core</strong>：Python 虛擬環境（進階用戶）",
+            "<strong>Home Assistant Supervised</strong>：有 Supervisor 但在既有 OS 上"
+          ]
+        },
+        {
+          "heading": "基礎配置",
+          "subSections": [
+            {
+              "subHeading": "初次設定",
+              "list": [
+                "建立管理員帳號",
+                "設定位置（日出日落計算）",
+                "選擇單位系統（公制/英制）",
+                "設定時區"
+              ]
+            },
+            {
+              "subHeading": "整合設備",
+              "list": [
+                "自動探索：系統自動尋找可用設備",
+                "手動新增：設定 → 裝置與服務 → 新增整合",
+                "支援協定：Zigbee、Z-Wave、MQTT、REST API 等",
+                "常見品牌：Philips Hue、小米、Tuya、Sonoff"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "YAML 設定檔",
+          "content": "Home Assistant 使用 YAML 格式進行進階配置。",
+          "subSections": [
+            {
+              "subHeading": "主要設定檔",
+              "list": [
+                "<strong>configuration.yaml</strong>：主配置檔",
+                "<strong>automations.yaml</strong>：自動化規則",
+                "<strong>scripts.yaml</strong>：腳本定義",
+                "<strong>scenes.yaml</strong>：場景設定"
+              ]
+            },
+            {
+              "subHeading": "YAML 語法基礎",
+              "list": [
+                "使用縮排表示層級（2 空格）",
+                "冒號後需空格",
+                "列表使用 - 開頭",
+                "字串可用引號或不用",
+                "注意大小寫"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "自訂儀表板",
+          "list": [
+            "<strong>Lovelace UI</strong>：可視化編輯界面",
+            "<strong>卡片類型</strong>：實體卡片、按鈕卡片、圖表卡片、地圖卡片",
+            "<strong>佈局</strong>：格點佈局、垂直/水平堆疊",
+            "<strong>自訂卡片</strong>：HACS 安裝社群卡片",
+            "<strong>主題</strong>：安裝不同視覺主題"
+          ]
+        },
+        {
+          "heading": "自動化範例",
+          "content": "根據日落開燈的自動化：",
+          "list": [
+            "觸發：太陽下降至地平線以下",
+            "條件：檢查是否有人在家",
+            "動作：開啟客廳燈"
+          ]
+        },
+        {
+          "heading": "Add-ons（附加元件）",
+          "list": [
+            "<strong>File Editor</strong>：網頁編輯配置檔",
+            "<strong>Node-RED</strong>：視覺化自動化",
+            "<strong>ESPHome</strong>：自製 ESP 設備",
+            "<strong>Mosquitto MQTT</strong>：MQTT broker",
+            "<strong>Samba Share</strong>：檔案分享",
+            "<strong>DuckDNS</strong>：動態 DNS"
+          ]
+        },
+        {
+          "heading": "進階功能",
+          "list": [
+            "<strong>模板（Template）</strong>：動態計算數值",
+            "<strong>腳本（Script）</strong>：可重複使用的動作序列",
+            "<strong>場景（Scene）</strong>：儲存設備狀態快照",
+            "<strong>通知</strong>：推送訊息到手機",
+            "<strong>藍圖（Blueprint）</strong>：可分享的自動化模板"
+          ]
+        },
+        {
+          "heading": "整合第三方服務",
+          "list": [
+            "<strong>Google Assistant / Alexa</strong>：語音控制",
+            "<strong>IFTTT</strong>：跨平台自動化",
+            "<strong>天氣服務</strong>：氣象資訊",
+            "<strong>行事曆</strong>：Google Calendar、CalDAV",
+            "<strong>媒體播放器</strong>：Spotify、Plex、Kodi"
+          ]
+        },
+        {
+          "heading": "社群資源",
+          "list": [
+            "<strong>HACS</strong>：Home Assistant Community Store（社群商店）",
+            "<strong>論壇</strong>：community.home-assistant.io",
+            "<strong>GitHub</strong>：自訂整合與卡片",
+            "<strong>Discord</strong>：即時社群討論"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "title": "Node-RED 自動化",
+      "subtitle": "視覺化編程、MQTT、複雜邏輯、API整合",
+      "sections": [
+        {
+          "heading": "什麼是 Node-RED？",
+          "content": "Node-RED 是基於流程的視覺化編程工具，使用拖拉方式建立自動化邏輯，特別適合 IoT 應用與複雜的條件判斷。"
+        },
+        {
+          "heading": "基本概念",
+          "list": [
+            "<strong>節點（Node）</strong>：功能單元，執行特定任務",
+            "<strong>流程（Flow）</strong>：連接多個節點的自動化邏輯",
+            "<strong>訊息（Message）</strong>：節點間傳遞的資料物件",
+            "<strong>payload</strong>：訊息的主要內容",
+            "<strong>Context</strong>：儲存變數的空間"
+          ]
+        },
+        {
+          "heading": "常用節點類型",
+          "subSections": [
+            {
+              "subHeading": "輸入節點",
+              "list": [
+                "<strong>inject</strong>：手動觸發或定時觸發",
+                "<strong>mqtt in</strong>：接收 MQTT 訊息",
+                "<strong>http in</strong>：接收 HTTP 請求"
+              ]
+            },
+            {
+              "subHeading": "處理節點",
+              "list": [
+                "<strong>function</strong>：自訂 JavaScript 程式碼",
+                "<strong>change</strong>：修改訊息內容",
+                "<strong>switch</strong>：條件分支",
+                "<strong>template</strong>：格式化輸出"
+              ]
+            },
+            {
+              "subHeading": "輸出節點",
+              "list": [
+                "<strong>debug</strong>：顯示訊息內容（除錯）",
+                "<strong>mqtt out</strong>：發送 MQTT 訊息",
+                "<strong>http response</strong>：回應 HTTP 請求"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "MQTT 通訊協定",
+          "subSections": [
+            {
+              "subHeading": "MQTT 基礎",
+              "list": [
+                "<strong>Broker</strong>：訊息中介者（如 Mosquitto）",
+                "<strong>Topic</strong>：訊息主題（如 home/living-room/light）",
+                "<strong>Publish</strong>：發布訊息",
+                "<strong>Subscribe</strong>：訂閱主題",
+                "<strong>QoS</strong>：訊息品質等級（0, 1, 2）"
+              ]
+            },
+            {
+              "subHeading": "實際應用",
+              "list": [
+                "連接 ESP8266/ESP32 自製設備",
+                "整合 Zigbee2MQTT 設備",
+                "與 Home Assistant 通訊",
+                "設備間互相通訊"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "複雜邏輯設計",
+          "subSections": [
+            {
+              "subHeading": "條件判斷",
+              "list": [
+                "使用 switch 節點進行多條件分支",
+                "function 節點撰寫複雜邏輯",
+                "AND/OR 邏輯組合"
+              ]
+            },
+            {
+              "subHeading": "時間控制",
+              "list": [
+                "inject 節點設定定時執行",
+                "時間範圍判斷（白天/夜晚）",
+                "延遲執行（delay 節點）",
+                "重複觸發防呆機制"
+              ]
+            },
+            {
+              "subHeading": "狀態管理",
+              "list": [
+                "使用 context 儲存變數",
+                "追蹤設備狀態變化",
+                "計數器與累加器",
+                "狀態機實作"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "API 整合",
+          "list": [
+            "<strong>HTTP Request</strong>：呼叫 REST API",
+            "<strong>JSON 解析</strong>：處理 API 回應",
+            "<strong>認證</strong>：Bearer Token、API Key",
+            "<strong>常見整合</strong>：天氣 API、通知服務、智能設備 API",
+            "<strong>Webhook</strong>：接收外部事件"
+          ]
+        },
+        {
+          "heading": "實用流程範例",
+          "subSections": [
+            {
+              "subHeading": "智能通知系統",
+              "list": [
+                "門窗感測器觸發 → 檢查時間 → 判斷是否在家 → 發送通知"
+              ]
+            },
+            {
+              "subHeading": "環境監控",
+              "list": [
+                "溫濕度感測器 → 記錄到資料庫 → 超過閾值發送警報"
+              ]
+            },
+            {
+              "subHeading": "智能燈光",
+              "list": [
+                "移動感測器 → 檢查照度 → 檢查時間 → 調整燈光亮度與色溫"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "除錯技巧",
+          "list": [
+            "善用 debug 節點觀察訊息",
+            "使用 catch 節點捕捉錯誤",
+            "在 function 節點加入 console.log",
+            "檢查 msg.payload 內容",
+            "逐步測試各節點功能"
+          ]
+        },
+        {
+          "heading": "進階技巧",
+          "list": [
+            "<strong>子流程（Subflow）</strong>：封裝可重複使用的邏輯",
+            "<strong>全域變數</strong>：跨流程共享資料",
+            "<strong>檔案操作</strong>：讀寫本地檔案",
+            "<strong>資料庫</strong>：儲存歷史資料",
+            "<strong>Dashboard</strong>：建立網頁控制介面"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "title": "DIY 智能設備",
+      "subtitle": "Arduino、ESP8266/ESP32、Raspberry Pi",
+      "sections": [
+        {
+          "heading": "為什麼要 DIY？",
+          "list": [
+            "<strong>客製化</strong>：完全符合自己需求",
+            "<strong>成本低</strong>：比市售產品便宜許多",
+            "<strong>學習</strong>：深入理解智能家居原理",
+            "<strong>開放性</strong>：不受廠商限制",
+            "<strong>樂趣</strong>：動手做的成就感"
+          ]
+        },
+        {
+          "heading": "Arduino 基礎",
+          "subSections": [
+            {
+              "subHeading": "什麼是 Arduino？",
+              "content": "Arduino 是開源的微控制器開發板，易於學習，適合電子專案入門。"
+            },
+            {
+              "subHeading": "常見型號",
+              "list": [
+                "<strong>Arduino Uno</strong>：最經典入門款",
+                "<strong>Arduino Nano</strong>：小巧版本",
+                "<strong>Arduino Mega</strong>：更多 I/O 接腳"
+              ]
+            },
+            {
+              "subHeading": "基本應用",
+              "list": [
+                "感測器資料讀取",
+                "繼電器控制",
+                "LED 燈條控制",
+                "馬達驅動"
+              ]
+            },
+            {
+              "subHeading": "限制",
+              "list": [
+                "無內建 Wi-Fi（需外接模組）",
+                "記憶體較小",
+                "不適合複雜運算"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "ESP8266/ESP32",
+          "subSections": [
+            {
+              "subHeading": "ESP8266",
+              "list": [
+                "<strong>特色</strong>：內建 Wi-Fi、超低價格（約 $2-5 美元）",
+                "<strong>常見模組</strong>：NodeMCU、Wemos D1 Mini",
+                "<strong>適用</strong>：溫濕度監測、智能開關、燈光控制",
+                "<strong>記憶體</strong>：80KB RAM、4MB Flash（一般）"
+              ]
+            },
+            {
+              "subHeading": "ESP32",
+              "list": [
+                "<strong>特色</strong>：內建 Wi-Fi + 藍牙、雙核心、更多 GPIO",
+                "<strong>性能</strong>：比 ESP8266 強大許多",
+                "<strong>適用</strong>：攝影機、語音控制、複雜專案",
+                "<strong>記憶體</strong>：520KB RAM、4MB+ Flash"
+              ]
+            },
+            {
+              "subHeading": "開發環境",
+              "list": [
+                "<strong>Arduino IDE</strong>：最簡單入門",
+                "<strong>PlatformIO</strong>：專業開發環境",
+                "<strong>ESPHome</strong>：專為智能家居設計（搭配 Home Assistant）",
+                "<strong>MicroPython</strong>：使用 Python 程式設計"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Raspberry Pi 應用",
+          "subSections": [
+            {
+              "subHeading": "什麼是 Raspberry Pi？",
+              "content": "Raspberry Pi 是信用卡大小的單板電腦，功能完整，可執行完整作業系統。"
+            },
+            {
+              "subHeading": "常見型號",
+              "list": [
+                "<strong>Raspberry Pi 4</strong>：最新旗艦款（2-8GB RAM）",
+                "<strong>Raspberry Pi Zero W</strong>：超迷你版（512MB RAM）",
+                "<strong>Raspberry Pi 5</strong>：2023 最新款（更強效能）"
+              ]
+            },
+            {
+              "subHeading": "智能家居應用",
+              "list": [
+                "<strong>Home Assistant 主機</strong>：運行智能家居中樞",
+                "<strong>MQTT Broker</strong>：訊息中介服務",
+                "<strong>攝影機</strong>：MotionEye 監控系統",
+                "<strong>媒體中心</strong>：Kodi、Plex 伺服器",
+                "<strong>NAS</strong>：簡易網路儲存"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "常用感測器",
+          "list": [
+            "<strong>DHT11/DHT22</strong>：溫濕度感測器（便宜好用）",
+            "<strong>BME280</strong>：溫濕度氣壓感測器（更精確）",
+            "<strong>PIR</strong>：人體紅外線感測器",
+            "<strong>超音波</strong>：距離感測（HC-SR04）",
+            "<strong>光敏電阻</strong>：偵測亮度",
+            "<strong>繼電器</strong>：控制高壓電器",
+            "<strong>MQ-2</strong>：煙霧/氣體感測器"
+          ]
+        },
+        {
+          "heading": "DIY 專案範例",
+          "subSections": [
+            {
+              "subHeading": "智能溫濕度計",
+              "list": [
+                "ESP8266 + DHT22",
+                "顯示在網頁",
+                "推送資料到 Home Assistant",
+                "超過閾值發送通知"
+              ]
+            },
+            {
+              "subHeading": "智能插座",
+              "list": [
+                "ESP8266 + 繼電器",
+                "遠端開關控制",
+                "用電監測（加 PZEM-004T）",
+                "排程控制"
+              ]
+            },
+            {
+              "subHeading": "智能門鈴",
+              "list": [
+                "ESP32-CAM",
+                "按鈕觸發拍照",
+                "推送照片到手機",
+                "雙向語音通話"
+              ]
+            },
+            {
+              "subHeading": "智能LED燈條",
+              "list": [
+                "ESP8266 + WS2812B LED",
+                "調整顏色與亮度",
+                "音樂律動效果",
+                "整合 Home Assistant"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "連接方式",
+          "list": [
+            "<strong>MQTT</strong>：最常用的 IoT 通訊協定",
+            "<strong>HTTP/REST API</strong>：簡單的網頁請求",
+            "<strong>WebSocket</strong>：雙向即時通訊",
+            "<strong>ESPHome</strong>：與 Home Assistant 無縫整合"
+          ]
+        },
+        {
+          "heading": "學習資源",
+          "list": [
+            "<strong>Arduino 官網</strong>：tutorials.arduino.cc",
+            "<strong>ESP8266/ESP32</strong>：randomnerdtutorials.com",
+            "<strong>Raspberry Pi</strong>：projects.raspberrypi.org",
+            "<strong>ESPHome</strong>：esphome.io",
+            "<strong>YouTube</strong>：Andreas Spiess、Great Scott!"
+          ]
+        },
+        {
+          "heading": "注意事項",
+          "list": [
+            "<strong>電源供應</strong>：確保穩定的電源（5V 1-2A）",
+            "<strong>電氣安全</strong>：處理高壓電務必小心，建議使用低壓",
+            "<strong>防護</strong>：加外殼保護，避免短路",
+            "<strong>測試</strong>：先在麵包板測試，確認無誤再焊接",
+            "<strong>備份</strong>：保存程式碼與電路圖"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "16",
+      "title": "網路架構規劃",
+      "subtitle": "VLAN隔離、IoT網路、防火牆、本地伺服器",
+      "sections": [
+        {
+          "heading": "為什麼需要規劃網路架構？",
+          "list": [
+            "<strong>安全性</strong>：隔離 IoT 設備與重要設備",
+            "<strong>穩定性</strong>：避免設備互相干擾",
+            "<strong>效能</strong>：優化頻寬分配",
+            "<strong>管理</strong>：集中管理設備連線",
+            "<strong>隱私</strong>：防止設備擅自連外傳資料"
+          ]
+        },
+        {
+          "heading": "VLAN（虛擬區域網路）",
+          "subSections": [
+            {
+              "subHeading": "什麼是 VLAN？",
+              "content": "VLAN 將一個實體網路劃分成多個邏輯網路，不同 VLAN 之間預設無法直接通訊，提升安全性。"
+            },
+            {
+              "subHeading": "建議的 VLAN 劃分",
+              "list": [
+                "<strong>VLAN 10</strong>：管理網路（路由器、交換機管理介面）",
+                "<strong>VLAN 20</strong>：信任設備（電腦、手機、平板）",
+                "<strong>VLAN 30</strong>：IoT 設備（智能家居設備）",
+                "<strong>VLAN 40</strong>：訪客網路（訪客使用）",
+                "<strong>VLAN 50</strong>：伺服器（Home Assistant、NAS）"
+              ]
+            },
+            {
+              "subHeading": "VLAN 設定要點",
+              "list": [
+                "需要支援 VLAN 的交換機（Managed Switch）",
+                "設定 VLAN Tag",
+                "配置 Trunk Port（多個 VLAN 通過）",
+                "配置 Access Port（單一 VLAN）"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "IoT 專用網路",
+          "subSections": [
+            {
+              "subHeading": "設計原則",
+              "list": [
+                "<strong>隔離</strong>：與主要網路分開",
+                "<strong>限制外連</strong>：阻擋不必要的對外連線",
+                "<strong>允許內連</strong>：可連接 Home Assistant 等中樞",
+                "<strong>無網際網路</strong>：部分設備完全不給網路（如攝影機）"
+              ]
+            },
+            {
+              "subHeading": "實作方式",
+              "list": [
+                "<strong>獨立 SSID</strong>：建立專門給 IoT 的 Wi-Fi",
+                "<strong>獨立子網路</strong>：如 192.168.30.x",
+                "<strong>防火牆規則</strong>：限制通訊",
+                "<strong>DHCP 保留</strong>：固定 IP 便於管理"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "路由器與防火牆設定",
+          "subSections": [
+            {
+              "subHeading": "推薦路由器",
+              "list": [
+                "<strong>pfSense / OPNsense</strong>：開源防火牆（進階用戶）",
+                "<strong>UniFi Dream Machine</strong>：Ubiquiti 整合方案",
+                "<strong>TP-Link Omada</strong>：企業級但價格親民",
+                "<strong>MikroTik</strong>：功能強大但學習曲線陡"
+              ]
+            },
+            {
+              "subHeading": "防火牆規則範例",
+              "list": [
+                "<strong>允許</strong>：IoT VLAN → Home Assistant（port 8123）",
+                "<strong>允許</strong>：IoT VLAN → MQTT Broker（port 1883）",
+                "<strong>阻擋</strong>：IoT VLAN → 信任設備 VLAN",
+                "<strong>阻擋</strong>：IoT VLAN → 網際網路（選擇性）",
+                "<strong>允許</strong>：信任設備 → 所有 VLAN（管理用）"
+              ]
+            },
+            {
+              "subHeading": "進階設定",
+              "list": [
+                "<strong>Port Forwarding</strong>：外網存取（不建議，改用 VPN）",
+                "<strong>mDNS Repeater</strong>：跨 VLAN 裝置探索",
+                "<strong>QoS</strong>：優先處理重要流量",
+                "<strong>DNS 過濾</strong>：阻擋廣告與追蹤"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "本地伺服器建置",
+          "subSections": [
+            {
+              "subHeading": "硬體選擇",
+              "list": [
+                "<strong>Raspberry Pi 4</strong>：入門首選（2-4GB）",
+                "<strong>Intel NUC</strong>：效能更好（8-32GB）",
+                "<strong>Synology NAS</strong>：整合儲存與運算",
+                "<strong>舊電腦</strong>：成本最低（注意功耗）"
+              ]
+            },
+            {
+              "subHeading": "虛擬化方案",
+              "list": [
+                "<strong>Proxmox VE</strong>：開源虛擬化平台",
+                "<strong>Docker</strong>：容器化應用",
+                "<strong>Virtual Machine</strong>：完整虛擬機",
+                "<strong>LXC</strong>：輕量級容器"
+              ]
+            },
+            {
+              "subHeading": "伺服器服務",
+              "list": [
+                "<strong>Home Assistant</strong>：智能家居中樞",
+                "<strong>Mosquitto</strong>：MQTT Broker",
+                "<strong>InfluxDB</strong>：時序資料庫",
+                "<strong>Grafana</strong>：資料視覺化",
+                "<strong>Pi-hole</strong>：DNS 廣告過濾",
+                "<strong>WireGuard / OpenVPN</strong>：VPN 伺服器"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "網路監控",
+          "list": [
+            "<strong>PRTG</strong>：網路監控軟體（免費版 100 感測器）",
+            "<strong>Grafana + Prometheus</strong>：開源監控方案",
+            "<strong>Uptime Kuma</strong>：服務運作監控",
+            "<strong>Router 內建</strong>：查看連線設備與流量"
+          ]
+        },
+        {
+          "heading": "無線網路優化",
+          "subSections": [
+            {
+              "subHeading": "Wi-Fi 規劃",
+              "list": [
+                "<strong>2.4GHz</strong>：給 IoT 設備用（穿透力好、範圍廣）",
+                "<strong>5GHz</strong>：給手機電腦用（速度快、干擾少）",
+                "<strong>頻道選擇</strong>：避開干擾（2.4GHz 用 1, 6, 11）",
+                "<strong>功率調整</strong>：避免訊號重疊"
+              ]
+            },
+            {
+              "subHeading": "Mesh Wi-Fi",
+              "list": [
+                "適合大坪數或多樓層",
+                "無縫漫遊",
+                "統一管理",
+                "推薦品牌：Ubiquiti、TP-Link Deco、Google Nest WiFi"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "UPS（不斷電系統）",
+          "list": [
+            "<strong>保護設備</strong>：突然斷電時保護伺服器",
+            "<strong>平穩關機</strong>：透過 USB 通知系統關機",
+            "<strong>容量選擇</strong>：至少撐 10-30 分鐘",
+            "<strong>推薦品牌</strong>：APC、CyberPower"
+          ]
+        },
+        {
+          "heading": "遠端存取",
+          "subSections": [
+            {
+              "subHeading": "安全方式（推薦）",
+              "list": [
+                "<strong>VPN</strong>：WireGuard 或 OpenVPN（最安全）",
+                "<strong>Cloudflare Tunnel</strong>：免開 Port（零信任架構）",
+                "<strong>Tailscale</strong>：超簡單的 P2P VPN",
+                "<strong>Nabu Casa</strong>：Home Assistant 官方付費服務"
+              ]
+            },
+            {
+              "subHeading": "避免的方式",
+              "list": [
+                "❌ 直接開 Port Forwarding",
+                "❌ 使用弱密碼",
+                "❌ 不更新軟體",
+                "❌ 暴露管理介面"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "網路安全檢查清單",
+          "list": [
+            "✓ 更改路由器預設密碼",
+            "✓ 停用 WPS（Wi-Fi Protected Setup）",
+            "✓ 使用 WPA3 或至少 WPA2",
+            "✓ 停用 UPnP（除非必要）",
+            "✓ 定期更新韌體",
+            "✓ 檢視連線設備清單",
+            "✓ 設定防火牆規則",
+            "✓ 備份路由器設定"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "17",
+      "title": "進階自動化邏輯",
+      "subtitle": "機器學習、多條件判斷、狀態機、容錯機制",
+      "sections": [
+        {
+          "heading": "複雜條件判斷",
+          "subSections": [
+            {
+              "subHeading": "多條件組合",
+              "list": [
+                "<strong>AND 邏輯</strong>：所有條件都需滿足",
+                "<strong>OR 邏輯</strong>：任一條件滿足即可",
+                "<strong>NOT 邏輯</strong>：條件不成立時觸發",
+                "<strong>巢狀邏輯</strong>：(A AND B) OR (C AND D)"
+              ]
+            },
+            {
+              "subHeading": "時間條件",
+              "list": [
+                "特定時間範圍（如晚上 10 點到早上 7 點）",
+                "日出/日落相對時間（如日落前 30 分鐘）",
+                "星期幾判斷（工作日 vs 週末）",
+                "節假日判斷"
+              ]
+            },
+            {
+              "subHeading": "狀態條件",
+              "list": [
+                "設備狀態（開/關、上鎖/解鎖）",
+                "數值比較（溫度 > 28°C、濕度 < 40%）",
+                "持續時間（狀態維持超過 X 分鐘）",
+                "變化檢測（從關到開、從開到關）"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "狀態機設計",
+          "subSections": [
+            {
+              "subHeading": "什麼是狀態機？",
+              "content": "狀態機（State Machine）是描述系統在不同狀態間轉換的模型，每個狀態有特定行為，根據事件轉換到其他狀態。"
+            },
+            {
+              "subHeading": "智能家居狀態機範例",
+              "list": [
+                "<strong>家庭模式</strong>：在家、外出、睡眠、度假、派對",
+                "<strong>安全模式</strong>：解除、警戒、觸發警報",
+                "<strong>燈光模式</strong>：明亮、柔和、夜燈、關閉",
+                "<strong>空調模式</strong>：舒適、節能、強力、關閉"
+              ]
+            },
+            {
+              "subHeading": "狀態轉換觸發",
+              "list": [
+                "手動切換（按鈕、語音指令）",
+                "時間觸發（晚上 10 點自動進入睡眠模式）",
+                "事件觸發（偵測到人離家進入外出模式）",
+                "感測器觸發（溫度過高切換空調模式）"
+              ]
+            },
+            {
+              "subHeading": "實作方式",
+              "list": [
+                "<strong>Home Assistant</strong>：使用 input_select 建立狀態",
+                "<strong>Node-RED</strong>：使用 context 儲存當前狀態",
+                "<strong>腳本</strong>：根據狀態執行不同動作"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "機器學習應用",
+          "subSections": [
+            {
+              "subHeading": "學習使用習慣",
+              "list": [
+                "<strong>作息模式</strong>：學習起床/睡覺時間",
+                "<strong>偏好設定</strong>：學習喜歡的溫度、亮度",
+                "<strong>異常檢測</strong>：偵測不尋常的行為模式",
+                "<strong>預測</strong>：預測何時會到家"
+              ]
+            },
+            {
+              "subHeading": "Home Assistant 機器學習",
+              "list": [
+                "<strong>Bayesian Sensor</strong>：貝氏推論（在家機率計算）",
+                "<strong>TensorFlow</strong>：影像辨識（人臉、物體）",
+                "<strong>Presence Detection</strong>：學習在家模式",
+                "<strong>Energy Prediction</strong>：預測用電量"
+              ]
+            },
+            {
+              "subHeading": "簡單 ML 範例",
+              "list": [
+                "根據過去 30 天資料預測明天用電量",
+                "根據天氣與歷史資料預測需要開冷氣的機率",
+                "根據時間與動態學習最佳燈光亮度",
+                "根據使用模式預測何時會回家"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "錯誤處理與容錯機制",
+          "subSections": [
+            {
+              "subHeading": "常見錯誤",
+              "list": [
+                "設備無回應（離線、故障）",
+                "網路中斷",
+                "感測器資料異常",
+                "自動化衝突"
+              ]
+            },
+            {
+              "subHeading": "容錯策略",
+              "list": [
+                "<strong>重試機制</strong>：失敗後自動重試 2-3 次",
+                "<strong>逾時處理</strong>：設定等待時間上限",
+                "<strong>備援方案</strong>：主要方法失敗時使用備用方法",
+                "<strong>通知</strong>：錯誤時發送通知給管理員",
+                "<strong>狀態檢查</strong>：執行前確認設備在線",
+                "<strong>預設安全</strong>：錯誤時回到安全狀態"
+              ]
+            },
+            {
+              "subHeading": "實作範例",
+              "list": [
+                "關燈前檢查燈是否在線，不在線則跳過",
+                "發送通知失敗時使用另一個通知服務",
+                "自動化執行失敗時記錄到日誌並通知",
+                "網路中斷時切換到本地控制模式"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "進階自動化技巧",
+          "subSections": [
+            {
+              "subHeading": "延遲執行",
+              "list": [
+                "關燈前等待 2 分鐘（防止誤觸）",
+                "門開啟後等待 30 秒未關閉才警報",
+                "偵測到人後延遲開燈（避免短暫經過）"
+              ]
+            },
+            {
+              "subHeading": "限速（Rate Limiting）",
+              "list": [
+                "同一事件 5 分鐘內只通知一次",
+                "防止感測器誤觸發導致頻繁執行",
+                "限制開關次數（保護設備壽命）"
+              ]
+            },
+            {
+              "subHeading": "條件連鎖",
+              "list": [
+                "A 觸發後檢查 B，B 成立後檢查 C",
+                "多層次判斷避免誤操作",
+                "依序確認多個條件"
+              ]
+            },
+            {
+              "subHeading": "場景堆疊",
+              "list": [
+                "記住當前狀態，臨時改變後恢復",
+                "電影模式 → 暫停 → 恢復電影模式",
+                "保存燈光狀態 → 閃爍警報 → 恢復原狀態"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "自動化測試",
+          "list": [
+            "<strong>單元測試</strong>：逐一測試各個條件",
+            "<strong>情境測試</strong>：模擬實際使用情境",
+            "<strong>壓力測試</strong>：測試系統負載極限",
+            "<strong>日誌分析</strong>：檢查執行記錄",
+            "<strong>除錯模式</strong>：詳細輸出執行過程"
+          ]
+        },
+        {
+          "heading": "效能優化",
+          "list": [
+            "<strong>減少輪詢</strong>：使用事件驅動取代定時檢查",
+            "<strong>批次處理</strong>：合併多個動作一次執行",
+            "<strong>條件前置</strong>：先檢查簡單條件再檢查複雜條件",
+            "<strong>快取資料</strong>：避免重複查詢相同資料",
+            "<strong>非同步執行</strong>：不阻塞其他自動化"
+          ]
+        },
+        {
+          "heading": "文件化與維護",
+          "list": [
+            "<strong>命名規範</strong>：清楚描述自動化用途",
+            "<strong>註解說明</strong>：記錄邏輯與原因",
+            "<strong>版本控制</strong>：使用 Git 管理設定檔",
+            "<strong>定期檢查</strong>：確認自動化仍正常運作",
+            "<strong>除錯資訊</strong>：記錄關鍵步驟供排查"
+          ]
+        },
+        {
+          "heading": "複雜自動化範例",
+          "subSections": [
+            {
+              "subHeading": "智能回家模式",
+              "list": [
+                "GPS 偵測距離家 5 公里 → 啟動回家準備",
+                "開啟空調預冷/預熱",
+                "檢查天氣，下雨則預約掃地機器人延後",
+                "進家門 → 根據時間開相對應燈光",
+                "播放歡迎訊息",
+                "解除安全警戒"
+              ]
+            },
+            {
+              "subHeading": "智能睡眠模式",
+              "list": [
+                "晚上 10 點後手機充電 → 觸發睡眠準備",
+                "逐漸調暗燈光（10 分鐘）",
+                "啟動空氣清淨機",
+                "設定空調舒適溫度",
+                "關閉不必要設備（電視、音響）",
+                "啟動夜間安全警戒",
+                "早晨日出後逐漸調亮燈光（模擬自然甦醒）"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "18",
+      "title": "資料分析與視覺化",
+      "subtitle": "InfluxDB、Grafana、歷史資料、趨勢預測",
+      "sections": [
+        {
+          "heading": "為什麼需要資料分析？",
+          "list": [
+            "<strong>了解使用模式</strong>：分析作息與習慣",
+            "<strong>優化能源</strong>：找出耗電設備與時段",
+            "<strong>預測維護</strong>：提早發現設備異常",
+            "<strong>改善舒適</strong>：分析環境資料找最佳設定",
+            "<strong>成本分析</strong>：計算智能化節省的費用"
+          ]
+        },
+        {
+          "heading": "InfluxDB 時序資料庫",
+          "subSections": [
+            {
+              "subHeading": "什麼是 InfluxDB？",
+              "content": "InfluxDB 是專為時間序列資料設計的資料庫，高效處理大量帶時間戳的資料點，如感測器讀數、設備狀態等。"
+            },
+            {
+              "subHeading": "核心概念",
+              "list": [
+                "<strong>Measurement</strong>：類似資料表（如 temperature、power）",
+                "<strong>Tag</strong>：索引標籤（如 location=living_room）",
+                "<strong>Field</strong>：實際數值（如 value=25.3）",
+                "<strong>Timestamp</strong>：時間戳記（奈秒精度）"
+              ]
+            },
+            {
+              "subHeading": "與 Home Assistant 整合",
+              "list": [
+                "安裝 InfluxDB Add-on",
+                "設定 configuration.yaml",
+                "選擇要記錄的實體",
+                "設定保留期限（避免資料庫過大）"
+              ]
+            },
+            {
+              "subHeading": "查詢語言（InfluxQL）",
+              "list": [
+                "<strong>SELECT</strong>：選擇資料欄位",
+                "<strong>FROM</strong>：指定 measurement",
+                "<strong>WHERE</strong>：篩選條件",
+                "<strong>GROUP BY</strong>：分組聚合",
+                "<strong>函數</strong>：MEAN(), MAX(), MIN(), SUM()"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Grafana 視覺化",
+          "subSections": [
+            {
+              "subHeading": "什麼是 Grafana？",
+              "content": "Grafana 是開源的資料視覺化平台，可建立漂亮的儀表板，支援多種資料來源（InfluxDB、Prometheus、MySQL 等）。"
+            },
+            {
+              "subHeading": "安裝與設定",
+              "list": [
+                "Home Assistant Supervisor → Add-ons → 安裝 Grafana",
+                "設定資料來源（InfluxDB）",
+                "建立第一個儀表板",
+                "加入面板（Panel）"
+              ]
+            },
+            {
+              "subHeading": "常用圖表類型",
+              "list": [
+                "<strong>時間序列圖</strong>：顯示數值隨時間變化（溫度、濕度）",
+                "<strong>量表</strong>：顯示當前數值（Gauge）",
+                "<strong>統計卡片</strong>：顯示單一數值（Stat）",
+                "<strong>長條圖</strong>：比較不同項目（用電量）",
+                "<strong>圓餅圖</strong>：顯示比例（各設備耗電佔比）",
+                "<strong>熱圖</strong>：顯示密度分佈（Heatmap）",
+                "<strong>表格</strong>：詳細資料列表"
+              ]
+            },
+            {
+              "subHeading": "儀表板設計技巧",
+              "list": [
+                "用顏色區分狀態（綠色正常、黃色警告、紅色異常）",
+                "設定閾值（Threshold）視覺化警示",
+                "使用變數（Variable）切換顯示內容",
+                "排版整齊，相關資訊放一起",
+                "加入說明文字幫助理解"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "實用儀表板範例",
+          "subSections": [
+            {
+              "subHeading": "環境監測儀表板",
+              "list": [
+                "各房間溫度曲線圖（24 小時）",
+                "濕度量表（當前值）",
+                "空氣品質指數（PM2.5、CO2）",
+                "舒適度評分（溫濕度綜合）",
+                "開窗建議（室內外溫差）"
+              ]
+            },
+            {
+              "subHeading": "能源監控儀表板",
+              "list": [
+                "即時功率（W）",
+                "今日/本月累計用電（kWh）",
+                "各設備用電佔比（圓餅圖）",
+                "電費估算",
+                "尖峰/離峰用電比較",
+                "與前期比較（節省多少）"
+              ]
+            },
+            {
+              "subHeading": "安全監控儀表板",
+              "list": [
+                "門窗狀態總覽",
+                "最近進出記錄",
+                "移動偵測觸發次數",
+                "攝影機快照",
+                "異常事件清單",
+                "警報觸發歷史"
+              ]
+            },
+            {
+              "subHeading": "系統狀態儀表板",
+              "list": [
+                "伺服器 CPU、記憶體使用率",
+                "磁碟空間",
+                "網路流量",
+                "設備在線狀態",
+                "自動化執行次數",
+                "錯誤日誌數量"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "歷史資料分析",
+          "subSections": [
+            {
+              "subHeading": "長期趨勢分析",
+              "list": [
+                "季節性變化（夏天vs冬天用電）",
+                "作息規律（幾點起床、幾點睡覺）",
+                "設備使用頻率",
+                "環境參數變化"
+              ]
+            },
+            {
+              "subHeading": "關聯性分析",
+              "list": [
+                "溫度與空調用電關係",
+                "天氣與燈光使用關係",
+                "時間與設備使用關係",
+                "人在家與用電關係"
+              ]
+            },
+            {
+              "subHeading": "異常檢測",
+              "list": [
+                "用電突然增加（設備故障？）",
+                "溫度異常變化",
+                "設備離線時間過長",
+                "自動化執行失敗率增加"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "趨勢預測",
+          "subSections": [
+            {
+              "subHeading": "簡單預測方法",
+              "list": [
+                "<strong>移動平均</strong>：過去 7 天平均預測今天",
+                "<strong>線性回歸</strong>：根據趨勢預測未來",
+                "<strong>同期比較</strong>：去年同期資料參考"
+              ]
+            },
+            {
+              "subHeading": "進階預測",
+              "list": [
+                "<strong>ARIMA 模型</strong>：時間序列預測",
+                "<strong>Prophet</strong>：Facebook 開源預測工具",
+                "<strong>機器學習</strong>：考慮多變數影響",
+                "<strong>深度學習</strong>：LSTM 神經網路"
+              ]
+            },
+            {
+              "subHeading": "預測應用",
+              "list": [
+                "預測明天用電量",
+                "預測空調需求（根據天氣預報）",
+                "預測設備壽命（根據使用時數）",
+                "預測電費帳單"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "報表與通知",
+          "list": [
+            "<strong>每日摘要</strong>：早晨發送昨日統計（用電、溫度、異常事件）",
+            "<strong>每週報告</strong>：本週與上週比較",
+            "<strong>每月帳單</strong>：電費預估與節省金額",
+            "<strong>即時警報</strong>：超過閾值立即通知（溫度過高、用電異常）",
+            "<strong>PDF 報表</strong>：月底生成詳細報表"
+          ]
+        },
+        {
+          "heading": "資料保留策略",
+          "list": [
+            "<strong>原始資料</strong>：保留 7 天（高精度）",
+            "<strong>5 分鐘平均</strong>：保留 30 天",
+            "<strong>1 小時平均</strong>：保留 1 年",
+            "<strong>每日統計</strong>：永久保留",
+            "<strong>定期備份</strong>：匯出重要資料",
+            "<strong>自動清理</strong>：刪除過期資料"
+          ]
+        },
+        {
+          "heading": "隱私與資料安全",
+          "list": [
+            "<strong>本地儲存</strong>：資料不上傳雲端",
+            "<strong>加密</strong>：敏感資料加密儲存",
+            "<strong>存取控制</strong>：設定密碼與權限",
+            "<strong>資料匿名化</strong>：分享時移除個人資訊",
+            "<strong>定期備份</strong>：防止資料遺失"
+          ]
+        },
+        {
+          "heading": "工具與資源",
+          "list": [
+            "<strong>InfluxDB</strong>：influxdata.com",
+            "<strong>Grafana</strong>：grafana.com",
+            "<strong>Jupyter Notebook</strong>：進階資料分析",
+            "<strong>Python + Pandas</strong>：資料處理",
+            "<strong>R 語言</strong>：統計分析",
+            "<strong>Power BI / Tableau</strong>：商業智慧工具"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "19",
+      "title": "智能家居整合專案",
+      "subtitle": "全屋規劃、預算選型、施工維護",
+      "sections": [
+        {
+          "heading": "專案規劃階段",
+          "subSections": [
+            {
+              "subHeading": "需求分析",
+              "list": [
+                "<strong>使用者分析</strong>：家庭成員人數、年齡、生活習慣",
+                "<strong>空間分析</strong>：坪數、格局、房間數量",
+                "<strong>痛點分析</strong>：目前生活中的不便之處",
+                "<strong>預算評估</strong>：可投入的資金與時程",
+                "<strong>技術能力</strong>：是否有技術背景、願意花時間學習程度"
+              ]
+            },
+            {
+              "subHeading": "功能優先順序",
+              "list": [
+                "<strong>高優先</strong>：安全（門鎖、監控）、燈光控制、溫度控制",
+                "<strong>中優先</strong>：窗簾、掃地機器人、空氣品質",
+                "<strong>低優先</strong>：音樂系統、情境模式、進階自動化",
+                "<strong>可選</strong>：語音控制、能源監控、DIY 設備"
+              ]
+            },
+            {
+              "subHeading": "系統架構選擇",
+              "list": [
+                "<strong>雲端方案</strong>：簡單但依賴網路（小米、Tuya）",
+                "<strong>本地方案</strong>：複雜但隱私好（Home Assistant）",
+                "<strong>混合方案</strong>：雲端設備 + 本地中樞（推薦）"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "預算與設備選型",
+          "subSections": [
+            {
+              "subHeading": "入門級（3-5 萬台幣）",
+              "list": [
+                "<strong>中樞</strong>：Raspberry Pi 4（約 $3000）",
+                "<strong>燈光</strong>：智能燈泡 5-10 顆（約 $5000-8000）",
+                "<strong>插座</strong>：智能插座 3-5 個（約 $2000-3000）",
+                "<strong>感測器</strong>：溫濕度、門窗、人體感測器（約 $3000）",
+                "<strong>語音助理</strong>：小米音箱或 Echo Dot（約 $1000-2000）",
+                "<strong>其他</strong>：線材、收納、備品（約 $2000）"
+              ]
+            },
+            {
+              "subHeading": "中階級（10-20 萬台幣）",
+              "list": [
+                "<strong>中樞</strong>：Intel NUC 或 Synology NAS（約 $15000-25000）",
+                "<strong>燈光</strong>：Philips Hue 全套（約 $20000-30000）",
+                "<strong>開關</strong>：智能開關取代傳統開關（約 $10000-15000）",
+                "<strong>窗簾</strong>：電動窗簾軌道（約 $15000-25000）",
+                "<strong>空調</strong>：智能空調控制器（約 $3000-5000）",
+                "<strong>門鎖</strong>：智能門鎖（約 $8000-15000）",
+                "<strong>攝影機</strong>：2-4 支網路攝影機（約 $10000-20000）",
+                "<strong>音響</strong>：多房間音響系統（約 $15000-30000）",
+                "<strong>網路</strong>：Mesh Wi-Fi 系統（約 $8000-15000）"
+              ]
+            },
+            {
+              "subHeading": "高階級（50 萬以上）",
+              "list": [
+                "<strong>全屋智能開關</strong>：KNX 或 Loxone 系統",
+                "<strong>中控系統</strong>：Control4、Crestron 專業系統",
+                "<strong>全屋音響</strong>：Sonos 或 B&W 多房間系統",
+                "<strong>智能窗簾</strong>：Somfy 電動系統全屋",
+                "<strong>安全系統</strong>：專業監控與警報系統",
+                "<strong>環境控制</strong>：新風系統、全熱交換器",
+                "<strong>能源管理</strong>：太陽能板、儲能系統",
+                "<strong>專業施工</strong>：包含設計、施工、調試"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "設備品牌選擇建議",
+          "subSections": [
+            {
+              "subHeading": "平價選擇",
+              "list": [
+                "<strong>小米</strong>：生態完整、價格親民、中文界面",
+                "<strong>Tuya</strong>：品牌多選擇多、價格便宜",
+                "<strong>TP-Link</strong>：穩定可靠、性價比高"
+              ]
+            },
+            {
+              "subHeading": "品質選擇",
+              "list": [
+                "<strong>Philips Hue</strong>：燈光系統首選",
+                "<strong>Aqara</strong>：小米生態高階版，支援 HomeKit",
+                "<strong>Sonoff</strong>：開源友善、DIY 首選",
+                "<strong>Shelly</strong>：體積小、功能強大"
+              ]
+            },
+            {
+              "subHeading": "專業選擇",
+              "list": [
+                "<strong>Ubiquiti</strong>：網路設備專業級",
+                "<strong>Lutron</strong>：燈光控制專業品牌",
+                "<strong>Control4</strong>：全屋智能專業系統",
+                "<strong>Yale / August</strong>：智能門鎖"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "施工注意事項",
+          "subSections": [
+            {
+              "subHeading": "新屋裝潢階段",
+              "list": [
+                "<strong>預留線路</strong>：網路線、電源線、控制線",
+                "<strong>中性線</strong>：確保開關位置有中性線（智能開關需要）",
+                "<strong>電箱規劃</strong>：預留空間給智能斷路器",
+                "<strong>面板選擇</strong>：使用標準 86 型面板方便日後更換",
+                "<strong>天花板</strong>：預留感測器、喇叭位置",
+                "<strong>窗簾盒</strong>：預留電動窗簾軌道空間與電源"
+              ]
+            },
+            {
+              "subHeading": "既有房屋改裝",
+              "list": [
+                "<strong>評估配線</strong>：檢查是否有中性線",
+                "<strong>無線優先</strong>：減少破壞，使用電池或 USB 供電設備",
+                "<strong>智能插座</strong>：不動線路，插座控制電器",
+                "<strong>智能燈泡</strong>：不換開關，直接換燈泡",
+                "<strong>黏貼式開關</strong>：不破壞牆面，使用無線開關"
+              ]
+            },
+            {
+              "subHeading": "網路布建",
+              "list": [
+                "<strong>有線優先</strong>：主要設備走網路線（NAS、AP、攝影機）",
+                "<strong>Wi-Fi 覆蓋</strong>：確保全屋 2.4GHz 訊號良好",
+                "<strong>機櫃規劃</strong>：集中管理網路設備",
+                "<strong>UPS</strong>：保護重要設備（路由器、NAS、主機）",
+                "<strong>弱電箱</strong>：整理線材，預留散熱空間"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "安裝順序建議",
+          "list": [
+            "<strong>1. 網路基礎</strong>：路由器、交換機、Wi-Fi AP",
+            "<strong>2. 中樞系統</strong>：Home Assistant、NAS",
+            "<strong>3. 感測器</strong>：溫濕度、門窗、移動感測器",
+            "<strong>4. 燈光</strong>：智能燈泡或開關",
+            "<strong>5. 插座與開關</strong>：智能插座、牆壁開關",
+            "<strong>6. 大型設備</strong>：窗簾、門鎖、空調控制",
+            "<strong>7. 進階功能</strong>：攝影機、音響、顯示螢幕",
+            "<strong>8. 自動化設定</strong>：設定場景與自動化",
+            "<strong>9. 測試調整</strong>：實際使用並調整",
+            "<strong>10. 家人訓練</strong>：教導家人使用方式"
+          ]
+        },
+        {
+          "heading": "測試與驗收",
+          "list": [
+            "<strong>單一設備</strong>：逐一測試每個設備功能",
+            "<strong>場景測試</strong>：測試各種情境模式",
+            "<strong>自動化測試</strong>：確認自動化正確觸發",
+            "<strong>語音控制</strong>：測試語音指令",
+            "<strong>遠端控制</strong>：測試外網存取",
+            "<strong>異常處理</strong>：測試斷網、斷電後恢復",
+            "<strong>家人試用</strong>：確認操作直覺易用"
+          ]
+        },
+        {
+          "heading": "系統維護",
+          "subSections": [
+            {
+              "subHeading": "定期維護（每月）",
+              "list": [
+                "檢查設備電池電量",
+                "清理感測器灰塵",
+                "檢視錯誤日誌",
+                "測試攝影機與門鎖",
+                "備份設定檔"
+              ]
+            },
+            {
+              "subHeading": "軟體更新（每季）",
+              "list": [
+                "Home Assistant 更新",
+                "路由器韌體更新",
+                "設備韌體更新",
+                "檢查整合是否失效",
+                "測試備份還原"
+              ]
+            },
+            {
+              "subHeading": "年度檢查",
+              "list": [
+                "檢視全年資料分析",
+                "評估系統改善空間",
+                "汰換老舊設備",
+                "擴充新功能",
+                "更新文件與家人訓練"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "升級擴充",
+          "list": [
+            "<strong>漸進式升級</strong>：不要一次全換，逐步升級",
+            "<strong>相容性</strong>：確認新設備與現有系統相容",
+            "<strong>測試環境</strong>：先測試再正式部署",
+            "<strong>備份先行</strong>：升級前完整備份",
+            "<strong>回退計畫</strong>：準備降版方案"
+          ]
+        },
+        {
+          "heading": "常見問題與解決",
+          "subSections": [
+            {
+              "subHeading": "設備離線",
+              "list": [
+                "檢查電源與網路",
+                "重啟設備",
+                "檢查 Wi-Fi 訊號",
+                "重新配對"
+              ]
+            },
+            {
+              "subHeading": "自動化失效",
+              "list": [
+                "檢查觸發條件",
+                "查看執行日誌",
+                "測試個別動作",
+                "檢查設備狀態"
+              ]
+            },
+            {
+              "subHeading": "語音控制失敗",
+              "list": [
+                "確認設備已連結",
+                "重新探索設備",
+                "檢查名稱是否清楚",
+                "測試手動控制是否正常"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "家人接受度提升",
+          "list": [
+            "<strong>簡化操作</strong>：保留傳統開關功能",
+            "<strong>漸進導入</strong>：從簡單功能開始",
+            "<strong>明顯好處</strong>：讓家人感受便利性",
+            "<strong>培訓說明</strong>：耐心教導使用方式",
+            "<strong>備援方案</strong>：智能化失效時仍可手動",
+            "<strong>聽取回饋</strong>：根據家人需求調整"
+          ]
+        },
+        {
+          "heading": "專案文件化",
+          "list": [
+            "<strong>設備清單</strong>：型號、位置、購買日期、保固",
+            "<strong>網路拓樸</strong>：網路架構圖、IP 分配",
+            "<strong>配線圖</strong>：記錄線路走向",
+            "<strong>設定備份</strong>：定期備份配置檔",
+            "<strong>操作手冊</strong>：給家人的使用說明",
+            "<strong>故障排除</strong>：常見問題與解決方法",
+            "<strong>聯絡資訊</strong>：廠商、技術支援電話"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "20",
+      "title": "未來趨勢",
+      "subtitle": "AI應用、5G、邊緣運算、永續能源",
+      "sections": [
+        {
+          "heading": "AI 與智能家居",
+          "subSections": [
+            {
+              "subHeading": "AI 語音助理進化",
+              "list": [
+                "<strong>更自然對話</strong>：理解上下文、多輪對話",
+                "<strong>情感辨識</strong>：根據語氣調整回應",
+                "<strong>主動建議</strong>：預測需求並提出建議",
+                "<strong>個人化</strong>：針對不同家庭成員客製化",
+                "<strong>多語言混合</strong>：支援中英混合對話"
+              ]
+            },
+            {
+              "subHeading": "AI 視覺辨識",
+              "list": [
+                "<strong>人臉辨識</strong>：辨識家庭成員與訪客",
+                "<strong>姿態辨識</strong>：偵測跌倒、異常動作",
+                "<strong>物體辨識</strong>：識別包裹、寵物、車輛",
+                "<strong>情緒辨識</strong>：透過表情判斷心情",
+                "<strong>行為分析</strong>：學習生活模式與異常偵測"
+              ]
+            },
+            {
+              "subHeading": "預測性維護",
+              "list": [
+                "AI 分析設備運作資料",
+                "提早預測設備故障",
+                "自動排程維護",
+                "延長設備壽命",
+                "降低維護成本"
+              ]
+            },
+            {
+              "subHeading": "個人化自動化",
+              "list": [
+                "學習個人偏好（溫度、亮度、音樂）",
+                "預測行為（幾點回家、何時睡覺）",
+                "適應性調整（根據季節、天氣）",
+                "情境感知（開會中、運動後）"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "5G 與物聯網",
+          "subSections": [
+            {
+              "subHeading": "5G 優勢",
+              "list": [
+                "<strong>超高速</strong>：下載速度可達 10Gbps",
+                "<strong>低延遲</strong>：延遲低於 1ms",
+                "<strong>大連接</strong>：每平方公里百萬設備連接",
+                "<strong>高可靠</strong>：99.999% 可靠度"
+              ]
+            },
+            {
+              "subHeading": "5G 智能家居應用",
+              "list": [
+                "<strong>8K 影音串流</strong>：超高畫質監控",
+                "<strong>AR/VR</strong>：虛擬實境家居控制",
+                "<strong>即時控制</strong>：無延遲的設備控制",
+                "<strong>雲端遊戲</strong>：家庭娛樂升級",
+                "<strong>全息投影</strong>：未來的顯示技術"
+              ]
+            },
+            {
+              "subHeading": "NB-IoT / LTE-M",
+              "list": [
+                "低功耗廣域網路",
+                "適合電池供電設備",
+                "涵蓋範圍廣",
+                "適合戶外感測器"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "邊緣運算",
+          "subSections": [
+            {
+              "subHeading": "什麼是邊緣運算？",
+              "content": "將運算能力從雲端下放到邊緣設備（本地伺服器、閘道器），減少延遲、提升隱私、降低頻寬需求。"
+            },
+            {
+              "subHeading": "智能家居邊緣運算應用",
+              "list": [
+                "<strong>本地 AI 推論</strong>：在本地辨識人臉、物體",
+                "<strong>即時處理</strong>：無需上傳雲端即可分析",
+                "<strong>隱私保護</strong>：敏感資料不離開家庭",
+                "<strong>離線運作</strong>：無網路仍可正常運作",
+                "<strong>降低成本</strong>：減少雲端費用"
+              ]
+            },
+            {
+              "subHeading": "邊緣 AI 晶片",
+              "list": [
+                "<strong>Google Coral</strong>：TPU 加速 AI 推論",
+                "<strong>NVIDIA Jetson</strong>：強大的邊緣 AI 平台",
+                "<strong>Intel Neural Compute Stick</strong>：USB AI 加速器",
+                "<strong>ARM NPU</strong>：手機晶片內建 AI"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Matter 統一標準",
+          "subSections": [
+            {
+              "subHeading": "Matter 是什麼？",
+              "content": "由 Apple、Google、Amazon、Samsung 等大廠共同推動的智能家居統一標準，目標是讓所有設備互通互聯。"
+            },
+            {
+              "subHeading": "Matter 優勢",
+              "list": [
+                "<strong>互通性</strong>：不同品牌設備可互相控制",
+                "<strong>本地控制</strong>：不依賴雲端",
+                "<strong>安全性</strong>：內建加密與認證",
+                "<strong>簡化設定</strong>：統一配對流程",
+                "<strong>多平台</strong>：支援 HomeKit、Alexa、Google Home"
+              ]
+            },
+            {
+              "subHeading": "Matter 影響",
+              "list": [
+                "消費者選擇更自由",
+                "廠商不再綁定生態系",
+                "開發者更容易整合",
+                "推動產業標準化"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "永續能源整合",
+          "subSections": [
+            {
+              "subHeading": "太陽能系統",
+              "list": [
+                "<strong>發電監控</strong>：即時顯示發電量",
+                "<strong>自發自用</strong>：優先使用太陽能",
+                "<strong>售電管理</strong>：多餘電力賣回電網",
+                "<strong>天氣預測</strong>：根據天氣預測調整用電",
+                "<strong>AI 優化</strong>：學習用電模式最佳化"
+              ]
+            },
+            {
+              "subHeading": "儲能系統",
+              "list": [
+                "<strong>削峰填谷</strong>：離峰儲電、尖峰用電",
+                "<strong>備援電力</strong>：停電時緊急供電",
+                "<strong>電網平衡</strong>：協助電網穩定",
+                "<strong>虛擬電廠</strong>：整合社區儲能"
+              ]
+            },
+            {
+              "subHeading": "電動車整合",
+              "list": [
+                "<strong>充電排程</strong>：離峰時段充電",
+                "<strong>V2H</strong>：車輛電池供電給家庭",
+                "<strong>V2G</strong>：車輛電池供電給電網",
+                "<strong>智能充電</strong>：根據太陽能發電調整"
+              ]
+            },
+            {
+              "subHeading": "能源管理系統（HEMS）",
+              "list": [
+                "整合發電、儲能、用電",
+                "AI 優化能源分配",
+                "減少電費支出",
+                "提升能源自給率",
+                "降低碳足跡"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "健康照護",
+          "list": [
+            "<strong>睡眠監測</strong>：非接觸式睡眠品質分析",
+            "<strong>跌倒偵測</strong>：保護長者安全",
+            "<strong>用藥提醒</strong>：智能藥盒與提醒",
+            "<strong>環境健康</strong>：監控 VOC、CO2、PM2.5",
+            "<strong>遠端照護</strong>：家人即時掌握長者狀況",
+            "<strong>緊急求助</strong>：一鍵呼叫緊急聯絡人"
+          ]
+        },
+        {
+          "heading": "機器人整合",
+          "list": [
+            "<strong>掃地機器人</strong>：更智能的路徑規劃",
+            "<strong>拖地機器人</strong>：自動換水、清潔",
+            "<strong>除草機器人</strong>：庭院自動維護",
+            "<strong>送貨機器人</strong>：室內物品搬運",
+            "<strong>陪伴機器人</strong>：與長者、小孩互動",
+            "<strong>服務機器人</strong>：協助家務"
+          ]
+        },
+        {
+          "heading": "區塊鏈與智能合約",
+          "list": [
+            "<strong>設備身份</strong>：區塊鏈確保設備身份",
+            "<strong>資料交易</strong>：安全交易感測器資料",
+            "<strong>智能合約</strong>：自動執行電費結算",
+            "<strong>共享經濟</strong>：分享設備使用權",
+            "<strong>去中心化</strong>：不依賴單一廠商"
+          ]
+        },
+        {
+          "heading": "空間運算",
+          "subSections": [
+            {
+              "subHeading": "AR（擴增實境）",
+              "list": [
+                "透過手機看到虛擬控制介面",
+                "家具擺放模擬",
+                "維修指引（AR 標示）",
+                "室內導航"
+              ]
+            },
+            {
+              "subHeading": "VR（虛擬實境）",
+              "list": [
+                "遠端臨場感控制",
+                "虛擬裝潢設計",
+                "沉浸式娛樂體驗",
+                "虛擬會議空間"
+              ]
+            },
+            {
+              "subHeading": "空間音訊",
+              "list": [
+                "3D 環繞音效",
+                "定向音訊（只有特定位置聽到）",
+                "跟隨式音訊（聲音跟著人移動）"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "數位分身（Digital Twin）",
+          "list": [
+            "<strong>虛擬家居模型</strong>：建立家的數位孿生",
+            "<strong>模擬測試</strong>：測試新設備或自動化",
+            "<strong>優化分析</strong>：模擬能源使用優化",
+            "<strong>預測維護</strong>：預測設備狀態",
+            "<strong>遠端展示</strong>：遠端展示家居狀態"
+          ]
+        },
+        {
+          "heading": "隱私與倫理",
+          "list": [
+            "<strong>資料所有權</strong>：誰擁有感測器資料？",
+            "<strong>監控邊界</strong>：過度監控的倫理問題",
+            "<strong>AI 偏見</strong>：AI 決策的公平性",
+            "<strong>自主權</strong>：人類 vs AI 決策權",
+            "<strong>透明度</strong>：AI 決策可解釋性",
+            "<strong>資料保護</strong>：GDPR、個資法規"
+          ]
+        },
+        {
+          "heading": "技術融合趨勢",
+          "list": [
+            "<strong>AIoT</strong>：AI + IoT",
+            "<strong>5G + AI + IoT</strong>：三技術融合",
+            "<strong>邊緣 AI</strong>：本地智能運算",
+            "<strong>聯邦學習</strong>：保護隱私的 AI 訓練",
+            "<strong>量子加密</strong>：未來的安全通訊",
+            "<strong>6G</strong>：下一代通訊技術"
+          ]
+        },
+        {
+          "heading": "持續學習建議",
+          "list": [
+            "<strong>關注趨勢</strong>：訂閱科技媒體與論壇",
+            "<strong>實驗新技術</strong>：小規模測試新功能",
+            "<strong>社群參與</strong>：加入智能家居社群",
+            "<strong>開源貢獻</strong>：參與開源專案",
+            "<strong>技能提升</strong>：學習 AI、程式設計、網路",
+            "<strong>展會參觀</strong>：參加 CES、Computex 等展覽"
+          ]
+        }
+      ]
+    }
+  ]
+}
