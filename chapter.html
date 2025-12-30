@@ -287,15 +287,16 @@
                 `;
 
                 level.knowledgePoints.forEach(point => {
+                    const uniqueId = `${level.level.id}-${point.number}`;
                     // 只顯示有內容的知識點
                     if (point.sections && point.sections.length > 0) {
                         html += `
-                            <div class="knowledge-item" onclick="toggleContent('${point.number}')">
+                            <div class="knowledge-item" onclick="toggleContent('${uniqueId}')">
                                 <div class="knowledge-header">
                                     <div class="knowledge-number">${point.number}</div>
                                     <div class="knowledge-title">${point.title}</div>
                                 </div>
-                                <div class="knowledge-content collapsed" id="content-${point.number}">
+                                <div class="knowledge-content collapsed" id="content-${uniqueId}">
                                     ${renderSections(point.sections)}
                                 </div>
                             </div>

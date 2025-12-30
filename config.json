@@ -107,6 +107,33 @@
                     "jsonFile": "home-assistant/advanced.json"
                 }
             ]
+        },
+        {
+            "id": "smart-home-service",
+            "title": "智能家居服務配置",
+            "icon": "💼",
+            "subtitle": "專業智能家居服務方案與定價策略",
+            "description": "從基礎入門級到高端定制級，掌握不同客戶群的智能家居解決方案",
+            "levels": [
+                {
+                    "id": "basic",
+                    "name": "基礎入門級",
+                    "order": 1,
+                    "jsonFile": "smart-home-service/basic.json"
+                },
+                {
+                    "id": "standard",
+                    "name": "主流全能級",
+                    "order": 2,
+                    "jsonFile": "smart-home-service/standard.json"
+                },
+                {
+                    "id": "premium",
+                    "name": "高端定制級",
+                    "order": 3,
+                    "jsonFile": "smart-home-service/premium.json"
+                }
+            ]
         }
     ]
 }
