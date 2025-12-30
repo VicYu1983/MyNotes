@@ -75,12 +75,20 @@
         }
 
         .topic-count {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .level-badge {
             display: inline-block;
             background: #667eea;
             color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9em;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85em;
         }
 
         .coming-soon {
@@ -130,7 +138,17 @@
                 const config = await response.json();
                 const grid = document.getElementById('topicsGrid');
                 
+                // 根據階級順序定義顏色
+                const levelColors = {
+                    1: '#4caf50',  // 綠色 - 初階/入門
+                    2: '#ff9800',  // 橙色 - 中階/進階
+                    3: '#f44336'   // 紅色 - 高階/專業
+                };
+                
                 config.topics.forEach(topic => {
+                    const levelBadges = topic.levels.map(level => 
+                        `<span class="level-badge" style="background: ${levelColors[level.order] || '#667eea'}">${level.name}</span>`
+                    ).join('');
                     const card = document.createElement('a');
                     card.href = `chapter.html?topic=${topic.id}`;
                     card.className = 'topic-card';
@@ -140,7 +158,7 @@
                         <div class="topic-description">
                             ${topic.description}
                         </div>
-                        <div class="topic-count">${topic.levels.length} 個階級</div>
+                        <div class="topic-count">${levelBadges}</div>
                     `;
                     grid.appendChild(card);
                 });

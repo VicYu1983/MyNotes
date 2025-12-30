@@ -1,76 +1,85 @@
 {
-  "topics": [
-    {
-      "id": "smart-home",
-      "title": "智能家居",
-      "icon": "🏠",
-      "subtitle": "從基礎到進階，系統化學習智能家居技術",
-      "description": "從基礎概念到系統開發，全方位學習智能家居技術",
-      "levels": [
+    "topics": [
         {
-          "id": "beginner",
-          "order": 1,
-          "jsonFile": "smart-home/beginner.json"
+            "id": "smart-home",
+            "title": "智能家居",
+            "icon": "🏠",
+            "subtitle": "從基礎到進階，系統化學習智能家居技術",
+            "description": "從基礎概念到系統開發，全方位學習智能家居技術",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "初階",
+                    "order": 1,
+                    "jsonFile": "smart-home/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中階",
+                    "order": 2,
+                    "jsonFile": "smart-home/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高階",
+                    "order": 3,
+                    "jsonFile": "smart-home/advanced.json"
+                }
+            ]
         },
         {
-          "id": "intermediate",
-          "order": 2,
-          "jsonFile": "smart-home/intermediate.json"
+            "id": "home-improvement",
+            "title": "居家修善",
+            "icon": "🔧",
+            "subtitle": "從基礎修繕到大規模改造，打造夢想家居",
+            "description": "學習家居維護、修理和改造的實用技能，由初階DIY到專業級別",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "初階",
+                    "order": 1,
+                    "jsonFile": "home-improvement/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中階",
+                    "order": 2,
+                    "jsonFile": "home-improvement/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高階",
+                    "order": 3,
+                    "jsonFile": "home-improvement/advanced.json"
+                }
+            ]
         },
         {
-          "id": "advanced",
-          "order": 3,
-          "jsonFile": "smart-home/advanced.json"
+            "id": "smart-home-improvement",
+            "title": "智能家居改造",
+            "icon": "✨",
+            "subtitle": "結合家居改造與智能化，打造現代化住宅",
+            "description": "從租屋族無損方案到深度改造的完整智能家居整合指南",
+            "levels": [
+                {
+                    "id": "rental",
+                    "name": "租屋族無損方案",
+                    "order": 1,
+                    "jsonFile": "smart-home-improvement/rental.json"
+                },
+                {
+                    "id": "light-renovation",
+                    "name": "自家輕改造",
+                    "order": 2,
+                    "jsonFile": "smart-home-improvement/light-renovation.json"
+                },
+                {
+                    "id": "deep-renovation",
+                    "name": "自家深改造",
+                    "order": 3,
+                    "jsonFile": "smart-home-improvement/deep-renovation.json"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "id": "home-improvement",
-      "title": "居家修善",
-      "icon": "🔧",
-      "subtitle": "從基礎修繕到大規模改造，打造夢想家居",
-      "description": "學習家居維護、修理和改造的實用技能，由初階DIY到專業級別",
-      "levels": [
-        {
-          "id": "beginner",
-          "order": 1,
-          "jsonFile": "home-improvement/beginner.json"
-        },
-        {
-          "id": "intermediate",
-          "order": 2,
-          "jsonFile": "home-improvement/intermediate.json"
-        },
-        {
-          "id": "advanced",
-          "order": 3,
-          "jsonFile": "home-improvement/advanced.json"
-        }
-      ]
-    },
-    {
-      "id": "smart-home-improvement",
-      "title": "智能家居改造",
-      "icon": "✨",
-      "subtitle": "結合家居改造與智能化，打造現代化住宅",
-      "description": "從租屋族無損方案到深度改造的完整智能家居整合指南",
-      "levels": [
-        {
-          "id": "rental",
-          "order": 1,
-          "jsonFile": "smart-home-improvement/rental.json"
-        },
-        {
-          "id": "light-renovation",
-          "order": 2,
-          "jsonFile": "smart-home-improvement/light-renovation.json"
-        },
-        {
-          "id": "deep-renovation",
-          "order": 3,
-          "jsonFile": "smart-home-improvement/deep-renovation.json"
-        }
-      ]
-    }
-  ]
+    ]
 }
