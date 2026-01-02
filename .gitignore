@@ -1,4 +1,4 @@
 ```
-# Configuration files
-n8n/
+# Configuration files for n8n
+n8n/*.json
 ```

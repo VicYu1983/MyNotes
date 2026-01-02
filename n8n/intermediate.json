@@ -1,0 +1,34 @@
+{
+  "title": "n8n 學習與使用",
+  "level": "中階",
+  "description": "從入門到精通 n8n 工作流程自動化工具 - 中階篇",
+  "chapters": [
+    {
+      "title": "進階節點操作",
+      "content": "學習更複雜的節點操作，包括資料轉換、條件判斷和循環處理。",
+      "keyPoints": [
+        "資料轉換與映射",
+        "條件節點使用",
+        "循環與迭代處理"
+      ]
+    },
+    {
+      "title": "Webhook 與觸發器",
+      "content": "學習如何使用 Webhook 和各種觸發器來啟動工作流程。",
+      "keyPoints": [
+        "HTTP 觸發器設定",
+        "Webhook 使用方法",
+        "排程觸發器設定"
+      ]
+    },
+    {
+      "title": "整合外部服務",
+      "content": "學習如何整合常見的外部服務，如 Google Sheets、Slack、Email 等。",
+      "keyPoints": [
+        "設定服務認證",
+        "使用內建整合",
+        "API 串接技巧"
+      ]
+    }
+  ]
+}
