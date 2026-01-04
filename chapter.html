@@ -408,6 +408,7 @@
 
     <script>
         let quizData = null;
+        let originalQuestions = null; // 保存原始完整題庫
         let currentQuestionIndex = 0;
         let userAnswers = [];
         let selectedAnswer = null;
@@ -454,6 +455,7 @@
                     try {
                         const quizResponse = await fetch(topic.questionFile);
                         quizData = await quizResponse.json();
+                        originalQuestions = [...quizData.questions]; // 保存原始完整題庫
                     } catch (err) {
                         console.warn('測驗資料載入失敗:', err);
                     }
@@ -610,11 +612,10 @@
             userAnswers = [];
             selectedAnswer = null;
             
-            // 隨機抽取 10 題
-            if (quizData && quizData.questions) {
-                const allQuestions = [...quizData.questions];
-                const shuffled = shuffleArray(allQuestions);
-                quizData.questions = shuffled.slice(0, 10);
+            // 從原始完整題庫隨機抽取 10 題
+            if (originalQuestions && originalQuestions.length > 0) {
+                const shuffled = shuffleArray([...originalQuestions]);
+                quizData.questions = shuffled.slice(0, Math.min(10, shuffled.length));
             }
             
             showQuestion();
