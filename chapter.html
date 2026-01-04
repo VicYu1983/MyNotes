@@ -531,9 +531,11 @@
 
             // 如果有測驗資料，添加測驗按鈕
             if (quizData && quizData.questions && quizData.questions.length > 0) {
+                const totalQuestions = quizData.questions.length;
+                const quizCount = Math.min(10, totalQuestions);
                 html += `
                     <button class="quiz-button" onclick="startQuiz()">
-                        📝 開始測驗（共 ${quizData.questions.length} 題）
+                        📝 開始測驗（題庫 ${totalQuestions} 題，隨機抽取 ${quizCount} 題）
                     </button>
                 `;
             }
@@ -608,9 +610,11 @@
             userAnswers = [];
             selectedAnswer = null;
             
-            // 隨機排序題目
+            // 隨機抽取 10 題
             if (quizData && quizData.questions) {
-                quizData.questions = shuffleArray(quizData.questions);
+                const allQuestions = [...quizData.questions];
+                const shuffled = shuffleArray(allQuestions);
+                quizData.questions = shuffled.slice(0, 10);
             }
             
             showQuestion();

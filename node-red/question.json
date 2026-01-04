@@ -194,6 +194,201 @@
       ],
       "correctAnswer": 1,
       "explanation": "生產環境應啟用使用者身份驗證、使用 HTTPS 加密、設定防火牆限制存取、定期更新版本，並考慮使用反向代理。"
+    },
+    {
+      "id": 16,
+      "level": "beginner",
+      "question": "Inject 節點的主要功能是什麼？",
+      "options": [
+        "刪除訊息",
+        "手動或定時觸發流程並注入訊息",
+        "儲存資料",
+        "顯示錯誤"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Inject 節點可以手動點擊觸發或設定定時排程，向流程中注入訊息，是流程的起始點。"
+    },
+    {
+      "id": 17,
+      "level": "beginner",
+      "question": "如何匯出 Node-RED 流程以便分享？",
+      "options": [
+        "複製整個資料夾",
+        "選單 → Export → 選擇流程匯出為 JSON",
+        "無法匯出",
+        "需要專業工具"
+      ],
+      "correctAnswer": 1,
+      "explanation": "可以透過選單的 Export 功能將流程匯出為 JSON 格式，方便分享、備份或在其他 Node-RED 環境中匯入使用。"
+    },
+    {
+      "id": 18,
+      "level": "beginner",
+      "question": "Switch 節點的作用是什麼？",
+      "options": [
+        "開關電源",
+        "根據條件將訊息路由到不同輸出",
+        "切換語言",
+        "改變顏色"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Switch 節點可以根據設定的條件（如數值比較、字串匹配）將訊息路由到不同的輸出分支，實現邏輯分流。"
+    },
+    {
+      "id": 19,
+      "level": "beginner",
+      "question": "Change 節點可以用來做什麼？",
+      "options": [
+        "改變節點顏色",
+        "設定、更改或刪除 msg 物件的屬性",
+        "改變流程名稱",
+        "修改程式碼"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Change 節點可以設定、更改或刪除 msg 物件的屬性值，也可以在 flow 或 global context 中操作變數。"
+    },
+    {
+      "id": 20,
+      "level": "beginner",
+      "question": "如何在 Node-RED 中查看已安裝節點的文件說明？",
+      "options": [
+        "只能上網查",
+        "點選節點後查看右側資訊面板",
+        "無法查看",
+        "需要安裝外掛"
+      ],
+      "correctAnswer": 1,
+      "explanation": "點選任何節點後，右側的資訊面板會顯示該節點的詳細說明、屬性和使用範例。"
+    },
+    {
+      "id": 21,
+      "level": "intermediate",
+      "question": "如何在 Function 節點中回傳多個訊息？",
+      "options": [
+        "無法回傳多個訊息",
+        "使用 return [msg1, msg2] 陣列形式",
+        "呼叫多次 node.send()",
+        "使用逗號分隔"
+      ],
+      "correctAnswer": 1,
+      "explanation": "在 Function 節點中可以使用 return [msg1, msg2] 陣列形式回傳多個訊息到不同輸出，或使用 node.send() 非同步發送。"
+    },
+    {
+      "id": 22,
+      "level": "intermediate",
+      "question": "Template 節點主要用於什麼目的？",
+      "options": [
+        "設計流程外觀",
+        "使用 Mustache 模板產生文字或 HTML 內容",
+        "建立節點樣板",
+        "設定主題"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Template 節點使用 Mustache 模板語法，可以將 msg 物件的資料嵌入模板中產生文字、HTML 或其他格式的內容。"
+    },
+    {
+      "id": 23,
+      "level": "intermediate",
+      "question": "Delay 節點可以實現什麼功能？",
+      "options": [
+        "加快處理速度",
+        "延遲訊息、限制速率、隨機延遲",
+        "刪除訊息",
+        "複製訊息"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Delay 節點可以延遲訊息傳遞、限制單位時間內的訊息數量（rate limit），或加入隨機延遲時間。"
+    },
+    {
+      "id": 24,
+      "level": "intermediate",
+      "question": "如何在 Node-RED 中處理 JSON 資料？",
+      "options": [
+        "無法處理",
+        "使用 JSON 節點進行解析和序列化",
+        "只能手動處理",
+        "需要外掛"
+      ],
+      "correctAnswer": 1,
+      "explanation": "JSON 節點可以將 JSON 字串解析為 JavaScript 物件，或將物件序列化為 JSON 字串，方便資料處理和傳輸。"
+    },
+    {
+      "id": 25,
+      "level": "intermediate",
+      "question": "HTTP Request 節點的主要用途是什麼？",
+      "options": [
+        "建立網站",
+        "發送 HTTP 請求到外部 API 或網頁",
+        "接收網頁請求",
+        "編輯 HTML"
+      ],
+      "correctAnswer": 1,
+      "explanation": "HTTP Request 節點可以向外部 API 或網頁發送 GET、POST 等 HTTP 請求，並取得回應資料進行後續處理。"
+    },
+    {
+      "id": 26,
+      "level": "advanced",
+      "question": "如何實現 Node-RED 流程的高可用性部署？",
+      "options": [
+        "單機運行就好",
+        "使用 Docker 容器化、負載平衡、共享 Context 儲存",
+        "複製檔案",
+        "不需要考慮"
+      ],
+      "correctAnswer": 1,
+      "explanation": "高可用性部署可使用 Docker 容器化、配置負載平衡、使用共享的 Context 儲存（如 Redis），實現多實例運行和故障轉移。"
+    },
+    {
+      "id": 27,
+      "level": "advanced",
+      "question": "Node-RED 中如何實現錯誤處理機制？",
+      "options": [
+        "讓錯誤自然發生",
+        "使用 Catch 節點捕捉錯誤，Function 中使用 try-catch",
+        "重啟系統",
+        "忽略錯誤"
+      ],
+      "correctAnswer": 1,
+      "explanation": "可使用 Catch 節點捕捉特定節點或全域的錯誤，在 Function 節點中使用 try-catch 處理異常，並記錄錯誤日誌。"
+    },
+    {
+      "id": 28,
+      "level": "advanced",
+      "question": "如何在 Node-RED 中實現訊息持久化？",
+      "options": [
+        "訊息會自動保存",
+        "使用資料庫節點或檔案節點儲存訊息",
+        "不需要持久化",
+        "使用 Debug 節點"
+      ],
+      "correctAnswer": 1,
+      "explanation": "可使用資料庫節點（如 MySQL、MongoDB）或檔案節點將訊息寫入持久化儲存，確保重啟後資料不遺失。"
+    },
+    {
+      "id": 29,
+      "level": "advanced",
+      "question": "Node-RED 環境變數的配置方法是什麼？",
+      "options": [
+        "無法使用環境變數",
+        "在 settings.js 或使用 ${ENV_VAR} 語法引用",
+        "只能寫死在流程中",
+        "需要重新編譯"
+      ],
+      "correctAnswer": 1,
+      "explanation": "可以在 settings.js 中定義環境變數，或在節點屬性中使用 ${ENV_VAR} 語法引用系統環境變數，方便多環境部署。"
+    },
+    {
+      "id": 30,
+      "level": "advanced",
+      "question": "如何監控和除錯生產環境的 Node-RED 流程？",
+      "options": [
+        "只能靠猜測",
+        "使用日誌記錄、效能監控節點、整合監控系統",
+        "不需要監控",
+        "等問題發生"
+      ],
+      "correctAnswer": 1,
+      "explanation": "應配置完善的日誌記錄、使用效能監控節點追蹤處理時間、整合 Prometheus/Grafana 等監控系統，並設定告警機制。"
     }
   ]
 }

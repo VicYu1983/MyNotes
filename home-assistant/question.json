@@ -194,6 +194,201 @@
       ],
       "correctAnswer": 1,
       "explanation": "Scene 用於儲存多個實體的狀態快照（如燈光場景），而 Script 是定義一系列要執行的動作序列，兩者用途不同。"
+    },
+    {
+      "id": 16,
+      "level": "beginner",
+      "question": "Home Assistant 的整合（Integration）是什麼？",
+      "options": [
+        "一種硬體設備",
+        "連接外部服務或設備的模組",
+        "一個手機應用",
+        "一種資料庫"
+      ],
+      "correctAnswer": 1,
+      "explanation": "整合是 Home Assistant 用來連接各種外部服務、平台或設備的模組，如 Philips Hue、小米、IKEA 等。"
+    },
+    {
+      "id": 17,
+      "level": "beginner",
+      "question": "如何在 Home Assistant 中添加新的整合？",
+      "options": [
+        "只能編輯 YAML 檔案",
+        "透過設定 → 整合 → 添加整合",
+        "需要重新安裝系統",
+        "必須使用命令列"
+      ],
+      "correctAnswer": 1,
+      "explanation": "大部分整合可以透過圖形介面添加：設定 → 裝置與服務 → 添加整合，系統會自動搜尋或手動選擇。"
+    },
+    {
+      "id": 18,
+      "level": "beginner",
+      "question": "Home Assistant 的「區域」（Area）功能用途是什麼？",
+      "options": [
+        "只是裝飾功能",
+        "將裝置和實體按房間或區域分組管理",
+        "設定網路區域",
+        "劃分權限"
+      ],
+      "correctAnswer": 1,
+      "explanation": "區域功能可以將裝置和實體按實際的房間或區域分組，方便管理和建立針對特定區域的自動化。"
+    },
+    {
+      "id": 19,
+      "level": "beginner",
+      "question": "Home Assistant Companion App 的主要功能是什麼？",
+      "options": [
+        "只能查看狀態",
+        "遠端控制、推送通知、位置追蹤、感測器資料",
+        "只能接收通知",
+        "只能在本地使用"
+      ],
+      "correctAnswer": 1,
+      "explanation": "手機 App 提供完整功能，包括遠端控制家居、接收推送通知、位置追蹤、手機感測器資料回傳等。"
+    },
+    {
+      "id": 20,
+      "level": "beginner",
+      "question": "Home Assistant 的 Recorder 元件負責什麼？",
+      "options": [
+        "錄製影片",
+        "記錄實體狀態歷史到資料庫",
+        "錄製音訊",
+        "備份系統"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Recorder 元件負責將實體的狀態變化記錄到資料庫，供歷史查詢、圖表顯示和分析使用。"
+    },
+    {
+      "id": 21,
+      "level": "intermediate",
+      "question": "在 Home Assistant 中，如何實現「如果溫度低於20度就開啟暖氣」的自動化？",
+      "options": [
+        "不可能實現",
+        "使用數值觸發器（Numeric State Trigger）",
+        "只能手動控制",
+        "需要寫程式"
+      ],
+      "correctAnswer": 1,
+      "explanation": "使用數值狀態觸發器，設定溫度感測器實體，當數值低於 20 度時觸發，執行開啟暖氣的動作。"
+    },
+    {
+      "id": 22,
+      "level": "intermediate",
+      "question": "Home Assistant 的條件（Condition）在自動化中的作用是什麼？",
+      "options": [
+        "沒有作用",
+        "在觸發後檢查條件，條件滿足才執行動作",
+        "替代觸發器",
+        "只是記錄用"
+      ],
+      "correctAnswer": 1,
+      "explanation": "條件在觸發器啟動後進行額外檢查，只有條件都滿足時才會執行動作，提供更精確的控制。"
+    },
+    {
+      "id": 23,
+      "level": "intermediate",
+      "question": "Home Assistant 的 Node-RED 整合有什麼優勢？",
+      "options": [
+        "沒有優勢",
+        "視覺化流程設計、複雜邏輯處理、豐富的節點庫",
+        "只是換個介面",
+        "會降低效能"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Node-RED 提供視覺化的流程設計，適合處理複雜邏輯，並有豐富的社群節點可以整合各種服務。"
+    },
+    {
+      "id": 24,
+      "level": "intermediate",
+      "question": "如何在 Home Assistant 中實現語音控制？",
+      "options": [
+        "不支援語音控制",
+        "整合 Google Assistant、Alexa 或使用本地語音助理",
+        "只能用鍵盤",
+        "需要特殊硬體"
+      ],
+      "correctAnswer": 1,
+      "explanation": "可以整合 Google Assistant、Amazon Alexa，或使用本地方案如 Rhasspy、Mycroft 實現語音控制。"
+    },
+    {
+      "id": 25,
+      "level": "intermediate",
+      "question": "Home Assistant 的 Blueprint 是什麼？",
+      "options": [
+        "建築設計圖",
+        "可重複使用的自動化模板",
+        "網路配置",
+        "裝置清單"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Blueprint 是可重複使用的自動化模板，讓使用者可以分享和匯入預設的自動化配置，只需填入自己的實體。"
+    },
+    {
+      "id": 26,
+      "level": "advanced",
+      "question": "Home Assistant 的 REST API 可以用來做什麼？",
+      "options": [
+        "只能查詢資料",
+        "查詢狀態、觸發服務、管理設定等完整控制",
+        "只能備份",
+        "無法使用"
+      ],
+      "correctAnswer": 1,
+      "explanation": "REST API 提供完整的程式化存取能力，可以查詢實體狀態、呼叫服務、觸發自動化等，方便外部整合。"
+    },
+    {
+      "id": 27,
+      "level": "advanced",
+      "question": "如何實現 Home Assistant 的高可用性（HA）？",
+      "options": [
+        "不可能實現",
+        "使用備份、資料庫複製、負載平衡、容錯機制",
+        "只要多買幾個 Raspberry Pi",
+        "不需要考慮"
+      ],
+      "correctAnswer": 1,
+      "explanation": "高可用性需要多方面配置：定期備份、使用外部資料庫、設定備援系統、UPS 供電等確保系統穩定運作。"
+    },
+    {
+      "id": 28,
+      "level": "advanced",
+      "question": "Home Assistant 的 AppDaemon 有什麼用途？",
+      "options": [
+        "只是一個普通 App",
+        "用 Python 撰寫進階自動化和應用程式",
+        "只能管理手機 App",
+        "沒有用處"
+      ],
+      "correctAnswer": 1,
+      "explanation": "AppDaemon 允許使用 Python 撰寫更複雜的自動化邏輯和應用，適合需要進階程式控制的場景。"
+    },
+    {
+      "id": 29,
+      "level": "advanced",
+      "question": "如何在 Home Assistant 中實現多使用者權限管理？",
+      "options": [
+        "無法設定權限",
+        "建立不同使用者帳號並設定存取權限",
+        "所有人都有完整權限",
+        "只能有一個使用者"
+      ],
+      "correctAnswer": 1,
+      "explanation": "可以建立多個使用者帳號，為每個使用者設定不同的存取權限，控制可見的實體和可執行的操作。"
+    },
+    {
+      "id": 30,
+      "level": "advanced",
+      "question": "Home Assistant 的 WebSocket API 相比 REST API 有什麼優勢？",
+      "options": [
+        "沒有優勢",
+        "即時雙向通訊、訂閱狀態變化、更低延遲",
+        "更耗資源",
+        "更慢"
+      ],
+      "correctAnswer": 1,
+      "explanation": "WebSocket API 提供即時雙向通訊，可以訂閱實體狀態變化並即時接收通知，比 REST API 輪詢更高效。"
     }
   ]
 }
