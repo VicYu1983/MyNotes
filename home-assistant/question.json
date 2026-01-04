@@ -1,0 +1,199 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": "beginner",
+      "question": "Home Assistant 是什麼類型的平台？",
+      "options": [
+        "商業智能家居平台",
+        "開源智能家居平台",
+        "雲端智能家居服務",
+        "手機應用程式"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Home Assistant 是一個開源的智能家居平台，允許使用者完全控制自己的智能家居系統。"
+    },
+    {
+      "id": 2,
+      "level": "beginner",
+      "question": "Home Assistant 預設的網頁介面使用哪個連接埠？",
+      "options": [
+        "8080",
+        "80",
+        "8123",
+        "1880"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Home Assistant 預設使用 8123 連接埠來提供網頁介面服務。"
+    },
+    {
+      "id": 3,
+      "level": "beginner",
+      "question": "Home Assistant 的設定檔主要使用什麼格式？",
+      "options": [
+        "JSON",
+        "XML",
+        "YAML",
+        "INI"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Home Assistant 主要使用 YAML 格式來撰寫設定檔，YAML 具有良好的可讀性和結構化特性。"
+    },
+    {
+      "id": 4,
+      "level": "beginner",
+      "question": "以下哪個不是 Home Assistant 的安裝方式？",
+      "options": [
+        "Home Assistant OS",
+        "Home Assistant Container (Docker)",
+        "Home Assistant Core",
+        "Home Assistant Cloud Only"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Home Assistant 可以透過多種方式安裝，但不是只能在雲端運行的服務，它可以完全本地運行。"
+    },
+    {
+      "id": 5,
+      "level": "beginner",
+      "question": "Home Assistant 的實體（Entity）ID 格式是什麼？",
+      "options": [
+        "類型.名稱 (例如: light.living_room)",
+        "名稱_類型 (例如: living_room_light)",
+        "類型-名稱 (例如: light-living_room)",
+        "名稱.類型 (例如: living_room.light)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Home Assistant 的實體 ID 格式為「類型.名稱」，例如 light.living_room 表示客廳的燈光。"
+    },
+    {
+      "id": 6,
+      "level": "intermediate",
+      "question": "在 Home Assistant 中，Automation 的觸發器（Trigger）有哪些類型？",
+      "options": [
+        "只有時間觸發",
+        "只有狀態變化觸發",
+        "時間、狀態、事件、數值等多種類型",
+        "只有手動觸發"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Home Assistant 的自動化支援多種觸發器類型，包括時間、狀態變化、事件、數值範圍等，提供靈活的自動化能力。"
+    },
+    {
+      "id": 7,
+      "level": "intermediate",
+      "question": "Home Assistant 的 Lovelace UI 是什麼？",
+      "options": [
+        "一個外掛程式",
+        "可自訂的使用者介面系統",
+        "資料庫系統",
+        "備份工具"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Lovelace 是 Home Assistant 的現代化、可自訂的使用者介面系統，讓使用者可以設計自己的儀表板。"
+    },
+    {
+      "id": 8,
+      "level": "intermediate",
+      "question": "Home Assistant 的 Add-on 功能只能在哪種安裝方式中使用？",
+      "options": [
+        "所有安裝方式都可以",
+        "Home Assistant OS 和 Supervised",
+        "只有 Home Assistant OS",
+        "只有 Docker 安裝"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Add-on 功能只在 Home Assistant OS 和 Supervised 安裝方式中可用，這是為了提供一鍵式的附加服務安裝體驗。"
+    },
+    {
+      "id": 9,
+      "level": "intermediate",
+      "question": "Home Assistant 中的 Template 使用什麼模板引擎？",
+      "options": [
+        "Mustache",
+        "Handlebars",
+        "Jinja2",
+        "EJS"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Home Assistant 使用 Jinja2 模板引擎來處理模板，它提供強大的邏輯和數據處理能力。"
+    },
+    {
+      "id": 10,
+      "level": "intermediate",
+      "question": "如何在 Home Assistant 中重新載入 YAML 設定而不重啟？",
+      "options": [
+        "必須完全重啟",
+        "使用「檢查設定」功能",
+        "使用開發者工具中的 YAML 重新載入功能",
+        "編輯設定後會自動重新載入"
+      ],
+      "correctAnswer": 2,
+      "explanation": "可以使用開發者工具中的「YAML」標籤來重新載入特定部分的設定，無需完全重啟系統。"
+    },
+    {
+      "id": 11,
+      "level": "advanced",
+      "question": "Home Assistant 的狀態機（State Machine）主要負責什麼？",
+      "options": [
+        "只負責儲存實體狀態",
+        "管理所有實體狀態、觸發事件、維護歷史記錄",
+        "只負責執行自動化",
+        "只負責處理使用者介面"
+      ],
+      "correctAnswer": 1,
+      "explanation": "狀態機是 Home Assistant 的核心，負責管理所有實體的當前狀態、觸發相關事件，並維護狀態變化的歷史記錄。"
+    },
+    {
+      "id": 12,
+      "level": "advanced",
+      "question": "在 Home Assistant 中，如何建立自訂元件（Custom Component）？",
+      "options": [
+        "只能使用官方提供的元件",
+        "在 custom_components 目錄下建立 Python 套件",
+        "必須向官方提交申請",
+        "透過 YAML 設定即可"
+      ],
+      "correctAnswer": 1,
+      "explanation": "可以在 custom_components 目錄下建立 Python 套件來開發自訂元件，遵循 Home Assistant 的元件架構規範。"
+    },
+    {
+      "id": 13,
+      "level": "advanced",
+      "question": "Home Assistant 的事件匯流排（Event Bus）主要用途是什麼？",
+      "options": [
+        "儲存歷史資料",
+        "作為系統內部通訊的訊息中心",
+        "管理使用者權限",
+        "處理網路連線"
+      ],
+      "correctAnswer": 1,
+      "explanation": "事件匯流排是 Home Assistant 內部通訊的核心機制，所有狀態變化、自動化觸發等都透過事件匯流排傳遞。"
+    },
+    {
+      "id": 14,
+      "level": "advanced",
+      "question": "如何優化 Home Assistant 的資料庫效能？",
+      "options": [
+        "使用 SQLite 預設設定即可",
+        "定期清理、設定排除項目、考慮使用外部資料庫如 PostgreSQL",
+        "增加更多記憶體",
+        "減少整合數量"
+      ],
+      "correctAnswer": 1,
+      "explanation": "優化資料庫效能可透過定期清理歷史資料、在 recorder 中排除不需要記錄的實體，對於大型系統可考慮使用 PostgreSQL 等外部資料庫。"
+    },
+    {
+      "id": 15,
+      "level": "advanced",
+      "question": "Home Assistant 的 Scene 和 Script 有什麼主要差異？",
+      "options": [
+        "沒有差異，只是名稱不同",
+        "Scene 儲存實體狀態快照，Script 是一系列動作序列",
+        "Scene 比較進階",
+        "Script 不能在自動化中使用"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Scene 用於儲存多個實體的狀態快照（如燈光場景），而 Script 是定義一系列要執行的動作序列，兩者用途不同。"
+    }
+  ]
+}

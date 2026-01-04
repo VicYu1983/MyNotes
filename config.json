@@ -108,6 +108,7 @@
             "icon": "🤖",
             "subtitle": "開源智能家居平台完全指南",
             "description": "從安裝設定到進階整合，全面掌握 Home Assistant 智能家居中樞",
+            "questionFile": "home-assistant/question.json",
             "levels": [
                 {
                     "id": "beginner",

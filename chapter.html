@@ -180,6 +180,192 @@
             margin-bottom: 10px;
         }
 
+        .quiz-button {
+            display: block;
+            width: 100%;
+            margin: 30px 0;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .quiz-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .quiz-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .quiz-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .quiz-header h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .quiz-progress {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .quiz-question {
+            margin-bottom: 25px;
+        }
+
+        .quiz-question h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .quiz-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .quiz-option.selected {
+            border-color: #667eea;
+            background: #e8ecff;
+        }
+
+        .quiz-option.correct {
+            border-color: #4caf50;
+            background: #e8f5e9;
+        }
+
+        .quiz-option.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+
+        .quiz-explanation {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .quiz-explanation.show {
+            display: block;
+        }
+
+        .quiz-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .quiz-btn {
+            flex: 1;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quiz-btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .quiz-btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .quiz-btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .quiz-btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .quiz-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .quiz-result h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .quiz-score {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .quiz-result p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -213,7 +399,18 @@
         </div>
     </div>
 
+    <!-- 測驗彈窗 -->
+    <div id="quizModal" class="quiz-modal">
+        <div class="quiz-container">
+            <div id="quizContent"></div>
+        </div>
+    </div>
+
     <script>
+        let quizData = null;
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let selectedAnswer = null;
         // 從URL參數取得主題ID
         function getTopicIdFromURL() {
             const params = new URLSearchParams(window.location.search);
@@ -246,10 +443,21 @@
                         id: topic.id,
                         title: topic.title,
                         icon: topic.icon,
-                        subtitle: topic.subtitle
+                        subtitle: topic.subtitle,
+                        questionFile: topic.questionFile
                     },
                     levels: levels
                 };
+
+                // 如果有測驗檔案，載入測驗資料
+                if (topic.questionFile) {
+                    try {
+                        const quizResponse = await fetch(topic.questionFile);
+                        quizData = await quizResponse.json();
+                    } catch (err) {
+                        console.warn('測驗資料載入失敗:', err);
+                    }
+                }
 
                 renderContent(data);
             } catch (error) {
@@ -321,6 +529,15 @@
                 `;
             });
 
+            // 如果有測驗資料，添加測驗按鈕
+            if (quizData && quizData.questions && quizData.questions.length > 0) {
+                html += `
+                    <button class="quiz-button" onclick="startQuiz()">
+                        📝 開始測驗（共 ${quizData.questions.length} 題）
+                    </button>
+                `;
+            }
+
             content.innerHTML = html;
         }
 
@@ -374,6 +591,165 @@
                 content.classList.remove('expanded');
             }
         }
+
+        // 開始測驗
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            userAnswers = [];
+            selectedAnswer = null;
+            showQuestion();
+            document.getElementById('quizModal').classList.add('active');
+        }
+
+        // 顯示當前問題
+        function showQuestion() {
+            const question = quizData.questions[currentQuestionIndex];
+            const quizContent = document.getElementById('quizContent');
+            
+            let html = `
+                <div class="quiz-header">
+                    <h2>📝 測驗</h2>
+                    <p class="quiz-progress">第 ${currentQuestionIndex + 1} / ${quizData.questions.length} 題</p>
+                </div>
+                <div class="quiz-question">
+                    <h3>${question.question}</h3>
+                    <div class="quiz-options">
+            `;
+
+            question.options.forEach((option, index) => {
+                html += `
+                    <div class="quiz-option" onclick="selectAnswer(${index})">
+                        ${option}
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                    <div class="quiz-explanation" id="explanation"></div>
+                </div>
+                <div class="quiz-buttons">
+                    <button class="quiz-btn quiz-btn-secondary" onclick="closeQuiz()">關閉</button>
+                    <button class="quiz-btn quiz-btn-primary" id="submitBtn" onclick="submitAnswer()" disabled>提交答案</button>
+                </div>
+            `;
+
+            quizContent.innerHTML = html;
+            selectedAnswer = null;
+        }
+
+        // 選擇答案
+        function selectAnswer(index) {
+            // 如果已經提交過，不允許再選擇
+            if (userAnswers[currentQuestionIndex] !== undefined) return;
+
+            selectedAnswer = index;
+            
+            // 更新選項樣式
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((opt, i) => {
+                opt.classList.remove('selected');
+                if (i === index) {
+                    opt.classList.add('selected');
+                }
+            });
+
+            // 啟用提交按鈕
+            document.getElementById('submitBtn').disabled = false;
+        }
+
+        // 提交答案
+        function submitAnswer() {
+            if (selectedAnswer === null) return;
+
+            const question = quizData.questions[currentQuestionIndex];
+            const isCorrect = selectedAnswer === question.correctAnswer;
+            userAnswers[currentQuestionIndex] = isCorrect;
+
+            // 顯示答案結果
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((opt, i) => {
+                opt.style.pointerEvents = 'none';
+                if (i === question.correctAnswer) {
+                    opt.classList.add('correct');
+                } else if (i === selectedAnswer && !isCorrect) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            // 顯示解釋
+            const explanation = document.getElementById('explanation');
+            explanation.innerHTML = `
+                <strong>${isCorrect ? '✅ 答對了！' : '❌ 答錯了！'}</strong><br>
+                ${question.explanation}
+            `;
+            explanation.classList.add('show');
+
+            // 更新按鈕
+            const submitBtn = document.getElementById('submitBtn');
+            if (currentQuestionIndex < quizData.questions.length - 1) {
+                submitBtn.textContent = '下一題';
+                submitBtn.onclick = nextQuestion;
+            } else {
+                submitBtn.textContent = '查看結果';
+                submitBtn.onclick = showResult;
+            }
+        }
+
+        // 下一題
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        // 顯示結果
+        function showResult() {
+            const correctCount = userAnswers.filter(a => a === true).length;
+            const totalCount = quizData.questions.length;
+            const percentage = Math.round((correctCount / totalCount) * 100);
+
+            let message = '';
+            let emoji = '';
+            if (percentage >= 90) {
+                emoji = '🎉';
+                message = '太棒了！你完全掌握了這個主題！';
+            } else if (percentage >= 70) {
+                emoji = '👍';
+                message = '做得很好！繼續保持！';
+            } else if (percentage >= 50) {
+                emoji = '💪';
+                message = '還不錯！再複習一下會更好！';
+            } else {
+                emoji = '📚';
+                message = '建議再仔細閱讀一次章節內容喔！';
+            }
+
+            const quizContent = document.getElementById('quizContent');
+            quizContent.innerHTML = `
+                <div class="quiz-result">
+                    <h2>${emoji} 測驗完成！</h2>
+                    <div class="quiz-score">${correctCount} / ${totalCount}</div>
+                    <p>${message}</p>
+                    <p style="font-size: 0.9em; color: #999;">答對率：${percentage}%</p>
+                    <div class="quiz-buttons">
+                        <button class="quiz-btn quiz-btn-secondary" onclick="closeQuiz()">關閉</button>
+                        <button class="quiz-btn quiz-btn-primary" onclick="startQuiz()">再測一次</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 關閉測驗
+        function closeQuiz() {
+            document.getElementById('quizModal').classList.remove('active');
+        }
+
+        // 點擊背景關閉
+        document.getElementById('quizModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuiz();
+            }
+        });
 
         // 頁面載入時執行
         window.addEventListener('DOMContentLoaded', loadData);
