@@ -606,6 +606,24 @@
             return shuffled;
         }
 
+        // 為題目隨機排列選項
+        function randomizeQuestionOptions(question) {
+            const optionIndices = [0, 1, 2, 3];
+            const shuffledIndices = shuffleArray(optionIndices);
+            
+            // 記錄原始正確答案在新排列中的位置
+            const newCorrectAnswerIndex = shuffledIndices.indexOf(question.correctAnswer);
+            
+            // 按新順序排列選項
+            const randomizedOptions = shuffledIndices.map(i => question.options[i]);
+            
+            return {
+                options: randomizedOptions,
+                correctAnswerIndex: newCorrectAnswerIndex,
+                originalCorrectAnswer: question.correctAnswer
+            };
+        }
+
         // 開始測驗
         function startQuiz() {
             currentQuestionIndex = 0;
@@ -625,6 +643,13 @@
         // 顯示當前問題
         function showQuestion() {
             const question = quizData.questions[currentQuestionIndex];
+            
+            // 隨機排列選項
+            const randomized = randomizeQuestionOptions(question);
+            // 將隨機化的資訊存儲到當前題目中供後續使用
+            question._randomizedOptions = randomized.options;
+            question._randomizedCorrectAnswer = randomized.correctAnswerIndex;
+            
             const quizContent = document.getElementById('quizContent');
             
             let html = `
@@ -637,7 +662,7 @@
                     <div class="quiz-options">
             `;
 
-            question.options.forEach((option, index) => {
+            randomized.options.forEach((option, index) => {
                 html += `
                     <div class="quiz-option" onclick="selectAnswer(${index})">
                         ${option}
@@ -684,14 +709,16 @@
             if (selectedAnswer === null) return;
 
             const question = quizData.questions[currentQuestionIndex];
-            const isCorrect = selectedAnswer === question.correctAnswer;
+            // 使用隨機化後的正確答案索引
+            const correctAnswerIndex = question._randomizedCorrectAnswer;
+            const isCorrect = selectedAnswer === correctAnswerIndex;
             userAnswers[currentQuestionIndex] = isCorrect;
 
             // 顯示答案結果
             const options = document.querySelectorAll('.quiz-option');
             options.forEach((opt, i) => {
                 opt.style.pointerEvents = 'none';
-                if (i === question.correctAnswer) {
+                if (i === correctAnswerIndex) {
                     opt.classList.add('correct');
                 } else if (i === selectedAnswer && !isCorrect) {
                     opt.classList.add('incorrect');
