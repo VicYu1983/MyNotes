@@ -82,6 +82,7 @@
             "icon": "✨",
             "subtitle": "結合家居改造與智能化，打造現代化住宅",
             "description": "從租屋族無損方案到深度改造的完整智能家居整合指南",
+            "questionFile": "smart-home-improvement/question.json",
             "levels": [
                 {
                     "id": "rental",
@@ -139,6 +140,7 @@
             "icon": "🔴",
             "subtitle": "視覺化流程編程工具，輕鬆打造自動化應用",
             "description": "從安裝設定到進階應用，全面掌握 Node-RED 視覺化編程平台",
+            "questionFile": "node-red/question.json",
             "levels": [
                 {
                     "id": "beginner",
@@ -157,34 +159,6 @@
                     "name": "高階",
                     "order": 3,
                     "jsonFile": "node-red/advanced.json"
-                }
-            ]
-        },
-        {
-            "id": "smart-home-service",
-            "category": "business",
-            "title": "智能家居服務配置",
-            "icon": "💼",
-            "subtitle": "專業智能家居服務方案與定價策略",
-            "description": "從基礎入門級到高端定制級，掌握不同客戶群的智能家居解決方案",
-            "levels": [
-                {
-                    "id": "basic",
-                    "name": "基礎入門級",
-                    "order": 1,
-                    "jsonFile": "smart-home-service/basic.json"
-                },
-                {
-                    "id": "standard",
-                    "name": "主流全能級",
-                    "order": 2,
-                    "jsonFile": "smart-home-service/standard.json"
-                },
-                {
-                    "id": "premium",
-                    "name": "高端定制級",
-                    "order": 3,
-                    "jsonFile": "smart-home-service/premium.json"
                 }
             ]
         }

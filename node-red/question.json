@@ -1,0 +1,199 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": "beginner",
+      "question": "Node-RED 是基於什麼技術開發的？",
+      "options": [
+        "Python",
+        "Node.js",
+        "Java",
+        "PHP"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Node-RED 是基於 Node.js 開發的視覺化流程編程工具，具有輕量、高效、跨平台的特性。"
+    },
+    {
+      "id": 2,
+      "level": "beginner",
+      "question": "Node-RED 預設使用哪個連接埠提供服務？",
+      "options": [
+        "8080",
+        "1880",
+        "3000",
+        "8123"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Node-RED 預設使用 1880 連接埠，可透過瀏覽器訪問 http://localhost:1880 來使用編輯器。"
+    },
+    {
+      "id": 3,
+      "level": "beginner",
+      "question": "在 Node-RED 中，節點之間傳遞的資料物件稱為什麼？",
+      "options": [
+        "data",
+        "msg",
+        "payload",
+        "node"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Node-RED 中節點之間傳遞的資料物件稱為 msg，其中 msg.payload 是最常用來承載主要數據的屬性。"
+    },
+    {
+      "id": 4,
+      "level": "beginner",
+      "question": "以下哪個節點用於在偵錯視窗顯示訊息？",
+      "options": [
+        "Inject",
+        "Debug",
+        "Function",
+        "Switch"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Debug 節點用於在右側偵錯面板顯示訊息，是除錯和監控數據流的重要工具。"
+    },
+    {
+      "id": 5,
+      "level": "beginner",
+      "question": "在 Node-RED 中修改流程後，需要做什麼才能生效？",
+      "options": [
+        "關閉瀏覽器",
+        "點擊「部署」按鈕",
+        "重啟電腦",
+        "自動生效"
+      ],
+      "correctAnswer": 1,
+      "explanation": "在 Node-RED 中修改流程後，必須點擊右上角的「部署」按鈕，變更才會生效並開始運作。"
+    },
+    {
+      "id": 6,
+      "level": "intermediate",
+      "question": "如何在 Node-RED 中安裝額外的節點套件？",
+      "options": [
+        "只能手動複製檔案",
+        "透過 Palette Manager 或使用 npm install",
+        "不能安裝額外節點",
+        "必須重新編譯"
+      ],
+      "correctAnswer": 1,
+      "explanation": "可以透過選單中的 Palette Manager 圖形介面安裝，或在終端機使用 npm install 指令安裝節點套件。"
+    },
+    {
+      "id": 7,
+      "level": "intermediate",
+      "question": "Node-RED 中的 Function 節點可以使用什麼程式語言？",
+      "options": [
+        "Python",
+        "JavaScript",
+        "Java",
+        "C++"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Function 節點使用 JavaScript 語言撰寫程式碼，可以存取 msg、flow、global 等物件進行數據處理。"
+    },
+    {
+      "id": 8,
+      "level": "intermediate",
+      "question": "在 Node-RED 中，Context 變數的作用是什麼？",
+      "options": [
+        "只是裝飾用",
+        "在流程執行過程中儲存和共享資料",
+        "顯示錯誤訊息",
+        "控制節點顏色"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Context 提供三種範圍的變數儲存（node、flow、global），用於在流程執行過程中保存和共享數據。"
+    },
+    {
+      "id": 9,
+      "level": "intermediate",
+      "question": "Node-RED Dashboard 主要用於什麼？",
+      "options": [
+        "編輯程式碼",
+        "建立互動式 Web 儀表板介面",
+        "管理檔案",
+        "設定網路"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Node-RED Dashboard 是一個附加套件，可以快速建立包含按鈕、圖表、儀表等元件的互動式 Web 儀表板。"
+    },
+    {
+      "id": 10,
+      "level": "intermediate",
+      "question": "MQTT 節點在 Node-RED 中常用於什麼場景？",
+      "options": [
+        "編輯文件",
+        "物聯網設備通訊和訊息傳遞",
+        "播放音樂",
+        "繪製圖形"
+      ],
+      "correctAnswer": 1,
+      "explanation": "MQTT 是輕量級的發布/訂閱協定，MQTT 節點常用於物聯網設備間的訊息傳遞和智能家居整合。"
+    },
+    {
+      "id": 11,
+      "level": "advanced",
+      "question": "如何建立可重複使用的 Subflow？",
+      "options": [
+        "複製貼上節點",
+        "選單 → Subflows → Create subflow，封裝常用流程",
+        "無法建立",
+        "只能用外掛"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Subflow 可以將常用的流程封裝成可重複使用的元件，透過選單建立並定義輸入輸出，提高開發效率。"
+    },
+    {
+      "id": 12,
+      "level": "advanced",
+      "question": "Node-RED 的專案功能（Projects）主要提供什麼能力？",
+      "options": [
+        "只是改變外觀",
+        "Git 版本控制和多環境管理",
+        "加快運行速度",
+        "減少記憶體使用"
+      ],
+      "correctAnswer": 1,
+      "explanation": "專案功能整合 Git 版本控制，可以管理流程的版本歷史、分支、協作開發，並支援多環境配置管理。"
+    },
+    {
+      "id": 13,
+      "level": "advanced",
+      "question": "如何優化 Node-RED 處理大量訊息的效能？",
+      "options": [
+        "購買更快的電腦",
+        "使用 Rate Limit、批次處理、非同步操作",
+        "重複部署",
+        "增加更多 Debug 節點"
+      ],
+      "correctAnswer": 1,
+      "explanation": "應使用 Rate Limit 限制流量、Join 節點批次處理、Function 節點使用非同步操作，避免阻塞並提高吞吐量。"
+    },
+    {
+      "id": 14,
+      "level": "advanced",
+      "question": "開發自訂 Node-RED 節點需要哪些檔案？",
+      "options": [
+        "只需要 JavaScript 檔案",
+        "需要 JavaScript 檔案（邏輯）和 HTML 檔案（介面和設定）",
+        "只需要 HTML 檔案",
+        "只需要 JSON 檔案"
+      ],
+      "correctAnswer": 1,
+      "explanation": "自訂節點需要 JavaScript 檔案實作節點邏輯，以及 HTML 檔案定義節點外觀、設定介面和說明文件。"
+    },
+    {
+      "id": 15,
+      "level": "advanced",
+      "question": "在生產環境部署 Node-RED 時，應該考慮哪些安全措施？",
+      "options": [
+        "不需要考慮安全性",
+        "啟用身份驗證、使用 HTTPS、設定防火牆、定期更新",
+        "只要設定密碼就好",
+        "隱藏就安全了"
+      ],
+      "correctAnswer": 1,
+      "explanation": "生產環境應啟用使用者身份驗證、使用 HTTPS 加密、設定防火牆限制存取、定期更新版本，並考慮使用反向代理。"
+    }
+  ]
+}
