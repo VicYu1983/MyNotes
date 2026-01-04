@@ -1,0 +1,392 @@
+{
+  "level": {
+    "id": "intermediate",
+    "name": "中階",
+    "emoji": "🟡",
+    "description": "進階功能與整合",
+    "color": "#ff9800"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "安裝自訂節點",
+      "subtitle": "從 Palette Manager 安裝社群節點套件",
+      "sections": [
+        {
+          "heading": "什麼是自訂節點？",
+          "content": "Node-RED 擁有龐大的社群生態系統，開發者可以創建並分享自己的節點套件。透過 Palette Manager 或 npm 安裝這些節點，可以大幅擴展 Node-RED 的功能。"
+        },
+        {
+          "heading": "使用 Palette Manager 安裝",
+          "list": [
+            "點擊右上角選單 → Manage palette",
+            "切換到「Install」標籤",
+            "在搜尋框輸入節點名稱",
+            "找到需要的節點套件，點擊「Install」",
+            "等待安裝完成，節點會出現在左側面板"
+          ]
+        },
+        {
+          "heading": "使用 npm 安裝",
+          "code": "# 進入 Node-RED 使用者目錄\ncd ~/.node-red\n\n# 安裝節點套件\nnpm install node-red-contrib-example\n\n# 重啟 Node-RED"
+        },
+        {
+          "heading": "熱門節點套件推薦",
+          "list": [
+            "<strong>node-red-dashboard</strong>：建立互動式儀表板",
+            "<strong>node-red-contrib-telegrambot</strong>：Telegram 機器人整合",
+            "<strong>node-red-contrib-home-assistant-websocket</strong>：Home Assistant 整合",
+            "<strong>node-red-node-email</strong>：發送電子郵件",
+            "<strong>node-red-contrib-influxdb</strong>：InfluxDB 時序資料庫"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "HTTP 請求與 API 整合",
+      "subtitle": "呼叫外部 API 與建立 HTTP 端點",
+      "sections": [
+        {
+          "heading": "HTTP Request 節點",
+          "content": "用於發送 HTTP 請求到外部 API，支援 GET、POST、PUT、DELETE 等方法。"
+        },
+        {
+          "heading": "基本 GET 請求",
+          "list": [
+            "新增 <strong>HTTP Request</strong> 節點",
+            "設定 URL（如：https://api.example.com/data）",
+            "選擇 Method：GET",
+            "設定回傳格式（JSON、String 等）",
+            "連接 Debug 節點查看結果"
+          ]
+        },
+        {
+          "heading": "POST 請求範例",
+          "list": [
+            "使用 <strong>Function</strong> 節點準備資料",
+            "設定 msg.payload 為要發送的 JSON 物件",
+            "HTTP Request 節點選擇 POST 方法",
+            "可能需要設定 Headers（如 Content-Type）"
+          ]
+        },
+        {
+          "heading": "建立 HTTP 端點",
+          "list": [
+            "使用 <strong>HTTP In</strong> 節點接收請求",
+            "設定 URL 路徑（如 /api/data）",
+            "選擇 HTTP 方法（GET/POST 等）",
+            "處理請求後使用 <strong>HTTP Response</strong> 節點回應",
+            "設定 msg.payload 為回應內容，msg.statusCode 為狀態碼"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "MQTT 通訊協定",
+      "subtitle": "使用 MQTT 進行物聯網設備通訊",
+      "sections": [
+        {
+          "heading": "什麼是 MQTT？",
+          "content": "MQTT（Message Queuing Telemetry Transport）是一個輕量級的發布/訂閱式訊息傳輸協定，廣泛應用於物聯網設備通訊。Node-RED 內建 MQTT 支援。"
+        },
+        {
+          "heading": "設定 MQTT Broker",
+          "list": [
+            "新增 <strong>MQTT In</strong> 或 <strong>MQTT Out</strong> 節點",
+            "雙擊節點，點擊「Server」旁的編輯按鈕",
+            "輸入 Broker 位址（如 localhost:1883）",
+            "如需認證，輸入使用者名稱和密碼",
+            "設定 Client ID（可留空自動生成）"
+          ]
+        },
+        {
+          "heading": "訂閱主題（Subscribe）",
+          "list": [
+            "使用 <strong>MQTT In</strong> 節點",
+            "設定要訂閱的 Topic（如 home/sensor/temperature）",
+            "支援萬用字元：<code>+</code>（單層）、<code>#</code>（多層）",
+            "範例：<code>home/+/temperature</code> 訂閱所有房間的溫度"
+          ]
+        },
+        {
+          "heading": "發布訊息（Publish）",
+          "list": [
+            "使用 <strong>MQTT Out</strong> 節點",
+            "設定要發布的 Topic",
+            "msg.payload 會作為訊息內容發布",
+            "可設定 QoS（服務品質）和 Retain 旗標"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "資料庫整合",
+      "subtitle": "連接 MySQL、MongoDB、InfluxDB 等資料庫",
+      "sections": [
+        {
+          "heading": "支援的資料庫",
+          "list": [
+            "<strong>MySQL/MariaDB</strong>：關聯式資料庫",
+            "<strong>PostgreSQL</strong>：進階關聯式資料庫",
+            "<strong>MongoDB</strong>：NoSQL 文件資料庫",
+            "<strong>InfluxDB</strong>：時序資料庫",
+            "<strong>SQLite</strong>：輕量級檔案資料庫"
+          ]
+        },
+        {
+          "heading": "MySQL 節點安裝與設定",
+          "list": [
+            "安裝節點：<code>npm install node-red-node-mysql</code>",
+            "新增 <strong>mysql</strong> 節點",
+            "設定資料庫連線資訊（主機、連接埠、資料庫名稱）",
+            "輸入使用者名稱和密碼"
+          ]
+        },
+        {
+          "heading": "執行 SQL 查詢",
+          "code": "// 在 Function 節點中準備 SQL\nmsg.topic = \"SELECT * FROM sensors WHERE id = ?\";\nmsg.payload = [123];  // 參數\nreturn msg;"
+        },
+        {
+          "heading": "MongoDB 範例",
+          "list": [
+            "安裝：<code>npm install node-red-node-mongodb</code>",
+            "設定連線字串",
+            "支援查詢、插入、更新、刪除操作",
+            "使用 JSON 格式的查詢條件"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "Dashboard 儀表板",
+      "subtitle": "建立互動式 Web 儀表板",
+      "sections": [
+        {
+          "heading": "安裝 Dashboard",
+          "code": "npm install node-red-dashboard"
+        },
+        {
+          "heading": "Dashboard 節點類型",
+          "list": [
+            "<strong>ui_button</strong>：按鈕控制",
+            "<strong>ui_switch</strong>：開關切換",
+            "<strong>ui_slider</strong>：滑桿輸入",
+            "<strong>ui_text</strong>：文字顯示",
+            "<strong>ui_gauge</strong>：儀表圖",
+            "<strong>ui_chart</strong>：圖表",
+            "<strong>ui_form</strong>：表單輸入"
+          ]
+        },
+        {
+          "heading": "建立第一個 Dashboard",
+          "list": [
+            "新增任一 Dashboard 節點（如 ui_button）",
+            "在節點設定中建立新的 Group 和 Tab",
+            "設定標籤和位置",
+            "部署後訪問 <code>http://localhost:1880/ui</code>",
+            "查看互動式儀表板"
+          ]
+        },
+        {
+          "heading": "Layout 管理",
+          "list": [
+            "右側面板選擇「dashboard」標籤",
+            "管理 Tabs（分頁）和 Groups（群組）",
+            "拖曳調整順序",
+            "設定寬度和間距",
+            "自訂主題顏色"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "title": "定時任務與排程",
+      "subtitle": "使用 Cron 和進階定時功能",
+      "sections": [
+        {
+          "heading": "Inject 節點的定時功能",
+          "list": [
+            "<strong>間隔</strong>：每 N 秒/分/小時執行",
+            "<strong>特定時間</strong>：每天固定時間",
+            "<strong>Cron</strong>：複雜的排程規則",
+            "可設定開始和結束日期"
+          ]
+        },
+        {
+          "heading": "Cron 表達式",
+          "code": "# 格式：秒 分 時 日 月 星期\n# 範例：\n0 0 8 * * 1-5    # 週一到週五早上 8:00\n0 */15 * * * *   # 每 15 分鐘\n0 0 0 1 * *      # 每月 1 號午夜"
+        },
+        {
+          "heading": "安裝進階排程節點",
+          "list": [
+            "安裝 <strong>node-red-contrib-cron-plus</strong>",
+            "支援動態設定排程",
+            "可以暫停和恢復排程",
+            "支援多個獨立的排程任務"
+          ]
+        },
+        {
+          "heading": "實用案例",
+          "list": [
+            "每小時收集感測器數據",
+            "每天早上 7 點發送天氣預報",
+            "每週一晚上備份數據",
+            "每 5 分鐘檢查系統狀態"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "錯誤處理",
+      "subtitle": "使用 Catch 節點處理錯誤",
+      "sections": [
+        {
+          "heading": "Catch 節點",
+          "content": "Catch 節點用於捕捉流程中發生的錯誤，避免錯誤導致整個流程中斷。"
+        },
+        {
+          "heading": "基本使用",
+          "list": [
+            "新增 <strong>Catch</strong> 節點到流程中",
+            "預設會捕捉同一 Flow 內所有節點的錯誤",
+            "可指定只捕捉特定節點的錯誤",
+            "錯誤訊息會包含在 msg.error 中"
+          ]
+        },
+        {
+          "heading": "錯誤訊息結構",
+          "code": "{\n  \"message\": \"錯誤描述\",\n  \"source\": {\n    \"id\": \"節點ID\",\n    \"type\": \"節點類型\",\n    \"name\": \"節點名稱\"\n  }\n}"
+        },
+        {
+          "heading": "實用錯誤處理流程",
+          "list": [
+            "記錄錯誤到日誌檔案",
+            "發送錯誤通知（Email、Telegram）",
+            "嘗試重新執行失敗的任務",
+            "切換到備用流程或資料源"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "JSONata 表達式",
+      "subtitle": "強大的 JSON 查詢和轉換語言",
+      "sections": [
+        {
+          "heading": "什麼是 JSONata？",
+          "content": "JSONata 是一個輕量級的查詢和轉換語言，用於處理 JSON 資料。在 Node-RED 的 Change 節點和其他地方都可以使用。"
+        },
+        {
+          "heading": "基本語法",
+          "list": [
+            "<strong>選取屬性</strong>：<code>payload.temperature</code>",
+            "<strong>陣列索引</strong>：<code>payload.data[0]</code>",
+            "<strong>過濾</strong>：<code>payload.sensors[type='temp']</code>",
+            "<strong>映射</strong>：<code>payload.sensors.value</code>",
+            "<strong>聚合</strong>：<code>$sum(payload.values)</code>"
+          ]
+        },
+        {
+          "heading": "常用函數",
+          "list": [
+            "<code>$count(array)</code>：計數",
+            "<code>$sum(array)</code>：總和",
+            "<code>$average(array)</code>：平均值",
+            "<code>$max(array)</code>：最大值",
+            "<code>$min(array)</code>：最小值",
+            "<code>$join(array, separator)</code>：連接字串",
+            "<code>$substring(str, start, length)</code>：子字串"
+          ]
+        },
+        {
+          "heading": "實用範例",
+          "code": "// 計算溫度平均值\n$average(payload.sensors.temperature)\n\n// 過濾高溫感測器\npayload.sensors[temperature > 30]\n\n// 轉換資料格式\n{\n  \"location\": payload.room,\n  \"temp\": payload.temperature & \"°C\"\n}"
+        }
+      ]
+    },
+    {
+      "number": "09",
+      "title": "WebSocket 即時通訊",
+      "subtitle": "建立雙向即時通訊連線",
+      "sections": [
+        {
+          "heading": "WebSocket 節點",
+          "content": "WebSocket 提供全雙工的即時通訊能力，適合需要即時更新的應用，如聊天室、即時監控等。"
+        },
+        {
+          "heading": "建立 WebSocket Server",
+          "list": [
+            "新增 <strong>WebSocket In</strong> 節點",
+            "設定 URL 路徑（如 /ws/data）",
+            "選擇「Listen on」模式",
+            "處理接收到的訊息",
+            "使用 <strong>WebSocket Out</strong> 節點回應"
+          ]
+        },
+        {
+          "heading": "連接到 WebSocket Server",
+          "list": [
+            "新增 <strong>WebSocket In</strong> 節點",
+            "選擇「Connect to」模式",
+            "輸入完整的 WebSocket URL",
+            "處理接收到的訊息"
+          ]
+        },
+        {
+          "heading": "廣播訊息給所有客戶端",
+          "content": "使用 WebSocket Out 節點並選擇「Send to all connected clients」選項，可以將訊息廣播給所有連線的客戶端。"
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "檔案處理",
+      "subtitle": "讀取、寫入和監控檔案",
+      "sections": [
+        {
+          "heading": "File In 節點（讀取檔案）",
+          "list": [
+            "設定檔案路徑",
+            "選擇輸出格式（字串、Buffer）",
+            "可設定檔案編碼（UTF-8 等）",
+            "支援讀取二進位檔案"
+          ]
+        },
+        {
+          "heading": "File Out 節點（寫入檔案）",
+          "list": [
+            "設定檔案路徑",
+            "選擇寫入模式：覆寫或附加",
+            "msg.payload 會被寫入檔案",
+            "自動建立不存在的目錄"
+          ]
+        },
+        {
+          "heading": "Watch 節點（監控檔案變更）",
+          "list": [
+            "監控檔案或目錄的變更",
+            "檔案被修改、新增或刪除時觸發",
+            "msg.payload 包含檔案路徑",
+            "適合自動處理新檔案的場景"
+          ]
+        },
+        {
+          "heading": "CSV 處理",
+          "list": [
+            "使用 <strong>CSV</strong> 節點解析 CSV 檔案",
+            "可設定欄位名稱和分隔符號",
+            "支援雙向轉換（CSV ↔ JSON）",
+            "處理大型 CSV 時注意記憶體使用"
+          ]
+        }
+      ]
+    }
+  ]
+}

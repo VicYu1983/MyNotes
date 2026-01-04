@@ -1,0 +1,479 @@
+{
+  "level": {
+    "id": "beginner",
+    "name": "初階",
+    "emoji": "🟢",
+    "description": "基礎概念與入門",
+    "color": "#4caf50"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "Node-RED 簡介",
+      "subtitle": "什麼是 Node-RED？發展歷史與核心特色",
+      "sections": [
+        {
+          "heading": "什麼是 Node-RED？",
+          "content": "Node-RED 是一個開源的視覺化流程編程工具，由 IBM 開發。它使用基於瀏覽器的流程編輯器，讓使用者透過拖拉節點（Node）的方式連接各種服務、API 和硬體設備，無需撰寫大量程式碼即可建立自動化流程。特別適合物聯網（IoT）、家庭自動化和數據處理應用。"
+        },
+        {
+          "heading": "發展歷史",
+          "list": [
+            "<strong>2013年</strong>：由 IBM 新興技術服務團隊開發，最初用於快速原型開發",
+            "<strong>2016年</strong>：成為 JS Foundation 的一部分，正式開源",
+            "<strong>2019年</strong>：加入 OpenJS Foundation",
+            "<strong>2023年</strong>：3.x 版本發布，帶來更多功能與效能提升"
+          ]
+        },
+        {
+          "heading": "核心特色",
+          "list": [
+            "<strong>視覺化編程</strong>：拖拉式介面，直覺易懂",
+            "<strong>基於 Node.js</strong>：輕量高效，跨平台運行",
+            "<strong>豐富的節點庫</strong>：超過 4000+ 社群開發的節點套件",
+            "<strong>即時部署</strong>：修改後一鍵部署，立即生效",
+            "<strong>開源免費</strong>：完全開源，社群活躍",
+            "<strong>擴展性強</strong>：可自行開發客製化節點"
+          ]
+        },
+        {
+          "heading": "應用場景",
+          "list": [
+            "<strong>智能家居</strong>：整合各種智能設備，建立自動化場景",
+            "<strong>IoT 專案</strong>：連接感測器與執行器，處理數據流",
+            "<strong>API 整合</strong>：串接不同服務的 API，建立工作流程",
+            "<strong>數據處理</strong>：收集、轉換和視覺化數據",
+            "<strong>通知系統</strong>：建立警報與推送通知機制"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "安裝與設定",
+      "subtitle": "在不同平台上安裝 Node-RED",
+      "sections": [
+        {
+          "heading": "系統需求",
+          "list": [
+            "<strong>Node.js</strong>：版本 14.x 或更高（建議 18.x LTS）",
+            "<strong>記憶體</strong>：至少 256MB RAM（建議 512MB 以上）",
+            "<strong>儲存空間</strong>：約 200MB（含節點套件）",
+            "<strong>瀏覽器</strong>：Chrome、Firefox、Edge 等現代瀏覽器"
+          ]
+        },
+        {
+          "heading": "Windows 安裝步驟",
+          "list": [
+            "下載並安裝 <a href='https://nodejs.org/' target='_blank'>Node.js</a>",
+            "開啟命令提示字元或 PowerShell",
+            "執行安裝指令：<code>npm install -g --unsafe-perm node-red</code>",
+            "啟動 Node-RED：<code>node-red</code>",
+            "開啟瀏覽器訪問：<code>http://localhost:1880</code>"
+          ]
+        },
+        {
+          "heading": "macOS/Linux 安裝步驟",
+          "list": [
+            "安裝 Node.js（使用 Homebrew 或套件管理器）",
+            "開啟終端機",
+            "執行：<code>sudo npm install -g --unsafe-perm node-red</code>",
+            "啟動：<code>node-red</code>",
+            "訪問：<code>http://localhost:1880</code>"
+          ]
+        },
+        {
+          "heading": "Raspberry Pi 快速安裝",
+          "list": [
+            "使用官方腳本：<code>bash &lt;(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)</code>",
+            "啟動服務：<code>node-red-start</code>",
+            "開機自動啟動：<code>sudo systemctl enable nodered.service</code>"
+          ]
+        },
+        {
+          "heading": "Docker 安裝",
+          "code": "# 拉取映像檔\ndocker pull nodered/node-red\n\n# 運行容器\ndocker run -it -p 1880:1880 \\\n  -v node_red_data:/data \\\n  --name mynodered \\\n  nodered/node-red"
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "介面導覽",
+      "subtitle": "認識 Node-RED 編輯器的各個區域",
+      "sections": [
+        {
+          "heading": "主要區域介紹",
+          "content": "Node-RED 編輯器分為四個主要區域：左側節點面板、中央流程畫布、右側資訊/偵錯面板，以及頂部選單列。"
+        },
+        {
+          "heading": "1. 節點面板（左側）",
+          "list": [
+            "<strong>輸入節點</strong>：觸發流程的節點（如 inject、mqtt in）",
+            "<strong>輸出節點</strong>：輸出結果的節點（如 debug、mqtt out）",
+            "<strong>功能節點</strong>：處理數據的節點（如 function、change）",
+            "<strong>分類瀏覽</strong>：節點依功能分類，方便搜尋",
+            "<strong>搜尋功能</strong>：快速找到需要的節點"
+          ]
+        },
+        {
+          "heading": "2. 流程畫布（中央）",
+          "list": [
+            "<strong>工作區域</strong>：拖拉節點並連接成流程",
+            "<strong>多分頁</strong>：可建立多個 Flow 分頁",
+            "<strong>網格背景</strong>：幫助對齊節點",
+            "<strong>縮放功能</strong>：滾輪縮放或右下角控制",
+            "<strong>選取模式</strong>：單選、框選、全選節點"
+          ]
+        },
+        {
+          "heading": "3. 資訊面板（右側）",
+          "list": [
+            "<strong>資訊標籤</strong>：顯示節點說明文件",
+            "<strong>偵錯標籤</strong>：顯示 debug 節點輸出",
+            "<strong>設定標籤</strong>：管理全域設定與環境變數",
+            "<strong>上下文標籤</strong>：查看全域/流程變數"
+          ]
+        },
+        {
+          "heading": "4. 頂部選單",
+          "list": [
+            "<strong>部署按鈕</strong>：部署/更新流程（紅色按鈕）",
+            "<strong>主選單</strong>：匯入/匯出、設定、管理面板",
+            "<strong>使用者選單</strong>：登入/登出（啟用安全性時）"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "基本節點類型",
+      "subtitle": "認識常用的核心節點",
+      "sections": [
+        {
+          "heading": "Inject 節點（注入）",
+          "list": [
+            "<strong>功能</strong>：手動或定時觸發流程",
+            "<strong>設定</strong>：可設定時間間隔、定時排程",
+            "<strong>輸出</strong>：timestamp、字串、數字、JSON 物件",
+            "<strong>用途</strong>：測試流程、定時任務"
+          ]
+        },
+        {
+          "heading": "Debug 節點（偵錯）",
+          "list": [
+            "<strong>功能</strong>：在偵錯視窗顯示訊息",
+            "<strong>設定</strong>：選擇要顯示的訊息屬性",
+            "<strong>輸出位置</strong>：偵錯面板或系統日誌",
+            "<strong>用途</strong>：除錯、監控數據流"
+          ]
+        },
+        {
+          "heading": "Function 節點（函式）",
+          "list": [
+            "<strong>功能</strong>：使用 JavaScript 處理訊息",
+            "<strong>變數</strong>：可存取 msg、flow、global 變數",
+            "<strong>回傳</strong>：使用 return msg 輸出結果",
+            "<strong>用途</strong>：自訂邏輯、數據轉換"
+          ]
+        },
+        {
+          "heading": "Change 節點（修改）",
+          "list": [
+            "<strong>功能</strong>：修改訊息屬性",
+            "<strong>操作</strong>：設定、改變、刪除、移動屬性",
+            "<strong>支援</strong>：JSONata 表達式",
+            "<strong>用途</strong>：簡單的數據處理"
+          ]
+        },
+        {
+          "heading": "Switch 節點（分支）",
+          "list": [
+            "<strong>功能</strong>：根據條件分流訊息",
+            "<strong>條件</strong>：相等、包含、大於/小於等",
+            "<strong>輸出</strong>：多個輸出端口",
+            "<strong>用途</strong>：流程控制、條件判斷"
+          ]
+        },
+        {
+          "heading": "Template 節點（模板）",
+          "list": [
+            "<strong>功能</strong>：使用模板生成文字",
+            "<strong>語法</strong>：Mustache 模板語法",
+            "<strong>輸出</strong>：HTML、JSON、純文字",
+            "<strong>用途</strong>：產生動態內容、格式化輸出"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "第一個 Flow 實作",
+      "subtitle": "建立簡單的「Hello World」流程",
+      "sections": [
+        {
+          "heading": "目標",
+          "content": "建立一個點擊按鈕就會在偵錯視窗顯示「Hello World」的簡單流程。"
+        },
+        {
+          "heading": "步驟說明",
+          "list": [
+            "從左側節點面板拖曳 <strong>Inject</strong> 節點到畫布",
+            "再拖曳一個 <strong>Debug</strong> 節點到畫布",
+            "連接兩個節點：從 Inject 的輸出點拖曳到 Debug 的輸入點",
+            "雙擊 Inject 節點進行設定",
+            "在 Payload 欄位選擇「字串」，輸入 <code>Hello World</code>",
+            "點擊「完成」按鈕",
+            "點擊右上角紅色的「部署」按鈕",
+            "點擊 Inject 節點左側的按鈕觸發",
+            "在右側偵錯面板查看輸出結果"
+          ]
+        },
+        {
+          "heading": "進階練習：加入 Function 節點",
+          "list": [
+            "在 Inject 和 Debug 節點之間加入 <strong>Function</strong> 節點",
+            "雙擊 Function 節點，輸入以下程式碼：",
+            "<code>msg.payload = msg.payload + ' - ' + new Date().toLocaleString();\nreturn msg;</code>",
+            "這樣會在訊息後面加上當前時間",
+            "部署並測試"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "title": "訊息物件 (msg)",
+      "subtitle": "理解 Node-RED 中的訊息傳遞機制",
+      "sections": [
+        {
+          "heading": "什麼是 msg 物件？",
+          "content": "在 Node-RED 中，節點之間傳遞的是 JavaScript 物件，稱為 <code>msg</code>。這個物件包含了各種屬性，其中最重要的是 <code>msg.payload</code>，用於承載主要數據。"
+        },
+        {
+          "heading": "常用的 msg 屬性",
+          "list": [
+            "<strong>msg.payload</strong>：主要數據內容",
+            "<strong>msg.topic</strong>：訊息主題（常用於 MQTT）",
+            "<strong>msg._msgid</strong>：訊息唯一識別碼",
+            "<strong>msg.req</strong>：HTTP 請求物件（HTTP 節點）",
+            "<strong>msg.res</strong>：HTTP 回應物件（HTTP 節點）"
+          ]
+        },
+        {
+          "heading": "在 Function 節點中存取 msg",
+          "code": "// 讀取 payload\nvar data = msg.payload;\n\n// 修改 payload\nmsg.payload = \"新的內容\";\n\n// 新增自訂屬性\nmsg.myData = { value: 100 };\n\n// 回傳訊息\nreturn msg;"
+        },
+        {
+          "heading": "多輸出處理",
+          "code": "// 回傳到第一個輸出\nreturn msg;\n\n// 回傳到多個輸出\nreturn [msg1, msg2, msg3];\n\n// 某些輸出不送出（null）\nreturn [msg, null, msg3];"
+        },
+        {
+          "heading": "非同步處理",
+          "code": "// 使用 node.send() 和 node.done()\nsetTimeout(function() {\n    msg.payload = \"延遲的訊息\";\n    node.send(msg);\n    node.done();\n}, 2000);"
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "變數與儲存",
+      "subtitle": "使用 Context 儲存數據",
+      "sections": [
+        {
+          "heading": "三種 Context 類型",
+          "content": "Node-RED 提供三種不同範圍的變數儲存機制，用於在流程執行過程中保存數據。"
+        },
+        {
+          "heading": "1. Flow Context（流程變數）",
+          "list": [
+            "<strong>範圍</strong>：同一個 Flow 分頁內的所有節點可存取",
+            "<strong>用途</strong>：在同一流程中共享數據",
+            "<strong>設定</strong>：<code>flow.set('key', value)</code>",
+            "<strong>讀取</strong>：<code>flow.get('key')</code>"
+          ]
+        },
+        {
+          "heading": "2. Global Context（全域變數）",
+          "list": [
+            "<strong>範圍</strong>：所有 Flow 分頁都可存取",
+            "<strong>用途</strong>：跨流程共享數據",
+            "<strong>設定</strong>：<code>global.set('key', value)</code>",
+            "<strong>讀取</strong>：<code>global.get('key')</code>"
+          ]
+        },
+        {
+          "heading": "3. Node Context（節點變數）",
+          "list": [
+            "<strong>範圍</strong>：僅該節點可存取",
+            "<strong>用途</strong>：節點內部狀態管理",
+            "<strong>設定</strong>：<code>context.set('key', value)</code>",
+            "<strong>讀取</strong>：<code>context.get('key')</code>"
+          ]
+        },
+        {
+          "heading": "Function 節點範例",
+          "code": "// 儲存到 flow context\nflow.set('temperature', 25.5);\n\n// 讀取 flow context\nvar temp = flow.get('temperature');\n\n// 儲存到 global context\nglobal.set('systemStatus', 'running');\n\n// 讀取 global context\nvar status = global.get('systemStatus');\n\nmsg.payload = { temp: temp, status: status };\nreturn msg;"
+        },
+        {
+          "heading": "持久化儲存",
+          "content": "預設情況下，Context 資料在重啟 Node-RED 後會遺失。可以在 <code>settings.js</code> 中設定持久化儲存（如檔案系統），讓資料在重啟後保留。"
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "流程管理",
+      "subtitle": "組織和管理你的 Flow",
+      "sections": [
+        {
+          "heading": "建立和管理 Flow 分頁",
+          "list": [
+            "點擊畫布上方的 <strong>+</strong> 按鈕新增 Flow",
+            "雙擊分頁標籤可重新命名",
+            "右鍵分頁標籤可刪除、停用或設定",
+            "拖曳分頁標籤可調整順序"
+          ]
+        },
+        {
+          "heading": "Subflow（子流程）",
+          "list": [
+            "<strong>用途</strong>：將常用的流程包裝成可重複使用的元件",
+            "<strong>建立</strong>：選單 → Subflows → Create subflow",
+            "<strong>編輯</strong>：雙擊 subflow 進入編輯模式",
+            "<strong>使用</strong>：從節點面板拖曳已建立的 subflow"
+          ]
+        },
+        {
+          "heading": "節點組織技巧",
+          "list": [
+            "使用 <strong>Comment</strong> 節點添加註解說明",
+            "善用節點命名，清楚描述功能",
+            "對齊節點，保持流程整潔",
+            "使用 <strong>Link</strong> 節點連接不同區域的流程",
+            "將相關功能分組在同一區域"
+          ]
+        },
+        {
+          "heading": "匯入和匯出",
+          "list": [
+            "<strong>匯出</strong>：選單 → Export → Clipboard",
+            "<strong>選擇範圍</strong>：可匯出選取的節點、當前 Flow 或所有 Flow",
+            "<strong>格式</strong>：JSON 格式，易於分享和版本控制",
+            "<strong>匯入</strong>：選單 → Import → Clipboard",
+            "<strong>貼上</strong>：貼上 JSON 後選擇放置位置"
+          ]
+        },
+        {
+          "heading": "備份與版本控制",
+          "list": [
+            "定期匯出 Flow 作為備份",
+            "使用 Git 管理 <code>flows.json</code> 檔案",
+            "在 <code>settings.js</code> 啟用專案功能，支援 Git 整合",
+            "使用有意義的部署註解"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "09",
+      "title": "安全性設定",
+      "subtitle": "保護你的 Node-RED 編輯器",
+      "sections": [
+        {
+          "heading": "為什麼需要安全性？",
+          "content": "預設情況下，Node-RED 編輯器不需要身份驗證，任何能訪問的人都可以修改你的流程。建議啟用安全性設定，特別是在公開網路環境中。"
+        },
+        {
+          "heading": "啟用使用者驗證",
+          "list": [
+            "編輯 <code>settings.js</code> 檔案",
+            "找到 <code>adminAuth</code> 區段",
+            "設定使用者名稱和密碼雜湊",
+            "重啟 Node-RED"
+          ]
+        },
+        {
+          "heading": "產生密碼雜湊",
+          "code": "# 使用 Node-RED 內建工具\nnode-red admin hash-pw\n\n# 輸入密碼後會產生雜湊值"
+        },
+        {
+          "heading": "settings.js 設定範例",
+          "code": "adminAuth: {\n    type: \"credentials\",\n    users: [{\n        username: \"admin\",\n        password: \"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.\",\n        permissions: \"*\"\n    }]\n}"
+        },
+        {
+          "heading": "設定權限",
+          "list": [
+            "<strong>*</strong>：完整管理權限",
+            "<strong>read</strong>：唯讀存取",
+            "<strong>write</strong>：可編輯但不能修改設定",
+            "可設定多個使用者，分配不同權限"
+          ]
+        },
+        {
+          "heading": "HTTPS 加密",
+          "list": [
+            "設定 <code>https</code> 區段使用 SSL 憑證",
+            "保護編輯器與流程之間的通訊",
+            "特別重要於公開網路環境"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "常用技巧與最佳實踐",
+      "subtitle": "提升開發效率的小訣竅",
+      "sections": [
+        {
+          "heading": "鍵盤快捷鍵",
+          "list": [
+            "<strong>Ctrl + C / Cmd + C</strong>：複製選取的節點",
+            "<strong>Ctrl + V / Cmd + V</strong>：貼上節點",
+            "<strong>Ctrl + Z / Cmd + Z</strong>：復原",
+            "<strong>Delete</strong>：刪除選取的節點",
+            "<strong>Ctrl + A / Cmd + A</strong>：全選",
+            "<strong>Ctrl + F / Cmd + F</strong>：搜尋"
+          ]
+        },
+        {
+          "heading": "除錯技巧",
+          "list": [
+            "多用 <strong>Debug</strong> 節點觀察數據流",
+            "使用 <strong>Catch</strong> 節點捕捉錯誤",
+            "啟用「顯示節點狀態」，觀察節點執行狀況",
+            "善用「完整部署」vs「修改的節點」選項",
+            "檢查瀏覽器主控台的錯誤訊息"
+          ]
+        },
+        {
+          "heading": "效能優化",
+          "list": [
+            "避免在 Function 節點中使用密集運算",
+            "使用 <strong>Rate Limit</strong> 節點控制訊息流量",
+            "定期清理不用的 Context 變數",
+            "避免在迴圈中使用 node.send()",
+            "大量數據處理考慮使用批次處理"
+          ]
+        },
+        {
+          "heading": "開發建議",
+          "list": [
+            "保持流程簡潔，複雜邏輯拆分為 Subflow",
+            "為節點和流程添加有意義的名稱和註解",
+            "定期備份和版本控制",
+            "測試流程前先用小量數據驗證",
+            "參考社群範例學習最佳實踐"
+          ]
+        },
+        {
+          "heading": "實用資源",
+          "list": [
+            "<strong>官方文件</strong>：<a href='https://nodered.org/docs/' target='_blank'>nodered.org/docs</a>",
+            "<strong>Flow Library</strong>：<a href='https://flows.nodered.org/' target='_blank'>flows.nodered.org</a>",
+            "<strong>論壇</strong>：<a href='https://discourse.nodered.org/' target='_blank'>discourse.nodered.org</a>",
+            "<strong>GitHub</strong>：<a href='https://github.com/node-red' target='_blank'>github.com/node-red</a>"
+          ]
+        }
+      ]
+    }
+  ]
+}

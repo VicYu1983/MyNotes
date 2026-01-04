@@ -130,6 +130,34 @@
             ]
         },
         {
+            "id": "node-red",
+            "category": "learning",
+            "title": "Node-RED",
+            "icon": "🔴",
+            "subtitle": "視覺化流程編程工具，輕鬆打造自動化應用",
+            "description": "從安裝設定到進階應用，全面掌握 Node-RED 視覺化編程平台",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "初階",
+                    "order": 1,
+                    "jsonFile": "node-red/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中階",
+                    "order": 2,
+                    "jsonFile": "node-red/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高階",
+                    "order": 3,
+                    "jsonFile": "node-red/advanced.json"
+                }
+            ]
+        },
+        {
             "id": "smart-home-service",
             "category": "business",
             "title": "智能家居服務配置",
