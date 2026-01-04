@@ -24,6 +24,7 @@
             "icon": "🏠",
             "subtitle": "從基礎到進階，系統化學習智能家居技術",
             "description": "從基礎概念到系統開發，全方位學習智能家居技術",
+            "questionFile": "smart-home/question.json",
             "levels": [
                 {
                     "id": "beginner",
@@ -52,6 +53,7 @@
             "icon": "🔧",
             "subtitle": "從基礎修繕到大規模改造，打造夢想家居",
             "description": "學習家居維護、修理和改造的實用技能，由初階DIY到專業級別",
+            "questionFile": "home-improvement/question.json",
             "levels": [
                 {
                     "id": "beginner",

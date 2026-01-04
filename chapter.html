@@ -592,11 +592,27 @@
             }
         }
 
+        // 隨機排序陣列（Fisher-Yates 洗牌算法）
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
         // 開始測驗
         function startQuiz() {
             currentQuestionIndex = 0;
             userAnswers = [];
             selectedAnswer = null;
+            
+            // 隨機排序題目
+            if (quizData && quizData.questions) {
+                quizData.questions = shuffleArray(quizData.questions);
+            }
+            
             showQuestion();
             document.getElementById('quizModal').classList.add('active');
         }
