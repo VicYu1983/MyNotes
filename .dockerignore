@@ -1,0 +1,35 @@
+# 日誌文件
+*.log
+npm-debug.log*
+
+# 依賴
+node_modules/
+
+# 系統文件
+.DS_Store
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git
+.gitignore
+
+# 臨時文件
+temp/
+tmp/
+*.tmp
+
+# 構建產物
+dist/
+build/
+
+# 開發相關
+.env
+.env.development
+docker-compose.override.yml

@@ -195,7 +195,23 @@ MyNotes/
 3. **瀏覽器兼容性**：嘗試切換到最新版瀏覽器
 4. **緩存問題**：清除瀏覽器緩存後重新加載
 
-## 🔐 隱私與數據
+## � Docker 部署
+
+本項目支援 Docker 容器化部署，快速一鍵部署到任何環境。
+
+### 快速開始
+
+```bash
+# 使用 Docker Compose（推薦）
+docker-compose up -d
+
+# 訪問應用
+# http://localhost:8080
+```
+
+詳細部署指南請查看 [DOCKER_DEPLOYMENT.md](DOCKER_DEPLOYMENT.md)
+
+## �🔐 隱私與數據
 
 - 所有學習進度默認保存在本地瀏覽器
 - 不收集用戶個人信息

@@ -2,19 +2,24 @@
 
 ## 📁 專案概述
 
-這是一個互動式學習平台，整合了知識點內容和測驗功能。平台支持多層級學習（初階、中階、高階），每個主題包含知識點展示和 50 道測驗題目，支援實時評分和答案解釋。
+這是一個互動式學習平台，整合了知識點內容和測驗功能。平台支持多層級學習（初階、中階、高階），每個主題包含知識點展示和 50 道測驗題目，支援實時評分和答案解釋。支援 Docker 容器化部署。
 
 ## 🏗️ 目錄結構
 
 ```
 MyNotes/
 ├── README.md               # 平台使用指南
+├── DOCKER_DEPLOYMENT.md    # Docker 部署指南 ⭐ 新增
 ├── index.html              # 首頁 - 主題入口
 ├── chapter.html            # 通用章節頁面 + 測驗頁面（所有主題共用）
 ├── config.json             # 配置文件 - 定義所有主題和JSON路徑
 ├── smart-home.html         # 智能家居專用頁面（舊，可保留向後相容）
 ├── webpage.md              # 網頁標記（暫未使用）
 ├── PROJECT_STRUCTURE.md    # 本文檔
+├── Dockerfile              # Docker 鏡像構建配置 ⭐ 新增
+├── docker-compose.yml      # Docker Compose 編排配置 ⭐ 新增
+├── nginx.conf              # Nginx 服務器配置 ⭐ 新增
+├── .dockerignore           # Docker 構建排除文件 ⭐ 新增
 │
 ├── home-assistant/         # Home Assistant 主題資料夾
 │   ├── beginner.json       # 初階知識點
@@ -358,4 +363,23 @@ A: 創建多個語言版本的 `config.json` 和 JSON 文件，或添加 i18n �
 - **CSS3** - 樣式和響應式設計
 - **Vanilla JavaScript** - 動態內容加載和交互
 - **JSON** - 數據存儲格式
+- **Docker** - 容器化部署
+- **Nginx** - Web 服務器
 - **無後端依賴** - 純前端靜態應用
+
+## 🐳 Docker 部署
+
+本項目已配置完整的 Docker 支援：
+
+### 快速部署
+```bash
+docker-compose up -d
+```
+
+### 配置文件
+- `Dockerfile` - 使用 nginx:alpine 基礎鏡像
+- `docker-compose.yml` - 本地開發編排配置
+- `nginx.conf` - 優化的 Nginx 配置（Gzip、緩存、安全頭）
+- `.dockerignore` - 排除不必要文件
+
+詳細部署指南請查看 [DOCKER_DEPLOYMENT.md](DOCKER_DEPLOYMENT.md)
