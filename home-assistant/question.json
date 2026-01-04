@@ -3,392 +3,452 @@
     {
       "id": 1,
       "level": "beginner",
+      "chapter": "01. Home Assistant 簡介",
       "question": "Home Assistant 是什麼類型的平台？",
-      "options": [
-        "商業智能家居平台",
-        "開源智能家居平台",
-        "雲端智能家居服務",
-        "手機應用程式"
-      ],
+      "options": ["商業智能家居平台", "開源智能家居平台", "雲端智能家居服務", "手機應用程式"],
       "correctAnswer": 1,
       "explanation": "Home Assistant 是一個開源的智能家居平台，允許使用者完全控制自己的智能家居系統。"
     },
     {
       "id": 2,
       "level": "beginner",
+      "chapter": "02. 安裝與設定",
       "question": "Home Assistant 預設的網頁介面使用哪個連接埠？",
-      "options": [
-        "8080",
-        "80",
-        "8123",
-        "1880"
-      ],
+      "options": ["8080", "80", "8123", "1880"],
       "correctAnswer": 2,
       "explanation": "Home Assistant 預設使用 8123 連接埠來提供網頁介面服務。"
     },
     {
       "id": 3,
       "level": "beginner",
+      "chapter": "02. 安裝與設定",
       "question": "Home Assistant 的設定檔主要使用什麼格式？",
-      "options": [
-        "JSON",
-        "XML",
-        "YAML",
-        "INI"
-      ],
+      "options": ["JSON", "XML", "YAML", "INI"],
       "correctAnswer": 2,
       "explanation": "Home Assistant 主要使用 YAML 格式來撰寫設定檔，YAML 具有良好的可讀性和結構化特性。"
     },
     {
       "id": 4,
       "level": "beginner",
+      "chapter": "02. 安裝與設定",
       "question": "以下哪個不是 Home Assistant 的安裝方式？",
-      "options": [
-        "Home Assistant OS",
-        "Home Assistant Container (Docker)",
-        "Home Assistant Core",
-        "Home Assistant Cloud Only"
-      ],
+      "options": ["Home Assistant OS", "Home Assistant Container (Docker)", "Home Assistant Core", "Home Assistant Cloud Only"],
       "correctAnswer": 3,
       "explanation": "Home Assistant 可以透過多種方式安裝，但不是只能在雲端運行的服務，它可以完全本地運行。"
     },
     {
       "id": 5,
       "level": "beginner",
+      "chapter": "03. 基本配置",
       "question": "Home Assistant 的實體（Entity）ID 格式是什麼？",
-      "options": [
-        "類型.名稱 (例如: light.living_room)",
-        "名稱_類型 (例如: living_room_light)",
-        "類型-名稱 (例如: light-living_room)",
-        "名稱.類型 (例如: living_room.light)"
-      ],
+      "options": ["類型.名稱 (例如: light.living_room)", "名稱_類型 (例如: living_room_light)", "類型-名稱 (例如: light-living_room)", "名稱.類型 (例如: living_room.light)"],
       "correctAnswer": 0,
       "explanation": "Home Assistant 的實體 ID 格式為「類型.名稱」，例如 light.living_room 表示客廳的燈光。"
     },
     {
       "id": 6,
       "level": "intermediate",
+      "chapter": "04. 整合與設備",
       "question": "在 Home Assistant 中，Automation 的觸發器（Trigger）有哪些類型？",
-      "options": [
-        "只有時間觸發",
-        "只有狀態變化觸發",
-        "時間、狀態、事件、數值等多種類型",
-        "只有手動觸發"
-      ],
+      "options": ["只有時間觸發", "只有狀態變化觸發", "時間、狀態、事件、數值等多種類型", "只有手動觸發"],
       "correctAnswer": 2,
       "explanation": "Home Assistant 的自動化支援多種觸發器類型，包括時間、狀態變化、事件、數值範圍等，提供靈活的自動化能力。"
     },
     {
       "id": 7,
       "level": "intermediate",
+      "chapter": "05. 介面自訂",
       "question": "Home Assistant 的 Lovelace UI 是什麼？",
-      "options": [
-        "一個外掛程式",
-        "可自訂的使用者介面系統",
-        "資料庫系統",
-        "備份工具"
-      ],
+      "options": ["一個外掛程式", "可自訂的使用者介面系統", "資料庫系統", "備份工具"],
       "correctAnswer": 1,
       "explanation": "Lovelace 是 Home Assistant 的現代化、可自訂的使用者介面系統，讓使用者可以設計自己的儀表板。"
     },
     {
       "id": 8,
       "level": "intermediate",
+      "chapter": "04. 整合與設備",
       "question": "Home Assistant 的 Add-on 功能只能在哪種安裝方式中使用？",
-      "options": [
-        "所有安裝方式都可以",
-        "Home Assistant OS 和 Supervised",
-        "只有 Home Assistant OS",
-        "只有 Docker 安裝"
-      ],
+      "options": ["所有安裝方式都可以", "Home Assistant OS 和 Supervised", "只有 Home Assistant OS", "只有 Docker 安裝"],
       "correctAnswer": 1,
       "explanation": "Add-on 功能只在 Home Assistant OS 和 Supervised 安裝方式中可用，這是為了提供一鍵式的附加服務安裝體驗。"
     },
     {
       "id": 9,
       "level": "intermediate",
+      "chapter": "06. 自動化進階",
       "question": "Home Assistant 中的 Template 使用什麼模板引擎？",
-      "options": [
-        "Mustache",
-        "Handlebars",
-        "Jinja2",
-        "EJS"
-      ],
+      "options": ["Mustache", "Handlebars", "Jinja2", "EJS"],
       "correctAnswer": 2,
       "explanation": "Home Assistant 使用 Jinja2 模板引擎來處理模板，它提供強大的邏輯和數據處理能力。"
     },
     {
       "id": 10,
       "level": "intermediate",
+      "chapter": "02. 安裝與設定",
       "question": "如何在 Home Assistant 中重新載入 YAML 設定而不重啟？",
-      "options": [
-        "必須完全重啟",
-        "使用「檢查設定」功能",
-        "使用開發者工具中的 YAML 重新載入功能",
-        "編輯設定後會自動重新載入"
-      ],
+      "options": ["必須完全重啟", "使用「檢查設定」功能", "使用開發者工具中的 YAML 重新載入功能", "編輯設定後會自動重新載入"],
       "correctAnswer": 2,
       "explanation": "可以使用開發者工具中的「YAML」標籤來重新載入特定部分的設定，無需完全重啟系統。"
     },
     {
       "id": 11,
       "level": "advanced",
+      "chapter": "07. 架構與進階",
       "question": "Home Assistant 的狀態機（State Machine）主要負責什麼？",
-      "options": [
-        "只負責儲存實體狀態",
-        "管理所有實體狀態、觸發事件、維護歷史記錄",
-        "只負責執行自動化",
-        "只負責處理使用者介面"
-      ],
+      "options": ["只負責儲存實體狀態", "管理所有實體狀態、觸發事件、維護歷史記錄", "只負責執行自動化", "只負責處理使用者介面"],
       "correctAnswer": 1,
       "explanation": "狀態機是 Home Assistant 的核心，負責管理所有實體的當前狀態、觸發相關事件，並維護狀態變化的歷史記錄。"
     },
     {
       "id": 12,
       "level": "advanced",
+      "chapter": "08. 自訂元件",
       "question": "在 Home Assistant 中，如何建立自訂元件（Custom Component）？",
-      "options": [
-        "只能使用官方提供的元件",
-        "在 custom_components 目錄下建立 Python 套件",
-        "必須向官方提交申請",
-        "透過 YAML 設定即可"
-      ],
+      "options": ["只能使用官方提供的元件", "在 custom_components 目錄下建立 Python 套件", "必須向官方提交申請", "透過 YAML 設定即可"],
       "correctAnswer": 1,
       "explanation": "可以在 custom_components 目錄下建立 Python 套件來開發自訂元件，遵循 Home Assistant 的元件架構規範。"
     },
     {
       "id": 13,
       "level": "advanced",
+      "chapter": "07. 架構與進階",
       "question": "Home Assistant 的事件匯流排（Event Bus）主要用途是什麼？",
-      "options": [
-        "儲存歷史資料",
-        "作為系統內部通訊的訊息中心",
-        "管理使用者權限",
-        "處理網路連線"
-      ],
+      "options": ["儲存歷史資料", "作為系統內部通訊的訊息中心", "管理使用者權限", "處理網路連線"],
       "correctAnswer": 1,
       "explanation": "事件匯流排是 Home Assistant 內部通訊的核心機制，所有狀態變化、自動化觸發等都透過事件匯流排傳遞。"
     },
     {
       "id": 14,
       "level": "advanced",
+      "chapter": "09. 效能與優化",
       "question": "如何優化 Home Assistant 的資料庫效能？",
-      "options": [
-        "使用 SQLite 預設設定即可",
-        "定期清理、設定排除項目、考慮使用外部資料庫如 PostgreSQL",
-        "增加更多記憶體",
-        "減少整合數量"
-      ],
+      "options": ["使用 SQLite 預設設定即可", "定期清理、設定排除項目、考慮使用外部資料庫如 PostgreSQL", "增加更多記憶體", "減少整合數量"],
       "correctAnswer": 1,
       "explanation": "優化資料庫效能可透過定期清理歷史資料、在 recorder 中排除不需要記錄的實體，對於大型系統可考慮使用 PostgreSQL 等外部資料庫。"
     },
     {
       "id": 15,
       "level": "advanced",
+      "chapter": "06. 自動化進階",
       "question": "Home Assistant 的 Scene 和 Script 有什麼主要差異？",
-      "options": [
-        "沒有差異，只是名稱不同",
-        "Scene 儲存實體狀態快照，Script 是一系列動作序列",
-        "Scene 比較進階",
-        "Script 不能在自動化中使用"
-      ],
+      "options": ["沒有差異，只是名稱不同", "Scene 儲存實體狀態快照，Script 是一系列動作序列", "Scene 比較進階", "Script 不能在自動化中使用"],
       "correctAnswer": 1,
       "explanation": "Scene 用於儲存多個實體的狀態快照（如燈光場景），而 Script 是定義一系列要執行的動作序列，兩者用途不同。"
     },
     {
       "id": 16,
       "level": "beginner",
+      "chapter": "04. 整合與設備",
       "question": "Home Assistant 的整合（Integration）是什麼？",
-      "options": [
-        "一種硬體設備",
-        "連接外部服務或設備的模組",
-        "一個手機應用",
-        "一種資料庫"
-      ],
+      "options": ["一種硬體設備", "連接外部服務或設備的模組", "一個手機應用", "一種資料庫"],
       "correctAnswer": 1,
       "explanation": "整合是 Home Assistant 用來連接各種外部服務、平台或設備的模組，如 Philips Hue、小米、IKEA 等。"
     },
     {
       "id": 17,
       "level": "beginner",
+      "chapter": "04. 整合與設備",
       "question": "如何在 Home Assistant 中添加新的整合？",
-      "options": [
-        "只能編輯 YAML 檔案",
-        "透過設定 → 整合 → 添加整合",
-        "需要重新安裝系統",
-        "必須使用命令列"
-      ],
+      "options": ["只能編輯 YAML 檔案", "透過設定 → 整合 → 添加整合", "需要重新安裝系統", "必須使用命令列"],
       "correctAnswer": 1,
       "explanation": "大部分整合可以透過圖形介面添加：設定 → 裝置與服務 → 添加整合，系統會自動搜尋或手動選擇。"
     },
     {
       "id": 18,
       "level": "beginner",
+      "chapter": "03. 基本配置",
       "question": "Home Assistant 的「區域」（Area）功能用途是什麼？",
-      "options": [
-        "只是裝飾功能",
-        "將裝置和實體按房間或區域分組管理",
-        "設定網路區域",
-        "劃分權限"
-      ],
+      "options": ["只是裝飾功能", "將裝置和實體按房間或區域分組管理", "設定網路區域", "劃分權限"],
       "correctAnswer": 1,
       "explanation": "區域功能可以將裝置和實體按實際的房間或區域分組，方便管理和建立針對特定區域的自動化。"
     },
     {
       "id": 19,
       "level": "beginner",
+      "chapter": "01. Home Assistant 簡介",
       "question": "Home Assistant Companion App 的主要功能是什麼？",
-      "options": [
-        "只能查看狀態",
-        "遠端控制、推送通知、位置追蹤、感測器資料",
-        "只能接收通知",
-        "只能在本地使用"
-      ],
+      "options": ["只能查看狀態", "遠端控制、推送通知、位置追蹤、感測器資料", "只能接收通知", "只能在本地使用"],
       "correctAnswer": 1,
       "explanation": "手機 App 提供完整功能，包括遠端控制家居、接收推送通知、位置追蹤、手機感測器資料回傳等。"
     },
     {
       "id": 20,
       "level": "beginner",
+      "chapter": "03. 基本配置",
       "question": "Home Assistant 的 Recorder 元件負責什麼？",
-      "options": [
-        "錄製影片",
-        "記錄實體狀態歷史到資料庫",
-        "錄製音訊",
-        "備份系統"
-      ],
+      "options": ["錄製影片", "記錄實體狀態歷史到資料庫", "錄製音訊", "備份系統"],
       "correctAnswer": 1,
       "explanation": "Recorder 元件負責將實體的狀態變化記錄到資料庫，供歷史查詢、圖表顯示和分析使用。"
     },
     {
       "id": 21,
       "level": "intermediate",
+      "chapter": "06. 自動化進階",
       "question": "在 Home Assistant 中，如何實現「如果溫度低於20度就開啟暖氣」的自動化？",
-      "options": [
-        "不可能實現",
-        "使用數值觸發器（Numeric State Trigger）",
-        "只能手動控制",
-        "需要寫程式"
-      ],
+      "options": ["不可能實現", "使用數值觸發器（Numeric State Trigger）", "只能手動控制", "需要寫程式"],
       "correctAnswer": 1,
       "explanation": "使用數值狀態觸發器，設定溫度感測器實體，當數值低於 20 度時觸發，執行開啟暖氣的動作。"
     },
     {
       "id": 22,
       "level": "intermediate",
+      "chapter": "06. 自動化進階",
       "question": "Home Assistant 的條件（Condition）在自動化中的作用是什麼？",
-      "options": [
-        "沒有作用",
-        "在觸發後檢查條件，條件滿足才執行動作",
-        "替代觸發器",
-        "只是記錄用"
-      ],
+      "options": ["沒有作用", "在觸發後檢查條件，條件滿足才執行動作", "替代觸發器", "只是記錄用"],
       "correctAnswer": 1,
       "explanation": "條件在觸發器啟動後進行額外檢查，只有條件都滿足時才會執行動作，提供更精確的控制。"
     },
     {
       "id": 23,
       "level": "intermediate",
+      "chapter": "06. 自動化進階",
       "question": "Home Assistant 的 Node-RED 整合有什麼優勢？",
-      "options": [
-        "沒有優勢",
-        "視覺化流程設計、複雜邏輯處理、豐富的節點庫",
-        "只是換個介面",
-        "會降低效能"
-      ],
+      "options": ["沒有優勢", "視覺化流程設計、複雜邏輯處理、豐富的節點庫", "只是換個介面", "會降低效能"],
       "correctAnswer": 1,
       "explanation": "Node-RED 提供視覺化的流程設計，適合處理複雜邏輯，並有豐富的社群節點可以整合各種服務。"
     },
     {
       "id": 24,
       "level": "intermediate",
+      "chapter": "01. Home Assistant 簡介",
       "question": "如何在 Home Assistant 中實現語音控制？",
-      "options": [
-        "不支援語音控制",
-        "整合 Google Assistant、Alexa 或使用本地語音助理",
-        "只能用鍵盤",
-        "需要特殊硬體"
-      ],
+      "options": ["不支援語音控制", "整合 Google Assistant、Alexa 或使用本地語音助理", "只能用鍵盤", "需要特殊硬體"],
       "correctAnswer": 1,
       "explanation": "可以整合 Google Assistant、Amazon Alexa，或使用本地方案如 Rhasspy、Mycroft 實現語音控制。"
     },
     {
       "id": 25,
       "level": "intermediate",
+      "chapter": "06. 自動化進階",
       "question": "Home Assistant 的 Blueprint 是什麼？",
-      "options": [
-        "建築設計圖",
-        "可重複使用的自動化模板",
-        "網路配置",
-        "裝置清單"
-      ],
+      "options": ["建築設計圖", "可重複使用的自動化模板", "網路配置", "裝置清單"],
       "correctAnswer": 1,
       "explanation": "Blueprint 是可重複使用的自動化模板，讓使用者可以分享和匯入預設的自動化配置，只需填入自己的實體。"
     },
     {
       "id": 26,
       "level": "advanced",
+      "chapter": "07. 架構與進階",
       "question": "Home Assistant 的 REST API 可以用來做什麼？",
-      "options": [
-        "只能查詢資料",
-        "查詢狀態、觸發服務、管理設定等完整控制",
-        "只能備份",
-        "無法使用"
-      ],
+      "options": ["只能查詢資料", "查詢狀態、觸發服務、管理設定等完整控制", "只能備份", "無法使用"],
       "correctAnswer": 1,
       "explanation": "REST API 提供完整的程式化存取能力，可以查詢實體狀態、呼叫服務、觸發自動化等，方便外部整合。"
     },
     {
       "id": 27,
       "level": "advanced",
+      "chapter": "09. 效能與優化",
       "question": "如何實現 Home Assistant 的高可用性（HA）？",
-      "options": [
-        "不可能實現",
-        "使用備份、資料庫複製、負載平衡、容錯機制",
-        "只要多買幾個 Raspberry Pi",
-        "不需要考慮"
-      ],
+      "options": ["不可能實現", "使用備份、資料庫複製、負載平衡、容錯機制", "只要多買幾個 Raspberry Pi", "不需要考慮"],
       "correctAnswer": 1,
       "explanation": "高可用性需要多方面配置：定期備份、使用外部資料庫、設定備援系統、UPS 供電等確保系統穩定運作。"
     },
     {
       "id": 28,
       "level": "advanced",
+      "chapter": "08. 自訂元件",
       "question": "Home Assistant 的 AppDaemon 有什麼用途？",
-      "options": [
-        "只是一個普通 App",
-        "用 Python 撰寫進階自動化和應用程式",
-        "只能管理手機 App",
-        "沒有用處"
-      ],
+      "options": ["只是一個普通 App", "用 Python 撰寫進階自動化和應用程式", "只能管理手機 App", "沒有用處"],
       "correctAnswer": 1,
       "explanation": "AppDaemon 允許使用 Python 撰寫更複雜的自動化邏輯和應用，適合需要進階程式控制的場景。"
     },
     {
       "id": 29,
       "level": "advanced",
+      "chapter": "10. 安全與多使用者",
       "question": "如何在 Home Assistant 中實現多使用者權限管理？",
-      "options": [
-        "無法設定權限",
-        "建立不同使用者帳號並設定存取權限",
-        "所有人都有完整權限",
-        "只能有一個使用者"
-      ],
+      "options": ["無法設定權限", "建立不同使用者帳號並設定存取權限", "所有人都有完整權限", "只能有一個使用者"],
       "correctAnswer": 1,
       "explanation": "可以建立多個使用者帳號，為每個使用者設定不同的存取權限，控制可見的實體和可執行的操作。"
     },
     {
       "id": 30,
       "level": "advanced",
+      "chapter": "07. 架構與進階",
       "question": "Home Assistant 的 WebSocket API 相比 REST API 有什麼優勢？",
-      "options": [
-        "沒有優勢",
-        "即時雙向通訊、訂閱狀態變化、更低延遲",
-        "更耗資源",
-        "更慢"
-      ],
+      "options": ["沒有優勢", "即時雙向通訊、訂閱狀態變化、更低延遲", "更耗資源", "更慢"],
       "correctAnswer": 1,
       "explanation": "WebSocket API 提供即時雙向通訊，可以訂閱實體狀態變化並即時接收通知，比 REST API 輪詢更高效。"
+    },
+    {
+      "id": 31,
+      "level": "beginner",
+      "chapter": "04. 整合與設備",
+      "question": "什麼是 Home Assistant 中的「設備」（Device）？",
+      "options": ["只是軟體概念", "物理硬體設備的虛擬表示，可包含多個實體", "一種自動化規則", "用戶帳號"],
+      "correctAnswer": 1,
+      "explanation": "設備是物理硬體設備在 Home Assistant 中的虛擬表示，例如一個智能燈泡設備可以包含亮度、色溫等多個實體。"
+    },
+    {
+      "id": 32,
+      "level": "beginner",
+      "chapter": "03. 基本配置",
+      "question": "如何在 Home Assistant 中給實體添加標籤？",
+      "options": ["無法添加標籤", "透過實體編輯對話框添加自訂標籤", "只能在 YAML 中設定", "標籤是自動生成的"],
+      "correctAnswer": 1,
+      "explanation": "可以透過 Home Assistant UI 的實體編輯功能或 YAML 配置為實體添加自訂標籤，方便分類和搜尋。"
+    },
+    {
+      "id": 33,
+      "level": "beginner",
+      "chapter": "03. 基本配置",
+      "question": "Home Assistant 中的「群組」（Group）主要用途是什麼？",
+      "options": ["只是聊天工具", "將多個實體組合在一起，方便統一管理和控制", "社群管理", "版本控制"],
+      "correctAnswer": 1,
+      "explanation": "群組讓您可以將相關的實體組合在一起，例如將所有客廳的燈組成一個群組，便於統一控制和自動化。"
+    },
+    {
+      "id": 34,
+      "level": "beginner",
+      "chapter": "03. 基本配置",
+      "question": "Home Assistant 支援哪些主要的通訊協定？",
+      "options": ["只支援 Wi-Fi", "Zigbee、Z-Wave、BLE、Wi-Fi 和其他協定", "只支援 Z-Wave", "不支援多協定"],
+      "correctAnswer": 1,
+      "explanation": "Home Assistant 支援多種通訊協定，包括 Zigbee、Z-Wave、BLE、Wi-Fi 等，讓使用者可以混合使用不同廠商的設備。"
+    },
+    {
+      "id": 35,
+      "level": "intermediate",
+      "chapter": "04. 整合與設備",
+      "question": "如何在 Home Assistant 中管理設備的重新命名和重新分配？",
+      "options": ["無法重新命名", "透過設定 → 裝置與服務進行管理", "必須刪除重新添加", "需要編輯 YAML"],
+      "correctAnswer": 1,
+      "explanation": "可以透過 Home Assistant 的圖形介面輕鬆重新命名設備、修改區域分配、管理設備屬性等。"
+    },
+    {
+      "id": 36,
+      "level": "intermediate",
+      "chapter": "05. 介面自訂",
+      "question": "Lovelace 卡片中的「條件卡片」（Conditional Card）有什麼用途？",
+      "options": ["只是裝飾", "根據條件動態顯示或隱藏卡片", "無法使用", "用於統計資料"],
+      "correctAnswer": 1,
+      "explanation": "條件卡片允許您根據實體的狀態動態顯示或隱藏其他卡片，提供更動態和聰慧的儀表板。"
+    },
+    {
+      "id": 37,
+      "level": "intermediate",
+      "chapter": "09. 效能與優化",
+      "question": "如何檢查 Home Assistant 系統的效能瓶頸？",
+      "options": ["無法檢查", "使用開發者工具中的系統監控和日誌分析", "只能猜測", "需要特殊工具"],
+      "correctAnswer": 1,
+      "explanation": "可以透過開發者工具、系統監控面板和日誌檢查來識別效能瓶頸，例如高 CPU 使用率或資料庫查詢速度。"
+    },
+    {
+      "id": 38,
+      "level": "intermediate",
+      "chapter": "09. 效能與優化",
+      "question": "為什麼應該定期清理 Home Assistant 的歷史資料？",
+      "options": ["不需要清理", "減少資料庫大小、提高查詢效能、節省存儲空間", "會導致遺失重要資料", "無法清理"],
+      "correctAnswer": 1,
+      "explanation": "定期清理舊的歷史資料可以減少資料庫大小，提高系統效能，特別是對長期運行的系統至關重要。"
+    },
+    {
+      "id": 39,
+      "level": "beginner",
+      "chapter": "02. 安裝與設定",
+      "question": "Home Assistant 的備份應該包含哪些內容？",
+      "options": ["只備份設定", "設定、自動化、腳本、前端配置、附加元件設定等全部內容", "只備份資料庫", "無法備份"],
+      "correctAnswer": 1,
+      "explanation": "完整的 Home Assistant 備份應包含所有設定、自動化、自訂卡片、附加元件配置和系統設定，確保恢復時的完整性。"
+    },
+    {
+      "id": 40,
+      "level": "beginner",
+      "chapter": "02. 安裝與設定",
+      "question": "Home Assistant 的自動備份功能默認多久執行一次？",
+      "options": ["每小時", "每天", "每周", "無法自動備份"],
+      "correctAnswer": 1,
+      "explanation": "Home Assistant 預設每天自動執行一次備份，並保留最新的 5 個備份。這樣可以確保系統故障時有恢復點。"
+    },
+    {
+      "id": 41,
+      "level": "intermediate",
+      "chapter": "04. 整合與設備",
+      "question": "如何在 Home Assistant 中安裝自訂集成（Custom Integration）？",
+      "options": ["無法安裝", "透過 HACS（Home Assistant Community Store）或手動下載", "必須編譯", "只能使用官方集成"],
+      "correctAnswer": 1,
+      "explanation": "可以透過 HACS 這個社群包管理工具輕鬆安裝自訂集成，或手動下載並放入 custom_components 目錄。"
+    },
+    {
+      "id": 42,
+      "level": "intermediate",
+      "chapter": "04. 整合與設備",
+      "question": "HACS 在 Home Assistant 中的作用是什麼？",
+      "options": ["只是遊戲", "提供社群自訂集成、前端卡片和腳本的安裝平台", "用於備份", "無關緊要的工具"],
+      "correctAnswer": 1,
+      "explanation": "HACS（Home Assistant Community Store）是一個社群驅動的應用商店，讓使用者輕鬆發現和安裝社群開發的擴展。"
+    },
+    {
+      "id": 43,
+      "level": "intermediate",
+      "chapter": "06. 自動化進階",
+      "question": "Home Assistant 的「Helper」是什麼？",
+      "options": ["幫助文件", "虛擬實體，用於簡化自動化邏輯", "教程視頻", "不存在"],
+      "correctAnswer": 1,
+      "explanation": "Helper 是虛擬實體，包括計時器、計數器、輸入選擇等，幫助使用者在自動化中儲存和管理中間狀態。"
+    },
+    {
+      "id": 44,
+      "level": "intermediate",
+      "chapter": "10. 安全與多使用者",
+      "question": "如何為 Home Assistant 設定兩因素驗證（2FA）？",
+      "options": ["不支援 2FA", "透過設定 → 帳號設定中啟用", "只能用密碼", "需要特殊硬體"],
+      "correctAnswer": 1,
+      "explanation": "可以在 Home Assistant 的帳號設定中啟用 TOTP 兩因素驗證，使用如 Google Authenticator 的應用程式。"
+    },
+    {
+      "id": 45,
+      "level": "advanced",
+      "chapter": "10. 安全與多使用者",
+      "question": "如何查看 Home Assistant 的系統日誌？",
+      "options": ["無法查看", "透過開發者工具 → 日誌 或 SSH 存取 home-assistant.log 檔案", "只能在終端", "不提供日誌"],
+      "correctAnswer": 1,
+      "explanation": "可以透過網頁介面的開發者工具查看即時日誌，或透過 SSH 存取系統上的 home-assistant.log 檔案進行詳細分析。"
+    },
+    {
+      "id": 46,
+      "level": "advanced",
+      "chapter": "07. 架構與進階",
+      "question": "Home Assistant 的「Webhook」機制有什麼用途？",
+      "options": ["只是命名", "允許外部系統透過 HTTP 通知 Home Assistant", "無法使用", "已廢棄"],
+      "correctAnswer": 1,
+      "explanation": "Webhook 讓外部系統（如雲服務、行動應用）可以透過 HTTP 請求將事件推送到 Home Assistant，觸發自動化。"
+    },
+    {
+      "id": 47,
+      "level": "advanced",
+      "chapter": "09. 效能與優化",
+      "question": "如何減少 Home Assistant 的記憶體使用？",
+      "options": ["無法減少", "禁用不需要的整合、設定 Recorder 排除項、定期清理歷史資料", "只能升級硬體", "沒有辦法"],
+      "correctAnswer": 1,
+      "explanation": "可以透過禁用未使用的整合、配置 Recorder 以排除不需要記錄的實體、定期清理歷史資料等方式減少記憶體使用。"
+    },
+    {
+      "id": 48,
+      "level": "advanced",
+      "chapter": "08. 自訂元件",
+      "question": "Home Assistant 的「自訂卡片」（Custom Card）是如何分發的？",
+      "options": ["只能透過文件共享", "透過 HACS 或直接下載並放入 www 目錄", "無法分發", "必須編譯"],
+      "correctAnswer": 1,
+      "explanation": "社群開發者透過 HACS 或直接在 GitHub 發佈自訂卡片，使用者可以輕鬆安裝到 Lovelace 儀表板中。"
+    },
+    {
+      "id": 49,
+      "level": "advanced",
+      "chapter": "10. 安全與多使用者",
+      "question": "如何保護 Home Assistant 免受未授權存取？",
+      "options": ["不需要保護", "設定強密碼、啟用 2FA、使用反向代理、定期更新系統", "只能斷網", "無法保護"],
+      "correctAnswer": 1,
+      "explanation": "應使用強密碼、啟用 2FA、透過反向代理（如 Nginx）保護、定期更新系統和附加元件、限制網路存取範圍。"
+    },
+    {
+      "id": 50,
+      "level": "advanced",
+      "chapter": "01. Home Assistant 簡介",
+      "question": "Home Assistant 的未來發展方向是什麼？",
+      "options": ["沒有計畫", "Matter 標準支援、本地 AI 語音、更好的行動應用、社群驅動創新", "已停止開發", "完全雲端化"],
+      "correctAnswer": 1,
+      "explanation": "Home Assistant 社群致力於支援 Matter 標準、整合本地運行的 AI、改進行動應用體驗，並持續推進社群創新。"
     }
   ]
 }

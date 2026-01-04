@@ -1,394 +1,54 @@
 {
   "questions": [
-    {
-      "id": 1,
-      "level": "beginner",
-      "question": "以下哪個不是智能家居的主要優點？",
-      "options": [
-        "便利性和遠端控制",
-        "節能降低電費",
-        "完全不需要網路連線",
-        "提升居家安全性"
-      ],
-      "correctAnswer": 2,
-      "explanation": "智能家居的一個缺點是依賴網路連線，斷網可能會影響部分功能的使用。"
-    },
-    {
-      "id": 2,
-      "level": "beginner",
-      "question": "智能家居系統的大腦通常稱為什麼？",
-      "options": [
-        "智能插座",
-        "智能中樞（Hub）",
-        "智能燈泡",
-        "感測器"
-      ],
-      "correctAnswer": 1,
-      "explanation": "智能中樞（Hub）是智能家居系統的核心，負責連接和控制各種智能設備。"
-    },
-    {
-      "id": 3,
-      "level": "beginner",
-      "question": "以下哪個是最常見的智能家居通訊協定？",
-      "options": [
-        "HTTP 和 FTP",
-        "Zigbee 和 Z-Wave",
-        "SMTP 和 POP3",
-        "TCP 和 UDP"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Zigbee 和 Z-Wave 是專為智能家居設計的無線通訊協定，具有低功耗、穩定可靠的特點。"
-    },
-    {
-      "id": 4,
-      "level": "beginner",
-      "question": "Matter 標準的主要目的是什麼？",
-      "options": [
-        "提高設備的運算速度",
-        "實現不同品牌設備的互通互聯",
-        "降低設備價格",
-        "增加設備的功耗"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Matter 是一個開放標準，目的是讓不同品牌的智能家居設備能夠互相溝通，解決相容性問題。"
-    },
-    {
-      "id": 5,
-      "level": "beginner",
-      "question": "智能音箱主要使用什麼技術來控制智能家居？",
-      "options": [
-        "手勢控制",
-        "語音控制",
-        "遙控器控制",
-        "觸控控制"
-      ],
-      "correctAnswer": 1,
-      "explanation": "智能音箱的核心功能是語音控制，讓使用者可以透過語音指令來操作智能家居設備。"
-    },
-    {
-      "id": 6,
-      "level": "intermediate",
-      "question": "在智能家居中，「場景」（Scene）是什麼？",
-      "options": [
-        "一個智能設備",
-        "一組設備狀態的組合",
-        "一種通訊協定",
-        "一個手機應用程式"
-      ],
-      "correctAnswer": 1,
-      "explanation": "場景是預先設定的多個設備狀態組合，例如「回家模式」可能包括開燈、開空調、關閉警報等動作。"
-    },
-    {
-      "id": 7,
-      "level": "intermediate",
-      "question": "智能家居的自動化（Automation）和場景（Scene）的主要差異是什麼？",
-      "options": [
-        "沒有差異",
-        "自動化有觸發條件，場景是手動執行",
-        "場景比自動化更複雜",
-        "自動化只能在夜間使用"
-      ],
-      "correctAnswer": 1,
-      "explanation": "自動化包含觸發條件（如時間、感測器），會自動執行；場景則需要手動觸發來執行一組設備狀態。"
-    },
-    {
-      "id": 8,
-      "level": "intermediate",
-      "question": "以下哪個是智能門鎖的安全考量重點？",
-      "options": [
-        "顏色是否美觀",
-        "是否支援多種解鎖方式和防撬警報",
-        "價格是否便宜",
-        "是否需要充電"
-      ],
-      "correctAnswer": 1,
-      "explanation": "智能門鎖的安全性最重要，應支援多種解鎖方式（指紋、密碼、卡片）並具備防撬警報功能。"
-    },
-    {
-      "id": 9,
-      "level": "intermediate",
-      "question": "為什麼建議使用獨立的 VLAN 或網路隔離智能家居設備？",
-      "options": [
-        "提升網路速度",
-        "降低功耗",
-        "增強安全性，防止攻擊擴散",
-        "減少設備數量"
-      ],
-      "correctAnswer": 2,
-      "explanation": "將智能家居設備隔離到獨立網路可以增強安全性，即使設備被攻擊也不會影響到主要網路和重要資料。"
-    },
-    {
-      "id": 10,
-      "level": "intermediate",
-      "question": "智能家居中的「聯動」是什麼意思？",
-      "options": [
-        "多個設備連接到同一個 Wi-Fi",
-        "一個設備的狀態變化觸發其他設備動作",
-        "設備之間相互充電",
-        "設備同時開關"
-      ],
-      "correctAnswer": 1,
-      "explanation": "聯動是指設備之間的互動關係，例如門窗感測器偵測到開門時，自動開啟玄關燈光。"
-    },
-    {
-      "id": 11,
-      "level": "advanced",
-      "question": "在設計智能家居系統時，為什麼要考慮「本地控制」能力？",
-      "options": [
-        "本地控制比較便宜",
-        "避免依賴雲端服務，確保斷網時仍可使用",
-        "本地控制速度較慢",
-        "本地控制比較複雜"
-      ],
-      "correctAnswer": 1,
-      "explanation": "本地控制讓系統在斷網或雲端服務中斷時仍能運作，提高系統的可靠性和響應速度。"
-    },
-    {
-      "id": 12,
-      "level": "advanced",
-      "question": "智能家居的「邊緣計算」是什麼概念？",
-      "options": [
-        "在設備邊緣安裝感測器",
-        "在本地設備上進行數據處理，減少雲端傳輸",
-        "在房間邊緣安裝設備",
-        "使用邊緣網路協定"
-      ],
-      "correctAnswer": 1,
-      "explanation": "邊緣計算是在本地設備或中樞上處理數據，減少雲端傳輸延遲，提高響應速度並增強隱私保護。"
-    },
-    {
-      "id": 13,
-      "level": "advanced",
-      "question": "為什麼在智能家居中使用 MQTT 協定？",
-      "options": [
-        "因為它是最新的協定",
-        "它輕量、支援發布/訂閱模式，適合物聯網",
-        "它比 HTTP 更安全",
-        "它不需要網路連線"
-      ],
-      "correctAnswer": 1,
-      "explanation": "MQTT 是輕量級的發布/訂閱協定，非常適合物聯網設備間的訊息傳遞，具有低頻寬、低功耗的優勢。"
-    },
-    {
-      "id": 14,
-      "level": "advanced",
-      "question": "在設計智能照明系統時，為什麼建議保留實體開關功能？",
-      "options": [
-        "節省成本",
-        "提供備援方案，確保系統故障時仍可使用",
-        "美觀考量",
-        "法規要求"
-      ],
-      "correctAnswer": 1,
-      "explanation": "保留實體開關提供備援方案，當智能系統故障、斷網或沒有手機時，仍能使用傳統方式控制燈光。"
-    },
-    {
-      "id": 15,
-      "level": "advanced",
-      "question": "智能家居系統的「高可用性」設計包含哪些要素？",
-      "options": [
-        "只需要備份電源",
-        "備份電源、本地控制、多重通訊路徑、故障轉移機制",
-        "購買最貴的設備",
-        "只使用一個品牌的設備"
-      ],
-      "correctAnswer": 1,
-      "explanation": "高可用性設計需要多方面考量：備份電源確保停電時運作、本地控制避免依賴雲端、多重通訊路徑和故障轉移機制確保系統穩定性。"
-    },
-    {
-      "id": 16,
-      "level": "beginner",
-      "question": "智能恆溫器可以帶來什麼好處？",
-      "options": [
-        "只是好看",
-        "自動調節溫度、學習習慣、節能省電",
-        "增加耗電",
-        "讓房間更冷"
-      ],
-      "correctAnswer": 1,
-      "explanation": "智能恆溫器能自動調節溫度、學習使用者習慣、優化運行時間，從而節能省電並提升舒適度。"
-    },
-    {
-      "id": 17,
-      "level": "beginner",
-      "question": "智能插座的主要功能是什麼？",
-      "options": [
-        "只能測量用電量",
-        "遠端開關電器、排程控制、用電監測",
-        "只能當普通插座",
-        "充電功能"
-      ],
-      "correctAnswer": 1,
-      "explanation": "智能插座可以遠端控制電器開關、設定排程自動化、監測用電量，讓傳統電器變智能。"
-    },
-    {
-      "id": 18,
-      "level": "beginner",
-      "question": "智能門鈴與傳統門鈴的主要區別是什麼？",
-      "options": [
-        "聲音更大",
-        "具有攝像頭、遠端視訊、雙向對講功能",
-        "更便宜",
-        "不會發出聲音"
-      ],
-      "correctAnswer": 1,
-      "explanation": "智能門鈴通常配備攝像頭，可遠端查看訪客、視訊對講，甚至有人臉識別和包裹偵測功能。"
-    },
-    {
-      "id": 19,
-      "level": "beginner",
-      "question": "什麼是智能家居的「生態系統」？",
-      "options": [
-        "家裡的植物",
-        "同品牌或平台下互相整合的設備群組",
-        "房屋結構",
-        "網路環境"
-      ],
-      "correctAnswer": 1,
-      "explanation": "生態系統指的是同一品牌或平台（如小米、Apple HomeKit）下能互相整合、統一控制的設備群組。"
-    },
-    {
-      "id": 20,
-      "level": "beginner",
-      "question": "智能窗簾的主要優勢是什麼？",
-      "options": [
-        "只是裝飾",
-        "自動開合、定時控制、光感應調節",
-        "更貴而已",
-        "會自動清潔"
-      ],
-      "correctAnswer": 1,
-      "explanation": "智能窗簾可以自動開合、設定時間排程、根據光線自動調節，提升居住舒適度和隱私保護。"
-    },
-    {
-      "id": 21,
-      "level": "intermediate",
-      "question": "Thread 協定在智能家居中的優勢是什麼？",
-      "options": [
-        "只是新名詞",
-        "低功耗、自組網、IP 原生支援",
-        "比其他協定慢",
-        "需要特殊硬體"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Thread 是為物聯網設計的協定，具有低功耗、網狀網路自我修復、原生 IP 支援等特點，是 Matter 的基礎協定之一。"
-    },
-    {
-      "id": 22,
-      "level": "intermediate",
-      "question": "智能家居中的「地理圍欄」（Geofencing）功能是什麼？",
-      "options": [
-        "實體柵欄",
-        "根據手機位置自動觸發智能家居動作",
-        "網路安全設定",
-        "房間區域劃分"
-      ],
-      "correctAnswer": 1,
-      "explanation": "地理圍欄利用手機 GPS 定位，當進入或離開特定區域時自動觸發動作，如到家時自動開燈、開空調。"
-    },
-    {
-      "id": 23,
-      "level": "intermediate",
-      "question": "為什麼智能家居設備建議使用 2.4GHz Wi-Fi 而非 5GHz？",
-      "options": [
-        "2.4GHz 更快",
-        "2.4GHz 穿牆能力強、覆蓋範圍廣",
-        "5GHz 不存在",
-        "沒有差別"
-      ],
-      "correctAnswer": 1,
-      "explanation": "2.4GHz 頻段穿牆能力較強、覆蓋範圍更廣，雖然速度較 5GHz 慢，但對智能家居設備已足夠。"
-    },
-    {
-      "id": 24,
-      "level": "intermediate",
-      "question": "智能家居的「存在感應」與「人體感應」有何不同？",
-      "options": [
-        "完全相同",
-        "存在感應能偵測靜止的人，人體感應需要移動",
-        "存在感應比較差",
-        "只是名稱不同"
-      ],
-      "correctAnswer": 1,
-      "explanation": "存在感應（如毫米波雷達）能偵測靜止的人，而傳統 PIR 人體感應器只能偵測移動，存在感應更適合居家使用。"
-    },
-    {
-      "id": 25,
-      "level": "intermediate",
-      "question": "智能家居的「情境模式」應該如何設計？",
-      "options": [
-        "越多越好",
-        "根據實際生活習慣設計實用的模式",
-        "全部設定成自動",
-        "不需要設計"
-      ],
-      "correctAnswer": 1,
-      "explanation": "應根據實際生活習慣設計常用情境，如起床、離家、回家、睡眠等，避免過度複雜影響使用體驗。"
-    },
-    {
-      "id": 26,
-      "level": "advanced",
-      "question": "在規劃全屋智能時，網路架構應該如何設計？",
-      "options": [
-        "一個路由器就夠",
-        "核心交換機、多 AP 覆蓋、VLAN 隔離、有線骨幹",
-        "全部用 Wi-Fi",
-        "不需要規劃"
-      ],
-      "correctAnswer": 1,
-      "explanation": "應規劃核心交換機作為骨幹、多 AP 確保全屋覆蓋、使用 VLAN 隔離設備、重要設備使用有線連接以確保穩定性。"
-    },
-    {
-      "id": 27,
-      "level": "advanced",
-      "question": "智能家居的能源管理系統應該包含哪些功能？",
-      "options": [
-        "只看總用電量",
-        "分項監測、尖峰管理、自動優化、太陽能整合",
-        "只要能開關就好",
-        "不需要管理"
-      ],
-      "correctAnswer": 1,
-      "explanation": "完整的能源管理應包括分項電力監測、尖峰時段管理、自動優化用電、整合太陽能等再生能源。"
-    },
-    {
-      "id": 28,
-      "level": "advanced",
-      "question": "如何評估智能家居系統的 ROI（投資回報率）？",
-      "options": [
-        "無法評估",
-        "考量節能效益、時間節省、安全提升、生活品質改善",
-        "只看設備價格",
-        "不需要評估"
-      ],
-      "correctAnswer": 1,
-      "explanation": "應綜合評估：節能帶來的電費節省、自動化節省的時間、安全系統避免的損失、生活品質的提升等多方面價值。"
-    },
-    {
-      "id": 29,
-      "level": "advanced",
-      "question": "智能家居系統的「預測性維護」是什麼概念？",
-      "options": [
-        "定期更換所有設備",
-        "透過數據分析預測設備故障，提前維護",
-        "等壞了再修",
-        "不需要維護"
-      ],
-      "correctAnswer": 1,
-      "explanation": "透過持續監測設備狀態、分析使用數據，預測可能的故障並提前維護，避免突然故障造成不便。"
-    },
-    {
-      "id": 30,
-      "level": "advanced",
-      "question": "面向未來的智能家居系統應該具備什麼特性？",
-      "options": [
-        "最貴的設備",
-        "開放標準、可擴展性、本地控制、隱私保護",
-        "只用一個品牌",
-        "雲端依賴"
-      ],
-      "correctAnswer": 1,
-      "explanation": "應採用開放標準（如 Matter）確保相容性、設計可擴展架構、保留本地控制能力、重視用戶隱私保護。"
-    }
+    {"id": 1, "level": "beginner", "chapter": "01. 智能家居基礎", "question": "以下哪個不是智能家居的主要優點？", "options": ["便利性和遠端控制", "節能降低電費", "完全不需要網路連線", "提升居家安全性"], "correctAnswer": 2, "explanation": "智能家居的一個缺點是依賴網路連線，斷網可能會影響部分功能的使用。"},
+    {"id": 2, "level": "beginner", "chapter": "02. 智能家居系統架構", "question": "智能家居系統的大腦通常稱為什麼？", "options": ["智能插座", "智能中樞（Hub）", "智能燈泡", "感測器"], "correctAnswer": 1, "explanation": "智能中樞（Hub）是智能家居系統的核心，負責連接和控制各種智能設備。"},
+    {"id": 3, "level": "beginner", "chapter": "03. 通訊協定", "question": "以下哪個是最常見的智能家居通訊協定？", "options": ["HTTP 和 FTP", "Zigbee 和 Z-Wave", "SMTP 和 POP3", "TCP 和 UDP"], "correctAnswer": 1, "explanation": "Zigbee 和 Z-Wave 是專為智能家居設計的無線通訊協定，具有低功耗、穩定可靠的特點。"},
+    {"id": 4, "level": "beginner", "chapter": "03. 通訊協定", "question": "Matter 標準的主要目的是什麼？", "options": ["提高設備的運算速度", "實現不同品牌設備的互通互聯", "降低設備價格", "增加設備的功耗"], "correctAnswer": 1, "explanation": "Matter 是一個開放標準，目的是讓不同品牌的智能家居設備能夠互相溝通，解決相容性問題。"},
+    {"id": 5, "level": "beginner", "chapter": "04. 語音控制", "question": "智能音箱主要使用什麼技術來控制智能家居？", "options": ["手勢控制", "語音控制", "遙控器控制", "觸控控制"], "correctAnswer": 1, "explanation": "智能音箱的核心功能是語音控制，讓使用者可以透過語音指令來操作智能家居設備。"},
+    {"id": 6, "level": "intermediate", "chapter": "05. 情境與自動化", "question": "在智能家居中，「場景」（Scene）是什麼？", "options": ["一個智能設備", "一組設備狀態的組合", "一種通訊協定", "一個手機應用程式"], "correctAnswer": 1, "explanation": "場景是預先設定的多個設備狀態組合，例如「回家模式」可能包括開燈、開空調、關閉警報等動作。"},
+    {"id": 7, "level": "intermediate", "chapter": "05. 情境與自動化", "question": "智能家居的自動化（Automation）和場景（Scene）的主要差異是什麼？", "options": ["沒有差異", "自動化有觸發條件，場景是手動執行", "場景比自動化更複雜", "自動化只能在夜間使用"], "correctAnswer": 1, "explanation": "自動化包含觸發條件（如時間、感測器），會自動執行；場景則需要手動觸發來執行一組設備狀態。"},
+    {"id": 8, "level": "intermediate", "chapter": "06. 智能門鎖與安全", "question": "以下哪個是智能門鎖的安全考量重點？", "options": ["顏色是否美觀", "是否支援多種解鎖方式和防撬警報", "價格是否便宜", "是否需要充電"], "correctAnswer": 1, "explanation": "智能門鎖的安全性最重要，應支援多種解鎖方式（指紋、密碼、卡片）並具備防撬警報功能。"},
+    {"id": 9, "level": "intermediate", "chapter": "07. 網路隔離與安全", "question": "為什麼建議使用獨立的 VLAN 或網路隔離智能家居設備？", "options": ["提升網路速度", "降低功耗", "增強安全性，防止攻擊擴散", "減少設備數量"], "correctAnswer": 2, "explanation": "將智能家居設備隔離到獨立網路可以增強安全性，即使設備被攻擊也不會影響到主要網路和重要資料。"},
+    {"id": 10, "level": "intermediate", "chapter": "05. 情境與自動化", "question": "智能家居中的「聯動」是什麼意思？", "options": ["多個設備連接到同一個 Wi-Fi", "一個設備的狀態變化觸發其他設備動作", "設備之間相互充電", "設備同時開關"], "correctAnswer": 1, "explanation": "聯動是指設備之間的互動關係，例如門窗感測器偵測到開門時，自動開啟玄關燈光。"},
+    {"id": 11, "level": "advanced", "chapter": "08. 本地控制", "question": "在設計智能家居系統時，為什麼要考慮「本地控制」能力？", "options": ["本地控制比較便宜", "避免依賴雲端服務，確保斷網時仍可使用", "本地控制速度較慢", "本地控制比較複雜"], "correctAnswer": 1, "explanation": "本地控制讓系統在斷網或雲端服務中斷時仍能運作，提高系統的可靠性和響應速度。"},
+    {"id": 12, "level": "advanced", "chapter": "09. 邊緣計算", "question": "智能家居的「邊緣計算」是什麼概念？", "options": ["在設備邊緣安裝感測器", "在本地設備上進行數據處理，減少雲端傳輸", "在房間邊緣安裝設備", "使用邊緣網路協定"], "correctAnswer": 1, "explanation": "邊緣計算是在本地設備或中樞上處理數據，減少雲端傳輸延遲，提高響應速度並增強隱私保護。"},
+    {"id": 13, "level": "advanced", "chapter": "03. 通訊協定", "question": "為什麼在智能家居中使用 MQTT 協定？", "options": ["因為它是最新的協定", "它輕量、支援發布/訂閱模式，適合物聯網", "它比 HTTP 更安全", "它不需要網路連線"], "correctAnswer": 1, "explanation": "MQTT 是輕量級的發布/訂閱協定，非常適合物聯網設備間的訊息傳遞，具有低頻寬、低功耗的優勢。"},
+    {"id": 14, "level": "advanced", "chapter": "10. 備援設計", "question": "在設計智能照明系統時，為什麼建議保留實體開關功能？", "options": ["節省成本", "提供備援方案，確保系統故障時仍可使用", "美觀考量", "法規要求"], "correctAnswer": 1, "explanation": "保留實體開關提供備援方案，當智能系統故障、斷網或沒有手機時，仍能使用傳統方式控制燈光。"},
+    {"id": 15, "level": "advanced", "chapter": "11. 高可用性", "question": "智能家居系統的「高可用性」設計包含哪些要素？", "options": ["只需要備份電源", "備份電源、本地控制、多重通訊路徑、故障轉移機制", "購買最貴的設備", "只使用一個品牌的設備"], "correctAnswer": 1, "explanation": "高可用性設計需要多方面考量：備份電源確保停電時運作、本地控制避免依賴雲端、多重通訊路徑和故障轉移機制確保系統穩定性。"},
+    {"id": 16, "level": "beginner", "chapter": "12. 智能恆溫器", "question": "智能恆溫器可以帶來什麼好處？", "options": ["只是好看", "自動調節溫度、學習習慣、節能省電", "增加耗電", "讓房間更冷"], "correctAnswer": 1, "explanation": "智能恆溫器能自動調節溫度、學習使用者習慣、優化運行時間，從而節能省電並提升舒適度。"},
+    {"id": 17, "level": "beginner", "chapter": "13. 智能插座", "question": "智能插座的主要功能是什麼？", "options": ["只能測量用電量", "遠端開關電器、排程控制、用電監測", "只能當普通插座", "充電功能"], "correctAnswer": 1, "explanation": "智能插座可以遠端控制電器開關、設定排程自動化、監測用電量，讓傳統電器變智能。"},
+    {"id": 18, "level": "beginner", "chapter": "14. 智能門鈴", "question": "智能門鈴與傳統門鈴的主要區別是什麼？", "options": ["聲音更大", "具有攝像頭、遠端視訊、雙向對講功能", "更便宜", "不會發出聲音"], "correctAnswer": 1, "explanation": "智能門鈴通常配備攝像頭，可遠端查看訪客、視訊對講，甚至有人臉識別和包裹偵測功能。"},
+    {"id": 19, "level": "beginner", "chapter": "02. 智能家居系統架構", "question": "什麼是智能家居的「生態系統」？", "options": ["家裡的植物", "同品牌或平台下互相整合的設備群組", "房屋結構", "網路環境"], "correctAnswer": 1, "explanation": "生態系統指的是同一品牌或平台（如小米、Apple HomeKit）下能互相整合、統一控制的設備群組。"},
+    {"id": 20, "level": "beginner", "chapter": "15. 智能窗簾", "question": "智能窗簾的主要優勢是什麼？", "options": ["只是裝飾", "自動開合、定時控制、光感應調節", "更貴而已", "會自動清潔"], "correctAnswer": 1, "explanation": "智能窗簾可以自動開合、設定時間排程、根據光線自動調節，提升居住舒適度和隱私保護。"},
+    {"id": 21, "level": "intermediate", "chapter": "03. 通訊協定", "question": "Thread 協定在智能家居中的優勢是什麼？", "options": ["只是新名詞", "低功耗、自組網、IP 原生支援", "比其他協定慢", "需要特殊硬體"], "correctAnswer": 1, "explanation": "Thread 是為物聯網設計的協定，具有低功耗、網狀網路自我修復、原生 IP 支援等特點，是 Matter 的基礎協定之一。"},
+    {"id": 22, "level": "intermediate", "chapter": "05. 情境與自動化", "question": "智能家居中的「地理圍欄」（Geofencing）功能是什麼？", "options": ["實體柵欄", "根據手機位置自動觸發智能家居動作", "網路安全設定", "房間區域劃分"], "correctAnswer": 1, "explanation": "地理圍欄利用手機 GPS 定位，當進入或離開特定區域時自動觸發動作，如到家時自動開燈、開空調。"},
+    {"id": 23, "level": "intermediate", "chapter": "16. Wi-Fi 配置", "question": "為什麼智能家居設備建議使用 2.4GHz Wi-Fi 而非 5GHz？", "options": ["2.4GHz 更快", "2.4GHz 穿牆能力強、覆蓋範圍廣", "5GHz 不存在", "沒有差別"], "correctAnswer": 1, "explanation": "2.4GHz 頻段穿牆能力較強、覆蓋範圍更廣，雖然速度較 5GHz 慢，但對智能家居設備已足夠。"},
+    {"id": 24, "level": "intermediate", "chapter": "17. 感測器", "question": "智能家居的「存在感應」與「人體感應」有何不同？", "options": ["完全相同", "存在感應能偵測靜止的人，人體感應需要移動", "存在感應比較差", "只是名稱不同"], "correctAnswer": 1, "explanation": "存在感應（如毫米波雷達）能偵測靜止的人，而傳統 PIR 人體感應器只能偵測移動，存在感應更適合居家使用。"},
+    {"id": 25, "level": "intermediate", "chapter": "05. 情境與自動化", "question": "智能家居的「情境模式」應該如何設計？", "options": ["越多越好", "根據實際生活習慣設計實用的模式", "全部設定成自動", "不需要設計"], "correctAnswer": 1, "explanation": "應根據實際生活習慣設計常用情境，如起床、離家、回家、睡眠等，避免過度複雜影響使用體驗。"},
+    {"id": 26, "level": "advanced", "chapter": "18. 網路規劃", "question": "在規劃全屋智能時，網路架構應該如何設計？", "options": ["一個路由器就夠", "核心交換機、多 AP 覆蓋、VLAN 隔離、有線骨幹", "全部用 Wi-Fi", "不需要規劃"], "correctAnswer": 1, "explanation": "應規劃核心交換機作為骨幹、多 AP 確保全屋覆蓋、使用 VLAN 隔離設備、重要設備使用有線連接以確保穩定性。"},
+    {"id": 27, "level": "advanced", "chapter": "19. 能源管理", "question": "智能家居的能源管理系統應該包含哪些功能？", "options": ["只看總用電量", "分項監測、尖峰管理、自動優化、太陽能整合", "只要能開關就好", "不需要管理"], "correctAnswer": 1, "explanation": "完整的能源管理應包括分項電力監測、尖峰時段管理、自動優化用電、整合太陽能等再生能源。"},
+    {"id": 28, "level": "advanced", "chapter": "20. ROI 評估", "question": "如何評估智能家居系統的 ROI（投資回報率）？", "options": ["無法評估", "考量節能效益、時間節省、安全提升、生活品質改善", "只看設備價格", "不需要評估"], "correctAnswer": 1, "explanation": "應綜合評估：節能帶來的電費節省、自動化節省的時間、安全系統避免的損失、生活品質的提升等多方面價值。"},
+    {"id": 29, "level": "advanced", "chapter": "21. 預測性維護", "question": "智能家居系統的「預測性維護」是什麼概念？", "options": ["定期更換所有設備", "透過數據分析預測設備故障，提前維護", "等壞了再修", "不需要維護"], "correctAnswer": 1, "explanation": "透過持續監測設備狀態、分析使用數據，預測可能的故障並提前維護，避免突然故障造成不便。"},
+    {"id": 30, "level": "advanced", "chapter": "22. 未來展望", "question": "面向未來的智能家居系統應該具備什麼特性？", "options": ["最貴的設備", "開放標準、可擴展性、本地控制、隱私保護", "只用一個品牌", "雲端依賴"], "correctAnswer": 1, "explanation": "應採用開放標準（如 Matter）確保相容性、設計可擴展架構、保留本地控制能力、重視用戶隱私保護。"},
+    {"id": 31, "level": "beginner", "chapter": "02. 智能家居系統架構", "question": "智能家居的中樞（Hub）有哪些類型？", "options": ["只有一種類型", "獨立中樞、路由器內置、雲端平台", "無法分類", "都是一樣的"], "correctAnswer": 1, "explanation": "智能中樞可以是獨立設備（如 Smart Hub）、整合到路由器中、或基於雲端平台，各有優缺點。"},
+    {"id": 32, "level": "beginner", "chapter": "23. 設備選購", "question": "選購智能設備時應該注意什麼？", "options": ["只看價格", "相容性、功耗、隱私、品牌支援、評價", "越貴越好", "隨意購買"], "correctAnswer": 1, "explanation": "應考慮與現有系統的相容性、設備功耗、隱私政策、品牌長期支援承諾和使用者評價。"},
+    {"id": 33, "level": "beginner", "chapter": "24. 安裝與配置", "question": "安裝智能設備的第一步是什麼？", "options": ["立即使用", "查看相容性、準備配置所需的資訊、按照指引添加", "隨意安裝", "需要專業人士"], "correctAnswer": 1, "explanation": "應先確認設備與現有系統相容、準備 Wi-Fi 密碼等資訊、按照製造商指引進行配置和配對。"},
+    {"id": 34, "level": "beginner", "chapter": "25. 隱私保護", "question": "使用智能家居設備時如何保護隱私？", "options": ["無法保護", "使用本地控制、選擇隱私政策清晰的品牌、定期更新韌體", "只能放棄", "無所謂"], "correctAnswer": 1, "explanation": "應優先使用支援本地控制的設備、仔細閱讀隱私政策、定期更新韌體、限制設備的數據訪問權限。"},
+    {"id": 35, "level": "intermediate", "chapter": "26. 設備管理", "question": "如何有效管理多個智能設備？", "options": ["無法管理", "使用統一的應用程式、分組管理、建立情境、定期檢查狀態", "只能逐一操作", "放棄管理"], "correctAnswer": 1, "explanation": "可以透過統一的應用程式或中樞進行集中管理、按房間或功能分組、設定自動化情境來簡化操作。"},
+    {"id": 36, "level": "intermediate", "chapter": "27. 故障排除", "question": "智能家居設備連線不穩定的常見原因是什麼？", "options": ["無法判斷", "Wi-Fi 訊號弱、設備距離遠、干擾、韌體過舊", "設備故障", "無法解決"], "correctAnswer": 1, "explanation": "常見原因包括 Wi-Fi 訊號覆蓋不足、設備距離中樞太遠、電子干擾、韌體版本過舊需要更新。"},
+    {"id": 37, "level": "intermediate", "chapter": "28. 性能優化", "question": "如何優化智能家居系統的響應速度？", "options": ["無法優化", "減少設備數量、改善網路品質、降低自動化複雜度、更新中樞韌體", "只能忍耐", "買新設備"], "correctAnswer": 1, "explanation": "可以透過改善 Wi-Fi 訊號、簡化自動化規則、定期更新設備韌體、使用有線連接重要設備來提升效能。"},
+    {"id": 38, "level": "intermediate", "chapter": "29. 自動化編程", "question": "編寫複雜的智能家居自動化邏輯時建議使用什麼？", "options": ["簡單規則", "Node-RED、程式化編程、視覺化流程設計工具", "不建議複雜化", "手動操作"], "correctAnswer": 1, "explanation": "對於複雜邏輯，可使用 Node-RED 進行視覺化流程設計、使用專門的編程工具或支援複雜條件的平台。"},
+    {"id": 39, "level": "beginner", "chapter": "30. 備份與恢復", "question": "為什麼應該定期備份智能家居配置？", "options": ["不需要備份", "防止數據遺失、快速恢復配置、系統遷移時使用", "浪費時間", "自動備份了"], "correctAnswer": 1, "explanation": "定期備份可確保設備故障或系統遷移時快速恢復配置，避免重新設定所有設備的麻煩。"},
+    {"id": 40, "level": "beginner", "chapter": "31. 成本控制", "question": "建立智能家居系統時如何控制成本？", "options": ["全部買最貴的", "分階段投資、優先核心設備、參加促銷活動", "只能一次性投資", "無法控制"], "correctAnswer": 1, "explanation": "可分階段投資、從核心設備開始、逐步擴展功能、利用促銷活動、選擇性價比高的品牌。"},
+    {"id": 41, "level": "intermediate", "chapter": "32. 跨品牌整合", "question": "如何整合不同品牌的智能設備？", "options": ["無法整合", "使用中立平台（如 Home Assistant）、選擇支援 Matter 的設備、使用代理應用", "只能同品牌", "購買集線器"], "correctAnswer": 1, "explanation": "可使用 Home Assistant 等中立平台統一管理、購買支援 Matter 標準的設備、或使用跨品牌的代理應用。"},
+    {"id": 42, "level": "intermediate", "chapter": "33. 遠端存取", "question": "如何安全地遠端存取家中的智能家居系統？", "options": ["不可能", "使用 VPN、反向代理、動態 DNS、雲端存取（含加密）", "只能本地使用", "開放端口就好"], "correctAnswer": 1, "explanation": "應使用 VPN、配置反向代理、設定動態 DNS、或使用品牌提供的安全雲端存取方案。"},
+    {"id": 43, "level": "intermediate", "chapter": "34. 場景與羅輯", "question": "設計複雜場景時應避免什麼？", "options": ["沒有限制", "循環觸發、過度複雜、衝突規則、缺少備援", "越複雜越好", "無需考慮"], "correctAnswer": 1, "explanation": "應避免設備互相觸發造成循環、規則過於複雜導致理解困難、不同規則相互衝突、缺少手動備援。"},
+    {"id": 44, "level": "intermediate", "chapter": "35. 故障恢復", "question": "智能家居系統故障時應該如何應對？", "options": ["放棄使用", "檢查日誌、重啟設備、檢查網路、更新韌體、聯絡支援", "更換全部設備", "只能等待"], "correctAnswer": 1, "explanation": "應先檢查系統日誌尋找錯誤、嘗試重啟設備、檢查網路連線、更新韌體到最新版本、必要時聯絡技術支援。"},
+    {"id": 45, "level": "advanced", "chapter": "36. 數據分析", "question": "智能家居系統收集的數據有什麼用途？", "options": ["只是記錄", "分析使用習慣、優化自動化、識別異常、能耗管理", "應該刪除", "無用的東西"], "correctAnswer": 1, "explanation": "可分析使用模式優化自動化、識別設備異常、跟蹤能源使用、改進用戶體驗。"},
+    {"id": 46, "level": "advanced", "chapter": "37. 本地伺服器", "question": "為什麼有人會在智能家居中使用本地伺服器？", "options": ["沒有必要", "獨立控制、隱私保護、不依賴雲端、成本低", "太複雜了", "沒有優勢"], "correctAnswer": 1, "explanation": "本地伺服器如 Home Assistant 提供完整控制、強大隱私保護、不依賴互聯網服務、一次投資長期使用。"},
+    {"id": 47, "level": "advanced", "chapter": "38. 容錯機制", "question": "構建高可靠的智能家居系統需要哪些容錯措施？", "options": ["無需容錯", "設備冗餘、網路備援、本地控制備份、UPS 電源", "無法實現", "一個就夠"], "correctAnswer": 1, "explanation": "應設置重要設備冗餘、配置網路備援連接、保留本地控制方式、配備不斷電系統（UPS）。"},
+    {"id": 48, "level": "advanced", "chapter": "39. 社群資源", "question": "智能家居社群能提供什麼幫助？", "options": ["無用的", "配置指南、故障排除、創意場景分享、開源項目", "浪費時間", "只是社交"], "correctAnswer": 1, "explanation": "活躍的社群提供配置指南、故障排除經驗、創意場景分享、開源項目和自訂工具。"},
+    {"id": 49, "level": "advanced", "chapter": "40. 標準演進", "question": "Smart Home 標準（如 Matter）的發展方向是什麼？", "options": ["停止發展", "增強相容性、簡化配置、提高安全性、支援更多設備", "回到老標準", "無法預測"], "correctAnswer": 1, "explanation": "新標準持續演進以提升不同品牌設備間的相容性、簡化使用者配置、增強隱私和安全性。"},
+    {"id": 50, "level": "advanced", "chapter": "41. 未來趨勢", "question": "智能家居的未來發展趨勢是什麼？", "options": ["無法預測", "AI 整合、邊緣計算、隱私優先、自主學習、無縫體驗", "沒有進展", "完全雲端化"], "correctAnswer": 1, "explanation": "未來智能家居將整合 AI 能力、强調邊緣計算和隱私保護、實現自主學習和自適應、提供無縫無感的體驗。"}
   ]
 }

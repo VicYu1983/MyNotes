@@ -303,6 +303,16 @@
             display: block;
         }
 
+        .quiz-chapter {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            color: #1565c0;
+            font-size: 0.95em;
+            border-radius: 4px;
+        }
+
         .quiz-buttons {
             display: flex;
             gap: 15px;
@@ -652,12 +662,16 @@
             
             const quizContent = document.getElementById('quizContent');
             
+            // 章節資訊顯示
+            const chapterInfo = question.chapter ? `<p class="quiz-chapter">📚 章節：${question.chapter}</p>` : '';
+            
             let html = `
                 <div class="quiz-header">
                     <h2>📝 測驗</h2>
                     <p class="quiz-progress">第 ${currentQuestionIndex + 1} / ${quizData.questions.length} 題</p>
                 </div>
                 <div class="quiz-question">
+                    ${chapterInfo}
                     <h3>${question.question}</h3>
                     <div class="quiz-options">
             `;
