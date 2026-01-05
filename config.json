@@ -214,6 +214,35 @@
                     "jsonFile": "zigbee-matter/advanced.json"
                 }
             ]
+        },
+        {
+            "id": "home-assistant-dev",
+            "category": "software",
+            "title": "Home Assistant 插件開發",
+            "icon": "🔌",
+            "subtitle": "從使用者升級為開發者，打造專屬功能",
+            "description": "學習 Python-based integration、custom component、API 呼叫，創建自己的 Home Assistant 插件",
+            "questionFile": "home-assistant-dev/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "入門級",
+                    "order": 1,
+                    "jsonFile": "home-assistant-dev/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中級",
+                    "order": 2,
+                    "jsonFile": "home-assistant-dev/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高級",
+                    "order": 3,
+                    "jsonFile": "home-assistant-dev/advanced.json"
+                }
+            ]
         }
     ]
 }

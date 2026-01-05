@@ -1,0 +1,67 @@
+{
+  "level": {
+    "id": "beginner",
+    "name": "入門級",
+    "emoji": "🌱",
+    "description": "了解 Home Assistant 插件開發的基礎概念和環境設置",
+    "color": "#10b981"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "Home Assistant 架構概覽",
+      "subtitle": "理解核心架構與插件生態系統",
+      "sections": [
+        {
+          "heading": "核心組件",
+          "content": "Home Assistant 使用 Python 開發，採用事件驅動架構。核心組件包括：Event Bus（事件匯流排）、State Machine（狀態機）、Service Registry（服務註冊中心）、Entity Registry（實體註冊中心）。所有插件都通過這些核心組件與系統互動。"
+        },
+        {
+          "heading": "插件類型",
+          "list": [
+            "Integration（整合）：連接外部設備或服務的主要方式",
+            "Component（組件）：提供核心功能的系統級模組",
+            "Platform（平台）：為特定實體類型提供實作（如 light、sensor）",
+            "Custom Component：使用者自訂的第三方插件"
+          ]
+        },
+        {
+          "heading": "開發環境要求",
+          "list": [
+            "Python 3.11+（Home Assistant 2024+ 要求）",
+            "Home Assistant Core 開發版本",
+            "VSCode + Python 擴展（推薦）",
+            "Git 版本控制工具",
+            "基礎的 Python 異步編程知識"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "開發環境設置",
+      "subtitle": "建立本地開發與測試環境",
+      "sections": [
+        {
+          "heading": "安裝 Home Assistant Dev 環境",
+          "content": "使用虛擬環境隔離開發。執行：`python -m venv ha-dev`，然後 `source ha-dev/bin/activate`（Linux/Mac）或 `ha-dev\\Scripts\\activate`（Windows）。安裝開發版本：`pip install homeassistant` 或從 GitHub clone 源碼進行開發。"
+        },
+        {
+          "heading": "目錄結構",
+          "list": [
+            "config/ - 配置目錄（等同於 /config）",
+            "config/custom_components/ - 自訂插件目錄",
+            "config/custom_components/your_integration/ - 你的插件",
+            "__init__.py - 插件入口文件",
+            "manifest.json - 插件元數據",
+            "const.py - 常數定義"
+          ]
+        },
+        {
+          "heading": "基本開發工具",
+          "content": "使用 `hass --script check_config` 檢查配置。使用 `pytest` 進行單元測試。使用 Home Assistant Dev Container（推薦）提供完整的開發環境。啟用調試模式在 configuration.yaml 中設置 `logger: default: debug`。"
+        }
+      ]
+    }
+  ]
+}

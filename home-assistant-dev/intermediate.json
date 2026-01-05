@@ -1,0 +1,177 @@
+{
+  "level": {
+    "id": "intermediate",
+    "name": "中級",
+    "emoji": "🚀",
+    "description": "深入學習插件開發核心技術與實作模式",
+    "color": "#3b82f6"
+  },
+  "knowledgePoints": [
+    {
+      "number": "03",
+      "title": "Integration 基本結構",
+      "subtitle": "創建第一個自訂整合",
+      "sections": [
+        {
+          "heading": "manifest.json 配置",
+          "content": "每個整合都需要 manifest.json 定義元數據。必要欄位包括：domain（唯一識別碼）、name（顯示名稱）、version、documentation、requirements（Python 依賴）、codeowners、iot_class（設備互動類型）。範例：`{\"domain\": \"my_device\", \"name\": \"My Device\", \"version\": \"1.0.0\", \"requirements\": [\"aiohttp==3.9.0\"], \"iot_class\": \"cloud_polling\"}`"
+        },
+        {
+          "heading": "__init__.py 入口點",
+          "content": "定義 async_setup 或 async_setup_entry 函數作為入口。async_setup 用於 YAML 配置，async_setup_entry 用於 UI 配置流程（推薦）。在這裡初始化 API 連接、設置更新協調器、註冊服務。返回 True 表示成功，False 表示失敗。"
+        },
+        {
+          "heading": "Config Flow 實作",
+          "content": "創建 config_flow.py 實現 UI 配置。繼承 ConfigFlow 類別，定義 async_step_user 處理用戶輸入。使用 vol.Schema 定義表單欄位驗證。成功後調用 async_create_entry 創建配置項。支援重新配置流程：async_step_reauth。"
+        },
+        {
+          "heading": "基本範例結構",
+          "list": [
+            "1. 在 manifest.json 聲明整合資訊",
+            "2. 在 __init__.py 實現 async_setup_entry",
+            "3. 在 config_flow.py 實現用戶配置界面",
+            "4. 創建 API 客戶端類別處理外部通訊",
+            "5. 實現至少一個 Platform（如 sensor.py）"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "Entity 實體開發",
+      "subtitle": "實作各類智能家居實體",
+      "sections": [
+        {
+          "heading": "Entity 基類",
+          "content": "所有實體繼承自對應的基類：SensorEntity（傳感器）、BinarySensorEntity（二元傳感器）、LightEntity（燈光）、SwitchEntity（開關）、ClimateEntity（空調）等。必須實現 name、unique_id、device_info 屬性。透過覆寫屬性提供實體狀態。"
+        },
+        {
+          "heading": "Sensor 實作範例",
+          "content": "創建 sensor.py，定義 async_setup_entry 函數。繼承 SensorEntity，實現 native_value（當前值）、native_unit_of_measurement（單位）、device_class（設備類型，如 temperature）、state_class（統計類型，如 measurement）。使用 @property 裝飾器定義只讀屬性。"
+        },
+        {
+          "heading": "狀態更新機制",
+          "list": [
+            "輪詢模式：定義 async_update() 方法定期獲取數據",
+            "推送模式：透過回調函數接收實時更新",
+            "DataUpdateCoordinator：統一管理多個實體的更新（推薦）",
+            "使用 async_write_ha_state() 觸發狀態更新"
+          ]
+        },
+        {
+          "heading": "Device 設備資訊",
+          "content": "透過 device_info 屬性將多個實體關聯到同一設備。包含欄位：identifiers（設備唯一識別）、name（設備名稱）、manufacturer、model、sw_version。這樣在 UI 中可以看到設備下的所有實體。"
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "DataUpdateCoordinator 使用",
+      "subtitle": "高效管理數據更新",
+      "sections": [
+        {
+          "heading": "Coordinator 概念",
+          "content": "DataUpdateCoordinator 統一管理多個實體的數據獲取，避免重複 API 調用。設定更新間隔，自動處理錯誤重試。所有實體共享同一個 Coordinator 實例。支援手動觸發更新和監聽更新事件。"
+        },
+        {
+          "heading": "基本實作",
+          "content": "繼承 DataUpdateCoordinator，在 async_setup_entry 中初始化。實現 _async_update_data 方法獲取所有數據。設定 update_interval 定義更新頻率（如 timedelta(minutes=5)）。Coordinator 會自動處理異常和可用性狀態。"
+        },
+        {
+          "heading": "在 Entity 中使用",
+          "content": "實體繼承 CoordinatorEntity 基類。在 __init__ 接收 coordinator 實例。透過 self.coordinator.data 訪問數據。自動監聽 Coordinator 的更新事件。調用 self.async_write_ha_state() 不再需要，Coordinator 會自動觸發。"
+        },
+        {
+          "heading": "錯誤處理",
+          "list": [
+            "在 _async_update_data 中捕獲異常並拋出 UpdateFailed",
+            "Coordinator 自動設置實體的 available 屬性",
+            "實現指數退避重試機制",
+            "記錄錯誤日誌便於調試：_LOGGER.error()"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "title": "API 客戶端開發",
+      "subtitle": "與外部服務通訊",
+      "sections": [
+        {
+          "heading": "使用 aiohttp",
+          "content": "Home Assistant 是異步框架，必須使用 aiohttp 進行 HTTP 請求。創建獨立的 API 客戶端類別。在 __init__ 保存 session 和認證資訊。實現 async 方法進行 API 調用。使用 async with 確保資源正確釋放。"
+        },
+        {
+          "heading": "認證處理",
+          "content": "支援常見認證方式：API Token（Header: `Authorization: Bearer token`）、Basic Auth、OAuth 2.0。在 config_flow 中收集認證資訊。使用 aiohttp.ClientSession 的 headers 參數統一設置認證。實現 token 刷新機制（OAuth）。"
+        },
+        {
+          "heading": "錯誤處理最佳實踐",
+          "list": [
+            "捕獲 aiohttp.ClientError 處理網路錯誤",
+            "檢查 response.status 處理 HTTP 錯誤",
+            "使用 asyncio.TimeoutError 處理超時",
+            "定義自訂異常類別（AuthError, APIError）",
+            "在 Coordinator 中統一處理 API 錯誤"
+          ]
+        },
+        {
+          "heading": "API 客戶端範例",
+          "content": "```python\nclass MyDeviceAPI:\n    def __init__(self, session: aiohttp.ClientSession, token: str):\n        self.session = session\n        self.token = token\n        self.base_url = \"https://api.example.com\"\n    \n    async def get_data(self) -> dict:\n        headers = {\"Authorization\": f\"Bearer {self.token}\"}\n        async with self.session.get(\n            f\"{self.base_url}/data\",\n            headers=headers,\n            timeout=aiohttp.ClientTimeout(total=10)\n        ) as resp:\n            resp.raise_for_status()\n            return await resp.json()\n```"
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "Service 服務開發",
+      "subtitle": "提供可調用的功能",
+      "sections": [
+        {
+          "heading": "Service 概念",
+          "content": "Service 是 Home Assistant 中可以被調用的動作。用戶可在自動化、腳本中調用服務。服務接收參數、執行操作、可選地返回結果。每個服務都有定義的 Schema 驗證輸入參數。"
+        },
+        {
+          "heading": "註冊服務",
+          "content": "在 async_setup_entry 中使用 hass.services.async_register() 註冊服務。指定 domain、service_name、handler 函數、schema。Handler 函數接收 ServiceCall 對象，從 call.data 獲取參數。服務名稱格式：domain.service_name（如 my_device.send_command）。"
+        },
+        {
+          "heading": "服務定義文件",
+          "content": "創建 services.yaml 定義服務元數據。包含：name（顯示名稱）、description、fields（參數定義）。每個參數定義：description、example、selector（UI 選擇器類型）。這樣在 UI 中調用服務時會有友好的表單界面。"
+        },
+        {
+          "heading": "實作範例",
+          "content": "```python\nimport voluptuous as vol\nfrom homeassistant.helpers import config_validation as cv\n\nSERVICE_SEND_COMMAND = \"send_command\"\nSERVICE_SCHEMA = vol.Schema({\n    vol.Required(\"device_id\"): cv.string,\n    vol.Required(\"command\"): cv.string,\n    vol.Optional(\"value\"): cv.positive_int,\n})\n\nasync def async_setup_entry(hass, entry):\n    async def handle_send_command(call):\n        device_id = call.data[\"device_id\"]\n        command = call.data[\"command\"]\n        # 執行命令\n        await api.send_command(device_id, command)\n    \n    hass.services.async_register(\n        DOMAIN, SERVICE_SEND_COMMAND,\n        handle_send_command, schema=SERVICE_SCHEMA\n    )\n```"
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "配置選項與 Options Flow",
+      "subtitle": "支援插件配置修改",
+      "sections": [
+        {
+          "heading": "Options Flow 概念",
+          "content": "Options Flow 允許用戶在安裝後修改整合配置。不需要刪除重新添加整合。適用於更新 API token、修改更新間隔、啟用/禁用功能等場景。數據保存在 entry.options 中。"
+        },
+        {
+          "heading": "實作 Options Flow",
+          "content": "在 config_flow.py 的 ConfigFlow 類中添加 @staticmethod 裝飾的 async_get_options_flow。創建 OptionsFlowHandler 類繼承 OptionsFlow。實現 async_step_init 顯示當前設置的表單。使用 entry.options 獲取當前值作為默認值。"
+        },
+        {
+          "heading": "監聽選項更新",
+          "content": "在 __init__.py 的 async_setup_entry 中註冊選項更新監聽器。使用 entry.add_update_listener(async_reload_entry)。當用戶保存選項時，重新載入整合使新配置生效。或者直接在監聽器中更新 Coordinator 的參數。"
+        },
+        {
+          "heading": "最佳實踐",
+          "list": [
+            "為配置項提供合理的默認值",
+            "使用 vol.Optional 定義非必填項",
+            "在 options_flow 中顯示當前設置",
+            "重要配置變更時提示用戶需要重啟",
+            "將頻繁變更的配置放入 Options"
+          ]
+        }
+      ]
+    }
+  ]
+}
