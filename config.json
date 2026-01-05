@@ -243,6 +243,35 @@
                     "jsonFile": "home-assistant-dev/advanced.json"
                 }
             ]
+        },
+        {
+            "id": "iot-security-ai",
+            "category": "software",
+            "title": "IoT 資安與 AI 資料流應用",
+            "icon": "🤖",
+            "subtitle": "把資料轉化為智慧，打造未來智能家居",
+            "description": "從設備加密到 AI 預測模型，掌握 IoT 安全與機器學習的完整技術棧",
+            "questionFile": "iot-security-ai/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "入門級",
+                    "order": 1,
+                    "jsonFile": "iot-security-ai/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中級",
+                    "order": 2,
+                    "jsonFile": "iot-security-ai/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高級",
+                    "order": 3,
+                    "jsonFile": "iot-security-ai/advanced.json"
+                }
+            ]
         }
     ]
 }

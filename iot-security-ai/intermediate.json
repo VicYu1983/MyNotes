@@ -1,0 +1,164 @@
+{
+  "level": {
+    "id": "intermediate",
+    "name": "中級",
+    "emoji": "🛡️",
+    "description": "掌握網路安全配置與數據分析技術",
+    "color": "#3b82f6"
+  },
+  "knowledgePoints": [
+    {
+      "number": "03",
+      "title": "設備加密與認證機制",
+      "subtitle": "實施端到端加密保護",
+      "sections": [
+        {
+          "heading": "MQTT 安全配置",
+          "content": "MQTT 是 IoT 常用協議，必須正確配置安全性。啟用 TLS/SSL 加密通訊：配置 Mosquitto broker 使用證書。實施用戶名密碼認證：每個設備使用獨立帳戶。使用 ACL（Access Control List）限制主題訪問權限。配置範例：`listener 8883`、`cafile ca.crt`、`certfile server.crt`。禁用匿名訪問。定期輪換密碼和證書。"
+        },
+        {
+          "heading": "Zigbee/Z-Wave 安全",
+          "content": "Zigbee 3.0 支援 AES-128 加密。配對時使用 Install Code 提升安全性，防止未授權設備加入。Z-Wave S2 提供更強的加密和認證。定期檢查網路中的設備列表，移除未知設備。使用 Zigbee2MQTT 或 ZHA 的網路地圖功能監控拓撲。避免在公共場所配對設備（可能被監聽）。"
+        },
+        {
+          "heading": "API Token 管理",
+          "content": "Home Assistant 使用 Long-Lived Access Token 進行 API 認證。為每個應用創建獨立 token，不要共用。定期輪換 token，特別是可能洩露時。使用環境變數或 secrets.yaml 存儲 token，不要硬編碼。監控 token 使用情況，檢測異常訪問。撤銷不再使用的 token。對外部 API（如天氣、能源）也應用相同原則。"
+        },
+        {
+          "heading": "TLS 證書配置",
+          "content": "使用 Let's Encrypt 免費證書或自簽證書。配置 HTTPS：通過 Nginx Proxy Manager、Caddy 或內建 HTTP 組件。證書自動更新避免過期。使用強加密套件（TLS 1.2+），禁用弱加密算法。HSTS（HTTP Strict Transport Security）強制 HTTPS。證書固定（Certificate Pinning）防止中間人攻擊。"
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "網路安全配置",
+      "subtitle": "建立隔離與防護的網路架構",
+      "sections": [
+        {
+          "heading": "VLAN 隔離策略",
+          "content": "將網路劃分為多個 VLAN：主網路（電腦、手機）、IoT 網路（智能設備）、訪客網路。IoT VLAN 限制訪問：只能連接 Home Assistant，不能訪問主網路。使用 VLAN 標籤（802.1Q）區分流量。配置交換機和路由器支援 VLAN。Home Assistant 放在可訪問所有 VLAN 的管理網路或使用多網卡。實施最小權限：設備只能訪問必要服務。"
+        },
+        {
+          "heading": "防火牆規則配置",
+          "content": "入站規則：默認拒絕，只開放必要端口（如 Home Assistant 8123）。出站規則：允許 IoT 設備訪問 NTP、DNS，禁止其他外部連接。設備間規則：禁止 IoT 設備互相訪問（防止橫向移動）。地理封鎖：限制只有特定國家可訪問。速率限制：防止暴力破解和 DDoS。日誌記錄：監控被阻擋的訪問嘗試。"
+        },
+        {
+          "heading": "VPN 遠端訪問",
+          "content": "使用 WireGuard 或 OpenVPN 建立安全遠端訪問。優點：加密隧道、不暴露內網端口。WireGuard 配置簡單、性能好，推薦使用。配置步驟：1) 在服務器安裝 WireGuard；2) 生成密鑰對；3) 配置客戶端；4) 啟用 IP 轉發。Home Assistant Add-on 簡化安裝。移動設備使用 WireGuard 應用連接。替代方案：Tailscale、Cloudflare Tunnel。"
+        },
+        {
+          "heading": "入侵檢測與監控",
+          "list": [
+            "安裝 Fail2ban 檢測並封鎖暴力破解",
+            "配置 Suricata 或 Snort IDS 監控異常流量",
+            "使用 Pi-hole 監控 DNS 查詢，檢測惡意域名",
+            "Home Assistant 集成 Notifications 接收告警",
+            "定期檢查路由器和防火牆日誌",
+            "使用 NetFlow 分析流量模式",
+            "配置 SIEM 系統（如 Wazuh）集中管理日誌"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "感測器數據分析基礎",
+      "subtitle": "從原始數據中提取洞察",
+      "sections": [
+        {
+          "heading": "數據清洗與預處理",
+          "content": "處理缺失值：使用前向填充、後向填充或插值。異常值檢測：使用統計方法（3σ 規則、IQR）或機器學習方法識別異常。數據平滑：移動平均、指數平滑消除噪聲。重採樣：統一時間間隔（如每分鐘平均）。數據標準化：將不同量綱的數據轉換到相同尺度。特徵工程：從原始數據生成有用特徵（如一天中的小時、星期幾）。"
+        },
+        {
+          "heading": "統計分析方法",
+          "content": "描述性統計：計算均值、中位數、標準差了解數據分佈。趨勢分析：識別數據的上升或下降趨勢。相關性分析：發現變數間的關聯（如溫度與用電量）。週期性檢測：識別日、週、季節性模式。分佈分析：檢查數據是否符合正態分佈。假設檢驗：驗證觀察到的模式是否統計顯著。"
+        },
+        {
+          "heading": "使用 Template Sensor",
+          "content": "Template Sensor 允許在 Home Assistant 中進行即時計算。計算衍生指標：體感溫度 = f(溫度, 濕度)。統計聚合：過去 24 小時平均溫度。條件邏輯：根據多個傳感器判斷狀態。使用 Jinja2 模板語言。範例：`{{ states('sensor.temp') | float + 5 }}`。結合 Filter 組件進一步處理。整合到自動化中根據計算結果觸發動作。"
+        },
+        {
+          "heading": "實戰：能源消耗分析",
+          "content": "收集智能插座的功率數據。計算每日、每週、每月總用電量。識別高耗能時段和設備。比較不同時期的用電趨勢。計算電費成本（結合電價資訊）。生成用電報告和可視化圖表。根據分析結果優化用電策略：在離峰時段運行高耗能設備。"
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "title": "時間序列數據處理",
+      "subtitle": "處理按時間順序的感測器數據",
+      "sections": [
+        {
+          "heading": "時間序列基礎概念",
+          "content": "時間序列數據：按時間順序排列的數據點序列。特徵：趨勢（長期方向）、季節性（週期性模式）、週期性（非固定週期）、不規則波動（隨機噪聲）。平穩性：統計特性不隨時間改變。自相關：數據與其過去值的相關性。滯後特徵：使用過去時刻的值作為特徵。"
+        },
+        {
+          "heading": "時間序列分解",
+          "content": "將時間序列分解為多個組成部分以便分析。加法模型：Y = 趨勢 + 季節性 + 殘差。乘法模型：Y = 趨勢 × 季節性 × 殘差。使用 STL（Seasonal-Trend decomposition using LOESS）分解。Python 實現：`from statsmodels.tsa.seasonal import seasonal_decompose`。分解後可以更好地理解數據模式，為預測做準備。"
+        },
+        {
+          "heading": "移動平均與指數平滑",
+          "content": "簡單移動平均（SMA）：取固定窗口的平均值，平滑噪聲。指數加權移動平均（EWMA）：近期數據權重更高，響應更快。Home Assistant 的 Filter 組件實現：`filter: - filter: time_simple_moving_average window_size: '00:05'`。用途：消除短期波動、檢測趨勢變化、生成交易信號。參數選擇：窗口大小影響平滑程度和延遲。"
+        },
+        {
+          "heading": "實戰：溫度趨勢預警",
+          "content": "收集室內外溫度數據。使用移動平均平滑數據。計算溫度變化率（導數）。檢測快速溫度變化（如開窗、設備故障）。設置閾值觸發通知：溫度下降超過 3°C/小時。結合天氣預報數據預測室內溫度。自動調整空調設定以維持舒適溫度。"
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "數據可視化與監控",
+      "subtitle": "建立直觀的數據展示系統",
+      "sections": [
+        {
+          "heading": "Home Assistant 內建可視化",
+          "content": "History 面板：查看實體歷史狀態。使用 History Card 在儀表板展示歷史數據。配置時間範圍和實體列表。Statistics 組件：顯示平均值、最小值、最大值等統計資訊。ApexCharts Card：強大的第三方圖表卡片，支援多種圖表類型（折線圖、柱狀圖、熱力圖）。Mini Graph Card：輕量級圖表卡片，適合即時數據。"
+        },
+        {
+          "heading": "Grafana 整合",
+          "content": "Grafana 是專業的數據可視化平台。安裝 Grafana 和 Home Assistant 數據源插件。配置數據源：連接到 Home Assistant 的 API 或數據庫。創建儀表板：拖拽式設計多種圖表。高級功能：變數、模板、告警規則。查詢語言：使用 PromQL 或 SQL 查詢數據。範例查詢：過去 24 小時的平均溫度趨勢。"
+        },
+        {
+          "heading": "告警與通知",
+          "content": "基於閾值的簡單告警：溫度超過 30°C 發送通知。基於趨勢的智能告警：溫度連續上升 3 小時。多條件告警：溫度高且濕度低（火災風險）。告警渠道：推送通知、郵件、Telegram、Discord。告警抑制：避免重複通知，設置靜默期。告警升級：未處理的高優先級告警升級通知。"
+        },
+        {
+          "heading": "自訂監控面板",
+          "list": [
+            "能源儀表板：即時功率、每日/每月用電量、成本",
+            "環境監控：多房間溫濕度、空氣品質趨勢",
+            "安全監控：門窗狀態、人體感應、攝像頭快照",
+            "系統健康：設備在線狀態、電池電量、網路延遲",
+            "預測面板：AI 模型的預測結果可視化",
+            "比較分析：今日與昨日/上週的對比圖表"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "InfluxDB 與時序數據庫",
+      "subtitle": "長期數據存儲與高效查詢",
+      "sections": [
+        {
+          "heading": "為什麼使用 InfluxDB",
+          "content": "SQLite 局限性：不適合大量時序數據，查詢性能差。InfluxDB 優勢：專為時序數據設計、高寫入性能、強大的查詢語言（Flux/InfluxQL）、自動數據降採樣、數據保留策略。支援標籤（tags）和欄位（fields）靈活建模。內建聚合函數優化時序查詢。整合 Grafana 提供強大可視化。"
+        },
+        {
+          "heading": "InfluxDB 安裝與配置",
+          "content": "使用 Home Assistant Add-on 或 Docker 安裝 InfluxDB 2.x。創建組織（Organization）和 Bucket（數據桶）。生成 API Token 用於認證。配置 Home Assistant 的 InfluxDB 整合：`influxdb: host: localhost, port: 8086, token: xxx, organization: home, bucket: sensors`。選擇要記錄的實體：使用 include/exclude 規則。設置數據保留策略：如保留 1 年數據，自動刪除舊數據。"
+        },
+        {
+          "heading": "Flux 查詢語言",
+          "content": "Flux 是 InfluxDB 2.x 的查詢語言，功能強大。基本查詢結構：from() |> range() |> filter() |> aggregateWindow()。範例：查詢過去 7 天的平均溫度：`from(bucket: \"sensors\") |> range(start: -7d) |> filter(fn: (r) => r._measurement == \"°C\" and r.entity_id == \"temperature\") |> aggregateWindow(every: 1h, fn: mean)`。支援複雜轉換、數學運算、JOIN 操作。"
+        },
+        {
+          "heading": "數據管理最佳實踐",
+          "content": "合理設置採樣率：避免過度採樣造成存儲壓力。使用連續查詢（Continuous Queries）預聚合數據。配置降採樣策略：保留原始數據 7 天，1 小時聚合保留 1 年，1 天聚合永久保留。定期備份數據：使用 InfluxDB 備份命令或複製 Bucket。監控數據庫大小和性能。使用標籤（tags）而非欄位（fields）存儲分類信息，優化查詢。"
+        }
+      ]
+    }
+  ]
+}

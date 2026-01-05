@@ -1,0 +1,187 @@
+{
+  "level": {
+    "id": "advanced",
+    "name": "高級",
+    "emoji": "🤖",
+    "description": "掌握 AI/ML 模型開發與智能場景應用",
+    "color": "#8b5cf6"
+  },
+  "knowledgePoints": [
+    {
+      "number": "09",
+      "title": "AI/ML 基礎與應用場景",
+      "subtitle": "機器學習在智能家居的應用",
+      "sections": [
+        {
+          "heading": "適用的機器學習任務",
+          "list": [
+            "時間序列預測：預測未來的溫度、能源消耗",
+            "分類任務：識別活動模式（在家/外出/睡眠）",
+            "異常檢測：識別設備故障或異常行為",
+            "聚類分析：發現用戶行為模式",
+            "推薦系統：智能建議最佳設定",
+            "強化學習：優化能源使用策略"
+          ]
+        },
+        {
+          "heading": "技術棧選擇",
+          "content": "Python 生態系統：scikit-learn（傳統 ML）、TensorFlow/PyTorch（深度學習）、Prophet（時序預測）、statsmodels（統計模型）。Home Assistant 整合：Python Scripts、AppDaemon、自訂插件。輕量級部署：使用 sklearn-porter 轉換模型為 JavaScript 或 C。雲端 vs 本地：本地運行保護隱私，雲端提供更強算力。"
+        },
+        {
+          "heading": "數據準備流程",
+          "content": "1. 數據收集：從 Home Assistant 導出歷史數據。2. 數據清洗：處理缺失值、異常值、重複數據。3. 特徵工程：創建時間特徵（小時、星期、月份）、滯後特徵、滾動統計。4. 標籤生成：為監督學習創建目標變數。5. 數據分割：訓練集、驗證集、測試集（時序數據按時間分割）。6. 數據標準化：確保特徵在相同尺度。"
+        },
+        {
+          "heading": "模型評估指標",
+          "content": "回歸任務：MAE（平均絕對誤差）、RMSE（均方根誤差）、R²（決定係數）。分類任務：準確率、精確率、召回率、F1 分數、混淆矩陣。時序預測：MAPE（平均絕對百分比誤差）、預測偏差。交叉驗證：時序交叉驗證（TimeSeriesSplit）評估模型穩定性。避免過擬合：使用正則化、早停、特徵選擇。"
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "使用 scikit-learn 建立預測模型",
+      "subtitle": "實戰：室內溫度預測",
+      "sections": [
+        {
+          "heading": "數據獲取與準備",
+          "content": "從 Home Assistant 導出 CSV 數據：使用 InfluxDB API 或 SQL 查詢。載入 pandas：`df = pd.read_csv('sensor_data.csv', parse_dates=['time'])`。創建特徵：`df['hour'] = df['time'].dt.hour`, `df['day_of_week'] = df['time'].dt.dayofweek`。滯後特徵：`df['temp_lag1'] = df['temperature'].shift(1)`。外部天氣數據：整合天氣預報 API。分割數據：最後 20% 作為測試集。"
+        },
+        {
+          "heading": "模型訓練",
+          "content": "選擇算法：線性回歸（基線）、隨機森林（處理非線性）、梯度提升（XGBoost/LightGBM）。訓練代碼：`from sklearn.ensemble import RandomForestRegressor; model = RandomForestRegressor(n_estimators=100, max_depth=10); model.fit(X_train, y_train)`。超參數調優：使用 GridSearchCV 或 RandomizedSearchCV。特徵重要性分析：識別最重要的預測因子。"
+        },
+        {
+          "heading": "模型評估與優化",
+          "content": "測試集評估：`y_pred = model.predict(X_test); mae = mean_absolute_error(y_test, y_pred)`。殘差分析：繪製預測誤差分佈，檢查是否有系統性偏差。特徵工程迭代：根據特徵重要性添加或移除特徵。模型融合：結合多個模型的預測（Ensemble）。定期重訓練：使用最新數據更新模型保持準確性。"
+        },
+        {
+          "heading": "模型部署",
+          "content": "保存模型：`import joblib; joblib.dump(model, 'temp_model.pkl')`。載入模型進行預測：`model = joblib.load('temp_model.pkl'); prediction = model.predict(new_data)`。整合到 Home Assistant：創建 RESTful Sensor 或 Python Script。自動化觸發：每小時運行預測，更新 sensor 狀態。監控模型性能：記錄預測準確度，當性能下降時重新訓練。"
+        }
+      ]
+    },
+    {
+      "number": "11",
+      "title": "在 Home Assistant 中整合 AI 模型",
+      "subtitle": "將 ML 模型應用到實際場景",
+      "sections": [
+        {
+          "heading": "Python Scripts 方法",
+          "content": "啟用 python_script 組件：在 configuration.yaml 添加 `python_script:`。創建腳本文件：`python_scripts/predict_temperature.py`。訪問數據：`temp = hass.states.get('sensor.temperature').state`。加載模型：使用 joblib 載入預先訓練的模型。執行預測：運行模型並設置結果到新 sensor。從自動化調用：`service: python_script.predict_temperature`。"
+        },
+        {
+          "heading": "AppDaemon 整合",
+          "content": "安裝 AppDaemon：Home Assistant Add-on 或獨立安裝。創建應用：`apps/ml_predictor.py` 繼承 `hass.Hass`。監聽事件：`self.listen_state(callback, 'sensor.temperature')`。運行預測：在回調中執行模型推理。設置狀態：`self.set_state('sensor.temp_prediction', state=value)`。優勢：完整 Python 環境，可使用任何庫；異步執行不阻塞主系統。"
+        },
+        {
+          "heading": "RESTful 傳感器方法",
+          "content": "創建獨立 API 服務：使用 Flask 或 FastAPI 提供預測接口。範例：`@app.route('/predict', methods=['POST']); data = request.json; prediction = model.predict(data); return {'prediction': prediction}`。Home Assistant 配置：`sensor: - platform: rest, resource: http://localhost:5000/predict, method: POST, payload: '{\"temp\": {{ states(\"sensor.temperature\") }} }'`。優勢：解耦模型服務，易於更新和擴展。"
+        },
+        {
+          "heading": "自訂整合開發",
+          "content": "創建 custom_component：完整控制和最佳性能。實現 Sensor Platform：自動獲取數據、運行預測、更新狀態。使用 DataUpdateCoordinator：統一管理預測更新。模型加載：在 async_setup_entry 中載入模型到內存。異步預測：使用 `await hass.async_add_executor_job(model.predict, data)` 避免阻塞。配置選項：允許用戶調整預測參數。"
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "進階場景：異常檢測",
+      "subtitle": "識別設備故障與安全威脅",
+      "sections": [
+        {
+          "heading": "異常檢測方法",
+          "content": "統計方法：3σ 規則（超過均值 3 個標準差）、IQR（四分位距）方法。機器學習方法：Isolation Forest（孤立森林）、One-Class SVM、Autoencoder（自編碼器）。時序方法：ARIMA 殘差分析、Prophet 異常檢測、LSTM 預測偏差。無監督學習：不需要標註異常數據，適合 IoT 場景。"
+        },
+        {
+          "heading": "實戰：設備故障檢測",
+          "content": "場景：檢測智能插座功率異常。數據收集：正常運行時的功率模式。訓練模型：使用 Isolation Forest 學習正常模式。異常評分：計算每個數據點的異常分數。設置閾值：當異常分數超過閾值時觸發告警。範例代碼：`from sklearn.ensemble import IsolationForest; model = IsolationForest(contamination=0.1); model.fit(normal_data); anomaly_score = model.decision_function(new_data)`。"
+        },
+        {
+          "heading": "安全威脅檢測",
+          "content": "網路流量異常：檢測 DDoS、掃描攻擊。使用模式異常：夜間突然有活動（可能是入侵）。設備行為異常：攝像頭突然高流量（可能被入侵）。認證異常：多次登入失敗、異常地點登入。實施方法：收集正常行為數據、訓練異常檢測模型、即時監控並告警。整合到 Home Assistant：創建 binary_sensor 顯示威脅狀態。"
+        },
+        {
+          "heading": "告警與響應",
+          "content": "多級告警：低（記錄日誌）、中（發送通知）、高（執行自動化響應）。告警聚合：避免告警風暴，相似告警合併。自動響應：檢測到異常時自動執行動作（如關閉設備、啟動錄影）。人工審核：提供界面讓用戶確認是否為真實異常。反饋學習：使用用戶反饋改進模型（主動學習）。"
+        }
+      ]
+    },
+    {
+      "number": "13",
+      "title": "進階場景：能源優化",
+      "subtitle": "AI 驅動的智能節能",
+      "sections": [
+        {
+          "heading": "能源預測模型",
+          "content": "預測未來用電量：使用歷史用電數據、天氣預報、日曆事件訓練模型。特徵工程：小時、星期、月份、溫度、濕度、是否假日。模型選擇：梯度提升樹（XGBoost）或深度學習（LSTM）。預測窗口：未來 24 小時的小時級預測。應用：提前調整設備運行時間、避開尖峰電價。"
+        },
+        {
+          "heading": "動態電價優化",
+          "content": "整合電力公司 API 獲取即時電價。預測未來電價趨勢。優化目標：最小化電費，滿足舒適度約束。策略：將高耗能任務（洗衣、充電）調度到低價時段。使用強化學習：Q-Learning 或 DQN 學習最優策略。範例：在電價最低的 2 小時啟動熱水器。"
+        },
+        {
+          "heading": "太陽能與儲能優化",
+          "content": "預測太陽能發電量：基於天氣預報和歷史數據。預測家庭用電需求。優化儲能策略：何時充電、何時放電、何時賣電給電網。多目標優化：最大化自用、最小化電費、延長電池壽命。考慮約束：電池容量、充放電速率、電網限制。實施：使用線性規劃或強化學習求解。"
+        },
+        {
+          "heading": "實戰：智能空調控制",
+          "content": "目標：保持舒適溫度，最小化能耗。預測模型：預測未來室內溫度（考慮外部天氣、人員活動）。控制策略：使用 MPC（模型預測控制）或 RL（強化學習）。考慮因素：溫度慣性、人員在家時間、電價。實施：每 15 分鐘運行優化，調整空調設定。效果：相比固定設定可節能 20-30%。學習用戶偏好：適應不同用戶的舒適度需求。"
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "title": "隱私保護與聯邦學習",
+      "subtitle": "在保護隱私的前提下使用 AI",
+      "sections": [
+        {
+          "heading": "本地化 AI 的重要性",
+          "content": "隱私風險：雲端 AI 需要上傳敏感數據（活動模式、能源使用）。本地運行優勢：數據不離開家庭網路、無網路依賴、低延遲。挑戰：計算資源有限、模型更新困難。解決方案：使用輕量級模型（如隨機森林）、模型蒸餾、量化。硬體加速：使用 Google Coral TPU 或 NVIDIA Jetson 加速推理。"
+        },
+        {
+          "heading": "差分隱私技術",
+          "content": "差分隱私（Differential Privacy）：在數據中添加噪聲保護個體隱私。應用場景：分享聚合統計資訊，但不洩露個人數據。實施：使用 Google 的 differential-privacy 庫。範例：發佈平均用電量，但無法反推單個家庭。權衡：隱私保護程度 vs 數據效用。參數選擇：epsilon（ε）控制隱私預算。"
+        },
+        {
+          "heading": "聯邦學習概念",
+          "content": "聯邦學習（Federated Learning）：多方協作訓練模型，但數據不共享。工作流程：1) 各家庭在本地訓練模型；2) 只上傳模型參數（梯度）；3) 伺服器聚合更新；4) 下發新模型。優勢：利用大規模數據改進模型，但保護個人隱私。框架：TensorFlow Federated、PySyft。應用：多個家庭協作訓練更好的能源優化模型。"
+        },
+        {
+          "heading": "實施最佳實踐",
+          "list": [
+            "最小化數據收集：只收集必要的數據",
+            "數據加密：靜態數據和傳輸中數據加密",
+            "匿名化處理：移除或混淆可識別信息",
+            "用戶控制：讓用戶選擇是否參與數據共享",
+            "透明化：清楚告知數據使用方式",
+            "定期審計：檢查數據訪問日誌",
+            "GDPR 合規：遵守隱私法規"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "title": "生產部署與監控",
+      "subtitle": "穩定可靠的 AI 系統運營",
+      "sections": [
+        {
+          "heading": "模型版本管理",
+          "content": "使用 MLflow 或 DVC 管理模型版本。記錄元數據：訓練數據、超參數、性能指標、訓練時間。實施 A/B 測試：比較新舊模型性能。回滾機制：當新模型性能下降時快速恢復。語義版本號：MAJOR.MINOR.PATCH 標識模型版本。模型註冊表：集中管理所有生產模型。"
+        },
+        {
+          "heading": "持續監控",
+          "content": "性能監控：追蹤預測準確度、延遲、錯誤率。數據漂移檢測：監控輸入數據分佈變化（可能導致性能下降）。概念漂移：底層關係變化（如季節變化影響能源模式）。告警設置：性能下降超過閾值時通知。日誌記錄：記錄所有預測請求和結果。可視化：使用 Grafana 展示模型性能趨勢。"
+        },
+        {
+          "heading": "模型重訓練策略",
+          "content": "定期重訓練：每週/月使用最新數據重訓練模型。觸發式重訓練：檢測到性能下降時自動重訓練。增量學習：使用新數據更新模型，不從頭訓練。在線學習：模型持續從新數據中學習。驗證流程：重訓練後在驗證集上測試，確認改進。自動化管道：使用 Airflow 或 Prefect 編排重訓練流程。"
+        },
+        {
+          "heading": "故障恢復與高可用",
+          "content": "健康檢查：API 端點返回模型狀態。優雅降級：模型服務不可用時使用簡單規則。冗餘部署：多個模型實例負載均衡。容器化部署：使用 Docker 簡化部署和擴展。容錯機制：捕獲異常，記錄錯誤，返回默認值。備份與恢復：定期備份模型和配置。災難恢復計劃：定義 RTO（恢復時間目標）和 RPO（恢復點目標）。"
+        }
+      ]
+    }
+  ]
+}
