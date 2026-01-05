@@ -229,6 +229,56 @@
             overflow-y: auto;
         }
 
+        /* Loading 效果 */
+        .loading-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+        }
+
+        .loading-overlay.hidden {
+            display: none;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(102, 126, 234, 0.2);
+            border-top: 6px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #667eea;
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .quiz-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
         .quiz-header {
             text-align: center;
             margin-bottom: 25px;
@@ -404,6 +454,13 @@
             <!-- 動態載入標題 -->
         </div>
 
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="loading-container">
+                <div class="spinner"></div>
+                <div class="loading-text">正在載入內容...</div>
+            </div>
+        </div>
+
         <div id="content">
             <!-- 動態載入內容 -->
         </div>
@@ -430,7 +487,12 @@
 
         // 載入所有階層的 JSON 資料
         async function loadData() {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            
             try {
+                // 顯示 loading
+                loadingOverlay.classList.remove('hidden');
+                
                 const topicId = getTopicIdFromURL();
 
                 // 先載入配置文件
@@ -472,9 +534,13 @@
                 }
 
                 renderContent(data);
+                
+                // 隱藏 loading
+                loadingOverlay.classList.add('hidden');
             } catch (error) {
                 console.error('載入資料失敗:', error);
-                document.getElementById('content').innerHTML = '<p style="color: red;">資料載入失敗，請重新整理頁面。</p>';
+                loadingOverlay.classList.add('hidden');
+                document.getElementById('content').innerHTML = '<p style="color: red; text-align: center; font-size: 1.1em;">⚠️ 資料載入失敗，請重新整理頁面。</p>';
             }
         }
 

@@ -200,45 +200,6 @@
             box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
         }
 
-        /* Loading 效果 */
-        .loading-overlay {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 400px;
-        }
-
-        .loading-overlay.hidden {
-            display: none;
-        }
-
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 6px solid rgba(255, 255, 255, 0.3);
-            border-top: 6px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loading-text {
-            color: white;
-            margin-top: 20px;
-            font-size: 1.2em;
-            text-align: center;
-        }
-
-        .loading-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -271,13 +232,6 @@
             <!-- 動態載入分類標籤 -->
         </div>
 
-        <div id="loadingOverlay" class="loading-overlay">
-            <div class="loading-container">
-                <div class="spinner"></div>
-                <div class="loading-text">正在載入課程...</div>
-            </div>
-        </div>
-
         <div id="contentContainer">
             <!-- 動態載入標籤內容 -->
         </div>
@@ -290,12 +244,7 @@
 
     <script>
         async function loadTopics() {
-            const loadingOverlay = document.getElementById('loadingOverlay');
-            
             try {
-                // 顯示 loading
-                loadingOverlay.classList.remove('hidden');
-                
                 const response = await fetch('config.json');
                 const config = await response.json();
                 
@@ -388,12 +337,8 @@
                     contentContainer.appendChild(tabContent);
                 });
                 
-                // 隱藏 loading
-                loadingOverlay.classList.add('hidden');
-                
             } catch (error) {
                 console.error('載入配置失敗:', error);
-                loadingOverlay.classList.add('hidden');
                 document.getElementById('contentContainer').innerHTML = '<p style="color: white; text-align: center; font-size: 1.1em;">⚠️ 載入失敗，請重新整理頁面。</p>';
             }
         }
