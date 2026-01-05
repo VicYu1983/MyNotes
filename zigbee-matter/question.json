@@ -1,0 +1,354 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Zigbee 協定基於哪個 IEEE 標準？",
+      "options": ["IEEE 802.11", "IEEE 802.15.4", "IEEE 802.3", "IEEE 802.1X"],
+      "correctAnswer": 1,
+      "explanation": "Zigbee 是基於 IEEE 802.15.4 標準的低功耗無線通訊協定，專為物聯網應用設計。"
+    },
+    {
+      "id": 2,
+      "question": "Zigbee 網路中協調器 (Coordinator) 的主要職責是什麼？",
+      "options": ["轉發訊號", "管理整個網路", "降低功耗", "增強信號強度"],
+      "correctAnswer": 1,
+      "explanation": "協調器是 Zigbee 網路的管理中心，負責網路初始化、設備管理和路由管理。每個 Zigbee 網路只有一個協調器。"
+    },
+    {
+      "id": 3,
+      "question": "Matter 協定支援哪三種主要的傳輸層？",
+      "options": ["Wi-Fi、Thread、Zigbee", "Wi-Fi、Thread、BLE", "Thread、BLE、Ethernet", "Wi-Fi、Zigbee、Ethernet"],
+      "correctAnswer": 1,
+      "explanation": "Matter 支援 Wi-Fi（用於高頻寬設備）、Thread（用於低功耗網狀網路）和 BLE（用於設備配對和近距通訊）。"
+    },
+    {
+      "id": 4,
+      "question": "什麼是 Zigbee 的 AODV 路由協定？",
+      "options": ["靜態路由協定", "按需動態路由協定", "廣播路由協定", "單播路由協定"],
+      "correctAnswer": 1,
+      "explanation": "AODV (Ad Hoc On-Demand Distance Vector) 是 Zigbee 採用的動態路由協定，只在需要時建立路由，支援多跳轉發。"
+    },
+    {
+      "id": 5,
+      "question": "Zigbee 設備斷線的常見原因是什麼？（多選）",
+      "options": ["信號干擾", "路由故障", "電池耗盡", "所有選項都可能"],
+      "correctAnswer": 3,
+      "explanation": "Zigbee 設備斷線可能由信號干擾、路由故障、電源問題、協調器過載等多種原因造成。診斷時需要逐項排查。"
+    },
+    {
+      "id": 6,
+      "question": "2.4GHz 頻段的主要干擾源包括什麼？",
+      "options": ["Wi-Fi、微波爐、藍牙", "Wi-Fi、無線滑鼠", "藍牙、無線耳機", "所有選項都是干擾源"],
+      "correctAnswer": 3,
+      "explanation": "2.4GHz 是一個擁擠的 ISM 頻段，Wi-Fi、藍牙、微波爐、無線設備等都會造成干擾。"
+    },
+    {
+      "id": 7,
+      "question": "Zigbee2MQTT 是什麼？",
+      "options": ["設備驅動程式", "協定轉換工具", "無線路由器", "網路分析器"],
+      "correctAnswer": 1,
+      "explanation": "Zigbee2MQTT 是一個開源項目，將 Zigbee 設備連接到 MQTT 代理，提供協定轉換和調試功能。"
+    },
+    {
+      "id": 8,
+      "question": "Matter 使用哪種加密算法保護通訊？",
+      "options": ["AES-256-GCM", "AES-CCM", "RSA-2048", "DES"],
+      "correctAnswer": 1,
+      "explanation": "Matter 使用 AES-CCM (Counter with CBC-MAC) 加密算法進行訊息加密和認證，確保通訊安全。"
+    },
+    {
+      "id": 9,
+      "question": "什麼是 CASE 協議？",
+      "options": ["設備認證協議", "證書認證會話建立協議", "密鑰交換協議", "加密算法"],
+      "correctAnswer": 1,
+      "explanation": "CASE (Certificate Authenticated Session Establishment) 是 Matter 使用的協議，用於建立加密的端點對端點連接。"
+    },
+    {
+      "id": 10,
+      "question": "Thread 邊界路由器的作用是什麼？",
+      "options": ["提高信號強度", "連接 Thread 和其他網路", "過濾惡意訊息", "降低能耗"],
+      "correctAnswer": 1,
+      "explanation": "邊界路由器連接 Thread 網狀網路和其他網路（如 Wi-Fi），使設備能夠相互通訊，是混合網路的關鍵。"
+    },
+    {
+      "id": 11,
+      "question": "為什麼 Zigbee 有時出現延遲？",
+      "options": ["設備太多導致網路擁塞", "跳數過多", "信道質量差", "所有選項都可能導致延遲"],
+      "correctAnswer": 3,
+      "explanation": "Zigbee 延遲的常見原因包括網路擁塞、跳數過多、信道質量差和應用層處理延遲等。"
+    },
+    {
+      "id": 12,
+      "question": "如何優化 Zigbee 網路的覆蓋範圍？",
+      "options": ["增加路由器", "移動協調器", "更換天線", "檢查電源供應"],
+      "correctAnswer": 0,
+      "explanation": "增加路由器數量是擴大 Zigbee 網路覆蓋的最有效方法，因為路由器可以中繼訊號，擴大通訊範圍。"
+    },
+    {
+      "id": 13,
+      "question": "Matter 的主要優勢是什麼？",
+      "options": ["統一標準", "設備互操作性", "增強的安全性", "所有選項都是"],
+      "correctAnswer": 3,
+      "explanation": "Matter 的主要優勢是統一標準、設備互操作性、增強的安全性和離線支援，解決了物聯網碎片化問題。"
+    },
+    {
+      "id": 14,
+      "question": "Zigbee 網狀拓撲相比星形拓撲的優勢是什麼？",
+      "options": ["更簡單", "更可靠，支援自動迂迴路由", "功耗更低", "設備更少"],
+      "correctAnswer": 1,
+      "explanation": "網狀拓撲支援設備相互連接和路由，當主路由失敗時可以自動迂迴，提供更高的可靠性。"
+    },
+    {
+      "id": 15,
+      "question": "什麼是 DAC 認證？",
+      "options": ["設備位置認證", "數據訪問控制", "設備真實性認證", "數據完整性檢查"],
+      "correctAnswer": 2,
+      "explanation": "DAC (Device Attestation Certificate) 是 Matter 用來驗證設備製造商和真實性的認證方式。"
+    },
+    {
+      "id": 16,
+      "question": "如何使用 Wireshark 分析 Thread 訊息？",
+      "options": ["安裝 Wireshark 插件", "使用 Thread 解析器", "使用標準 IP 協議解析", "所有選項都需要"],
+      "correctAnswer": 0,
+      "explanation": "要分析 Thread 訊息，需要安裝 Wireshark 的 Thread 插件，以便正確解析 Thread 和 MLE 訊息。"
+    },
+    {
+      "id": 17,
+      "question": "協調器過載會導致什麼問題？",
+      "options": ["信號減弱", "設備斷線", "網路時延增加", "所有選項都可能"],
+      "correctAnswer": 3,
+      "explanation": "協調器過載會導致設備連接請求被拒絕、訊息處理延遲、甚至設備斷線等多種問題。"
+    },
+    {
+      "id": 18,
+      "question": "PAKE 協議的作用是什麼？",
+      "options": ["加密訊息", "防止中間人攻擊", "認證設備", "所有選項都是"],
+      "correctAnswer": 1,
+      "explanation": "PAKE (Password Authenticated Key Exchange) 是 Matter 使用的協議，在配對期間進行身份驗證，防止中間人攻擊。"
+    },
+    {
+      "id": 19,
+      "question": "Zigbee 設備配對的安全機制是什麼？",
+      "options": ["明文傳輸", "AES-128 加密", "RSA 加密", "無加密"],
+      "correctAnswer": 1,
+      "explanation": "Zigbee 設備配對使用 AES-128 加密和安全密鑰交換，確保配對過程的安全性。"
+    },
+    {
+      "id": 20,
+      "question": "什麼情況下應該啟用 Zigbee2MQTT 的調試日誌？",
+      "options": ["正常使用", "故障診斷", "性能優化", "所有情況都需要"],
+      "correctAnswer": 1,
+      "explanation": "調試日誌應在故障診斷時啟用，以查看原始框架訊息、路由更新和設備事件，幫助快速定位問題。"
+    },
+    {
+      "id": 21,
+      "question": "Matter 訊息框架中的加密計數器的作用是什麼？",
+      "options": ["計算訊息數量", "防止重放攻擊", "標識訊息類型", "跟蹤訊息延遲"],
+      "correctAnswer": 1,
+      "explanation": "加密計數器用於防止重放攻擊，確保相同的訊息不會被重複執行。"
+    },
+    {
+      "id": 22,
+      "question": "如何診斷信號干擾問題？",
+      "options": ["使用頻譜分析工具", "更換路由器", "重啟設備", "增加天線"],
+      "correctAnswer": 0,
+      "explanation": "使用頻譜分析工具可以檢測 2.4GHz 頻段中的干擾源，幫助選擇最佳信道。"
+    },
+    {
+      "id": 23,
+      "question": "Thread 中 CSL (Coordinated Sampled Listening) 的作用是什麼？",
+      "options": ["提高信號強度", "降低睡眠設備的能耗", "加密訊息", "增加路由器"],
+      "correctAnswer": 1,
+      "explanation": "CSL 是 Thread 中的低功耗機制，允許睡眠設備定期喚醒監聽訊息，同時保持低能耗。"
+    },
+    {
+      "id": 24,
+      "question": "Zigbee 幀中的校驗和的作用是什麼？",
+      "options": ["加密訊息", "驗證訊息完整性", "標識訊息優先級", "跟蹤訊息來源"],
+      "correctAnswer": 1,
+      "explanation": "校驗和用於驗證訊息傳輸過程中沒有被破壞或篡改，確保通訊的可靠性。"
+    },
+    {
+      "id": 25,
+      "question": "如何優化 Zigbee 網路以減少重傳？",
+      "options": ["改善無線環境", "調整發送功率", "增加路由器", "以上都需要"],
+      "correctAnswer": 3,
+      "explanation": "減少重傳需要多管齊下：改善無線環境、調整發送功率、增加路由器以提高信號質量。"
+    },
+    {
+      "id": 26,
+      "question": "Matter 使用哪種加密算法進行訊息加密？",
+      "options": ["AES-256-GCM", "AES-CCM", "DES", "RC4"],
+      "correctAnswer": 1,
+      "explanation": "Matter 使用 AES-CCM (Counter with CBC-MAC) 加密算法進行訊息加密和認證。"
+    },
+    {
+      "id": 27,
+      "question": "Matter 訊息框架中的訊息標識符 (MIC) 的作用是什麼？",
+      "options": ["加密訊息", "唯一識別訊息，用於去重和追蹤", "驗證設備身份", "指定傳輸層"],
+      "correctAnswer": 1,
+      "explanation": "訊息標識符用於唯一識別每條訊息，防止重複接收和幫助追蹤訊息流。"
+    },
+    {
+      "id": 28,
+      "question": "Zigbee 樹形拓撲的主要缺點是什麼？",
+      "options": ["功耗過高", "父節點故障導致子樹離線", "不支援多跳", "無法加密通訊"],
+      "correctAnswer": 1,
+      "explanation": "樹形拓撲中，父節點的故障會導致其下所有子節點失去連接，這是其主要缺點。"
+    },
+    {
+      "id": 29,
+      "question": "什麼是 Zigbee 的許可模式 (Permit Joining)？",
+      "options": ["設備自動連接模式", "允許新設備加入網路的模式", "加密連接模式", "靜態配置模式"],
+      "correctAnswer": 1,
+      "explanation": "許可模式是協調器或路由器允許新設備加入 Zigbee 網路的狀態，通常持續 3-5 分鐘。"
+    },
+    {
+      "id": 30,
+      "question": "Matter 的 CASE 協議的全稱是什麼？",
+      "options": ["Cipher Authenticated Session Establishment", "Certificate Authenticated Session Establishment", "Crypto Authentication Security Exchange", "Connection Automatic Session Exchange"],
+      "correctAnswer": 1,
+      "explanation": "CASE 是 Certificate Authenticated Session Establishment，用於建立加密的端點對端點連接。"
+    },
+    {
+      "id": 31,
+      "question": "Thread 邊界路由器的主要功能是什麼？",
+      "options": ["提高訊號強度", "連接 Thread 網狀網路和其他網路", "加密訊息", "管理設備密鑰"],
+      "correctAnswer": 1,
+      "explanation": "邊界路由器連接 Thread 網狀網路和其他網路（如 Wi-Fi），使設備能夠相互通訊。"
+    },
+    {
+      "id": 32,
+      "question": "Matter 互動模型中的「屬性 (Attributes)」代表什麼？",
+      "options": ["設備的操作命令", "設備的狀態數據", "設備的網路地址", "設備的加密密鑰"],
+      "correctAnswer": 1,
+      "explanation": "屬性代表設備的狀態數據，如溫度、亮度、開關狀態等，可以被讀取、寫入和訂閱。"
+    },
+    {
+      "id": 33,
+      "question": "Zigbee 中的 LQI (Link Quality Indicator) 是什麼？",
+      "options": ["設備的電池電量", "連結品質指標", "路由表大小", "加密密鑰版本"],
+      "correctAnswer": 1,
+      "explanation": "LQI 是連結品質指標，範圍 0-255，表示無線連結的品質，值越高連結越好。"
+    },
+    {
+      "id": 34,
+      "question": "為什麼 Matter 設計為分層架構？",
+      "options": ["降低功耗", "實現解耦和互操作性", "提高加密強度", "簡化設備製造"],
+      "correctAnswer": 1,
+      "explanation": "分層架構使各層各司其職，實現了解耦，使不同品牌的設備可以無縫互操作。"
+    },
+    {
+      "id": 35,
+      "question": "Zigbee 網狀拓撲相比其他拓撲的優勢是什麼？",
+      "options": ["功耗更低", "配置更簡單", "最可靠，支援自動迂迴路由", "通訊範圍更小"],
+      "correctAnswer": 2,
+      "explanation": "網狀拓撲支援設備相互連接和路由，當某個路由失敗時可自動迂迴，提供最高可靠性。"
+    },
+    {
+      "id": 36,
+      "question": "Matter 的訊息計數器 (Message Counter) 的作用是什麼？",
+      "options": ["計算訊息數量", "防止重放攻擊", "標識訊息類型", "控制訊息優先級"],
+      "correctAnswer": 1,
+      "explanation": "訊息計數器用於防止重放攻擊，確保相同的訊息不會被重複執行。"
+    },
+    {
+      "id": 37,
+      "question": "Zigbee 設備配對中，安全密鑰交換使用的是哪種算法？",
+      "options": ["RSA", "DES", "AES-128", "ECC"],
+      "correctAnswer": 2,
+      "explanation": "Zigbee 使用 AES-128 加密進行安全密鑰交換和設備驗證。"
+    },
+    {
+      "id": 38,
+      "question": "Matter 事件 (Events) 主要用於什麼？",
+      "options": ["配置設備參數", "設備主動報告發生的事件", "加密通訊", "管理路由表"],
+      "correctAnswer": 1,
+      "explanation": "事件用於設備主動報告發生的事件，如按鈕按下、警告觸發等，支援實時推送。"
+    },
+    {
+      "id": 39,
+      "question": "Zigbee AODV 路由協定中的 RREQ 表示什麼？",
+      "options": ["Route Response", "Route Request", "Route Reliability", "Route Retry Exchange"],
+      "correctAnswer": 1,
+      "explanation": "RREQ 是 Route Request，用於廣播尋找目標設備的最短路徑。"
+    },
+    {
+      "id": 40,
+      "question": "Matter 協定中，IPv6 屬於哪一層？",
+      "options": ["傳輸層", "應用層", "安全層", "網路層"],
+      "correctAnswer": 3,
+      "explanation": "IPv6 是 Matter 網路層的一部分，提供端點到端點的通訊。"
+    },
+    {
+      "id": 41,
+      "question": "Zigbee 協調器為什麼容易成為網路瓶頸？",
+      "options": ["功耗太高", "頻寬不足", "需要管理所有設備和路由", "無法加密"],
+      "correctAnswer": 2,
+      "explanation": "協調器需要管理網路初始化、設備加入、路由管理等任務，設備過多時容易過載。"
+    },
+    {
+      "id": 42,
+      "question": "Matter PAKE 協議的全稱是什麼？",
+      "options": ["Password Authentication Key Encryption", "Password Authenticated Key Exchange", "Public Authentication Protocol Extension", "Paired Authentication Key Establishment"],
+      "correctAnswer": 1,
+      "explanation": "PAKE 是 Password Authenticated Key Exchange，用於配對期間的身份驗證和防中間人攻擊。"
+    },
+    {
+      "id": 43,
+      "question": "在 Zigbee2MQTT 中，如何查看設備的路由信息？",
+      "options": ["使用 ot route 命令", "查看 MQTT 主題 zigbee2mqtt/bridge/log", "使用 REST API getRoutes 命令", "無法查看路由信息"],
+      "correctAnswer": 2,
+      "explanation": "可以使用 Zigbee2MQTT 的 REST API 命令 /api/devices/routes 來查看設備的路由信息。"
+    },
+    {
+      "id": 44,
+      "question": "Zigbee 中的 RSSI (Received Signal Strength Indicator) 是什麼？",
+      "options": ["路由重試次數", "信號強度指標", "訊息序列號", "設備型號標識"],
+      "correctAnswer": 1,
+      "explanation": "RSSI 是信號強度指標，表示接收到的無線信號強度，用於評估連接品質。"
+    },
+    {
+      "id": 45,
+      "question": "Matter 協定中，DAC 代表什麼？",
+      "options": ["Digital Audio Codec", "Data Access Control", "Device Attestation Certificate", "Distributed Authentication Code"],
+      "correctAnswer": 2,
+      "explanation": "DAC 是 Device Attestation Certificate，用於驗證設備的製造商和真實性。"
+    },
+    {
+      "id": 46,
+      "question": "Zigbee 設備配對時，新設備掃描的目的是什麼？",
+      "options": ["檢測干擾源", "獲取可用的 Zigbee 網路參數", "驗證安全密鑰", "分配網路地址"],
+      "correctAnswer": 1,
+      "explanation": "掃描用於新設備發現可用的 Zigbee 網路並獲取必要的網路參數以便加入。"
+    },
+    {
+      "id": 47,
+      "question": "Matter 命令 (Commands) 執行失敗時會返回什麼？",
+      "options": ["空值", "錯誤代碼和詳細信息", "自動重試", "無任何回覆"],
+      "correctAnswer": 1,
+      "explanation": "命令執行失敗時會返回狀態碼（如錯誤代碼）和詳細信息，幫助診斷問題。"
+    },
+    {
+      "id": 48,
+      "question": "Zigbee 中的終端設備 (End Device) 的特點是什麼？",
+      "options": ["不轉發訊號，可低功耗運作", "轉發訊號，消耗電力多", "管理整個網路", "無法加密通訊"],
+      "correctAnswer": 0,
+      "explanation": "終端設備不轉發訊號，只進行點對點通訊，可以長時間運行於低功耗模式。"
+    },
+    {
+      "id": 49,
+      "question": "Thread 中 MLE (Mesh Link Establishment) 的作用是什麼？",
+      "options": ["加密訊息", "建立和維護網狀網路連接", "路由發現", "設備認證"],
+      "correctAnswer": 1,
+      "explanation": "MLE 是 Mesh Link Establishment，用於建立和維護 Thread 網狀網路中的設備連接。"
+    },
+    {
+      "id": 50,
+      "question": "比較 Zigbee 和 Matter，哪個具有更好的跨廠牌互操作性？",
+      "options": ["Zigbee", "Matter", "兩者相同", "需要根據情況選擇"],
+      "correctAnswer": 1,
+      "explanation": "Matter 由多家大廠聯合制定，定義了統一的互動模型，使不同品牌設備可無縫協作，互操作性遠優於 Zigbee。"
+    }
+  ]
+}

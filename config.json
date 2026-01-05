@@ -185,6 +185,35 @@
                     "jsonFile": "smart-home-engineer/advanced.json"
                 }
             ]
+        },
+        {
+            "id": "zigbee-matter",
+            "category": "software",
+            "title": "Zigbee / Matter 協定層分析",
+            "icon": "📡",
+            "subtitle": "深度解析無線協定，掌握設備通訊核心",
+            "description": "從協定基礎到進階診斷，全面理解為什麼設備斷線或延遲，成為真正的協定專家",
+            "questionFile": "zigbee-matter/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "基礎認識",
+                    "order": 1,
+                    "jsonFile": "zigbee-matter/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "協定分析",
+                    "order": 2,
+                    "jsonFile": "zigbee-matter/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "進階診斷",
+                    "order": 3,
+                    "jsonFile": "zigbee-matter/advanced.json"
+                }
+            ]
         }
     ]
 }

@@ -1,0 +1,67 @@
+{
+  "level": {
+    "id": "beginner",
+    "name": "基礎認識",
+    "emoji": "🟢",
+    "description": "Zigbee 與 Matter 協定基礎概念",
+    "color": "#4caf50"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "Zigbee 基礎概念",
+      "subtitle": "低功耗無線通訊協定簡介",
+      "sections": [
+        {
+          "heading": "什麼是 Zigbee？",
+          "content": "Zigbee 是一種低功耗無線通訊協定，基於 IEEE 802.15.4 標準，專為物聯網和智能家居應用設計。它採用 2.4GHz 頻段，提供可靠的短距離通訊。"
+        },
+        {
+          "heading": "Zigbee 的主要特性",
+          "list": [
+            "<strong>低功耗</strong>：採用低頻段設計，可延長電池壽命至數年",
+            "<strong>自組織網路</strong>：設備可自動組網和路由",
+            "<strong>小範圍覆蓋</strong>：典型範圍 10-100 公尺（可透過中繼延伸）",
+            "<strong>支援多種設備</strong>：主控器、路由器、終端設備"
+          ]
+        },
+        {
+          "heading": "Zigbee 網路層級",
+          "list": [
+            "<strong>協調器 (Coordinator)</strong>：網路管理者，只有一個，負責初始化網路和設備加入",
+            "<strong>路由器 (Router)</strong>：轉發信號和管理子節點，可長期供電",
+            "<strong>終端設備 (End Device)</strong>：不轉發訊號，可低功耗運作"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Matter 協定介紹",
+      "subtitle": "統一的物聯網標準",
+      "sections": [
+        {
+          "heading": "Matter 是什麼？",
+          "content": "Matter 是由 Connectivity Standards Institute (CSI) 發起的統一物聯網標準，旨在簡化設備互操作性，解決物聯網碎片化問題。支援由 Apple、Google、Amazon 等大廠背書。"
+        },
+        {
+          "heading": "Matter 的優勢",
+          "list": [
+            "<strong>統一標準</strong>：一個協定支援多種傳輸方式（Wi-Fi、Thread、BLE）",
+            "<strong>互操作性</strong>：不同品牌設備可無縫協作",
+            "<strong>增強安全性</strong>：內建強化的加密和認證機制",
+            "<strong>離線支援</strong>：可在無網際網路情況下運作"
+          ]
+        },
+        {
+          "heading": "Matter 支援的傳輸層",
+          "list": [
+            "<strong>Wi-Fi</strong>：用於高頻寬設備，連接到網路",
+            "<strong>Thread</strong>：用於低功耗網狀網路，15.4 無線技術",
+            "<strong>BLE</strong>：用於設備配對和近距通訊"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "level": {
+    "id": "advanced",
+    "name": "進階診斷",
+    "emoji": "🔴",
+    "description": "深度診斷與使用工具進行協定分析",
+    "color": "#f44336"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "Zigbee 設備斷線根因分析",
+      "subtitle": "診斷和解決設備離線問題",
+      "sections": [
+        {
+          "heading": "根因 1：信號干擾",
+          "list": [
+            "<strong>原因</strong>：2.4GHz 頻段與 Wi-Fi、微波爐、藍牙等衝突",
+            "<strong>表現</strong>：設備頻繁斷線，特別是離 Wi-Fi 路由器近的位置",
+            "<strong>診斷</strong>：使用頻譜分析工具（如 Wi-Fi Analyzer）檢測干擾",
+            "<strong>解決</strong>：更換信道、移動路由器、使用跳頻技術、隔離設備"
+          ]
+        },
+        {
+          "heading": "根因 2：路由故障",
+          "list": [
+            "<strong>原因</strong>：主路由不可用，備用路由超載或失敗",
+            "<strong>表現</strong>：特定設備間無法通訊，訊息超時",
+            "<strong>診斷</strong>：檢查路由表中的跳數和信號品質指標 (LQI)",
+            "<strong>解決</strong>：增加路由器數量、優化位置、啟用多路由支援"
+          ]
+        },
+        {
+          "heading": "根因 3：電源問題",
+          "list": [
+            "<strong>原因</strong>：設備電池耗盡或供電不穩",
+            "<strong>表現</strong>：設備無法聯繫，心跳停止",
+            "<strong>診斷</strong>：監控設備的電源狀態報告、檢查電池電壓",
+            "<strong>解決</strong>：更換電池、檢查電源供應質量、使用新鮮電池"
+          ]
+        },
+        {
+          "heading": "根因 4：協調器過載",
+          "list": [
+            "<strong>原因</strong>：連接設備過多導致協調器無法處理所有請求",
+            "<strong>表現</strong>：新設備無法加入、舊設備頻繁斷線",
+            "<strong>診斷</strong>：檢查協調器的 CPU 和記憶體使用率、訊息隊列",
+            "<strong>解決</strong>：升級硬體、增加路由器分散負載、調整刷新頻率"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Zigbee 延遲根因分析",
+      "subtitle": "優化網路性能，減少命令延遲",
+      "sections": [
+        {
+          "heading": "根因 1：網路擁塞",
+          "list": [
+            "<strong>表現</strong>：訊息等待時間長，發送端阻塞",
+            "<strong>原因</strong>：設備太多，路由器承載量滿，頻道競爭激烈",
+            "<strong>優化</strong>：增加路由器、使用 QoS 優先級機制、減少不必要的報告"
+          ]
+        },
+        {
+          "heading": "根因 2：跳數過多",
+          "list": [
+            "<strong>表現</strong>：訊息經過多個中繼節點，延遲累積",
+            "<strong>原因</strong>：設備位置遠離協調器和路由器，被迫繞遠路",
+            "<strong>優化</strong>：重新放置設備、增加中間路由器、選擇信號強點"
+          ]
+        },
+        {
+          "heading": "根因 3：信道質量差",
+          "list": [
+            "<strong>表現</strong>：需要多次重傳，延遲變高",
+            "<strong>原因</strong>：路徑中的信號衰減，訊號強度低於閾值",
+            "<strong>優化</strong>：改善無線環境、調整發送功率、移除障礙物"
+          ]
+        },
+        {
+          "heading": "根因 4：應用層處理延遲",
+          "list": [
+            "<strong>表現</strong>：從接收到響應間隔長",
+            "<strong>原因</strong>：邏輯處理耗時、I/O 操作阻塞、CPU 繁忙",
+            "<strong>優化</strong>：優化應用程式碼、使用非同步處理、減少計算"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "使用 Zigbee2MQTT 進行分析",
+      "subtitle": "協定工具的強大調試功能",
+      "sections": [
+        {
+          "heading": "Zigbee2MQTT 簡介",
+          "content": "Zigbee2MQTT 是一個開源項目，將 Zigbee 設備連接到 MQTT 代理，提供協定轉換、日誌分析和設備診斷功能。它是分析 Zigbee 協定的最佳開源工具之一。"
+        },
+        {
+          "heading": "啟用調試日誌",
+          "list": [
+            "<strong>修改配置</strong>：在 configuration.yaml 中設定 debug: true",
+            "<strong>日誌級別</strong>：調整 logger 的日誌級別為 DEBUG",
+            "<strong>輸出位置</strong>：日誌寫入到 /data/log.txt 或控制台",
+            "<strong>查看內容</strong>：觀察原始幀資訊、訊息流和路由動作"
+          ]
+        },
+        {
+          "heading": "監測訊息流",
+          "list": [
+            "<strong>MQTT 主題</strong>：zigbee2mqtt/bridge/log 包含系統事件",
+            "<strong>訊息內容</strong>：設備加入、訊息發送、路由更新、錯誤等",
+            "<strong>訊息格式</strong>：JSON 格式，包含時間戳和事件類型",
+            "<strong>即時監控</strong>：使用 MQTT 客戶端訂閱實時監控"
+          ]
+        },
+        {
+          "heading": "分析路由表和性能",
+          "list": [
+            "<strong>路由表查詢</strong>：使用 REST API 命令 /api/devices/routes",
+            "<strong>內容包括</strong>：設備的親節點、子節點、跳數、信號品質 (LQI)",
+            "<strong>性能指標</strong>：訊息延遲、重傳率、路由失敗計數",
+            "<strong>健康檢查</strong>：定期檢查孤立設備和失效路由"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "Matter 進階安全機制",
+      "subtitle": "深度安全分析與最佳實踐",
+      "sections": [
+        {
+          "heading": "Matter 設備認證 (DAC)",
+          "list": [
+            "<strong>Device Attestation Certificate</strong>：驗證設備的製造商和真實性",
+            "<strong>認證流程</strong>：驗證證書鏈、檢查吊銷清單、驗證簽名",
+            "<strong>信任根</strong>：基於 Matter 認證根 CA，確保設備合法性",
+            "<strong>防偽應用</strong>：防止假冒設備加入網路"
+          ]
+        },
+        {
+          "heading": "CASE 會話建立",
+          "list": [
+            "<strong>Certificate Authenticated Session Establishment</strong>：建立加密端點對端點連接",
+            "<strong>密鑰交換</strong>：使用 ECDHE (Elliptic Curve Diffie-Hellman Ephemeral) 產生會話密鑰",
+            "<strong>相互認證</strong>：雙向驗證設備身份",
+            "<strong>加密通訊</strong>：所有後續訊息使用會話密鑰加密"
+          ]
+        },
+        {
+          "heading": "PAKE 配對保護",
+          "list": [
+            "<strong>Password Authenticated Key Exchange</strong>：在配對期間進行身份驗證",
+            "<strong>防中間人攻擊</strong>：使用共享密碼/PIN 防止攔截",
+            "<strong>支援傳輸</strong>：BLE 和 Thread 配對均使用 PAKE",
+            "<strong>密碼強度</strong>：4 或 6 位數字 PIN，簡單易用但安全"
+          ]
+        },
+        {
+          "heading": "訊息加密與完整性",
+          "list": [
+            "<strong>AES-CCM 加密</strong>：Counter with CBC-MAC 模式",
+            "<strong>加密計數器</strong>：防止重放攻擊，確保訊息新鮮性",
+            "<strong>訊息完整性檢查</strong>：附加認證資料 (AAD) 驗證未被篡改",
+            "<strong>密鑰導出</strong>：使用 HKDF 從主密鑰導出專用密鑰"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "Thread 網狀網路優化",
+      "subtitle": "Matter 的關鍵傳輸層",
+      "sections": [
+        {
+          "heading": "邊界路由器配置",
+          "list": [
+            "<strong>作用</strong>：連接 Thread 網狀網路和 Wi-Fi 網路",
+            "<strong>配置</strong>：支援 SLAAC (Stateless Address Autoconfiguration)",
+            "<strong>冗餘</strong>：建議至少 2 個邊界路由器以確保可靠性",
+            "<strong>互連</strong>：多個邊界路由器可形成備份路由"
+          ]
+        },
+        {
+          "heading": "Thread 網路擴展",
+          "list": [
+            "<strong>路由器密度</strong>：每 15-20 平方公尺配置一個 Thread 路由器",
+            "<strong>信道選擇</strong>：使用診斷工具找最少干擾的信道",
+            "<strong>網狀連接</strong>：設備自動學習鄰近路由器並選擇最佳路徑",
+            "<strong>容錯機制</strong>：支援多路由備份"
+          ]
+        },
+        {
+          "heading": "能耗優化",
+          "list": [
+            "<strong>睡眠模式</strong>：終端設備可進入深度睡眠以節電",
+            "<strong>訊息批處理</strong>：合併多個訊息減少喚醒次數",
+            "<strong>CSL (Coordinated Sampled Listening)</strong>：只在特定時間點監聽",
+            "<strong>同步最小化</strong>：減少與親節點的同步頻率"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "title": "Matter SDK 調試方法",
+      "subtitle": "使用官方工具進行深度分析",
+      "sections": [
+        {
+          "heading": "抓取和分析 Thread 訊息",
+          "list": [
+            "<strong>Wireshark 插件</strong>：安裝 Thread 解析器以正確解析幀",
+            "<strong>MLE 訊息</strong>：分析 Mesh Link Establishment 訊息，了解拓撲變化",
+            "<strong>IPv6 路由</strong>：檢查 ND (Neighbor Discovery) 訊息",
+            "<strong>實時抓包</strong>：使用無線適配器在監聽模式下抓取封包"
+          ]
+        },
+        {
+          "heading": "路由表和鄰近表檢查",
+          "list": [
+            "<strong>OpenThread 命令</strong>：ot route 查看路由表內容",
+            "<strong>鄰近表</strong>：ot neighbor 顯示已知的鄰近節點和連接品質",
+            "<strong>親節點信息</strong>：ot parent 顯示當前親節點和連接狀態",
+            "<strong>網路拓撲</strong>：結合所有資訊構建網路拓撲圖"
+          ]
+        },
+        {
+          "heading": "性能指標分析",
+          "list": [
+            "<strong>RSSI (Received Signal Strength Indicator)</strong>：信號強度，越高越好",
+            "<strong>LQI (Link Quality Indicator)</strong>：連結品質，0-255 範圍",
+            "<strong>遺漏率</strong>：丟失的訊息百分比，應盡量低",
+            "<strong>ACK 延遲</strong>：確認訊息的回應時間，反映網路延遲"
+          ]
+        }
+      ]
+    }
+  ]
+}
