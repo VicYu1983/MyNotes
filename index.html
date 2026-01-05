@@ -159,6 +159,47 @@
             margin-top: 10px;
         }
 
+        .community-section {
+            margin-top: 60px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .community-section h2 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .community-section p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .facebook-link {
+            display: inline-block;
+            background: #1877F2;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+        }
+
+        .facebook-link:hover {
+            background: #165FD5;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -166,6 +207,19 @@
             
             .topics-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .community-section {
+                margin-top: 40px;
+                padding: 20px;
+            }
+
+            .community-section h2 {
+                font-size: 1.3em;
+            }
+
+            .community-section p {
+                font-size: 0.95em;
             }
         }
     </style>
@@ -180,6 +234,11 @@
 
         <div id="contentContainer">
             <!-- 動態載入標籤內容 -->
+        </div>
+
+        <div class="community-section">
+            <h2>我的智能居家日記</h2>
+            <a href="https://www.facebook.com/groups/33956700450583718" target="_blank" class="facebook-link">📘 加入 Facebook 社團</a>
         </div>
     </div>
 
@@ -255,8 +314,8 @@
                     // 只在 "全部" 分類中添加 Coming Soon 卡片
                     if (categoryId === 'all') {
                         const comingSoonCards = [
-                            { icon: '📱', title: '物聯網開發', description: '即將推出...' },
-                            { icon: '🤖', title: '人工智慧應用', description: '即將推出...' }
+                            // { icon: '📱', title: '物聯網開發', description: '即將推出...' },
+                            // { icon: '🤖', title: '人工智慧應用', description: '即將推出...' }
                         ];
 
                         comingSoonCards.forEach(item => {
