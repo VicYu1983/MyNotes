@@ -161,6 +161,35 @@
                     "jsonFile": "node-red/advanced.json"
                 }
             ]
+        },
+        {
+            "id": "smart-home-engineer",
+            "category": "practical",
+            "title": "智能家居工程師",
+            "icon": "👨‍💼",
+            "subtitle": "從必備技能到專業實踐，成為智能家居工程師",
+            "description": "系統化學習智能家居工程師所需的核心能力與實踐方法，涵蓋必備層級、加分層級到專業級別",
+            "questionFile": "smart-home-engineer/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "必備層級",
+                    "order": 1,
+                    "jsonFile": "smart-home-engineer/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "加分層級",
+                    "order": 2,
+                    "jsonFile": "smart-home-engineer/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "專業層級",
+                    "order": 3,
+                    "jsonFile": "smart-home-engineer/advanced.json"
+                }
+            ]
         }
     ]
 }
