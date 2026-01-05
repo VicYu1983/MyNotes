@@ -81,6 +81,7 @@
             font-weight: 700;
             color: #f3f4f6;
             margin-bottom: 12px;
+            line-height: 1;
         }
 
         .header .title-icon {
@@ -91,11 +92,14 @@
             justify-content: center;
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
             border-radius: 12px;
+            flex-shrink: 0;
+            position: relative;
         }
 
         .header .title-icon .material-icons {
             font-size: 24px;
             color: #60a5fa;
+            line-height: 0;
         }
 
         .header .subtitle {
