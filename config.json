@@ -1,20 +1,28 @@
 {
     "categories": [
         {
-            "id": "hardware",
-            "name": "硬體設備",
-            "icon": "⚙️"
+            "id": "smart-living",
+            "name": "智能生活",
+            "icon": "🏠",
+            "description": "應用導向 - 從基礎到進階的智能家居應用"
         },
         {
-            "id": "software",
-            "name": "軟體技術",
-            "icon": "💻"
+            "id": "platform-tools",
+            "name": "平台與工具",
+            "icon": "🛠️",
+            "description": "技術整合 - 自動化平台與協定分析"
+        },
+        {
+            "id": "dev-ai",
+            "name": "開發與 AI",
+            "icon": "🚀",
+            "description": "創新前沿 - 插件開發與人工智慧應用"
         }
     ],
     "topics": [
         {
             "id": "smart-home",
-            "category": "hardware",
+            "category": "smart-living",
             "title": "智能家居",
             "icon": "🏠",
             "subtitle": "從基礎到進階，系統化學習智能家居技術",
@@ -43,7 +51,7 @@
         },
         {
             "id": "home-improvement",
-            "category": "hardware",
+            "category": "smart-living",
             "title": "居家修善",
             "icon": "🔧",
             "subtitle": "從基礎修繕到大規模改造，打造夢想家居",
@@ -72,7 +80,7 @@
         },
         {
             "id": "smart-home-improvement",
-            "category": "hardware",
+            "category": "smart-living",
             "title": "智能家居改造",
             "icon": "✨",
             "subtitle": "結合家居改造與智能化，打造現代化住宅",
@@ -101,7 +109,7 @@
         },
         {
             "id": "home-assistant",
-            "category": "software",
+            "category": "platform-tools",
             "title": "Home Assistant",
             "icon": "🤖",
             "subtitle": "開源智能家居平台完全指南",
@@ -130,7 +138,7 @@
         },
         {
             "id": "node-red",
-            "category": "software",
+            "category": "platform-tools",
             "title": "Node-RED",
             "icon": "🔴",
             "subtitle": "視覺化流程編程工具，輕鬆打造自動化應用",
@@ -159,7 +167,7 @@
         },
         {
             "id": "smart-home-engineer",
-            "category": "software",
+            "category": "smart-living",
             "title": "智能家居工程師",
             "icon": "👨‍💼",
             "subtitle": "從必備技能到專業實踐，成為智能家居工程師",
@@ -188,7 +196,7 @@
         },
         {
             "id": "zigbee-matter",
-            "category": "software",
+            "category": "platform-tools",
             "title": "Zigbee / Matter 協定層分析",
             "icon": "📡",
             "subtitle": "深度解析無線協定，掌握設備通訊核心",
@@ -217,7 +225,7 @@
         },
         {
             "id": "home-assistant-dev",
-            "category": "software",
+            "category": "dev-ai",
             "title": "Home Assistant 插件開發",
             "icon": "🔌",
             "subtitle": "從使用者升級為開發者，打造專屬功能",
@@ -246,7 +254,7 @@
         },
         {
             "id": "iot-security-ai",
-            "category": "software",
+            "category": "dev-ai",
             "title": "IoT 資安與 AI 資料流應用",
             "icon": "🤖",
             "subtitle": "把資料轉化為智慧，打造未來智能家居",
