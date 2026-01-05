@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>互動式學習 - 章節內容</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,50 +14,94 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: #0a0a0f;
             min-height: 100vh;
-            padding: 40px 20px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .header h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .header .subtitle {
-            color: #666;
-            font-size: 1.1em;
+            padding: 40px 24px;
+            position: relative;
+            z-index: 1;
         }
 
         .back-button {
-            display: inline-block;
-            margin-bottom: 30px;
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 32px;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            color: #9ca3af;
             text-decoration: none;
             border-radius: 8px;
-            transition: background 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: all 0.2s;
         }
 
         .back-button:hover {
-            background: #5568d3;
+            background: rgba(255, 255, 255, 0.06);
+            color: #e5e7eb;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .back-button .material-icons {
+            font-size: 18px;
+        }
+
+        .header {
+            margin-bottom: 48px;
+        }
+
+        .header h1 {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 2em;
+            font-weight: 700;
+            color: #f3f4f6;
+            margin-bottom: 12px;
+        }
+
+        .header .title-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+            border-radius: 12px;
+        }
+
+        .header .title-icon .material-icons {
+            font-size: 24px;
+            color: #60a5fa;
+        }
+
+        .header .subtitle {
+            color: #6b7280;
+            font-size: 1.05em;
+            margin-left: 64px;
         }
 
         .level-section {
@@ -65,141 +111,198 @@
         .level-header {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 16px;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #f0f0f0;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .level-badge {
-            padding: 8px 20px;
-            border-radius: 20px;
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 1.1em;
+            font-size: 0.9em;
+        }
+
+        .level-badge.beginner {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+        }
+
+        .level-badge.intermediate {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+
+        .level-badge.advanced {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+        }
+
+        .level-description {
+            color: #6b7280;
+            font-size: 0.9em;
         }
 
         .knowledge-list {
-            display: grid;
-            gap: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .knowledge-item {
-            padding: 15px 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            padding: 20px 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            user-select: none;
+            transition: all 0.2s ease;
         }
 
         .knowledge-item:hover {
-            background: #eff1f7;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .knowledge-header {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
+            gap: 12px;
         }
 
         .knowledge-number {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #667eea;
-            margin-right: 12px;
-            min-width: 30px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #6b7280;
+            min-width: 28px;
         }
 
         .knowledge-title {
             font-size: 1em;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .knowledge-subtitle {
-            color: #999;
-            font-size: 0.85em;
-            margin-bottom: 0;
-            font-style: italic;
-            display: none;
+            font-weight: 500;
+            color: #e5e7eb;
         }
 
         .knowledge-content {
-            line-height: 1.6;
-            color: #555;
-            font-size: 0.95em;
+            color: #9ca3af;
+            font-size: 0.9em;
+            line-height: 1.8;
         }
 
         .knowledge-content h3 {
-            color: #667eea;
-            margin: 12px 0 8px 0;
-            font-size: 1em;
+            color: #60a5fa;
+            margin: 20px 0 10px 0;
+            font-size: 0.95em;
+            font-weight: 600;
         }
 
         .knowledge-content ul {
             margin-left: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .knowledge-content li {
-            margin-bottom: 5px;
-            font-size: 0.9em;
+            margin-bottom: 6px;
         }
 
         .knowledge-content p {
-            margin-bottom: 10px;
-            font-size: 0.9em;
+            margin-bottom: 12px;
         }
 
         .knowledge-content strong {
-            color: #333;
+            color: #e5e7eb;
         }
 
-        .collapsed {
-            display: none;
-        }
+        .collapsed { display: none; }
 
         .expanded {
             display: block;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid #ddd;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .sub-section {
-            margin-left: 20px;
-            margin-top: 15px;
+            margin-left: 16px;
+            margin-top: 16px;
+            padding-left: 16px;
+            border-left: 2px solid rgba(96, 165, 250, 0.3);
         }
 
         .sub-section h4 {
-            color: #667eea;
-            font-size: 1.1em;
-            margin-bottom: 10px;
+            color: #60a5fa;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            font-weight: 500;
         }
 
         .quiz-button {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             width: 100%;
-            margin: 30px 0;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 40px 0;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(139, 92, 246, 0.8));
             color: white;
             border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
+            border-radius: 12px;
+            font-size: 1em;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.2s;
+            font-family: inherit;
         }
 
         .quiz-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
         }
 
+        .quiz-button .material-icons {
+            font-size: 22px;
+        }
+
+        /* Loading */
+        .loading-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .loading-overlay.hidden { display: none; }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(96, 165, 250, 0.2);
+            border-top-color: #60a5fa;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #6b7280;
+            font-size: 1em;
+        }
+
+        /* Quiz Modal */
         .quiz-modal {
             display: none;
             position: fixed;
@@ -207,9 +310,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 1000;
             overflow-y: auto;
+            backdrop-filter: blur(4px);
         }
 
         .quiz-modal.active {
@@ -220,59 +324,10 @@
         }
 
         .quiz-container {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 600px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        /* Loading 效果 */
-        .loading-overlay {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 500px;
-        }
-
-        .loading-overlay.hidden {
-            display: none;
-        }
-
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 6px solid rgba(102, 126, 234, 0.2);
-            border-top: 6px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loading-text {
-            color: #667eea;
-            margin-top: 20px;
-            font-size: 1.2em;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .loading-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .quiz-container {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
+            background: #16161e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
             max-width: 600px;
             width: 100%;
             max-height: 90vh;
@@ -281,174 +336,176 @@
 
         .quiz-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .quiz-header h2 {
-            color: #333;
-            margin-bottom: 10px;
+            color: #f3f4f6;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .quiz-progress {
-            color: #666;
+            color: #6b7280;
             font-size: 0.9em;
         }
 
-        .quiz-question {
-            margin-bottom: 25px;
+        .quiz-question h3 {
+            color: #e5e7eb;
+            margin-bottom: 24px;
+            font-size: 1.05em;
+            line-height: 1.7;
+            font-weight: 500;
         }
 
-        .quiz-question h3 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            line-height: 1.6;
+        .quiz-chapter {
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 3px solid #3b82f6;
+            color: #60a5fa;
+            font-size: 0.9em;
+            border-radius: 0 8px 8px 0;
         }
 
         .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .quiz-option {
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
+            padding: 16px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s;
-            background: white;
+            transition: all 0.2s;
+            background: rgba(255, 255, 255, 0.02);
+            color: #d1d5db;
         }
 
         .quiz-option:hover {
-            border-color: #667eea;
-            background: #f8f9ff;
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .quiz-option.selected {
-            border-color: #667eea;
-            background: #e8ecff;
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
         }
 
         .quiz-option.correct {
-            border-color: #4caf50;
-            background: #e8f5e9;
+            border-color: #22c55e;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
         }
 
         .quiz-option.incorrect {
-            border-color: #f44336;
-            background: #ffebee;
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
         }
 
         .quiz-explanation {
-            margin-top: 15px;
-            padding: 15px;
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            border-radius: 5px;
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 3px solid #f59e0b;
+            border-radius: 0 10px 10px 0;
             display: none;
+            color: #fbbf24;
+            font-size: 0.9em;
+            line-height: 1.7;
         }
 
-        .quiz-explanation.show {
-            display: block;
-        }
-
-        .quiz-chapter {
-            margin-bottom: 15px;
-            padding: 10px 15px;
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            color: #1565c0;
-            font-size: 0.95em;
-            border-radius: 4px;
-        }
+        .quiz-explanation.show { display: block; }
 
         .quiz-buttons {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 12px;
+            margin-top: 28px;
         }
 
         .quiz-btn {
             flex: 1;
-            padding: 12px 24px;
+            padding: 14px 24px;
             border: none;
-            border-radius: 8px;
-            font-size: 1em;
+            border-radius: 10px;
+            font-size: 0.95em;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
+            font-family: inherit;
         }
 
         .quiz-btn-primary {
-            background: #667eea;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: white;
         }
 
         .quiz-btn-primary:hover {
-            background: #5568d3;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
         .quiz-btn-secondary {
-            background: #e0e0e0;
-            color: #333;
+            background: rgba(255, 255, 255, 0.05);
+            color: #9ca3af;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .quiz-btn-secondary:hover {
-            background: #d0d0d0;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e5e7eb;
         }
 
         .quiz-btn:disabled {
-            opacity: 0.5;
+            opacity: 0.4;
             cursor: not-allowed;
         }
 
         .quiz-result {
             text-align: center;
-            padding: 30px;
+            padding: 24px;
         }
 
         .quiz-result h2 {
-            color: #333;
-            margin-bottom: 20px;
+            color: #f3f4f6;
+            margin-bottom: 16px;
+            font-weight: 600;
         }
 
         .quiz-score {
-            font-size: 3em;
-            font-weight: bold;
-            color: #667eea;
-            margin: 20px 0;
+            font-size: 3.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 24px 0;
         }
 
         .quiz-result p {
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 30px;
+            color: #9ca3af;
+            font-size: 1.05em;
+            margin-bottom: 8px;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .knowledge-number {
-                font-size: 1em;
-                min-width: 25px;
-            }
-
-            .knowledge-title {
-                font-size: 0.95em;
-            }
+            .container { padding: 24px 16px; }
+            .header h1 { font-size: 1.5em; }
+            .header .subtitle { margin-left: 0; margin-top: 12px; }
+            .knowledge-item { padding: 16px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-button">← 返回主頁</a>
+        <a href="index.html" class="back-button">
+            <span class="material-icons">arrow_back</span>
+            返回主頁
+        </a>
         
         <div class="header" id="header">
             <!-- 動態載入標題 -->
@@ -475,37 +532,31 @@
 
     <script>
         let quizData = null;
-        let originalQuestions = null; // 保存原始完整題庫
+        let originalQuestions = null;
         let currentQuestionIndex = 0;
         let userAnswers = [];
         let selectedAnswer = null;
-        // 從URL參數取得主題ID
+
         function getTopicIdFromURL() {
             const params = new URLSearchParams(window.location.search);
             return params.get('topic') || 'smart-home';
         }
 
-        // 載入所有階層的 JSON 資料
         async function loadData() {
             const loadingOverlay = document.getElementById('loadingOverlay');
             
             try {
-                // 顯示 loading
                 loadingOverlay.classList.remove('hidden');
-                
                 const topicId = getTopicIdFromURL();
 
-                // 先載入配置文件
                 const configResponse = await fetch('config.json');
                 const config = await configResponse.json();
 
-                // 找到對應的主題
                 const topic = config.topics.find(t => t.id === topicId);
                 if (!topic) {
                     throw new Error(`主題 ${topicId} 未找到`);
                 }
 
-                // 按照配置載入所有階層的JSON
                 const levelPromises = topic.levels.map(level => 
                     fetch(level.jsonFile).then(res => res.json())
                 );
@@ -522,59 +573,69 @@
                     levels: levels
                 };
 
-                // 如果有測驗檔案，載入測驗資料
                 if (topic.questionFile) {
                     try {
                         const quizResponse = await fetch(topic.questionFile);
                         quizData = await quizResponse.json();
-                        originalQuestions = [...quizData.questions]; // 保存原始完整題庫
+                        originalQuestions = [...quizData.questions];
                     } catch (err) {
                         console.warn('測驗資料載入失敗:', err);
                     }
                 }
 
                 renderContent(data);
-                
-                // 隱藏 loading
                 loadingOverlay.classList.add('hidden');
             } catch (error) {
                 console.error('載入資料失敗:', error);
                 loadingOverlay.classList.add('hidden');
-                document.getElementById('content').innerHTML = '<p style="color: red; text-align: center; font-size: 1.1em;">⚠️ 資料載入失敗，請重新整理頁面。</p>';
+                document.getElementById('content').innerHTML = `
+                    <div style="text-align: center; padding: 60px; color: #6b7280;">
+                        <span class="material-icons" style="font-size: 48px; margin-bottom: 16px; display: block;">error_outline</span>
+                        <p>資料載入失敗，請重新整理頁面</p>
+                    </div>
+                `;
             }
         }
 
-        // 渲染頁面內容
         function renderContent(data) {
-            // 渲染標題
             const header = document.getElementById('header');
             header.innerHTML = `
-                <h1>${data.topic.icon} ${data.topic.title}</h1>
+                <h1>
+                    <div class="title-icon">
+                        <span class="material-icons">${data.topic.icon}</span>
+                    </div>
+                    ${data.topic.title}
+                </h1>
                 <p class="subtitle">${data.topic.subtitle}</p>
             `;
 
-            // 更新頁面標題
             document.title = `${data.topic.title} - 互動式學習`;
 
-            // 渲染知識點
             const content = document.getElementById('content');
             let html = '';
+
+            const levelClasses = {
+                1: 'beginner',
+                2: 'intermediate', 
+                3: 'advanced'
+            };
 
             data.levels.forEach(level => {
                 if (level.knowledgePoints.length === 0) return;
 
+                const levelClass = levelClasses[level.level.order] || '';
+
                 html += `
                     <div class="level-section">
                         <div class="level-header">
-                            <span class="level-badge" style="background: ${level.level.color}">${level.level.emoji} ${level.level.name}</span>
-                            <span>${level.level.description}</span>
+                            <span class="level-badge ${levelClass}">${level.level.name}</span>
+                            <span class="level-description">${level.level.description}</span>
                         </div>
                         <div class="knowledge-list">
                 `;
 
                 level.knowledgePoints.forEach(point => {
                     const uniqueId = `${level.level.id}-${point.number}`;
-                    // 只顯示有內容的知識點
                     if (point.sections && point.sections.length > 0) {
                         html += `
                             <div class="knowledge-item" onclick="toggleContent('${uniqueId}')">
@@ -588,14 +649,13 @@
                             </div>
                         `;
                     } else {
-                        // 沒有內容的知識點顯示為待補充
                         html += `
-                            <div class="knowledge-item" style="opacity: 0.6; cursor: default;">
+                            <div class="knowledge-item" style="opacity: 0.5; cursor: default;">
                                 <div class="knowledge-header">
                                     <div class="knowledge-number">${point.number}</div>
                                     <div class="knowledge-title">${point.title}</div>
                                 </div>
-                                <p style="color: #888; margin-top: 8px; font-size: 0.85em;">📝 內容待補充...</p>
+                                <p style="color: #6b7280; margin-top: 8px; font-size: 0.85em;">內容待補充</p>
                             </div>
                         `;
                     }
@@ -607,13 +667,13 @@
                 `;
             });
 
-            // 如果有測驗資料，添加測驗按鈕
             if (quizData && quizData.questions && quizData.questions.length > 0) {
                 const totalQuestions = quizData.questions.length;
                 const quizCount = Math.min(10, totalQuestions);
                 html += `
                     <button class="quiz-button" onclick="startQuiz()">
-                        📝 開始測驗（題庫 ${totalQuestions} 題，隨機抽取 ${quizCount} 題）
+                        <span class="material-icons">quiz</span>
+                        開始測驗（題庫 ${totalQuestions} 題，隨機抽取 ${quizCount} 題）
                     </button>
                 `;
             }
@@ -621,7 +681,6 @@
             content.innerHTML = html;
         }
 
-        // 渲染段落內容
         function renderSections(sections) {
             let html = '';
             sections.forEach(section => {
@@ -660,7 +719,6 @@
             return html;
         }
 
-        // 切換內容展開/收合
         function toggleContent(id) {
             const content = document.getElementById(`content-${id}`);
             if (content.classList.contains('collapsed')) {
@@ -672,7 +730,6 @@
             }
         }
 
-        // 隨機排序陣列（Fisher-Yates 洗牌算法）
         function shuffleArray(array) {
             const shuffled = [...array];
             for (let i = shuffled.length - 1; i > 0; i--) {
@@ -682,15 +739,10 @@
             return shuffled;
         }
 
-        // 為題目隨機排列選項
         function randomizeQuestionOptions(question) {
             const optionIndices = [0, 1, 2, 3];
             const shuffledIndices = shuffleArray(optionIndices);
-            
-            // 記錄原始正確答案在新排列中的位置
             const newCorrectAnswerIndex = shuffledIndices.indexOf(question.correctAnswer);
-            
-            // 按新順序排列選項
             const randomizedOptions = shuffledIndices.map(i => question.options[i]);
             
             return {
@@ -700,13 +752,11 @@
             };
         }
 
-        // 開始測驗
         function startQuiz() {
             currentQuestionIndex = 0;
             userAnswers = [];
             selectedAnswer = null;
             
-            // 從原始完整題庫隨機抽取 10 題
             if (originalQuestions && originalQuestions.length > 0) {
                 const shuffled = shuffleArray([...originalQuestions]);
                 quizData.questions = shuffled.slice(0, Math.min(10, shuffled.length));
@@ -716,24 +766,18 @@
             document.getElementById('quizModal').classList.add('active');
         }
 
-        // 顯示當前問題
         function showQuestion() {
             const question = quizData.questions[currentQuestionIndex];
-            
-            // 隨機排列選項
             const randomized = randomizeQuestionOptions(question);
-            // 將隨機化的資訊存儲到當前題目中供後續使用
             question._randomizedOptions = randomized.options;
             question._randomizedCorrectAnswer = randomized.correctAnswerIndex;
             
             const quizContent = document.getElementById('quizContent');
-            
-            // 章節資訊顯示
-            const chapterInfo = question.chapter ? `<p class="quiz-chapter">📚 章節：${question.chapter}</p>` : '';
+            const chapterInfo = question.chapter ? `<p class="quiz-chapter">章節：${question.chapter}</p>` : '';
             
             let html = `
                 <div class="quiz-header">
-                    <h2>📝 測驗</h2>
+                    <h2>測驗</h2>
                     <p class="quiz-progress">第 ${currentQuestionIndex + 1} / ${quizData.questions.length} 題</p>
                 </div>
                 <div class="quiz-question">
@@ -764,14 +808,11 @@
             selectedAnswer = null;
         }
 
-        // 選擇答案
         function selectAnswer(index) {
-            // 如果已經提交過，不允許再選擇
             if (userAnswers[currentQuestionIndex] !== undefined) return;
 
             selectedAnswer = index;
             
-            // 更新選項樣式
             const options = document.querySelectorAll('.quiz-option');
             options.forEach((opt, i) => {
                 opt.classList.remove('selected');
@@ -780,21 +821,17 @@
                 }
             });
 
-            // 啟用提交按鈕
             document.getElementById('submitBtn').disabled = false;
         }
 
-        // 提交答案
         function submitAnswer() {
             if (selectedAnswer === null) return;
 
             const question = quizData.questions[currentQuestionIndex];
-            // 使用隨機化後的正確答案索引
             const correctAnswerIndex = question._randomizedCorrectAnswer;
             const isCorrect = selectedAnswer === correctAnswerIndex;
             userAnswers[currentQuestionIndex] = isCorrect;
 
-            // 顯示答案結果
             const options = document.querySelectorAll('.quiz-option');
             options.forEach((opt, i) => {
                 opt.style.pointerEvents = 'none';
@@ -805,15 +842,13 @@
                 }
             });
 
-            // 顯示解釋
             const explanation = document.getElementById('explanation');
             explanation.innerHTML = `
-                <strong>${isCorrect ? '✅ 答對了！' : '❌ 答錯了！'}</strong><br>
+                <strong>${isCorrect ? '正確' : '錯誤'}</strong><br>
                 ${question.explanation}
             `;
             explanation.classList.add('show');
 
-            // 更新按鈕
             const submitBtn = document.getElementById('submitBtn');
             if (currentQuestionIndex < quizData.questions.length - 1) {
                 submitBtn.textContent = '下一題';
@@ -824,41 +859,34 @@
             }
         }
 
-        // 下一題
         function nextQuestion() {
             currentQuestionIndex++;
             showQuestion();
         }
 
-        // 顯示結果
         function showResult() {
             const correctCount = userAnswers.filter(a => a === true).length;
             const totalCount = quizData.questions.length;
             const percentage = Math.round((correctCount / totalCount) * 100);
 
             let message = '';
-            let emoji = '';
             if (percentage >= 90) {
-                emoji = '🎉';
                 message = '太棒了！你完全掌握了這個主題！';
             } else if (percentage >= 70) {
-                emoji = '👍';
                 message = '做得很好！繼續保持！';
             } else if (percentage >= 50) {
-                emoji = '💪';
                 message = '還不錯！再複習一下會更好！';
             } else {
-                emoji = '📚';
-                message = '建議再仔細閱讀一次章節內容喔！';
+                message = '建議再仔細閱讀一次章節內容';
             }
 
             const quizContent = document.getElementById('quizContent');
             quizContent.innerHTML = `
                 <div class="quiz-result">
-                    <h2>${emoji} 測驗完成！</h2>
+                    <h2>測驗完成</h2>
                     <div class="quiz-score">${correctCount} / ${totalCount}</div>
                     <p>${message}</p>
-                    <p style="font-size: 0.9em; color: #999;">答對率：${percentage}%</p>
+                    <p style="font-size: 0.9em; color: #6b7280;">答對率：${percentage}%</p>
                     <div class="quiz-buttons">
                         <button class="quiz-btn quiz-btn-secondary" onclick="closeQuiz()">關閉</button>
                         <button class="quiz-btn quiz-btn-primary" onclick="startQuiz()">再測一次</button>
@@ -867,19 +895,16 @@
             `;
         }
 
-        // 關閉測驗
         function closeQuiz() {
             document.getElementById('quizModal').classList.remove('active');
         }
 
-        // 點擊背景關閉
         document.getElementById('quizModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeQuiz();
             }
         });
 
-        // 頁面載入時執行
         window.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>

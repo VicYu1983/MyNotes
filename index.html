@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>互動式學習平台</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,133 +14,229 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: #0a0a0f;
             min-height: 100vh;
-            padding: 40px 20px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* 背景裝飾 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 1;
         }
 
-        h1 {
-            color: white;
+        /* 頁首 */
+        .page-header {
             text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 60px;
         }
 
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
+        .page-header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
         }
 
+        .page-header .subtitle {
+            color: #6b7280;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        /* 分類標籤 */
         .tabs-container {
             display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 8px;
+            margin-bottom: 48px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .tab-button {
-            padding: 12px 24px;
-            border: 2px solid white;
-            background: transparent;
-            color: white;
-            border-radius: 20px;
-            font-size: 1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            color: #9ca3af;
+            border-radius: 8px;
+            font-size: 0.95em;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s ease;
             font-weight: 500;
+            font-family: inherit;
+        }
+
+        .tab-button .material-icons {
+            font-size: 20px;
+            opacity: 0.7;
         }
 
         .tab-button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            color: #e5e7eb;
         }
 
         .tab-button.active {
-            background: white;
-            color: #667eea;
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
         }
 
+        .tab-button.active .material-icons {
+            opacity: 1;
+        }
+
+        /* 內容區域 */
         .tab-content {
             display: none;
         }
 
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.3s ease-in;
+            animation: fadeIn 0.4s ease;
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
+        /* 卡片網格 */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        /* 主題卡片 */
         .topic-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 32px;
             text-decoration: none;
             color: inherit;
             display: block;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
         .topic-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .topic-card:hover::before {
+            opacity: 1;
         }
 
         .topic-icon {
-            font-size: 4em;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+            border-radius: 12px;
             margin-bottom: 20px;
         }
 
+        .topic-icon .material-icons {
+            font-size: 28px;
+            color: #60a5fa;
+        }
+
         .topic-title {
-            font-size: 1.8em;
-            color: #333;
-            margin-bottom: 15px;
+            font-size: 1.35em;
+            color: #f3f4f6;
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
         .topic-description {
-            color: #666;
-            line-height: 1.6;
+            color: #6b7280;
+            line-height: 1.7;
             margin-bottom: 20px;
+            font-size: 0.9em;
         }
 
         .topic-count {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            justify-content: center;
-            margin-top: 10px;
         }
 
         .level-badge {
             display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 0.85em;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8em;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.05);
+            color: #9ca3af;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
+        .level-badge.beginner {
+            background: rgba(34, 197, 94, 0.1);
+            color: #4ade80;
+            border-color: rgba(34, 197, 94, 0.2);
+        }
+
+        .level-badge.intermediate {
+            background: rgba(251, 191, 36, 0.1);
+            color: #fbbf24;
+            border-color: rgba(251, 191, 36, 0.2);
+        }
+
+        .level-badge.advanced {
+            background: rgba(239, 68, 68, 0.1);
+            color: #f87171;
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+
+        /* Coming Soon */
         .coming-soon {
             opacity: 0.5;
             cursor: not-allowed;
@@ -146,87 +244,96 @@
 
         .coming-soon:hover {
             transform: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .badge {
             display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 12px;
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 0.8em;
-            margin-top: 10px;
+            font-weight: 500;
         }
 
+        /* 社群區塊 */
         .community-section {
-            margin-top: 60px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
+            margin-top: 80px;
+            padding: 48px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
             text-align: center;
-            backdrop-filter: blur(10px);
         }
 
         .community-section h2 {
-            color: white;
-            margin-bottom: 15px;
+            color: #f3f4f6;
+            margin-bottom: 12px;
             font-size: 1.5em;
+            font-weight: 600;
         }
 
         .community-section p {
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.05em;
+            color: #6b7280;
+            margin-bottom: 24px;
+            font-size: 1em;
         }
 
         .facebook-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             background: #1877F2;
             color: white;
-            padding: 14px 40px;
-            border-radius: 25px;
+            padding: 14px 28px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+            font-weight: 500;
+            font-size: 1em;
+            transition: all 0.2s ease;
         }
 
         .facebook-link:hover {
-            background: #165FD5;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+            background: #1565d8;
+            transform: translateY(-2px);
         }
 
+        .facebook-link .material-icons {
+            font-size: 20px;
+        }
+
+        /* 響應式 */
         @media (max-width: 768px) {
-            h1 {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .page-header h1 {
                 font-size: 2em;
             }
-            
+
             .topics-grid {
                 grid-template-columns: 1fr;
             }
 
+            .tab-button {
+                padding: 10px 16px;
+                font-size: 0.9em;
+            }
+
             .community-section {
-                margin-top: 40px;
-                padding: 20px;
-            }
-
-            .community-section h2 {
-                font-size: 1.3em;
-            }
-
-            .community-section p {
-                font-size: 0.95em;
+                padding: 32px 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎓 互動式學習平台</h1>
+        <div class="page-header">
+            <h1>互動式學習平台</h1>
+            <p class="subtitle">系統化學習智慧居家與物聯網技術</p>
+        </div>
         
         <div class="tabs-container" id="tabsContainer">
             <!-- 動態載入分類標籤 -->
@@ -238,7 +345,11 @@
 
         <div class="community-section">
             <h2>我的智能居家日記</h2>
-            <a href="https://www.facebook.com/groups/33956700450583718" target="_blank" class="facebook-link">📘 加入 Facebook 社團</a>
+            <p>加入社群，與其他學習者交流心得</p>
+            <a href="https://www.facebook.com/groups/33956700450583718" target="_blank" class="facebook-link">
+                <span class="material-icons">group</span>
+                加入 Facebook 社團
+            </a>
         </div>
     </div>
 
@@ -248,20 +359,19 @@
                 const response = await fetch('config.json');
                 const config = await response.json();
                 
-                // 根據階級順序定義顏色
-                const levelColors = {
-                    1: '#4caf50',  // 綠色 - 初階/入門
-                    2: '#ff9800',  // 橙色 - 中階/進階
-                    3: '#f44336'   // 紅色 - 高階/專業
+                // 等級對應樣式類別
+                const levelClasses = {
+                    1: 'beginner',
+                    2: 'intermediate',
+                    3: 'advanced'
                 };
                 
-                // 渲染分類標籤
                 const tabsContainer = document.getElementById('tabsContainer');
                 const contentContainer = document.getElementById('contentContainer');
                 
                 // 添加 "全部" 分類
                 const allCategories = [
-                    { id: 'all', name: '全部課程', icon: '📚' },
+                    { id: 'all', name: '全部課程', icon: 'apps' },
                     ...config.categories
                 ];
                 
@@ -269,8 +379,8 @@
                 allCategories.forEach((category, index) => {
                     const button = document.createElement('button');
                     button.className = `tab-button ${index === 0 ? 'active' : ''}`;
-                    button.textContent = `${category.icon} ${category.name}`;
-                    button.onclick = () => switchTab(category.id);
+                    button.innerHTML = `<span class="material-icons">${category.icon}</span>${category.name}`;
+                    button.onclick = (e) => switchTab(category.id, e);
                     tabsContainer.appendChild(button);
                 });
                 
@@ -292,46 +402,24 @@
                     const grid = document.createElement('div');
                     grid.className = 'topics-grid';
                     
-                    // 添加該分類的所有主題卡片
                     topicsByCategory[categoryId].forEach(topic => {
                         const levelBadges = topic.levels.map(level => 
-                            `<span class="level-badge" style="background: ${levelColors[level.order] || '#667eea'}">${level.name}</span>`
+                            `<span class="level-badge ${levelClasses[level.order] || ''}">${level.name}</span>`
                         ).join('');
+                        
                         const card = document.createElement('a');
                         card.href = `chapter.html?topic=${topic.id}`;
                         card.className = 'topic-card';
                         card.innerHTML = `
-                            <div class="topic-icon">${topic.icon}</div>
-                            <div class="topic-title">${topic.title}</div>
-                            <div class="topic-description">
-                                ${topic.description}
+                            <div class="topic-icon">
+                                <span class="material-icons">${topic.icon}</span>
                             </div>
+                            <div class="topic-title">${topic.title}</div>
+                            <div class="topic-description">${topic.description}</div>
                             <div class="topic-count">${levelBadges}</div>
                         `;
                         grid.appendChild(card);
                     });
-                    
-                    // 只在 "全部" 分類中添加 Coming Soon 卡片
-                    if (categoryId === 'all') {
-                        const comingSoonCards = [
-                            // { icon: '📱', title: '物聯網開發', description: '即將推出...' },
-                            // { icon: '🤖', title: '人工智慧應用', description: '即將推出...' }
-                        ];
-
-                        comingSoonCards.forEach(item => {
-                            const card = document.createElement('div');
-                            card.className = 'topic-card coming-soon';
-                            card.innerHTML = `
-                                <div class="topic-icon">${item.icon}</div>
-                                <div class="topic-title">${item.title}</div>
-                                <div class="topic-description">
-                                    ${item.description}
-                                </div>
-                                <div class="badge">Coming Soon</div>
-                            `;
-                            grid.appendChild(card);
-                        });
-                    }
                     
                     tabContent.appendChild(grid);
                     contentContainer.appendChild(tabContent);
@@ -339,31 +427,30 @@
                 
             } catch (error) {
                 console.error('載入配置失敗:', error);
-                document.getElementById('contentContainer').innerHTML = '<p style="color: white; text-align: center; font-size: 1.1em;">⚠️ 載入失敗，請重新整理頁面。</p>';
+                document.getElementById('contentContainer').innerHTML = `
+                    <div style="text-align: center; padding: 60px; color: #6b7280;">
+                        <span class="material-icons" style="font-size: 48px; margin-bottom: 16px; display: block;">error_outline</span>
+                        <p>載入失敗，請重新整理頁面</p>
+                    </div>
+                `;
             }
         }
         
-        // Tab 切換函數
-        function switchTab(categoryId) {
-            // 隱藏所有標籤內容
+        function switchTab(categoryId, e) {
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
             
-            // 移除所有按鈕的 active 類
             const buttons = document.querySelectorAll('.tab-button');
             buttons.forEach(button => button.classList.remove('active'));
             
-            // 顯示選中的標籤內容
             const selectedContent = document.getElementById(`tab-${categoryId}`);
             if (selectedContent) {
                 selectedContent.classList.add('active');
             }
             
-            // 為點擊的按鈕添加 active 類
-            event.target.classList.add('active');
+            e.currentTarget.classList.add('active');
         }
 
-        // 頁面載入時執行
         window.addEventListener('DOMContentLoaded', loadTopics);
     </script>
 </body>
