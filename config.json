@@ -280,6 +280,23 @@
                     "jsonFile": "iot-security-ai/advanced.json"
                 }
             ]
+        },
+        {
+            "id": "gateway-hubs",
+            "category": "platform-tools",
+            "title": "多網關選型與搭配",
+            "icon": "device_hub",
+            "subtitle": "Zigbee / Matter / 藍牙 / 紅外的協同佈局指南",
+            "description": "為什麼要用多顆協調器？何時選 SLZB-06、SLZB-06M、ESP32 Proxy、Broadlink？優缺點一次說清楚。",
+            "questionFile": "gateway-hubs/question.json",
+            "levels": [
+                {
+                    "id": "overview",
+                    "name": "選型指南",
+                    "order": 1,
+                    "jsonFile": "gateway-hubs/beginner.json"
+                }
+            ]
         }
     ]
 }

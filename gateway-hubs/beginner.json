@@ -1,0 +1,198 @@
+{
+  "level": {
+    "id": "overview",
+    "name": "選型指南",
+    "emoji": "🟢",
+    "description": "多網關分工、優缺點與部署重點一次搞懂",
+    "color": "#4caf50"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "整體佈局原則",
+      "subtitle": "為什麼要多網關分工？",
+      "sections": [
+        {
+          "heading": "角色分工",
+          "list": [
+            "Zigbee：感測器、開關、窗簾等低功耗訊號 → SLZB-06 + Z2M",
+            "Thread/Matter：新世代燈具與控制器 → SLZB-06M + OTBR/Matter Controller",
+            "BLE：米家/青萍等廉價感測器 → ESP32 Bluetooth Proxy",
+            "IR/433：舊冷氣、電視、風扇 → Broadlink RM4 Pro"
+          ]
+        },
+        {
+          "heading": "好處",
+          "list": [
+            "降低干擾：不同無線協定分線運作，不搶同一顆協調器資源",
+            "韌性：單一網路出問題不影響其他協定",
+            "未來性：Thread/Matter 可獨立升級，不拖累現有 Zigbee"
+          ]
+        },
+        {
+          "heading": "可能的壞處",
+          "list": [
+            "設備成本與佈線增加（USB 延長、電源數量）",
+            "維運複雜度上升，需要清楚記得每個協調器用途",
+            "頻道規劃重要：Wi-Fi / Zigbee / Thread 需避開重疊"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Zigbee 協調器：SLZB-06 (Z2M)",
+      "subtitle": "處理開關、人感、門磁等 Zigbee",
+      "sections": [
+        {
+          "heading": "選它的理由",
+          "list": [
+            "原生支援 Zigbee2MQTT，裝置相容度高",
+            "USB 介面好佈線，可用 3–5 公尺延長避開主機干擾",
+            "社群多、問題容易查"
+          ]
+        },
+        {
+          "heading": "優點",
+          "list": [
+            "穩定路由：可搭配路由器設備拉大覆蓋",
+            "備份方便：Z2M 提供 network backup",
+            "成本低：單協調器可掛數十至上百設備（視路由品質）"
+          ]
+        },
+        {
+          "heading": "限制 / 注意",
+          "list": [
+            "2.4GHz 易與 Wi-Fi 衝突，建議 Zigbee Channel 15/20/25/26，避開家用 Wi-Fi 主渠道",
+            "金屬機殼/USB 3.0 會屏蔽訊號，務必延長線 + 避開金屬",
+            "大面積部署需足夠路由器（插電燈泡、插座等）"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Matter / Thread 協調器：SLZB-06M",
+      "subtitle": "陸版 Yeelight Matter 版與未來 Thread 設備",
+      "sections": [
+        {
+          "heading": "選它的理由",
+          "list": [
+            "同時具備 Thread Border Router 能力，可跑 OTBR + Matter",
+            "讓 HA 當 Fabric Controller，減少雲端依賴",
+            "為未來 Thread 配件預留通道，不佔 Zigbee 頻寬"
+          ]
+        },
+        {
+          "heading": "優點",
+          "list": [
+            "Matter 多廠互通，配對與移轉相對輕量",
+            "Thread 網狀自修復，低功耗且延遲小",
+            "與 Zigbee 分網，互不干擾"
+          ]
+        },
+        {
+          "heading": "限制 / 注意",
+          "list": [
+            "Thread 也是 2.4GHz，仍需避開擁擠 Wi-Fi 頻道",
+            "生態尚在成熟期，裝置選擇較少",
+            "OTBR/Matter 佈署比 Z2M 稍複雜，需要備份 dataset"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "ESP32 Bluetooth Proxy",
+      "subtitle": "覆蓋米家/青萍等廉價 BLE 感測器",
+      "sections": [
+        {
+          "heading": "選它的理由",
+          "list": [
+            "成本極低，可多點鋪設減少 RSSI 損耗",
+            "HA 官方支援 Bluetooth Proxy，設定簡單",
+            "BLE 感測器耗電低、體積小，量大也不心疼"
+          ]
+        },
+        {
+          "heading": "優點",
+          "list": [
+            "分散式覆蓋，室內不易有盲區",
+            "離線時感測器仍可廣播，Proxy 恢復後自動回傳",
+            "適合溫濕度、人感、門磁等資料型裝置"
+          ]
+        },
+        {
+          "heading": "限制 / 注意",
+          "list": [
+            "BLE 廣播有延遲與丟包風險，不適合即時控制",
+            "ESP32 需穩定 5V 電源；金屬機殼會削弱信號",
+            "建議在 HA 中固定 Proxy 名稱與位置便於維運"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "IR/433：Broadlink RM4 Pro",
+      "subtitle": "舊冷氣、電視、電扇的補網關",
+      "sections": [
+        {
+          "heading": "選它的理由",
+          "list": [
+            "IR/433 一機雙用，覆蓋大部分紅外家電",
+            "LAN 控制為主，延遲低且可離線運作（配置在 HA）",
+            "對既有家電零改造，成本最省"
+          ]
+        },
+        {
+          "heading": "優點",
+          "list": [
+            "學碼容易，自定情境（睡眠/返家）快速上線",
+            "433 可控部分遙控插座或門鈴",
+            "無需拆機或換設備"
+          ]
+        },
+        {
+          "heading": "限制 / 注意",
+          "list": [
+            "視線遮擋會影響 IR；需注意擺位與反射面",
+            "433 安全性低，不建議用於安全關鍵裝置",
+            "雲端配對資料建議匯出備份，避免重設"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "title": "部署建議與排程",
+      "subtitle": "怎麼放、怎麼備份、怎麼避干擾",
+      "sections": [
+        {
+          "heading": "擺位與電源",
+          "list": [
+            "協調器用 USB 延長線拉離主機/路由器 1–2 公尺以上",
+            "ESP32 Proxy 每 6–8 公尺一顆，樓層/房間視牆面再加密度",
+            "Broadlink 置於直視空調/電視位置，避免遮擋"
+          ]
+        },
+        {
+          "heading": "頻道規劃",
+          "list": [
+            "Zigbee 選 15/20/25/26，避開家用 Wi-Fi 主力信道",
+            "Thread 會自調，但仍避開最擁擠的 Wi-Fi 設備位置",
+            "Wi-Fi 2.4GHz 儘量用 1/6/11 並降低功率，減少干擾"
+          ]
+        },
+        {
+          "heading": "備份策略",
+          "list": [
+            "Z2M network backup 定期下載",
+            "OTBR dataset 匯出；HA snapshot 含 OTBR/Matter 資料",
+            "ESP32 Proxy 可用 OTA/ESPHome 備份；Broadlink 記得匯出遙控碼"
+          ]
+        }
+      ]
+    }
+  ]
+}
