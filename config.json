@@ -1,27 +1,30 @@
 {
     "categories": [
         {
-            "id": "learning",
-            "name": "學習課程",
-            "icon": "📚"
+            "id": "smart-living",
+            "name": "智能生活",
+            "icon": "home",
+            "description": "應用導向 - 從基礎到進階的智能家居應用"
         },
         {
-            "id": "practical",
-            "name": "實戰應用",
-            "icon": "🔧"
+            "id": "platform-tools",
+            "name": "平台與工具",
+            "icon": "build",
+            "description": "技術整合 - 自動化平台與協定分析"
         },
         {
-            "id": "business",
-            "name": "商業服務",
-            "icon": "💼"
+            "id": "dev-ai",
+            "name": "開發與 AI",
+            "icon": "rocket_launch",
+            "description": "創新前沿 - 插件開發與人工智慧應用"
         }
     ],
     "topics": [
         {
             "id": "smart-home",
-            "category": "learning",
+            "category": "smart-living",
             "title": "智能家居",
-            "icon": "🏠",
+            "icon": "home",
             "subtitle": "從基礎到進階，系統化學習智能家居技術",
             "description": "從基礎概念到系統開發，全方位學習智能家居技術",
             "questionFile": "smart-home/question.json",
@@ -48,9 +51,9 @@
         },
         {
             "id": "home-improvement",
-            "category": "learning",
+            "category": "smart-living",
             "title": "居家修善",
-            "icon": "🔧",
+            "icon": "home_repair_service",
             "subtitle": "從基礎修繕到大規模改造，打造夢想家居",
             "description": "學習家居維護、修理和改造的實用技能，由初階DIY到專業級別",
             "questionFile": "home-improvement/question.json",
@@ -77,9 +80,9 @@
         },
         {
             "id": "smart-home-improvement",
-            "category": "practical",
+            "category": "smart-living",
             "title": "智能家居改造",
-            "icon": "✨",
+            "icon": "auto_awesome",
             "subtitle": "結合家居改造與智能化，打造現代化住宅",
             "description": "從租屋族無損方案到深度改造的完整智能家居整合指南",
             "questionFile": "smart-home-improvement/question.json",
@@ -106,9 +109,9 @@
         },
         {
             "id": "home-assistant",
-            "category": "practical",
+            "category": "platform-tools",
             "title": "Home Assistant",
-            "icon": "🤖",
+            "icon": "house",
             "subtitle": "開源智能家居平台完全指南",
             "description": "從安裝設定到進階整合，全面掌握 Home Assistant 智能家居中樞",
             "questionFile": "home-assistant/question.json",
@@ -135,9 +138,9 @@
         },
         {
             "id": "node-red",
-            "category": "learning",
+            "category": "platform-tools",
             "title": "Node-RED",
-            "icon": "🔴",
+            "icon": "radio_button_checked",
             "subtitle": "視覺化流程編程工具，輕鬆打造自動化應用",
             "description": "從安裝設定到進階應用，全面掌握 Node-RED 視覺化編程平台",
             "questionFile": "node-red/question.json",
@@ -159,6 +162,139 @@
                     "name": "高階",
                     "order": 3,
                     "jsonFile": "node-red/advanced.json"
+                }
+            ]
+        },
+        {
+            "id": "smart-home-engineer",
+            "category": "smart-living",
+            "title": "智能家居工程師",
+            "icon": "engineering",
+            "subtitle": "從必備技能到專業實踐，成為智能家居工程師",
+            "description": "系統化學習智能家居工程師所需的核心能力與實踐方法，涵蓋必備層級、加分層級到專業級別",
+            "questionFile": "smart-home-engineer/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "必備層級",
+                    "order": 1,
+                    "jsonFile": "smart-home-engineer/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "加分層級",
+                    "order": 2,
+                    "jsonFile": "smart-home-engineer/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "專業層級",
+                    "order": 3,
+                    "jsonFile": "smart-home-engineer/advanced.json"
+                }
+            ]
+        },
+        {
+            "id": "zigbee-matter",
+            "category": "platform-tools",
+            "title": "Zigbee / Matter 協定層分析",
+            "icon": "satellite_alt",
+            "subtitle": "深度解析無線協定，掌握設備通訊核心",
+            "description": "從協定基礎到進階診斷，全面理解為什麼設備斷線或延遲，成為真正的協定專家",
+            "questionFile": "zigbee-matter/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "基礎認識",
+                    "order": 1,
+                    "jsonFile": "zigbee-matter/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "協定分析",
+                    "order": 2,
+                    "jsonFile": "zigbee-matter/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "進階診斷",
+                    "order": 3,
+                    "jsonFile": "zigbee-matter/advanced.json"
+                }
+            ]
+        },
+        {
+            "id": "home-assistant-dev",
+            "category": "dev-ai",
+            "title": "Home Assistant 插件開發",
+            "icon": "electrical_services",
+            "subtitle": "從使用者升級為開發者，打造專屬功能",
+            "description": "學習 Python-based integration、custom component、API 呼叫，創建自己的 Home Assistant 插件",
+            "questionFile": "home-assistant-dev/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "入門級",
+                    "order": 1,
+                    "jsonFile": "home-assistant-dev/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中級",
+                    "order": 2,
+                    "jsonFile": "home-assistant-dev/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高級",
+                    "order": 3,
+                    "jsonFile": "home-assistant-dev/advanced.json"
+                }
+            ]
+        },
+        {
+            "id": "iot-security-ai",
+            "category": "dev-ai",
+            "title": "IoT 資安與 AI 資料流應用",
+            "icon": "psychology",
+            "subtitle": "把資料轉化為智慧，打造未來智能家居",
+            "description": "從設備加密到 AI 預測模型，掌握 IoT 安全與機器學習的完整技術棧",
+            "questionFile": "iot-security-ai/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "入門級",
+                    "order": 1,
+                    "jsonFile": "iot-security-ai/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中級",
+                    "order": 2,
+                    "jsonFile": "iot-security-ai/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高級",
+                    "order": 3,
+                    "jsonFile": "iot-security-ai/advanced.json"
+                }
+            ]
+        },
+        {
+            "id": "gateway-hubs",
+            "category": "platform-tools",
+            "title": "多網關選型與搭配",
+            "icon": "device_hub",
+            "subtitle": "Zigbee / Matter / 藍牙 / 紅外的協同佈局指南",
+            "description": "為什麼要用多顆協調器？何時選 SLZB-06、SLZB-06M、ESP32 Proxy、Broadlink？優缺點一次說清楚。",
+            "questionFile": "gateway-hubs/question.json",
+            "levels": [
+                {
+                    "id": "overview",
+                    "name": "選型指南",
+                    "order": 1,
+                    "jsonFile": "gateway-hubs/beginner.json"
                 }
             ]
         },

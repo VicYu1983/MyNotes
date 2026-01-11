@@ -1,0 +1,262 @@
+{
+  "level": {
+    "id": "intermediate",
+    "name": "協定分析",
+    "emoji": "🟡",
+    "description": "Zigbee 與 Matter 協定層深度分析",
+    "color": "#ff9800"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "Zigbee 協定層分析",
+      "subtitle": "幀結構與網路拓撲",
+      "sections": [
+        {
+          "heading": "Zigbee 封包結構",
+          "content": "Zigbee 封包由多層組成，遵循 ISO/OSI 模型。每一層都有特定的職責和框架格式。"
+        },
+        {
+          "heading": "各層說明",
+          "list": [
+            "<strong>PHY 層 (物理層)</strong>：無線信號調製和解調",
+            "<strong>MAC 層 (鏈路層)</strong>：幀格式、序列號、衝突避免 (CSMA-CA)",
+            "<strong>NWK 層 (網路層)</strong>：路由和地址管理、網路形成",
+            "<strong>APS 層 (應用支持子層)</strong>：應用編程接口、綁定、端點管理",
+            "<strong>APP 層 (應用層)</strong>：用戶應用邏輯"
+          ]
+        },
+        {
+          "heading": "典型的 Zigbee 幀結構",
+          "content": "[序言] → [幀控制] → [序列號] → [目的地址] → [來源地址] → [路由] → [資料] → [校驗和]\n\n其中序言用於同步，幀控制定義幀類型，序列號用於追蹤，地址用於路由，校驗和驗證完整性。"
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Zigbee 網路拓撲",
+      "subtitle": "星形、樹形、網狀三種模式",
+      "sections": [
+        {
+          "heading": "星形拓撲",
+          "list": [
+            "<strong>結構</strong>：所有設備直接連接到中心協調器",
+            "<strong>優點</strong>：結構簡單，容易管理",
+            "<strong>缺點</strong>：協調器故障導致整體癱瘓，覆蓋範圍受限"
+          ]
+        },
+        {
+          "heading": "樹形拓撲",
+          "list": [
+            "<strong>結構</strong>：設備連接到父節點，形成樹狀結構",
+            "<strong>優點</strong>：支援更多設備和更大範圍，層級清晰",
+            "<strong>缺點</strong>：父節點故障導致子樹離線，路由固定"
+          ]
+        },
+        {
+          "heading": "網狀拓撲",
+          "list": [
+            "<strong>結構</strong>：設備可相互連接和路由",
+            "<strong>優點</strong>：最可靠，支援自動迂迴路由，高度冗餘",
+            "<strong>缺點</strong>：配置複雜，功耗較高（路由器）"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Zigbee 設備配對機制",
+      "subtitle": "安全加入新設備的流程",
+      "sections": [
+        {
+          "heading": "配對流程",
+          "list": [
+            "<strong>1. 許可模式</strong>：協調器或路由器進入許可模式，允許新設備加入（通常 3-5 分鐘）",
+            "<strong>2. 掃描</strong>：新設備掃描可用的 Zigbee 網路並取得網路參數",
+            "<strong>3. 驗證</strong>：設備提交安全密鑰進行身份驗證",
+            "<strong>4. 地址分配</strong>：協調器分配唯一的 16 位網路地址",
+            "<strong>5. 綁定</strong>：建立設備間的邏輯連接關係"
+          ]
+        },
+        {
+          "heading": "安全機制",
+          "list": [
+            "<strong>AES-128 加密</strong>：使用 128 位高級加密標準",
+            "<strong>密鑰管理</strong>：支援網路密鑰和連結密鑰",
+            "<strong>認證</strong>：設備認證和訊息完整性檢查",
+            "<strong>防重放</strong>：序列號機制防止重放攻擊"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "Zigbee 路由機制",
+      "subtitle": "AODV 動態路由協定",
+      "sections": [
+        {
+          "heading": "AODV 路由協定",
+          "list": [
+            "<strong>按需動態</strong>：只在需要時建立路由，節省資源",
+            "<strong>廣播發現</strong>：使用 RREQ (Route Request) 廣播尋找目標設備",
+            "<strong>反向路由</strong>：目標設備通過 RREP (Route Reply) 回覆最佳路由",
+            "<strong>路由維護</strong>：動態更新和清除失效路由"
+          ]
+        },
+        {
+          "heading": "多跳支援",
+          "list": [
+            "<strong>中繼轉發</strong>：訊號通過多個中間節點轉發，擴大通訊範圍",
+            "<strong>跳數限制</strong>：預設最多 15 跳，防止無限迴圈",
+            "<strong>路由表</strong>：每個設備維護鄰近節點的路由表"
+          ]
+        },
+        {
+          "heading": "故障排除",
+          "list": [
+            "<strong>設備斷線檢測</strong>：路由器檢測到鄰近設備無反應，標記為不可達",
+            "<strong>自動迂迴</strong>：使用備用路由或重新發現新路由",
+            "<strong>路由失敗通知</strong>：源設備收到 RERR (Route Error) 後重試"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "Matter 分層架構",
+      "subtitle": "協定的分層設計與各層職責",
+      "sections": [
+        {
+          "heading": "Matter 協定層次",
+          "content": "Matter 採用模組化分層設計，從下到上分為傳輸層、安全層、訊息層和應用層，每層各司其職，實現解耦和互操作性。"
+        },
+        {
+          "heading": "各層詳細說明",
+          "list": [
+            "<strong>傳輸層 (Transport)</strong>：支援 Wi-Fi、Thread、BLE 等多種無線技術",
+            "<strong>網路層 (Network)</strong>：IPv6 和 UDP，提供端點到端點的通訊",
+            "<strong>安全層 (Security)</strong>：CASE、PAKE 協議，加密和認證",
+            "<strong>訊息層 (Messaging)</strong>：Matter 訊息框架、可靠性保證",
+            "<strong>互動層 (Interaction)</strong>：設備屬性、命令、事件的交互模型",
+            "<strong>應用層 (Application)</strong>：用戶應用邏輯和設備特定功能"
+          ]
+        },
+        {
+          "heading": "層次間的通訊流程",
+          "content": "應用層命令 → 互動層編碼 → 訊息層封裝 → 安全層加密 → 網路層 IP 封裝 → 傳輸層發送\n\n反向接收時，每層按順序解析和驗證，確保訊息的完整性和安全性。"
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "title": "Matter 訊息框架",
+      "subtitle": "訊息格式與封包結構",
+      "sections": [
+        {
+          "heading": "Matter 訊息的完整結構",
+          "content": "[以太網首部] → [IPv6 首部] → [UDP 首部] → [Matter 首部] → [安全首部] → [訊息承載] → [MAC]\n\n每個層級都有特定的首部欄位，用於路由、加密和驗證。"
+        },
+        {
+          "heading": "Matter 首部關鍵欄位",
+          "list": [
+            "<strong>版本</strong>：Matter 協定版本號",
+            "<strong>訊息標識符 (MIC)</strong>：唯一識別此訊息，用於去重和追蹤",
+            "<strong>來源節點 ID</strong>：發送設備的唯一識別符",
+            "<strong>目的節點 ID</strong>：接收設備的唯一識別符",
+            "<strong>密鑰索引 (Key Index)</strong>：使用的加密密鑰版本"
+          ]
+        },
+        {
+          "heading": "安全首部欄位",
+          "list": [
+            "<strong>安全標誌</strong>：表示是否啟用加密和認證",
+            "<strong>訊息計數器</strong>：防重放攻擊，確保訊息新鮮性",
+            "<strong>來源標識符</strong>：加密密鑰的來源",
+            "<strong>認證標籤</strong>：訊息完整性檢查碼 (MIC)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "Matter 互動模型",
+      "subtitle": "屬性、命令、事件的交互方式",
+      "sections": [
+        {
+          "heading": "Matter 的三元互動模型",
+          "content": "Matter 定義了標準化的設備互動方式，分為屬性讀寫、命令執行和事件通知三大類。"
+        },
+        {
+          "heading": "屬性 (Attributes)",
+          "list": [
+            "<strong>作用</strong>：代表設備的狀態數據（如溫度、亮度、開關狀態）",
+            "<strong>讀取</strong>：使用 Read 請求獲取屬性值",
+            "<strong>寫入</strong>：使用 Write 請求修改屬性值",
+            "<strong>訂閱</strong>：訂閱屬性變化事件，接收推送更新"
+          ]
+        },
+        {
+          "heading": "命令 (Commands)",
+          "list": [
+            "<strong>作用</strong>：設備可執行的操作（如打開燈、設置溫度）",
+            "<strong>請求/回覆</strong>：用戶發送命令，設備執行後回覆結果",
+            "<strong>狀態碼</strong>：成功 (0x00) 或錯誤代碼",
+            "<strong>回覆資料</strong>：命令執行結果或返回值"
+          ]
+        },
+        {
+          "heading": "事件 (Events)",
+          "list": [
+            "<strong>作用</strong>：設備主動報告發生的事件（如按鈕按下、警告觸發）",
+            "<strong>推送機制</strong>：即時通知訂閱者",
+            "<strong>事件資料</strong>：包含時間戳、優先級和詳細信息",
+            "<strong>路徑指定</strong>：可選擇訂閱特定事件或所有事件"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "Matter vs Zigbee 協定對比",
+      "subtitle": "兩種協定的主要差異",
+      "sections": [
+        {
+          "heading": "設計理念",
+          "list": [
+            "<strong>Zigbee</strong>：專用物聯網協定，針對低功耗應用優化",
+            "<strong>Matter</strong>：統一標準，旨在實現跨廠牌互操作性"
+          ]
+        },
+        {
+          "heading": "傳輸層支援",
+          "list": [
+            "<strong>Zigbee</strong>：基於 IEEE 802.15.4，固定使用 2.4GHz 頻段",
+            "<strong>Matter</strong>：支援多種傳輸（Wi-Fi、Thread、BLE），更靈活"
+          ]
+        },
+        {
+          "heading": "設備管理",
+          "list": [
+            "<strong>Zigbee</strong>：協調器負責網路管理，中心化架構",
+            "<strong>Matter</strong>：分散式控制，邊界路由器提供互連"
+          ]
+        },
+        {
+          "heading": "安全機制",
+          "list": [
+            "<strong>Zigbee</strong>：AES-128 加密，密鑰管理由協調器負責",
+            "<strong>Matter</strong>：AES-CCM 加密，CASE/PAKE 雙層認證，安全性更強"
+          ]
+        },
+        {
+          "heading": "互操作性",
+          "list": [
+            "<strong>Zigbee</strong>：設備需支援相同的協議棧，碎片化問題存在",
+            "<strong>Matter</strong>：統一的互動模型（屬性/命令/事件），跨廠牌無縫協作"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,112 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": "beginner",
+      "chapter": "01. 整體佈局原則",
+      "question": "為什麼要讓 Zigbee、Thread/Matter、BLE、IR/433 分別由不同網關處理？",
+      "options": ["降低協議互相干擾、提升韌性", "只是好看", "因為硬體太便宜", "避免使用 Wi-Fi"],
+      "correctAnswer": 0,
+      "explanation": "多協議分工可降低干擾與負載，任一網路故障不會牽連其他協議，系統韌性更高。"
+    },
+    {
+      "id": 2,
+      "level": "beginner",
+      "chapter": "01. 整體佈局原則",
+      "question": "多網關的主要壞處是什麼？",
+      "options": ["維運與佈線複雜度上升", "設備一定無法備份", "無法與 Home Assistant 整合", "會強制使用雲端"],
+      "correctAnswer": 0,
+      "explanation": "多網關需要額外的電源、USB 佈線與頻道規劃，維運複雜度提高。"
+    },
+    {
+      "id": 3,
+      "level": "beginner",
+      "chapter": "02. Zigbee 協調器：SLZB-06",
+      "question": "Zigbee 減少 Wi-Fi 干擾的做法是什麼？",
+      "options": ["選擇 Zigbee Channel 15/20/25/26 並避開 Wi-Fi 主信道", "把協調器貼在路由器上", "改用 5GHz Wi-Fi", "把 Zigbee 設為 Channel 1"],
+      "correctAnswer": 0,
+      "explanation": "Zigbee 在 2.4GHz，選 15/20/25/26 可避開常用的 Wi-Fi 1/6/11，降低干擾。"
+    },
+    {
+      "id": 4,
+      "level": "beginner",
+      "chapter": "02. Zigbee 協調器：SLZB-06",
+      "question": "為什麼 SLZB-06 建議用 USB 延長線？",
+      "options": ["遠離主機與金屬干擾，提升訊號品質", "讓線更好看", "減少功耗", "避免升級韌體"],
+      "correctAnswer": 0,
+      "explanation": "將協調器離開主機與金屬，可降低屏蔽並改善收訊。"
+    },
+    {
+      "id": 5,
+      "level": "beginner",
+      "chapter": "04. ESP32 Bluetooth Proxy",
+      "question": "ESP32 Bluetooth Proxy 最適合收集哪類設備？",
+      "options": ["米家/青萍等低功耗 BLE 感測器", "高功率 Zigbee 燈泡", "以太網交換器", "Z-Wave 網關"],
+      "correctAnswer": 0,
+      "explanation": "BLE Proxy 低成本、易佈點，適合溫濕度、人感等廉價 BLE 感測器。"
+    },
+    {
+      "id": 6,
+      "level": "beginner",
+      "chapter": "05. IR/433：Broadlink RM4 Pro",
+      "question": "Broadlink RM4 Pro 主要解決什麼場景？",
+      "options": ["舊冷氣、電視等紅外/433 控制", "Thread 路由", "Zigbee 協調", "Wi-Fi 覆蓋"],
+      "correctAnswer": 0,
+      "explanation": "RM4 Pro 支援紅外與 433，適合舊家電的開關與模式控制。"
+    },
+    {
+      "id": 7,
+      "level": "intermediate",
+      "chapter": "03. Matter / Thread 協調器：SLZB-06M",
+      "question": "為什麼 Thread 仍需關注 2.4GHz 干擾？",
+      "options": ["Thread 也在 2.4GHz，仍可能與 Wi-Fi 互相影響", "Thread 是 5GHz", "Thread 只跑有線", "Thread 會自動避開所有頻道"] ,
+      "correctAnswer": 0,
+      "explanation": "Thread 與 Zigbee 都在 2.4GHz，需避開擁擠的 Wi-Fi 頻段以維持穩定。"
+    },
+    {
+      "id": 8,
+      "level": "intermediate",
+      "chapter": "06. 部署建議與排程",
+      "question": "協調器擺位的建議是什麼？",
+      "options": ["離開主機與金屬 1–2 公尺，避免 USB3 口，使用延長線", "直接插在電腦背面", "放進金屬機櫃", "只要有電就好"],
+      "correctAnswer": 0,
+      "explanation": "遠離金屬與高噪聲環境可大幅改善 Zigbee/Thread 收訊品質。"
+    },
+    {
+      "id": 9,
+      "level": "intermediate",
+      "chapter": "06. 部署建議與排程",
+      "question": "Zigbee 與 Thread 的頻道規劃重點是什麼？",
+      "options": ["與家用 Wi-Fi 1/6/11 錯開以降低干擾", "全部設為同一頻道", "只看 RSSI 不看頻段", "用 5GHz 就能解決"],
+      "correctAnswer": 0,
+      "explanation": "錯開 Wi-Fi 主信道可降低 2.4GHz 互相踩頻，提升穩定度。"
+    },
+    {
+      "id": 10,
+      "level": "advanced",
+      "chapter": "02. Zigbee 協調器：SLZB-06",
+      "question": "Zigbee2MQTT 最重要的備份是哪一項？",
+      "options": ["network backup 檔", "MQTT broker 日誌", "Wi-Fi 密碼", "藍牙配對檔"],
+      "correctAnswer": 0,
+      "explanation": "Z2M 的 network backup 包含 Zigbee 網路金鑰與拓撲，可用於協調器移機或災難復原。"
+    },
+    {
+      "id": 11,
+      "level": "advanced",
+      "chapter": "03. Matter / Thread 協調器：SLZB-06M",
+      "question": "OTBR/Matter 部署時需備份什麼以防止重建 Thread 網路？",
+      "options": ["Thread dataset", "MQTT config", "Wi-Fi DHCP 租約", "HomeKit 配對碼"],
+      "correctAnswer": 0,
+      "explanation": "Thread dataset 包含網路主鍵與頻道設定，遺失會導致設備需重新配網。"
+    },
+    {
+      "id": 12,
+      "level": "advanced",
+      "chapter": "04. ESP32 Bluetooth Proxy",
+      "question": "BLE Proxy 的主要限制是什麼？",
+      "options": ["廣播可能有延遲與丟包，不適合即時控制", "無法 OTA 更新", "只能放在室外", "與 Wi-Fi 完全無干擾"],
+      "correctAnswer": 0,
+      "explanation": "BLE 廣播天生有延遲與丟包，較適合感測資料而非即時開關控制。"
+    }
+  ]
+}
