@@ -1,0 +1,70 @@
+{
+  "level": {
+    "id": "matter-bridge",
+    "name": "Matter 協議整合",
+    "emoji": "🔘",
+    "description": "將 SwitchBot Hub 2 透過 Matter 協議接入 Home Assistant",
+    "color": "#667eea"
+  },
+  "knowledgePoints": [
+    {
+      "number": "01",
+      "title": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "subtitle": "解決藍牙信號距離問題，實現 Wi-Fi 控制",
+      "sections": [
+        {
+          "heading": "適用情境",
+          "content": "將 SwitchBot Hub 2 透過 Matter 協議接入 Home Assistant，解決藍牙信號距離問題，實現 Wi-Fi 控制。"
+        },
+        {
+          "heading": "前置準備",
+          "list": [
+            "確保 Home Assistant 已更新至較新版本（建議 2023.12 或以上）",
+            "準備好您的 SwitchBot Hub 2 及裝置機身上的 Matter 配對碼",
+            "手機與 Hub 2 連接至同一個 Wi-Fi 網路"
+          ]
+        },
+        {
+          "heading": "步驟 1：啟動 Hub 2 的 Matter 配對模式",
+          "content": "在 Hub 2 機體上，同時按住「On」與「Off」按鈕約 15秒，聽到「嗶」一聲後鬆手，指示燈將開始閃爍，表示已進入配對模式。"
+        },
+        {
+          "heading": "步驟 2：於 Home Assistant 中添加 Matter 裝置",
+          "list": [
+            "打開 Home Assistant App 或網頁版",
+            "進入「設定」>「裝置與服務」",
+            "點擊右下角「新增整合」，在清單中選擇「Matter」",
+            "點擊「新增 Matter 裝置」，然後手動輸入 Hub 2 機身上的 Matter 配對碼",
+            "點擊「提交」，系統將開始連接並引導 Hub 2 配置您的 Wi-Fi 網路。請稍候片刻直至配對完成"
+          ]
+        },
+        {
+          "heading": "步驟 3：於 SwitchBot App 中綁定裝置",
+          "list": [
+            "打開 SwitchBot App，進入您 Hub 2 的裝置管理頁面",
+            "在設定中找到「Matter 裝置」或類似選項",
+            "進入後，點擊「添加設備」，App 應會自動搜尋並綁定已完成 Matter 配對的 Hub 2"
+          ]
+        },
+        {
+          "heading": "確認與控制",
+          "list": [
+            "完成後，返回 Home Assistant 的「設定」>「裝置與服務」頁面",
+            "在「Matter」整合下，您應該能看到已添加的 SwitchBot Hub 2 及其關聯的設備",
+            "您現在可以透過 Wi-Fi 訊號，在 Home Assistant 中直接控制 Hub 2 及其子設備，不受藍牙距離限制"
+          ]
+        },
+        {
+          "heading": "重點提示",
+          "list": [
+            "<strong>硬體操作</strong>：配對模式需同時按住 On 與 Off 按鈕約 15 秒",
+            "<strong>軟體需求</strong>：Home Assistant 建議版本 2023.12 或以上",
+            "<strong>網路要求</strong>：手機與 Hub 2 需連接至同一個 Wi-Fi 網路",
+            "<strong>配對資訊</strong>：需準備 Hub 2 機身上的 Matter 配對碼",
+            "<strong>優勢</strong>：解決藍牙距離限制，改用 Wi-Fi 控制"
+          ]
+        }
+      ]
+    }
+  ]
+}

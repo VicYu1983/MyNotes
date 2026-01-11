@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": "beginner",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "SwitchBot Hub 2 透過 Matter 協議接入 Home Assistant 的主要優勢是什麼？",
+      "options": ["提高裝置的運算能力", "解決藍牙信號距離問題，實現 Wi-Fi 控制", "降低電力消耗", "增加裝置的儲存空間"],
+      "correctAnswer": 1,
+      "explanation": "透過 Matter 協議接入 Home Assistant，可以解決藍牙信號距離問題，透過 Wi-Fi 控制裝置，不受藍牙距離限制。"
+    },
+    {
+      "id": 2,
+      "level": "beginner",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "要啟動 Hub 2 的 Matter 配對模式，需要如何操作？",
+      "options": ["長按 On 按鈕 5 秒", "同時按住 On 與 Off 按鈕約 15 秒", "重新啟動裝置", "透過 App 啟動"],
+      "correctAnswer": 1,
+      "explanation": "在 Hub 2 機體上，同時按住「On」與「Off」按鈕約 15 秒，聽到「嗶」一聲後鬆手，指示燈將開始閃爍，表示已進入配對模式。"
+    },
+    {
+      "id": 3,
+      "level": "beginner",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "建議使用的 Home Assistant 版本為何？",
+      "options": ["2020.12 或以上", "2021.6 或以上", "2023.12 或以上", "版本不重要"],
+      "correctAnswer": 2,
+      "explanation": "建議 Home Assistant 已更新至較新版本，推薦 2023.12 或以上，以確保 Matter 協議的完整支援。"
+    },
+    {
+      "id": 4,
+      "level": "intermediate",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "在 Home Assistant 中添加 Matter 裝置時，需要輸入什麼資訊？",
+      "options": ["Wi-Fi 密碼", "Hub 2 的 MAC 地址", "Hub 2 機身上的 Matter 配對碼", "SwitchBot 帳號密碼"],
+      "correctAnswer": 2,
+      "explanation": "需要手動輸入 Hub 2 機身上的 Matter 配對碼，系統將開始連接並引導 Hub 2 配置 Wi-Fi 網路。"
+    },
+    {
+      "id": 5,
+      "level": "intermediate",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "在 Home Assistant 中添加 Matter 裝置的正確路徑是？",
+      "options": ["設定 > 自動化", "設定 > 裝置與服務 > 新增整合 > Matter", "工具 > 新增裝置", "儀表板 > 新增卡片"],
+      "correctAnswer": 1,
+      "explanation": "正確路徑是：進入「設定」>「裝置與服務」，點擊「新增整合」，在清單中選擇「Matter」。"
+    },
+    {
+      "id": 6,
+      "level": "intermediate",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "完成 Matter 配對後，還需要在哪裡進行裝置綁定？",
+      "options": ["Home Assistant App", "SwitchBot App", "路由器設定頁面", "不需要額外綁定"],
+      "correctAnswer": 1,
+      "explanation": "完成 Matter 配對後，還需要在 SwitchBot App 中找到「Matter 裝置」選項，點擊「添加設備」來綁定已完成配對的 Hub 2。"
+    },
+    {
+      "id": 7,
+      "level": "advanced",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "使用 Matter 協議的主要技術優勢是？",
+      "options": ["僅適用於特定品牌", "需要雲端連線才能運作", "提供跨平台互通性標準", "只支援藍牙連接"],
+      "correctAnswer": 2,
+      "explanation": "Matter 是一個跨平台的智能家居標準協議，提供不同品牌和平台之間的互通性，可透過本地網路運作，不一定需要雲端。"
+    },
+    {
+      "id": 8,
+      "level": "advanced",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "Hub 2 配對模式的指示燈閃爍代表什麼狀態？",
+      "options": ["裝置故障", "已進入配對模式", "需要充電", "正在更新韌體"],
+      "correctAnswer": 1,
+      "explanation": "當同時按住 On 與 Off 按鈕約 15 秒後聽到「嗶」一聲，指示燈開始閃爍，表示 Hub 2 已成功進入 Matter 配對模式。"
+    },
+    {
+      "id": 9,
+      "level": "advanced",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "為什麼要確保手機與 Hub 2 連接至同一個 Wi-Fi 網路？",
+      "options": ["節省流量", "提高安全性", "方便在本地網路中進行裝置發現與配對", "加快下載速度"],
+      "correctAnswer": 2,
+      "explanation": "確保在同一 Wi-Fi 網路下，可以讓裝置在本地網路中互相發現，方便進行 Matter 配對和 Wi-Fi 配置過程。"
+    },
+    {
+      "id": 10,
+      "level": "advanced",
+      "chapter": "SwitchBot Hub 2 連接 Home Assistant (Matter 協議)",
+      "question": "完成設置後，如何確認 Hub 2 已成功接入 Home Assistant？",
+      "options": ["檢查路由器的裝置清單", "在 Home Assistant 的「設定」>「裝置與服務」>「Matter」整合下查看", "重新啟動 Hub 2", "查看 SwitchBot App 的通知"],
+      "correctAnswer": 1,
+      "explanation": "完成後，在 Home Assistant 的「設定」>「裝置與服務」頁面，在「Matter」整合下應該能看到已添加的 SwitchBot Hub 2 及其關聯的設備。"
+    }
+  ]
+}

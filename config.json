@@ -161,6 +161,23 @@
                     "jsonFile": "node-red/advanced.json"
                 }
             ]
+        },
+        {
+            "id": "switchbot",
+            "category": "practical",
+            "title": "SwitchBot",
+            "icon": "🔘",
+            "subtitle": "SwitchBot 智能裝置整合與應用",
+            "description": "學習如何將 SwitchBot 裝置透過 Matter 協議接入 Home Assistant",
+            "questionFile": "switchbot/question.json",
+            "levels": [
+                {
+                    "id": "matter-bridge",
+                    "name": "Matter 協議整合",
+                    "order": 1,
+                    "jsonFile": "switchbot/matter-bridge.json"
+                }
+            ]
         }
     ]
 }
