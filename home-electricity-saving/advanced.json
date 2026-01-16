@@ -1,0 +1,138 @@
+{
+  "level": {
+    "id": "advanced",
+    "name": "高階",
+    "emoji": "🔴",
+    "description": "專業應用與系統設計",
+    "color": "#f44336"
+  },
+  "knowledgePoints": [
+    {
+      "number": "11",
+      "title": "能源管理系統（EMS）設計",
+      "subtitle": "完整的家庭能源監測體系",
+      "sections": [
+        {
+          "heading": "EMS 系統架構",
+          "content": "構建完整的家庭能源管理系統，實現全面的用電監測、分析和優化。",
+          "list": [
+            "<strong>主電表監測</strong>：監測整個住宅的總用電量",
+            "<strong>分項監測</strong>：各個家電或分路的用電情況",
+            "<strong>數據集成</strong>：整合新能源、儲能、傳統電力數據",
+            "<strong>決策支持</strong>：提供最優用電決策建議"
+          ]
+        },
+        {
+          "heading": "高階分析功能",
+          "list": [
+            "<strong>負荷預測</strong>：根據歷史數據預測未來用電負荷",
+            "<strong>異常檢測</strong>：採用機器學習算法自動識別異常用電",
+            "<strong>需求側管理</strong>：指導用戶在尖峰時段減少用電",
+            "<strong>自動需量反應</strong>：根據電網價格信號自動調整用電"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "微電網與能源獨立",
+      "subtitle": "構建社區或建築級別的能源系統",
+      "sections": [
+        {
+          "heading": "微電網概念",
+          "list": [
+            "<strong>自發自用</strong>：利用太陽能、風能等本地發電",
+            "<strong>互補儲能</strong>：多戶家庭共享儲能資源",
+            "<strong>削峰填谷</strong>：在發電充足時儲能，不足時供電",
+            "<strong>災難恢復</strong>：微電網可孤島運作，保證能源供應"
+          ]
+        },
+        {
+          "heading": "家庭級能源獨立",
+          "list": [
+            "<strong>規劃步驟</strong>：評估用電需求→設計太陽能容量→配置儲能→選擇控制系統",
+            "<strong>成本考量</strong>：太陽能面板、儲能電池、逆變器、監測系統",
+            "<strong>政策支援</strong>：了解當地補貼、稅優政策、並網規定",
+            "<strong>風險管理</strong>：天氣預報、故障備援、定期維護"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "13",
+      "title": "AI 與機器學習應用",
+      "subtitle": "智能預測與自適應優化",
+      "sections": [
+        {
+          "heading": "預測性算法",
+          "list": [
+            "<strong>用電預測</strong>：根據天氣、日期、歷史數據預測用電量",
+            "<strong>故障預測</strong>：分析設備運行參數預測何時需要維護",
+            "<strong>價格預測</strong>：預測未來電價走勢指導用電決策",
+            "<strong>舒適度優化</strong>：在節能和舒適度間找到平衡點"
+          ]
+        },
+        {
+          "heading": "自適應學習系統",
+          "list": [
+            "<strong>習慣學習</strong>：系統學習住戶的日常作息規律",
+            "<strong>偏好識別</strong>：自動識別居民的舒適度偏好",
+            "<strong>場景自動化</strong>：根據模式自動調整系統設置",
+            "<strong>持續優化</strong>：不斷改進算法以提升效率"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "title": "區塊鏈與能源交易",
+      "subtitle": "P2P 能源交易與智能合約",
+      "sections": [
+        {
+          "heading": "能源交易模式",
+          "content": "利用區塊鏈技術實現家庭間的能源交易，提升能源利用效率。",
+          "list": [
+            "<strong>點對點交易</strong>：家庭多餘能源可直接販售給鄰近住戶",
+            "<strong>智能合約</strong>：自動執行交易條件，減少中介成本",
+            "<strong>透明計價</strong>：區塊鏈確保交易記錄透明、無法篡改",
+            "<strong>激勵機制</strong>：鼓勵更多家庭參與能源生產和共享"
+          ]
+        },
+        {
+          "heading": "實施挑戰與展望",
+          "list": [
+            "<strong>法規框架</strong>：許多地區尚未完善相關法規",
+            "<strong>技術標準</strong>：需要統一的計量和交易標準",
+            "<strong>網路穩定性</strong>：確保交易系統的高可用性和安全性",
+            "<strong>市場演進</strong>：預期 2025 年後將逐步推廣"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "title": "網路安全與隱私保護",
+      "subtitle": "構建安全的能源管理系統",
+      "sections": [
+        {
+          "heading": "安全架構設計",
+          "list": [
+            "<strong>加密通訊</strong>：所有數據傳輸採用 TLS/SSL 加密",
+            "<strong>認證機制</strong>：多因素認證防止未授權存取",
+            "<strong>本地處理</strong>：敏感數據在本地邊界設備上處理",
+            "<strong>訪問控制</strong>：細粒度權限管理，最小化數據暴露"
+          ]
+        },
+        {
+          "heading": "隱私保護策略",
+          "list": [
+            "<strong>數據最小化</strong>：只收集必要的數據",
+            "<strong>匿名化處理</strong>：關鍵數據進行匿名處理",
+            "<strong>用戶掌控</strong>：用戶可隨時查看、修改、刪除個人數據",
+            "<strong>透明政策</strong>：明確告知數據如何使用、與誰共享"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -314,6 +314,35 @@
                     "jsonFile": "switchbot/matter-bridge.json"
                 }
             ]
+        },
+        {
+            "id": "home-electricity-saving",
+            "category": "smart-living",
+            "title": "居用用電修善",
+            "icon": "bolt",
+            "subtitle": "家居電能管理與節能優化",
+            "description": "學習如何透過智能設備監測用電，進行能源優化與成本節省",
+            "questionFile": "home-electricity-saving/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "初階",
+                    "order": 1,
+                    "jsonFile": "home-electricity-saving/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中階",
+                    "order": 2,
+                    "jsonFile": "home-electricity-saving/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高階",
+                    "order": 3,
+                    "jsonFile": "home-electricity-saving/advanced.json"
+                }
+            ]
         }
     ]
 }
