@@ -8,7 +8,7 @@
   },
   "knowledgePoints": [
     {
-      "number": "06",
+      "number": "07",
       "title": "智能插座的深度應用",
       "subtitle": "監測用電、分路管理、設備診斷",
       "sections": [
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "number": "07",
+      "number": "08",
       "title": "節能策略與自動化",
       "subtitle": "進階節能方案與聯動控制",
       "sections": [
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "number": "08",
+      "number": "09",
       "title": "用電成本分析",
       "subtitle": "計費模型與節費方案",
       "sections": [
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "number": "09",
+      "number": "10",
       "title": "智能家居與新能源整合",
       "subtitle": "太陽能、儲能、微網格",
       "sections": [
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "number": "10",
+      "number": "11",
       "title": "物聯網感測器應用",
       "subtitle": "環境監測與智能聯動",
       "sections": [

@@ -8,7 +8,7 @@
   },
   "knowledgePoints": [
     {
-      "number": "11",
+      "number": "12",
       "title": "能源管理系統（EMS）設計",
       "subtitle": "完整的家庭能源監測體系",
       "sections": [
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "number": "12",
+      "number": "13",
       "title": "微電網與能源獨立",
       "subtitle": "構建社區或建築級別的能源系統",
       "sections": [
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "number": "13",
+      "number": "14",
       "title": "AI 與機器學習應用",
       "subtitle": "智能預測與自適應優化",
       "sections": [
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "number": "14",
+      "number": "15",
       "title": "區塊鏈與能源交易",
       "subtitle": "P2P 能源交易與智能合約",
       "sections": [
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "number": "15",
+      "number": "16",
       "title": "網路安全與隱私保護",
       "subtitle": "構建安全的能源管理系統",
       "sections": [
