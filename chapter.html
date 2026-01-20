@@ -624,10 +624,16 @@
                 3: 'advanced'
             };
 
-            data.levels.forEach(level => {
+            data.levels.forEach((level, levelIndex) => {
                 if (level.knowledgePoints.length === 0) return;
 
                 const levelClass = levelClasses[level.level.order] || '';
+
+                // 計算當前 level 之前有多少個 point，用作偏移量
+                let offset = 0;
+                for (let i = 0; i < levelIndex; i++) {
+                    offset += data.levels[i].knowledgePoints.length;
+                }
 
                 html += `
                     <div class="level-section">
@@ -638,13 +644,14 @@
                         <div class="knowledge-list">
                 `;
 
-                level.knowledgePoints.forEach(point => {
-                    const uniqueId = `${level.level.id}-${point.number}`;
+                level.knowledgePoints.forEach((point, index) => {
+                    const chapterNumber = String(offset + index + 1).padStart(2, '0');
+                    const uniqueId = `${level.level.id}-${chapterNumber}`;
                     if (point.sections && point.sections.length > 0) {
                         html += `
                             <div class="knowledge-item" onclick="toggleContent('${uniqueId}')">
                                 <div class="knowledge-header">
-                                    <div class="knowledge-number">${point.number}</div>
+                                    <div class="knowledge-number">${chapterNumber}</div>
                                     <div class="knowledge-title">${point.title}</div>
                                 </div>
                                 <div class="knowledge-content collapsed" id="content-${uniqueId}">
@@ -656,7 +663,7 @@
                         html += `
                             <div class="knowledge-item" style="opacity: 0.5; cursor: default;">
                                 <div class="knowledge-header">
-                                    <div class="knowledge-number">${point.number}</div>
+                                    <div class="knowledge-number">${chapterNumber}</div>
                                     <div class="knowledge-title">${point.title}</div>
                                 </div>
                                 <p style="color: #6b7280; margin-top: 8px; font-size: 0.85em;">內容待補充</p>
@@ -777,7 +784,6 @@
             question._randomizedCorrectAnswer = randomized.correctAnswerIndex;
             
             const quizContent = document.getElementById('quizContent');
-            const chapterInfo = question.chapter ? `<p class="quiz-chapter">章節：${question.chapter}</p>` : '';
             
             let html = `
                 <div class="quiz-header">
@@ -785,7 +791,6 @@
                     <p class="quiz-progress">第 ${currentQuestionIndex + 1} / ${quizData.questions.length} 題</p>
                 </div>
                 <div class="quiz-question">
-                    ${chapterInfo}
                     <h3>${question.question}</h3>
                     <div class="quiz-options">
             `;
