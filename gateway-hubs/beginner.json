@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "overview",
     "name": "選型指南",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "整體佈局原則",
       "subtitle": "為什麼要多網關分工？",
       "sections": [
@@ -40,7 +39,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "Zigbee 協調器：SLZB-06 (Z2M)",
       "subtitle": "處理開關、人感、門磁等 Zigbee",
       "sections": [
@@ -71,7 +69,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "Matter / Thread 協調器：SLZB-06M",
       "subtitle": "陸版 Yeelight Matter 版與未來 Thread 設備",
       "sections": [
@@ -102,7 +99,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "ESP32 Bluetooth Proxy",
       "subtitle": "覆蓋米家/青萍等廉價 BLE 感測器",
       "sections": [
@@ -133,7 +129,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "IR/433：Broadlink RM4 Pro",
       "subtitle": "舊冷氣、電視、電扇的補網關",
       "sections": [
@@ -164,7 +159,6 @@
       ]
     },
     {
-      "number": "06",
       "title": "部署建議與排程",
       "subtitle": "怎麼放、怎麼備份、怎麼避干擾",
       "sections": [

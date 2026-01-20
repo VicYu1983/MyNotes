@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "初階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "智能家居簡介",
       "subtitle": "什麼是智能家居？發展歷史、優缺點與應用場景",
       "sections": [
@@ -59,7 +58,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "基礎硬體認識",
       "subtitle": "智能音箱、燈泡、插座、門鎖、攝影機",
       "sections": [
@@ -115,7 +113,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "無線通訊協定基礎",
       "subtitle": "Wi-Fi、藍牙、紅外線",
       "sections": [
@@ -164,7 +161,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "智能家居生態系統",
       "subtitle": "Apple HomeKit、Google Home、Amazon Alexa、小米米家",
       "sections": [
@@ -226,7 +222,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "基礎安裝與設定",
       "subtitle": "選購、配對與語音控制",
       "sections": [

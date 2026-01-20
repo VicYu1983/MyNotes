@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "advanced",
     "name": "專業層級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "自動化邏輯的可教性",
       "subtitle": "設計簡明易懂的配置，方便他人快速理解與維護",
       "sections": [
@@ -49,7 +48,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "容錯設計",
       "subtitle": "構建高可用系統，確保故障時仍可部分運作",
       "sections": [
@@ -90,7 +88,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "體驗導向場景設計",
       "subtitle": "超越功能層面，設計「安心、直覺、可靠」的使用體驗",
       "sections": [
@@ -131,7 +128,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "文件化與可複製性",
       "subtitle": "編寫完整文檔，使方案能被他人無痛複製與運營",
       "sections": [

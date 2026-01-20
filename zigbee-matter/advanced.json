@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "advanced",
     "name": "進階診斷",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "Zigbee 設備斷線根因分析",
       "subtitle": "診斷和解決設備離線問題",
       "sections": [
@@ -51,7 +50,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "Zigbee 延遲根因分析",
       "subtitle": "優化網路性能，減少命令延遲",
       "sections": [
@@ -90,7 +88,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "使用 Zigbee2MQTT 進行分析",
       "subtitle": "協定工具的強大調試功能",
       "sections": [
@@ -128,7 +125,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "Matter 進階安全機制",
       "subtitle": "深度安全分析與最佳實踐",
       "sections": [
@@ -171,7 +167,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "Thread 網狀網路優化",
       "subtitle": "Matter 的關鍵傳輸層",
       "sections": [
@@ -205,7 +200,6 @@
       ]
     },
     {
-      "number": "06",
       "title": "Matter SDK 調試方法",
       "subtitle": "使用官方工具進行深度分析",
       "sections": [

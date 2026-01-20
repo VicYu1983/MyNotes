@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "advanced",
     "name": "高階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "13",
       "title": "Home Assistant",
       "subtitle": "安裝、配置、YAML、整合第三方設備",
       "sections": [
@@ -135,7 +134,6 @@
       ]
     },
     {
-      "number": "14",
       "title": "Node-RED 自動化",
       "subtitle": "視覺化編程、MQTT、複雜邏輯、API整合",
       "sections": [
@@ -294,7 +292,6 @@
       ]
     },
     {
-      "number": "15",
       "title": "DIY 智能設備",
       "subtitle": "Arduino、ESP8266/ESP32、Raspberry Pi",
       "sections": [
@@ -486,7 +483,6 @@
       ]
     },
     {
-      "number": "16",
       "title": "網路架構規劃",
       "subtitle": "VLAN隔離、IoT網路、防火牆、本地伺服器",
       "sections": [
@@ -698,7 +694,6 @@
       ]
     },
     {
-      "number": "17",
       "title": "進階自動化邏輯",
       "subtitle": "機器學習、多條件判斷、狀態機、容錯機制",
       "sections": [
@@ -933,7 +928,6 @@
       ]
     },
     {
-      "number": "18",
       "title": "資料分析與視覺化",
       "subtitle": "InfluxDB、Grafana、歷史資料、趨勢預測",
       "sections": [
@@ -1180,7 +1174,6 @@
       ]
     },
     {
-      "number": "19",
       "title": "智能家居整合專案",
       "subtitle": "全屋規劃、預算選型、施工維護",
       "sections": [
@@ -1456,7 +1449,6 @@
       ]
     },
     {
-      "number": "20",
       "title": "未來趨勢",
       "subtitle": "AI應用、5G、邊緣運算、永續能源",
       "sections": [

@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "intermediate",
     "name": "中級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "03",
       "title": "Integration 基本結構",
       "subtitle": "創建第一個自訂整合",
       "sections": [
@@ -37,7 +36,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "Entity 實體開發",
       "subtitle": "實作各類智能家居實體",
       "sections": [
@@ -65,7 +63,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "DataUpdateCoordinator 使用",
       "subtitle": "高效管理數據更新",
       "sections": [
@@ -93,7 +90,6 @@
       ]
     },
     {
-      "number": "06",
       "title": "API 客戶端開發",
       "subtitle": "與外部服務通訊",
       "sections": [
@@ -122,7 +118,6 @@
       ]
     },
     {
-      "number": "07",
       "title": "Service 服務開發",
       "subtitle": "提供可調用的功能",
       "sections": [
@@ -145,7 +140,6 @@
       ]
     },
     {
-      "number": "08",
       "title": "配置選項與 Options Flow",
       "subtitle": "支援插件配置修改",
       "sections": [

@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "必備層級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "自動化燈光控制",
       "subtitle": "掌握智能燈光系統的安裝與場景設定",
       "sections": [
@@ -47,7 +46,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "溫濕度感測 + 空調聯動",
       "subtitle": "建立自動溫控系統的完整方案",
       "sections": [
@@ -87,7 +85,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "智能門鎖 / 安全感測",
       "subtitle": "建立完整的出入口安全管理方案",
       "sections": [
@@ -127,7 +124,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "基本場景化自動化",
       "subtitle": "設計符合生活習慣的一鍵模式",
       "sections": [

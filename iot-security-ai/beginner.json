@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "入門級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "IoT 資安威脅與防護基礎",
       "subtitle": "認識智能家居的安全風險",
       "sections": [
@@ -47,7 +46,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "Home Assistant 資料收集基礎",
       "subtitle": "建立數據採集與存儲系統",
       "sections": [

@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "advanced",
     "name": "高級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "09",
       "title": "AI/ML 基礎與應用場景",
       "subtitle": "機器學習在智能家居的應用",
       "sections": [
@@ -38,7 +37,6 @@
       ]
     },
     {
-      "number": "10",
       "title": "使用 scikit-learn 建立預測模型",
       "subtitle": "實戰：室內溫度預測",
       "sections": [
@@ -61,7 +59,6 @@
       ]
     },
     {
-      "number": "11",
       "title": "在 Home Assistant 中整合 AI 模型",
       "subtitle": "將 ML 模型應用到實際場景",
       "sections": [
@@ -84,7 +81,6 @@
       ]
     },
     {
-      "number": "12",
       "title": "進階場景：異常檢測",
       "subtitle": "識別設備故障與安全威脅",
       "sections": [
@@ -107,7 +103,6 @@
       ]
     },
     {
-      "number": "13",
       "title": "進階場景：能源優化",
       "subtitle": "AI 驅動的智能節能",
       "sections": [
@@ -130,7 +125,6 @@
       ]
     },
     {
-      "number": "14",
       "title": "隱私保護與聯邦學習",
       "subtitle": "在保護隱私的前提下使用 AI",
       "sections": [
@@ -161,7 +155,6 @@
       ]
     },
     {
-      "number": "15",
       "title": "生產部署與監控",
       "subtitle": "穩定可靠的 AI 系統運營",
       "sections": [

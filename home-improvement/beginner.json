@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "初階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "居家修善基礎知識",
       "subtitle": "工具介紹、安全事項與預防性維護",
       "sections": [
@@ -48,7 +47,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "牆面修補與粉刷",
       "subtitle": "解決牆面問題、漆面翻新",
       "sections": [
@@ -83,7 +81,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "水龍頭和馬桶修理",
       "subtitle": "常見衛浴問題的快速修復",
       "sections": [
@@ -116,7 +113,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "門窗維護",
       "subtitle": "保持門窗正常運作和密封",
       "sections": [
@@ -149,7 +145,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "照明和電氣基礎",
       "subtitle": "安全地更換燈泡、開關和插座",
       "sections": [

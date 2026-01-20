@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "初階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "家居用電基礎概念",
       "subtitle": "認識電力基本單位和家居用電的重要性",
       "sections": [
@@ -57,7 +56,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "家庭斷電器與電路保護",
       "subtitle": "了解斷電器的工作原理與安全使用",
       "sections": [
@@ -109,7 +107,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "常見家電的耗電量",
       "subtitle": "識別家中的高耗電設備",
       "sections": [
@@ -129,7 +126,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "用電監測的基本原理",
       "subtitle": "瞭解為什麼需要監測用電數據",
       "sections": [
@@ -154,7 +150,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "基本的節能方法",
       "subtitle": "日常生活中的實踐技巧",
       "sections": [
@@ -174,7 +169,6 @@
       ]
     },
     {
-      "number": "06",
       "title": "智能家居助力節能",
       "subtitle": "利用智能設備優化用電",
       "sections": [

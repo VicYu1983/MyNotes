@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "intermediate",
     "name": "加分層級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "多品牌整合",
       "subtitle": "統一管理不同廠商的設備於單一介面",
       "sections": [
@@ -49,7 +48,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "語音助理 + 備援操作",
       "subtitle": "整合智能語音控制並設計多層備援機制",
       "sections": [
@@ -90,7 +88,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "能源監控",
       "subtitle": "建立用電量追蹤與智能省電系統",
       "sections": [
@@ -131,7 +128,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "通知與回饋設計",
       "subtitle": "設計清晰、及時的系統提醒與信息反饋",
       "sections": [

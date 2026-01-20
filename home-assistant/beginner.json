@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "初階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "Home Assistant 簡介",
       "subtitle": "什麼是 Home Assistant？為什麼選擇它？",
       "sections": [
@@ -48,7 +47,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "安裝 Home Assistant",
       "subtitle": "多種安裝方式與建議選擇",
       "sections": [
@@ -94,7 +92,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "基礎介面與操作",
       "subtitle": "認識 Home Assistant 的主要介面",
       "sections": [
@@ -139,7 +136,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "常用整合設定",
       "subtitle": "連接主流智能家居設備",
       "sections": [
@@ -183,7 +179,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "建立第一個自動化",
       "subtitle": "使用視覺化編輯器創建自動化規則",
       "sections": [

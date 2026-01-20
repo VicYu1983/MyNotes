@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "入門級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "Home Assistant 架構概覽",
       "subtitle": "理解核心架構與插件生態系統",
       "sections": [
@@ -38,7 +37,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "開發環境設置",
       "subtitle": "建立本地開發與測試環境",
       "sections": [

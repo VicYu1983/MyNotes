@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "advanced",
     "name": "高階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "11",
       "title": "自製 ESPHome 設備",
       "subtitle": "使用 ESP32/ESP8266 創建客製感應器",
       "sections": [
@@ -51,7 +50,6 @@
       ]
     },
     {
-      "number": "12",
       "title": "高級自動化與腳本",
       "subtitle": "Python Scripts 和複雜邏輯",
       "sections": [
@@ -93,7 +91,6 @@
       ]
     },
     {
-      "number": "13",
       "title": "網路安全與遠端訪問",
       "subtitle": "安全地從外部訪問 Home Assistant",
       "sections": [
@@ -142,7 +139,6 @@
       ]
     },
     {
-      "number": "14",
       "title": "智能語音與 AI 整合",
       "subtitle": "本地語音助手與 AI 應用",
       "sections": [
@@ -183,7 +179,6 @@
       ]
     },
     {
-      "number": "15",
       "title": "企業級部署與高可用性",
       "subtitle": "打造穩定可靠的智能家居系統",
       "sections": [

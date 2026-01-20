@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "intermediate",
     "name": "中級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "03",
       "title": "設備加密與認證機制",
       "subtitle": "實施端到端加密保護",
       "sections": [
@@ -31,7 +30,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "網路安全配置",
       "subtitle": "建立隔離與防護的網路架構",
       "sections": [
@@ -62,7 +60,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "感測器數據分析基礎",
       "subtitle": "從原始數據中提取洞察",
       "sections": [
@@ -85,7 +82,6 @@
       ]
     },
     {
-      "number": "06",
       "title": "時間序列數據處理",
       "subtitle": "處理按時間順序的感測器數據",
       "sections": [
@@ -108,7 +104,6 @@
       ]
     },
     {
-      "number": "07",
       "title": "數據可視化與監控",
       "subtitle": "建立直觀的數據展示系統",
       "sections": [
@@ -138,7 +133,6 @@
       ]
     },
     {
-      "number": "08",
       "title": "InfluxDB 與時序數據庫",
       "subtitle": "長期數據存儲與高效查詢",
       "sections": [

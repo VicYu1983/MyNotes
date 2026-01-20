@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "intermediate",
     "name": "中階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "06",
       "title": "瓷磚和地板安裝",
       "subtitle": "廚房、浴室和客廳地板翻新",
       "sections": [
@@ -53,7 +52,6 @@
       ]
     },
     {
-      "number": "07",
       "title": "乾牆安裝和修理",
       "subtitle": "安裝隔牆、修理大面積損傷",
       "sections": [
@@ -97,7 +95,6 @@
       ]
     },
     {
-      "number": "08",
       "title": "廚房小型改造",
       "subtitle": "更新廚櫃、檯面和後擋板",
       "sections": [
@@ -140,7 +137,6 @@
       ]
     },
     {
-      "number": "09",
       "title": "浴室更新",
       "subtitle": "升級固定裝置、櫃子和照明",
       "sections": [
@@ -183,7 +179,6 @@
       ]
     },
     {
-      "number": "10",
       "title": "油漆技巧和技術",
       "subtitle": "專業結果的高級涂裝方法",
       "sections": [

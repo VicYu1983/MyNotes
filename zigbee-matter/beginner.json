@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "基礎認識",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "Zigbee 基礎概念",
       "subtitle": "低功耗無線通訊協定簡介",
       "sections": [
@@ -36,7 +35,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "Matter 協定介紹",
       "subtitle": "統一的物聯網標準",
       "sections": [

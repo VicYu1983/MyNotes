@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "advanced",
     "name": "高級",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "09",
       "title": "事件系統與監聽",
       "subtitle": "深入理解 Event Bus 機制",
       "sections": [
@@ -31,7 +30,6 @@
       ]
     },
     {
-      "number": "10",
       "title": "單元測試與集成測試",
       "subtitle": "確保代碼質量與穩定性",
       "sections": [
@@ -54,7 +52,6 @@
       ]
     },
     {
-      "number": "11",
       "title": "WebSocket API 實作",
       "subtitle": "提供實時數據訂閱",
       "sections": [
@@ -77,7 +74,6 @@
       ]
     },
     {
-      "number": "12",
       "title": "性能優化與調試",
       "subtitle": "提升插件效能與診斷問題",
       "sections": [
@@ -114,7 +110,6 @@
       ]
     },
     {
-      "number": "13",
       "title": "安全性與最佳實踐",
       "subtitle": "保護用戶數據與系統安全",
       "sections": [
@@ -144,7 +139,6 @@
       ]
     },
     {
-      "number": "14",
       "title": "發布與維護",
       "subtitle": "分享插件給社群使用",
       "sections": [
@@ -178,7 +172,6 @@
       ]
     },
     {
-      "number": "15",
       "title": "進階實作模式",
       "subtitle": "掌握複雜場景的開發技巧",
       "sections": [

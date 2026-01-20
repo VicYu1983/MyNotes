@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "advanced",
     "name": "高階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "11",
       "title": "房間隔牆和開放式概念",
       "subtitle": "去除或添加隔牆，規劃開放空間",
       "sections": [
@@ -52,7 +51,6 @@
       ]
     },
     {
-      "number": "12",
       "title": "屋頂改造和修理",
       "subtitle": "屋頂更換、漏水修復、隔熱升級",
       "sections": [
@@ -98,7 +96,6 @@
       ]
     },
     {
-      "number": "13",
       "title": "電路面板和佈線升級",
       "subtitle": "增加電路、升級到更大服務、專業安裝",
       "sections": [
@@ -144,7 +141,6 @@
       ]
     },
     {
-      "number": "14",
       "title": "管道系統改造",
       "subtitle": "重新佈線管道、升級到新材料、解決複雜問題",
       "sections": [
@@ -189,7 +185,6 @@
       ]
     },
     {
-      "number": "15",
       "title": "完整地下室改造",
       "subtitle": "將潮濕地下室轉變為可用空間",
       "sections": [

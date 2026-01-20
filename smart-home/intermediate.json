@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "intermediate",
     "name": "中階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "06",
       "title": "進階通訊協定",
       "subtitle": "Zigbee、Z-Wave、Matter、Thread",
       "sections": [
@@ -69,7 +68,6 @@
       ]
     },
     {
-      "number": "07",
       "title": "智能家庭中樞",
       "subtitle": "網關作用、本地vs雲端控制",
       "sections": [
@@ -149,7 +147,6 @@
       ]
     },
     {
-      "number": "08",
       "title": "場景自動化",
       "subtitle": "情境模式、條件觸發、多設備聯動",
       "sections": [
@@ -292,7 +289,6 @@
       ]
     },
     {
-      "number": "09",
       "title": "感測器應用",
       "subtitle": "溫濕度、移動、門窗、光線、安全感測器",
       "sections": [
@@ -385,7 +381,6 @@
       ]
     },
     {
-      "number": "10",
       "title": "能源管理",
       "subtitle": "智能電錶、用電監控、節能策略",
       "sections": [
@@ -515,7 +510,6 @@
       ]
     },
     {
-      "number": "11",
       "title": "安全與隱私",
       "subtitle": "網路安全、權限管理、隱私保護",
       "sections": [
@@ -665,7 +659,6 @@
       ]
     },
     {
-      "number": "12",
       "title": "語音助理進階應用",
       "subtitle": "自訂指令、多用戶識別、例行程序",
       "sections": [

@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "intermediate",
     "name": "中階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "安裝自訂節點",
       "subtitle": "從 Palette Manager 安裝社群節點套件",
       "sections": [
@@ -43,7 +42,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "HTTP 請求與 API 整合",
       "subtitle": "呼叫外部 API 與建立 HTTP 端點",
       "sections": [
@@ -83,7 +81,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "MQTT 通訊協定",
       "subtitle": "使用 MQTT 進行物聯網設備通訊",
       "sections": [
@@ -122,7 +119,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "資料庫整合",
       "subtitle": "連接 MySQL、MongoDB、InfluxDB 等資料庫",
       "sections": [
@@ -161,7 +157,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "Dashboard 儀表板",
       "subtitle": "建立互動式 Web 儀表板",
       "sections": [
@@ -204,7 +199,6 @@
       ]
     },
     {
-      "number": "06",
       "title": "定時任務與排程",
       "subtitle": "使用 Cron 和進階定時功能",
       "sections": [
@@ -242,7 +236,6 @@
       ]
     },
     {
-      "number": "07",
       "title": "錯誤處理",
       "subtitle": "使用 Catch 節點處理錯誤",
       "sections": [
@@ -275,7 +268,6 @@
       ]
     },
     {
-      "number": "08",
       "title": "JSONata 表達式",
       "subtitle": "強大的 JSON 查詢和轉換語言",
       "sections": [
@@ -312,7 +304,6 @@
       ]
     },
     {
-      "number": "09",
       "title": "WebSocket 即時通訊",
       "subtitle": "建立雙向即時通訊連線",
       "sections": [
@@ -346,7 +337,6 @@
       ]
     },
     {
-      "number": "10",
       "title": "檔案處理",
       "subtitle": "讀取、寫入和監控檔案",
       "sections": [

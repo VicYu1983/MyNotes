@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "beginner",
     "name": "初階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "01",
       "title": "Node-RED 簡介",
       "subtitle": "什麼是 Node-RED？發展歷史與核心特色",
       "sections": [
@@ -49,7 +48,6 @@
       ]
     },
     {
-      "number": "02",
       "title": "安裝與設定",
       "subtitle": "在不同平台上安裝 Node-RED",
       "sections": [
@@ -97,7 +95,6 @@
       ]
     },
     {
-      "number": "03",
       "title": "介面導覽",
       "subtitle": "認識 Node-RED 編輯器的各個區域",
       "sections": [
@@ -145,7 +142,6 @@
       ]
     },
     {
-      "number": "04",
       "title": "基本節點類型",
       "subtitle": "認識常用的核心節點",
       "sections": [
@@ -206,7 +202,6 @@
       ]
     },
     {
-      "number": "05",
       "title": "第一個 Flow 實作",
       "subtitle": "建立簡單的「Hello World」流程",
       "sections": [
@@ -241,7 +236,6 @@
       ]
     },
     {
-      "number": "06",
       "title": "訊息物件 (msg)",
       "subtitle": "理解 Node-RED 中的訊息傳遞機制",
       "sections": [
@@ -274,7 +268,6 @@
       ]
     },
     {
-      "number": "07",
       "title": "變數與儲存",
       "subtitle": "使用 Context 儲存數據",
       "sections": [
@@ -320,7 +313,6 @@
       ]
     },
     {
-      "number": "08",
       "title": "流程管理",
       "subtitle": "組織和管理你的 Flow",
       "sections": [
@@ -374,7 +366,6 @@
       ]
     },
     {
-      "number": "09",
       "title": "安全性設定",
       "subtitle": "保護你的 Node-RED 編輯器",
       "sections": [
@@ -419,7 +410,6 @@
       ]
     },
     {
-      "number": "10",
       "title": "常用技巧與最佳實踐",
       "subtitle": "提升開發效率的小訣竅",
       "sections": [

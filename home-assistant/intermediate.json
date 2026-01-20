@@ -1,4 +1,4 @@
-{
+﻿{
   "level": {
     "id": "intermediate",
     "name": "中階",
@@ -8,7 +8,6 @@
   },
   "knowledgePoints": [
     {
-      "number": "06",
       "title": "YAML 設定基礎",
       "subtitle": "理解並編輯 configuration.yaml",
       "sections": [
@@ -49,7 +48,6 @@
       ]
     },
     {
-      "number": "07",
       "title": "進階自動化技巧",
       "subtitle": "條件判斷、範本和複雜邏輯",
       "sections": [
@@ -90,7 +88,6 @@
       ]
     },
     {
-      "number": "08",
       "title": "客製化 Lovelace 介面",
       "subtitle": "打造個人化儀表板",
       "sections": [
@@ -135,7 +132,6 @@
       ]
     },
     {
-      "number": "09",
       "title": "附加元件與整合",
       "subtitle": "擴展 Home Assistant 功能",
       "sections": [
@@ -182,7 +178,6 @@
       ]
     },
     {
-      "number": "10",
       "title": "備份、更新與維護",
       "subtitle": "確保系統穩定運行",
       "sections": [
