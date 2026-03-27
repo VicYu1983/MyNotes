@@ -343,6 +343,34 @@
                     "jsonFile": "home-electricity-saving/advanced.json"
                 }
             ]
+        },
+        {
+            "id": "n8n",
+            "category": "learning",
+            "title": "n8n 學習與使用",
+            "icon": "🔄",
+            "subtitle": "從入門到精通 n8n 工作流程自動化工具",
+            "description": "學習如何使用 n8n 進行工作流程自動化，串接不同服務與應用程式",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "初階",
+                    "order": 1,
+                    "jsonFile": "n8n/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "中階",
+                    "order": 2,
+                    "jsonFile": "n8n/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "高階",
+                    "order": 3,
+                    "jsonFile": "n8n/advanced.json"
+                }
+            ]
         }
     ]
 }
