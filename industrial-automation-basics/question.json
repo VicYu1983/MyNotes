@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {"id": 1, "level": "beginner", "chapter": "01. 工業控制電氣基礎", "question": "工業設備中的主回路主要負責什麼？", "options": ["顯示 HMI 畫面", "提供馬達或負載所需的能量", "儲存 PLC 程式", "記錄操作員帳號"], "correctAnswer": 1, "explanation": "主回路負責傳送馬達、加熱器等負載所需的電能；控制回路則負責判斷條件與驅動控制元件。"},
+    {"id": 2, "level": "beginner", "chapter": "01. 工業控制電氣基礎", "question": "24V DC 電源在控制盤中常用於什麼用途？", "options": ["高壓輸電", "PLC、感測器與控制元件", "替代所有馬達主回路", "只供應照明塔"], "correctAnswer": 1, "explanation": "24V DC 常用於 PLC、感測器、繼電器線圈與其他控制元件，但仍須依設備規格接線。"},
+    {"id": 3, "level": "beginner", "chapter": "01. 工業控制電氣基礎", "question": "馬達過載時，熱繼電器的主要作用是什麼？", "options": ["提高馬達速度", "偵測過載並讓控制回路停止馬達", "把 AC 變成網路訊號", "增加 HMI 亮度"], "correctAnswer": 1, "explanation": "熱繼電器用來偵測馬達過載，動作後使控制回路失電，避免馬達長時間過熱。"},
+    {"id": 4, "level": "beginner", "chapter": "01. 工業控制電氣基礎", "question": "控制盤維修前最重要的第一類措施是什麼？", "options": ["先按下 HMI 的開始按鈕", "斷電、驗電、上鎖與掛牌", "直接拔除所有端子", "只關閉螢幕"], "correctAnswer": 1, "explanation": "維修前要依安全程序隔離能源、確認無電並防止他人重新送電。"},
+    {"id": 5, "level": "beginner", "chapter": "02. 感測器與執行元件", "question": "光電感測器在自動化設備中通常屬於什麼？", "options": ["輸入元件", "主回路斷路器", "HMI 儲存器", "液壓泵"], "correctAnswer": 0, "explanation": "光電感測器將物體有無或通過狀態送給 PLC，因此通常是輸入元件。"},
+    {"id": 6, "level": "beginner", "chapter": "02. 感測器與執行元件", "question": "電磁閥在氣壓系統中通常用來做什麼？", "options": ["顯示趨勢圖", "控制氣流方向或通斷", "測量網路速度", "儲存 PLC 程式"], "correctAnswer": 1, "explanation": "電磁閥接受控制訊號後切換氣流方向或通斷，進而控制氣壓缸動作。"},
+    {"id": 7, "level": "beginner", "chapter": "02. 感測器與執行元件", "question": "選擇感測器時，哪一項不應被忽略？", "options": ["供電電壓與輸出型式", "設備外觀顏色", "安裝位置與偵測距離", "環境溫度與防護等級"], "correctAnswer": 0, "explanation": "供電、輸出型式、安裝環境與偵測距離都會影響感測器能否正確接入及可靠工作。"},
+    {"id": 8, "level": "beginner", "chapter": "02. 感測器與執行元件", "question": "若輸送帶的到位感測器失效，較好的控制策略是什麼？", "options": ["忽略訊號並持續運轉", "辨識故障、告警並進入預先定義的安全狀態", "把馬達速度調到最大", "刪除感測器位址"], "correctAnswer": 1, "explanation": "感測器失效時，PLC 不應把不可信的狀態當成正常，應告警並採取安全、可診斷的策略。"},
+    {"id": 9, "level": "beginner", "chapter": "03. HMI 人機介面", "question": "PLC 與 HMI 的主要分工是什麼？", "options": ["HMI 執行所有安全回路", "PLC 執行控制邏輯，HMI 提供操作與狀態顯示", "PLC 只顯示圖表，HMI 控制馬達電源", "兩者完全沒有分工"], "correctAnswer": 1, "explanation": "PLC 通常負責控制邏輯與現場 I/O，HMI 則負責操作員操作、狀態顯示與警報呈現。"},
+    {"id": 10, "level": "beginner", "chapter": "03. HMI 人機介面", "question": "HMI 的警報訊息最好包含什麼？", "options": ["只有紅色背景", "故障內容、發生時間與處理提示", "只顯示設備名稱", "隨機顯示一組數字"], "correctAnswer": 1, "explanation": "可操作的警報至少要說明發生什麼事、何時發生，以及操作員可以採取的處理方向。"},
+    {"id": 11, "level": "beginner", "chapter": "03. HMI 人機介面", "question": "為什麼手動模式要在 HMI 上清楚標示？", "options": ["讓畫面更複雜", "避免操作員誤以為設備正在自動控制", "取代所有安全元件", "增加通訊速度"], "correctAnswer": 1, "explanation": "手動模式可能允許個別輸出動作，清楚標示能降低誤操作並幫助操作員理解設備狀態。"},
+    {"id": 12, "level": "beginner", "chapter": "03. HMI 人機介面", "question": "HMI 的復歸按鈕應該如何設計？", "options": ["可以繞過急停與防護門", "只能在安全條件滿足後提出復歸請求", "按下後直接啟動全部設備", "不需要顯示任何結果"], "correctAnswer": 1, "explanation": "復歸不能繞過安全條件，應在危險解除、設備狀態允許後才提出重新啟用請求。"}
+  ]
+}

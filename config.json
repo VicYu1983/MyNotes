@@ -207,6 +207,23 @@
             ]
         },
         {
+            "id": "industrial-automation-basics",
+            "category": "industrial-automation",
+            "title": "工業自動化基礎",
+            "icon": "settings_input_component",
+            "subtitle": "從控制電氣、現場元件到 HMI 的三章入門課",
+            "description": "以實際設備控制流程理解工業自動化，銜接 PLC、感測器、執行元件與人機介面",
+            "questionFile": "industrial-automation-basics/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "前三章：自動化入門",
+                    "order": 1,
+                    "jsonFile": "industrial-automation-basics/beginner.json"
+                }
+            ]
+        },
+        {
             "id": "low-voltage-basics",
             "category": "low-voltage",
             "title": "弱電工程基礎",
@@ -220,6 +237,18 @@
                     "name": "第一章：基礎電學與安全",
                     "order": 1,
                     "jsonFile": "low-voltage-basics/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "第二章：工具與現場施工",
+                    "order": 2,
+                    "jsonFile": "low-voltage-basics/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "第三章：網路基礎與結構化佈線",
+                    "order": 3,
+                    "jsonFile": "low-voltage-basics/advanced.json"
                 }
             ]
         },

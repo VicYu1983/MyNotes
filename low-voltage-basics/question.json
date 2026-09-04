@@ -9,6 +9,13 @@
     {"id": 7, "level": "beginner", "chapter": "04. 常見弱電電壓與 PoE", "question": "下列哪一個是常見的 24V DC 使用情境？", "options": ["控制盤與工業感測器", "高壓輸電塔", "家用音樂 CD", "光纖玻璃本身"], "correctAnswer": 0, "explanation": "24V DC 常見於控制盤、PLC I/O、工業感測器與自動化設備。"},
     {"id": 8, "level": "beginner", "chapter": "04. 常見弱電電壓與 PoE", "question": "PoE 的主要功能是什麼？", "options": ["只增加網路速度", "透過網路線同時傳輸資料與電力", "把 AC 變成音訊", "只用於光纖熔接"], "correctAnswer": 1, "explanation": "PoE 讓符合標準的網路設備透過乙太網路線同時取得資料連線與電力。"},
     {"id": 9, "level": "beginner", "chapter": "05. 萬用電表與安全", "question": "測量導通或電阻前，通常應該怎麼做？", "options": ["保持設備通電", "先斷電並確認電容已放電", "把表棒插在電流孔後跨接電源", "把量程調到最大電流並短接"], "correctAnswer": 1, "explanation": "導通與電阻測量應在斷電狀態進行，否則可能損壞萬用電表或設備。"},
-    {"id": 10, "level": "beginner", "chapter": "05. 萬用電表與安全", "question": "初學者測量低電壓 DC 輸出前，最合理的第一步是什麼？", "options": ["直接拆開電源供應器", "確認設備標示、測量模式與表棒插孔", "將表棒短接測試火花", "先測量市電插座"], "correctAnswer": 1, "explanation": "測量前必須先確認設備規格、AC/DC 模式、量程和表棒插孔，並優先在安全的低電壓教學環境練習。"}
+    {"id": 10, "level": "beginner", "chapter": "05. 萬用電表與安全", "question": "初學者測量低電壓 DC 輸出前，最合理的第一步是什麼？", "options": ["直接拆開電源供應器", "確認設備標示、測量模式與表棒插孔", "將表棒短接測試火花", "先測量市電插座"], "correctAnswer": 1, "explanation": "測量前必須先確認設備規格、AC/DC 模式、量程和表棒插孔，並優先在安全的低電壓教學環境練習。"},
+    {"id": 11, "level": "intermediate", "chapter": "06. 工具與現場施工", "question": "網路線壓接或打線完成後，最合理的下一步是什麼？", "options": ["直接封板不測試", "進行線序與導通測試並完成標籤", "把線材拉到最緊", "剪掉所有標籤"], "correctAnswer": 1, "explanation": "接頭完成後要測試線序與導通，並在兩端貼上對應標籤，才能確保線路可用且方便維護。"},
+    {"id": 12, "level": "intermediate", "chapter": "06. 工具與現場施工", "question": "弱電線路施工時，哪個做法較合適？", "options": ["與強電線路長距離緊貼共管", "過度拉扯線材以避免鬆動", "依圖面規劃路徑並遵守彎曲與隔離要求", "不需要記錄線號"], "correctAnswer": 2, "explanation": "施工應依圖面規劃路徑，避免不當拉扯、過度彎折與和強電混雜，並留下清楚的線號記錄。"},
+    {"id": 13, "level": "intermediate", "chapter": "06. 工具與現場施工", "question": "尋線器的主要用途是什麼？", "options": ["提高網路速度", "找出線路另一端或對應的線材", "替代所有電源供應器", "測量馬達扭矩"], "correctAnswer": 1, "explanation": "尋線器能協助在多條線材中找到對應線路，方便配線、標籤與故障排除。"},
+    {"id": 14, "level": "advanced", "chapter": "07. 網路基礎與結構化佈線", "question": "交換器的主要功能是什麼？", "options": ["在區域網路中轉送設備資料", "取代所有網路線", "只供應市電", "只負責顯示影像"], "correctAnswer": 0, "explanation": "交換器主要在同一個區域網路中轉送設備之間的資料，讓電腦、攝影機與 AP 等設備互相連線。"},
+    {"id": 15, "level": "advanced", "chapter": "07. 網路基礎與結構化佈線", "question": "DHCP 的常見用途是什麼？", "options": ["自動分配網路設定", "壓接 RJ45 接頭", "測量線材電阻", "控制攝影機鏡頭焦距"], "correctAnswer": 0, "explanation": "DHCP 可以自動提供 IP 位址、子網路遮罩、閘道等網路設定，減少手動設定錯誤。"},
+    {"id": 16, "level": "advanced", "chapter": "07. 網路基礎與結構化佈線", "question": "結構化佈線驗收時，為什麼不能只看交換器燈號？", "options": ["燈號永遠不會亮", "燈號只代表部分連線狀態，不能取代線序與性能測試", "交換器不需要電源", "線材不需要接頭"], "correctAnswer": 1, "explanation": "交換器燈號只能提供有限的連線資訊，仍需檢查線序、導通與依需求進行性能測試。"},
+    {"id": 17, "level": "advanced", "chapter": "07. 網路基礎與結構化佈線", "question": "網路不通時，較好的故障排除順序是什麼？", "options": ["直接更換所有設備", "先檢查實體連線，再檢查交換器埠與 IP 設定", "先刪除 DHCP", "只重開瀏覽器"], "correctAnswer": 1, "explanation": "應先由網路線、插座、配線架與交換器埠確認實體連線，再檢查網卡與 IP 設定，逐步縮小故障範圍。"}
   ]
 }
