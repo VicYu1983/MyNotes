@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {"id": 1, "level": "beginner", "chapter": "01. PLC 基礎概念", "question": "PLC 的主要工作流程通常是什麼？", "options": ["只儲存生產資料", "讀取輸入、執行程式、更新輸出", "只控制網路設備", "只顯示畫面"], "correctAnswer": 1, "explanation": "PLC 會週期性讀取輸入，依使用者程式運算，再更新輸出以控制現場設備。"},
+    {"id": 2, "level": "beginner", "chapter": "02. PLC 硬體與 I/O", "question": "下列哪一項通常屬於 PLC 的輸入？", "options": ["電磁閥線圈", "馬達接觸器", "光電感測器", "指示燈"], "correctAnswer": 2, "explanation": "光電感測器提供現場狀態給 PLC，因此屬於輸入；電磁閥、接觸器與指示燈通常是輸出負載。"},
+    {"id": 3, "level": "beginner", "chapter": "02. PLC 硬體與 I/O", "question": "4–20 mA 壓力變送器屬於哪一類訊號？", "options": ["數位輸入", "數位輸出", "類比輸入", "類比輸出"], "correctAnswer": 2, "explanation": "壓力值會在範圍內連續變化，變送器將它以 4–20 mA 類比訊號送入 PLC。"},
+    {"id": 4, "level": "beginner", "chapter": "03. 掃描週期", "question": "PLC 掃描流程中，執行使用者程式通常發生在什麼時候？", "options": ["讀取輸入之後、更新輸出之前", "更新輸出之後才讀取輸入", "系統關機之後", "只在下載程式時"], "correctAnswer": 0, "explanation": "典型流程是先讀取輸入映像，再執行程式，最後把輸出映像更新到實體輸出。"},
+    {"id": 5, "level": "beginner", "chapter": "04. 梯形圖入門", "question": "梯形圖中，同一路徑上的兩個接點通常代表哪種邏輯？", "options": ["OR", "AND", "NOTHING", "隨機切換"], "correctAnswer": 1, "explanation": "接點串聯時必須同時導通，代表 AND 邏輯；並聯分支通常代表 OR 邏輯。"},
+    {"id": 6, "level": "beginner", "chapter": "04. 梯形圖入門", "question": "急停功能的設計原則是什麼？", "options": ["只要在畫面上顯示即可", "只依賴一個一般程式位元", "依風險使用適當的安全元件與程序", "完全不需要測試"], "correctAnswer": 2, "explanation": "急停屬於安全功能，不應只依賴一般 PLC 邏輯，應依風險評估採用適當安全元件並驗證。"},
+    {"id": 7, "level": "intermediate", "chapter": "05. 計時器與計數器", "question": "TON 計時器的典型用途是什麼？", "options": ["條件成立一段時間後才接通", "條件消失一段時間後才接通", "永久鎖定輸出", "將類比值轉成文字"], "correctAnswer": 0, "explanation": "TON 是延遲接通計時器，輸入條件持續成立達到預設時間後，完成輸出才會成立。"},
+    {"id": 8, "level": "intermediate", "chapter": "06. 狀態機與順序控制", "question": "使用狀態機設計設備流程的主要好處是什麼？", "options": ["讓所有輸出同時動作", "把流程拆成清楚且可診斷的狀態", "不需要處理故障", "完全取代安全電路"], "correctAnswer": 1, "explanation": "狀態機能清楚定義每個步驟的輸出與轉移條件，也方便處理超時、故障與復歸。"},
+    {"id": 9, "level": "intermediate", "chapter": "07. 類比訊號", "question": "將類比模組原始值轉成 bar 或 °C 的動作稱為什麼？", "options": ["縮放或工程單位轉換", "輸出短路", "程式下載", "網路橋接"], "correctAnswer": 0, "explanation": "類比模組讀到原始數值，必須依量程進行縮放，才可用工程單位表示壓力、溫度等實際值。"},
+    {"id": 10, "level": "intermediate", "chapter": "07. 類比訊號", "question": "感測器訊號斷線時，控制程式最應該先做什麼？", "options": ["直接沿用最後數值並忽略", "辨識故障並進入預先定義的失效策略", "刪除所有警報", "提高輸出到最大值"], "correctAnswer": 1, "explanation": "斷線代表回授不可信，程式應辨識故障、告警並依設備風險採取安全且可預期的策略。"},
+    {"id": 11, "level": "intermediate", "chapter": "08. 程式結構與診斷", "question": "為什麼應避免同一個輸出在多處被寫入？", "options": ["會讓畫面變漂亮", "控制權不明，造成難以預期的結果", "可提高類比解析度", "可省略所有測試"], "correctAnswer": 1, "explanation": "多處寫入同一輸出會讓最後執行的邏輯覆蓋前面結果，增加維護與診斷困難。"},
+    {"id": 12, "level": "intermediate", "chapter": "08. 程式結構與診斷", "question": "追查現場輸出不動時，較合理的順序是什麼？", "options": ["直接更換所有模組", "從現場元件與輸入，逐步追到邏輯和輸出負載", "只重開 HMI", "忽略診斷資料"], "correctAnswer": 1, "explanation": "應由現場輸入開始，依序確認輸入位元、邏輯條件、輸出位元、模組狀態與負載接線。"},
+    {"id": 13, "level": "advanced", "chapter": "09. 工業通訊", "question": "PLC 與變頻器通訊中，為什麼需要逾時監控？", "options": ["讓馬達永遠全速", "辨識回授已失效並採取替代策略", "增加螢幕亮度", "避免所有資料交換"], "correctAnswer": 1, "explanation": "通訊中斷時，最後一次資料可能已不可信；逾時監控能觸發告警或安全停機策略。"},
+    {"id": 14, "level": "advanced", "chapter": "10. 功能安全", "question": "一般 PLC 程式中的一個位元可以直接取代安全急停回路嗎？", "options": ["可以，所有設備都可以", "可以，只要畫面有顯示", "不可以，需依風險使用適當安全系統", "只有夜間可以"], "correctAnswer": 2, "explanation": "一般控制邏輯不等同於功能安全系統，急停等安全功能需依風險與適用標準設計、驗證。"},
+    {"id": 15, "level": "advanced", "chapter": "10. 功能安全", "question": "安全功能復歸按鈕的正確角色是什麼？", "options": ["繞過仍存在的危險條件", "提出復歸請求，但仍須確認安全條件", "強制所有馬達啟動", "清除所有歷史紀錄"], "correctAnswer": 1, "explanation": "復歸只能在危險條件解除後提出重新啟用請求，不能用來繞過防護或故障。"},
+    {"id": 16, "level": "advanced", "chapter": "11. PID 與製程控制", "question": "PID 中的 I（積分）作用通常是什麼？", "options": ["消除長期穩態偏差", "只讀取數位輸入", "切換網路協定", "固定輸出為零"], "correctAnswer": 0, "explanation": "積分項累積誤差，可幫助消除穩態偏差，但需注意積分飽和與調整過強造成的過衝。"},
+    {"id": 17, "level": "advanced", "chapter": "12. 可靠度與部署", "question": "PLC 程式部署前最重要的準備之一是什麼？", "options": ["只備份 HMI 圖片", "確認版本、硬體組態、I/O 對照與回復方案", "刪除診斷紀錄", "跳過模擬測試"], "correctAnswer": 1, "explanation": "部署前要確認軟硬體版本與 I/O 對照，並保留可用備份、測試結果與回復方案。"},
+    {"id": 18, "level": "advanced", "chapter": "12. 可靠度與部署", "question": "控制系統修改後，為什麼要保留變更紀錄？", "options": ["方便追溯原因、操作者與驗證結果", "讓程式執行更快", "取代所有安全測試", "增加輸出電壓"], "correctAnswer": 0, "explanation": "變更紀錄能支援故障追溯、版本管理與交接，也能確認修改是否經過適當驗證。"}
+  ]
+}

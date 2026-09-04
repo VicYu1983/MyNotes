@@ -166,6 +166,35 @@
             ]
         },
         {
+            "id": "plc",
+            "category": "platform-tools",
+            "title": "PLC 可程式邏輯控制器",
+            "icon": "precision_manufacturing",
+            "subtitle": "從 I/O、梯形圖到工業自動化控制的互動學習",
+            "description": "循序學習 PLC 的硬體架構、掃描週期、梯形圖、計時器、計數器與安全控制，建立工業自動化基礎",
+            "questionFile": "plc/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "基礎認識",
+                    "order": 1,
+                    "jsonFile": "plc/beginner.json"
+                },
+                {
+                    "id": "intermediate",
+                    "name": "控制編程",
+                    "order": 2,
+                    "jsonFile": "plc/intermediate.json"
+                },
+                {
+                    "id": "advanced",
+                    "name": "系統整合",
+                    "order": 3,
+                    "jsonFile": "plc/advanced.json"
+                }
+            ]
+        },
+        {
             "id": "smart-home-engineer",
             "category": "smart-living",
             "title": "智能家居工程師",
