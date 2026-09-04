@@ -229,24 +229,24 @@
             "title": "弱電工程基礎",
             "icon": "cable",
             "subtitle": "從基本電學、供電規格到安全測量",
-            "description": "建立弱電工程入門所需的電學概念，理解弱電與強電差異、常見電壓、極性、接地與萬用電表使用",
+            "description": "從基本電學、施工工具、網路佈線到 PoE、監控、門禁、消防、BMS 與故障排除，建立完整弱電工程入門基礎",
             "questionFile": "low-voltage-basics/question.json",
             "levels": [
                 {
                     "id": "beginner",
-                    "name": "第一章：基礎電學與安全",
+                    "name": "基礎入門",
                     "order": 1,
                     "jsonFile": "low-voltage-basics/beginner.json"
                 },
                 {
                     "id": "intermediate",
-                    "name": "第二章：工具與現場施工",
+                    "name": "施工與網路",
                     "order": 2,
                     "jsonFile": "low-voltage-basics/intermediate.json"
                 },
                 {
                     "id": "advanced",
-                    "name": "第三章：網路基礎與結構化佈線",
+                    "name": "系統整合",
                     "order": 3,
                     "jsonFile": "low-voltage-basics/advanced.json"
                 }
