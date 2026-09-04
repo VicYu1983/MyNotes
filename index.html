@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>互動式學習平台</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -325,6 +325,185 @@
             .community-section {
                 padding: 32px 20px;
             }
+        }
+
+        /* 長者友善版：保留資料與互動邏輯，只提高辨識度與可操作性。 */
+        :root {
+            --paper: #f7f3eb;
+            --paper-strong: #fffdf8;
+            --ink: #202b36;
+            --muted: #52606d;
+            --line: #c9d0d5;
+            --blue: #075985;
+            --blue-dark: #06466a;
+            --gold: #f0b429;
+            --shadow: 0 12px 28px rgba(32, 43, 54, 0.1);
+        }
+
+        * { letter-spacing: 0; }
+
+        body {
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--paper);
+            background-image: repeating-linear-gradient(0deg, rgba(7, 88, 133, 0.025) 0, rgba(7, 88, 133, 0.025) 1px, transparent 1px, transparent 7px);
+            color: var(--ink);
+            line-height: 1.8;
+        }
+
+        body::before { display: none; }
+
+        .container {
+            max-width: 1280px;
+            padding: 48px 32px 72px;
+        }
+
+        .page-header {
+            text-align: left;
+            max-width: 860px;
+            margin: 0 auto 36px;
+            padding: 32px 36px;
+            background: var(--paper-strong);
+            border: 2px solid var(--line);
+            border-left: 10px solid var(--blue);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .page-header h1 {
+            color: var(--ink);
+            background: none;
+            -webkit-text-fill-color: initial;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .page-header .subtitle {
+            color: var(--muted);
+            font-size: 1.2rem;
+        }
+
+        .tabs-container {
+            max-width: 1280px;
+            margin: 0 auto 32px;
+            gap: 12px;
+            justify-content: flex-start;
+        }
+
+        .tab-button {
+            min-height: 52px;
+            padding: 12px 20px;
+            border: 2px solid var(--line);
+            background: var(--paper-strong);
+            color: var(--ink);
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .tab-button:hover,
+        .tab-button.active {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: #fff;
+        }
+
+        .tab-button .material-icons { color: inherit; opacity: 1; }
+
+        .tab-button:focus-visible,
+        .topic-card:focus-visible,
+        .facebook-link:focus-visible {
+            outline: 4px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        .topics-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .topic-card {
+            min-height: 250px;
+            padding: 28px;
+            background: var(--paper-strong);
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(32, 43, 54, 0.06);
+        }
+
+        .topic-card:hover {
+            background: #fff;
+            border-color: var(--blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .topic-card::before { display: none; }
+
+        .topic-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 18px;
+            background: #dceef7;
+            border: 2px solid #a9d0e3;
+            border-radius: 8px;
+        }
+
+        .topic-icon .material-icons { color: var(--blue); font-size: 32px; }
+        .topic-title { color: var(--ink); font-size: 1.35rem; font-weight: 800; }
+        .topic-description { color: var(--muted); font-size: 1rem; line-height: 1.8; }
+
+        .level-badge {
+            padding: 6px 12px;
+            border: 1px solid #aab5bd;
+            border-radius: 5px;
+            color: var(--ink);
+            background: #eef1f3;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .level-badge.beginner { color: #14532d; background: #dcfce7; border-color: #86c79b; }
+        .level-badge.intermediate { color: #713f12; background: #fef3c7; border-color: #e4bd63; }
+        .level-badge.advanced { color: #7f1d1d; background: #fee2e2; border-color: #e8a1a1; }
+
+        .community-section {
+            max-width: 860px;
+            margin: 48px auto 0;
+            padding: 32px;
+            background: #e8f3f7;
+            border: 2px solid #a9d0e3;
+            border-radius: 8px;
+        }
+
+        .community-section h2 { color: var(--ink); font-size: 1.5rem; }
+        .community-section p { color: var(--muted); font-size: 1.05rem; }
+
+        .facebook-link {
+            min-height: 52px;
+            padding: 12px 24px;
+            border-radius: 7px;
+            background: var(--blue);
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .facebook-link:hover { background: var(--blue-dark); transform: none; }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 16px 48px; }
+            .page-header { padding: 24px 20px; border-left-width: 7px; }
+            .page-header .subtitle { font-size: 1.05rem; }
+            .tabs-container { display: grid; grid-template-columns: 1fr 1fr; }
+            .tab-button { width: 100%; min-height: 56px; padding: 10px 8px; font-size: 0.98rem; }
+            .tab-button .material-icons { font-size: 19px; }
+            .topic-card { min-height: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
     </style>
 </head>

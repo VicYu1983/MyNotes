@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>互動式學習 - 章節內容</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -501,6 +501,157 @@
             .header h1 { font-size: 1.5em; }
             .header .subtitle { margin-left: 0; margin-top: 12px; }
             .knowledge-item { padding: 16px; }
+        }
+
+        /* 長者友善版：提高閱讀舒適度、點按尺寸與鍵盤辨識度。 */
+        :root {
+            --paper: #f7f3eb;
+            --paper-strong: #fffdf8;
+            --ink: #202b36;
+            --muted: #52606d;
+            --line: #c9d0d5;
+            --blue: #075985;
+            --blue-dark: #06466a;
+            --gold: #f0b429;
+            --green: #166534;
+            --red: #991b1b;
+            --shadow: 0 12px 28px rgba(32, 43, 54, 0.1);
+        }
+
+        * { letter-spacing: 0; }
+
+        body {
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--paper);
+            background-image: repeating-linear-gradient(0deg, rgba(7, 88, 133, 0.025) 0, rgba(7, 88, 133, 0.025) 1px, transparent 1px, transparent 7px);
+            color: var(--ink);
+            line-height: 1.85;
+        }
+
+        body::before { display: none; }
+
+        .container { max-width: 980px; padding: 32px 28px 72px; }
+
+        .back-button {
+            min-height: 52px;
+            padding: 12px 18px;
+            margin-bottom: 28px;
+            background: var(--paper-strong);
+            color: var(--blue);
+            border: 2px solid var(--line);
+            border-radius: 7px;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .back-button:hover { background: #e8f3f7; color: var(--blue-dark); border-color: var(--blue); }
+
+        .back-button:focus-visible,
+        .knowledge-item:focus-visible,
+        .quiz-button:focus-visible,
+        .quiz-btn:focus-visible,
+        .quiz-option:focus-visible {
+            outline: 4px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+            padding: 28px 32px;
+            background: var(--paper-strong);
+            border: 2px solid var(--line);
+            border-left: 10px solid var(--blue);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .header h1 { color: var(--ink); font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.3; }
+        .header .title-icon { width: 60px; height: 60px; background: #dceef7; border: 2px solid #a9d0e3; border-radius: 8px; }
+        .header .title-icon .material-icons { color: var(--blue); font-size: 32px; }
+        .header .subtitle { margin-left: 76px; color: var(--muted); font-size: 1.15rem; }
+
+        .level-section { margin-bottom: 36px; }
+        .level-header { gap: 16px; margin-bottom: 18px; padding: 0 0 12px; border-bottom: 3px solid var(--line); }
+        .level-badge { min-height: 48px; padding: 8px 16px; border-radius: 6px; font-size: 1rem; font-weight: 800; }
+        .level-badge.beginner { color: var(--green); background: #dcfce7; border: 1px solid #86c79b; }
+        .level-badge.intermediate { color: #713f12; background: #fef3c7; border: 1px solid #e4bd63; }
+        .level-badge.advanced { color: var(--red); background: #fee2e2; border: 1px solid #e8a1a1; }
+        .level-description { color: var(--muted); font-size: 1.05rem; }
+
+        .knowledge-list { gap: 14px; }
+        .knowledge-item {
+            padding: 22px 24px;
+            background: var(--paper-strong);
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(32, 43, 54, 0.05);
+        }
+
+        .knowledge-item:hover { background: #fff; border-color: var(--blue); box-shadow: var(--shadow); }
+        .knowledge-header { min-height: 44px; gap: 16px; }
+        .knowledge-number { min-width: 42px; color: var(--blue); font-size: 1rem; font-weight: 800; }
+        .knowledge-title { color: var(--ink); font-size: 1.2rem; font-weight: 800; }
+        .knowledge-title::after { content: '　點按閱讀'; color: var(--muted); font-size: 0.85rem; font-weight: 500; }
+        .knowledge-content { color: var(--ink); font-size: 1.08rem; line-height: 2; }
+        .knowledge-content h3 { color: var(--blue-dark); font-size: 1.15rem; margin: 22px 0 8px; }
+        .knowledge-content ul { margin-left: 28px; }
+        .knowledge-content li { margin-bottom: 8px; }
+        .knowledge-content strong { color: var(--blue-dark); }
+        .expanded { border-top: 2px solid var(--line); }
+        .sub-section { border-left: 4px solid #a9d0e3; }
+        .sub-section h4 { color: var(--blue-dark); font-size: 1rem; }
+
+        .quiz-button {
+            min-height: 60px;
+            margin: 40px 0;
+            padding: 14px 24px;
+            background: var(--blue);
+            border-radius: 7px;
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .quiz-button:hover { background: var(--blue-dark); transform: none; box-shadow: var(--shadow); }
+
+        .loading-text { color: var(--muted); font-size: 1.1rem; }
+        .spinner { border-color: #b9d7e5; border-top-color: var(--blue); }
+
+        .quiz-modal { background: rgba(32, 43, 54, 0.7); backdrop-filter: none; }
+        .quiz-container { background: var(--paper-strong); border: 2px solid var(--line); border-radius: 8px; padding: 32px; box-shadow: var(--shadow); }
+        .quiz-header h2, .quiz-result h2 { color: var(--ink); font-size: 1.5rem; }
+        .quiz-progress, .quiz-result p { color: var(--muted); font-size: 1.05rem; }
+        .quiz-question h3 { color: var(--ink); font-size: 1.2rem; line-height: 1.8; }
+        .quiz-chapter { background: #e8f3f7; border-left-color: var(--blue); color: var(--blue-dark); font-size: 1rem; }
+        .quiz-options { gap: 12px; }
+        .quiz-option { min-height: 56px; padding: 14px 18px; background: #fff; border: 2px solid var(--line); border-radius: 7px; color: var(--ink); font-size: 1.05rem; }
+        .quiz-option:hover { background: #f1f8fb; border-color: var(--blue); }
+        .quiz-option.selected { background: #dceef7; border-color: var(--blue); color: var(--blue-dark); }
+        .quiz-option.correct { background: #dcfce7; border-color: #70ad85; color: var(--green); }
+        .quiz-option.incorrect { background: #fee2e2; border-color: #d58a8a; color: var(--red); }
+        .quiz-explanation { background: #fff4cf; border-left-color: #c98a00; color: #5b4300; font-size: 1.05rem; }
+        .quiz-buttons { gap: 14px; }
+        .quiz-btn { min-height: 54px; padding: 12px 20px; border-radius: 7px; font-size: 1.05rem; }
+        .quiz-btn-primary { background: var(--blue); }
+        .quiz-btn-primary:hover { background: var(--blue-dark); transform: none; box-shadow: none; }
+        .quiz-btn-secondary { background: #eef1f3; color: var(--ink); border: 2px solid var(--line); }
+        .quiz-btn-secondary:hover { background: #dceef7; color: var(--ink); }
+        .quiz-score { color: var(--blue); background: none; -webkit-text-fill-color: initial; font-size: 3.5rem; }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px 16px 48px; }
+            .header { padding: 22px 20px; border-left-width: 7px; }
+            .header h1 { align-items: flex-start; gap: 12px; }
+            .header .title-icon { width: 52px; height: 52px; }
+            .header .subtitle { margin-left: 0; margin-top: 14px; font-size: 1.05rem; }
+            .level-header { align-items: flex-start; flex-direction: column; gap: 8px; }
+            .knowledge-item { padding: 18px; }
+            .knowledge-title::after { display: block; margin-top: 2px; }
+            .quiz-container { padding: 22px 18px; }
+            .quiz-buttons { flex-direction: column-reverse; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
     </style>
 </head>
