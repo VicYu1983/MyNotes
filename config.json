@@ -17,6 +17,18 @@
             "name": "開發與 AI",
             "icon": "rocket_launch",
             "description": "創新前沿 - 插件開發與人工智慧應用"
+        },
+        {
+            "id": "low-voltage",
+            "name": "弱電工程",
+            "icon": "cable",
+            "description": "從基礎電學、佈線施工到監控、門禁與建築自動化"
+        },
+        {
+            "id": "industrial-automation",
+            "name": "工業自動化",
+            "icon": "precision_manufacturing",
+            "description": "PLC、工業通訊、製程控制與自動化系統整合"
         }
     ],
     "topics": [
@@ -167,7 +179,7 @@
         },
         {
             "id": "plc",
-            "category": "platform-tools",
+            "category": "industrial-automation",
             "title": "PLC 可程式邏輯控制器",
             "icon": "precision_manufacturing",
             "subtitle": "從 I/O、梯形圖到工業自動化控制的互動學習",
@@ -191,6 +203,23 @@
                     "name": "系統整合",
                     "order": 3,
                     "jsonFile": "plc/advanced.json"
+                }
+            ]
+        },
+        {
+            "id": "low-voltage-basics",
+            "category": "low-voltage",
+            "title": "弱電工程基礎",
+            "icon": "cable",
+            "subtitle": "從基本電學、供電規格到安全測量",
+            "description": "建立弱電工程入門所需的電學概念，理解弱電與強電差異、常見電壓、極性、接地與萬用電表使用",
+            "questionFile": "low-voltage-basics/question.json",
+            "levels": [
+                {
+                    "id": "beginner",
+                    "name": "第一章：基礎電學與安全",
+                    "order": 1,
+                    "jsonFile": "low-voltage-basics/beginner.json"
                 }
             ]
         },
@@ -329,7 +358,7 @@
         },
         {
             "id": "switchbot",
-            "category": "practical",
+            "category": "platform-tools",
             "title": "SwitchBot",
             "icon": "toggle_on",
             "subtitle": "SwitchBot 智能裝置整合與應用",

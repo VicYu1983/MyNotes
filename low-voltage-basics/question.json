@@ -1,0 +1,14 @@
+{
+  "questions": [
+    {"id": 1, "level": "beginner", "chapter": "01. 弱電與強電的差異", "question": "下列哪一項較符合弱電系統的典型用途？", "options": ["供應大型馬達的市電", "傳輸網路資料與控制訊號", "高壓輸電", "家庭插座主回路"], "correctAnswer": 1, "explanation": "弱電常用於資訊、通訊、感測、控制與安全系統；大型馬達和市電供應屬於強電範疇。"},
+    {"id": 2, "level": "beginner", "chapter": "01. 弱電與強電的差異", "question": "弱電工程是否代表一定不會有危險？", "options": ["是，弱電永遠安全", "是，只要電壓低就沒有風險", "否，錯誤供電、短路與施工環境仍可能造成危險", "只有網路線會有危險"], "correctAnswer": 2, "explanation": "弱電設備仍可能因錯誤電壓、短路、電池能量或與強電共存而受損或造成危險。"},
+    {"id": 3, "level": "beginner", "chapter": "02. 基本電學", "question": "功率 P 的基本計算關係是什麼？", "options": ["P = V × I", "P = V ÷ I", "P = R ÷ V", "P = I ÷ R"], "correctAnswer": 0, "explanation": "直流入門計算中，功率 P（瓦特）等於電壓 V（伏特）乘以電流 I（安培）。"},
+    {"id": 4, "level": "beginner", "chapter": "02. 基本電學", "question": "選擇 12V DC 電源供應器時，除了電壓外還要確認什麼？", "options": ["只看外觀顏色", "設備需要的電流、極性與接頭規格", "只看電源線長度", "只要瓦數越小越好"], "correctAnswer": 1, "explanation": "電源選型至少要確認電壓、額定電流、正負極性與接頭規格是否符合設備。"},
+    {"id": 5, "level": "beginner", "chapter": "03. AC、DC 與極性", "question": "直流設備接線前最需要確認哪一項？", "options": ["設備外殼顏色", "正負極性與 DC 電壓規格", "網路瀏覽器版本", "螺絲數量"], "correctAnswer": 1, "explanation": "直流設備通常有正負極，反接可能導致設備無法運作或損壞，因此要先確認極性與電壓。"},
+    {"id": 6, "level": "beginner", "chapter": "03. AC、DC 與極性", "question": "下列哪個說法正確？", "options": ["AC 與 DC 可以不分模式測量", "所有線材顏色都代表相同極性", "測量前應確認萬用電表的 AC/DC 模式", "接地可以任意與所有訊號線混接"], "correctAnswer": 2, "explanation": "AC 與 DC 的測量模式不同；測量前應依被測訊號選擇正確模式，避免誤判或造成危險。"},
+    {"id": 7, "level": "beginner", "chapter": "04. 常見弱電電壓與 PoE", "question": "下列哪一個是常見的 24V DC 使用情境？", "options": ["控制盤與工業感測器", "高壓輸電塔", "家用音樂 CD", "光纖玻璃本身"], "correctAnswer": 0, "explanation": "24V DC 常見於控制盤、PLC I/O、工業感測器與自動化設備。"},
+    {"id": 8, "level": "beginner", "chapter": "04. 常見弱電電壓與 PoE", "question": "PoE 的主要功能是什麼？", "options": ["只增加網路速度", "透過網路線同時傳輸資料與電力", "把 AC 變成音訊", "只用於光纖熔接"], "correctAnswer": 1, "explanation": "PoE 讓符合標準的網路設備透過乙太網路線同時取得資料連線與電力。"},
+    {"id": 9, "level": "beginner", "chapter": "05. 萬用電表與安全", "question": "測量導通或電阻前，通常應該怎麼做？", "options": ["保持設備通電", "先斷電並確認電容已放電", "把表棒插在電流孔後跨接電源", "把量程調到最大電流並短接"], "correctAnswer": 1, "explanation": "導通與電阻測量應在斷電狀態進行，否則可能損壞萬用電表或設備。"},
+    {"id": 10, "level": "beginner", "chapter": "05. 萬用電表與安全", "question": "初學者測量低電壓 DC 輸出前，最合理的第一步是什麼？", "options": ["直接拆開電源供應器", "確認設備標示、測量模式與表棒插孔", "將表棒短接測試火花", "先測量市電插座"], "correctAnswer": 1, "explanation": "測量前必須先確認設備規格、AC/DC 模式、量程和表棒插孔，並優先在安全的低電壓教學環境練習。"}
+  ]
+}
